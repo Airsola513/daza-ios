@@ -1,0 +1,800 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		34D61A55424D9306A1CE7AF4 /* Pods_DazaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC039F93BC51F3874BC22538 /* Pods_DazaUITests.framework */; };
+		57F281865FD8154099281280 /* Pods_Daza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8FE8D8F603C29202F719D14 /* Pods_Daza.framework */; };
+		87A9E137F2134802C2C6A256 /* ArticleLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9E7EBD782B2C9B9416FA7 /* ArticleLike.swift */; };
+		87A9E13E3F5C87FA705EF4DF /* TweetLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9EE96890D245D5AB59524 /* TweetLike.swift */; };
+		87A9E1694B7A710269A80A3D /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9EE2C991C5D4C6847BA5E /* Tag.swift */; };
+		87A9E1A19B555584EE254443 /* TweetComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9EE86D9879DE72044DAF9 /* TweetComment.swift */; };
+		87A9E209FFD6EFC9509E9441 /* EventLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9E3C2357F783C0D6EEC72 /* EventLike.swift */; };
+		87A9E3316C0FA4311D494D29 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 87A9EAD8B7E0DF77E26EDF64 /* .gitkeep */; };
+		87A9E35735640FE22F986E66 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9EA740E0CC0C8EC58DED8 /* Tweet.swift */; };
+		87A9E594B0C44D18D168F9DF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9E0BEEFF8C60CD427F145 /* Event.swift */; };
+		87A9E6EDF344AF2E9A0A2343 /* EventComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9EE31E285E30572DD3EF4 /* EventComment.swift */; };
+		87A9E6FFFD865256D58D2101 /* ArticleComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9E55993BF199D4903D243 /* ArticleComment.swift */; };
+		87A9E778BC2C5BBE943FA230 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9EC9EACEF7EA84A069AEE /* Asset.swift */; };
+		87A9E7D886BA6F11CF2CB320 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9E604BB94E87DB92A27CE /* Topic.swift */; };
+		87A9EBE7A069F7FA29B9AE27 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9EF44F702E9045B64697D /* Notification.swift */; };
+		87A9EC8D414700CB32D2EC49 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 87A9E3D950B7DDD592BFB1FF /* .gitkeep */; };
+		87A9ECA0E17B0C722735E6F4 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9E29C83BFF3795EE8716E /* LoginController.swift */; };
+		87A9EE9289CE563FA8632840 /* EventMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9E5BC47D483E2E85EAEBD /* EventMember.swift */; };
+		87A9EEBC6C4B59CC03C29050 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9E72A1D10D0CC1228D179 /* Article.swift */; };
+		87A9EF8BA4E71486C947AACF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9E6FBE730848C0539CFAB /* User.swift */; };
+		8A3736963DF62D544E5F34D9 /* Pods_DazaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4D813867A740C3F0DC5296 /* Pods_DazaTests.framework */; };
+		F56D2B011D3121AC004A92DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B001D3121AC004A92DD /* AppDelegate.swift */; };
+		F56D2B031D3121AC004A92DD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B021D3121AC004A92DD /* FirstViewController.swift */; };
+		F56D2B051D3121AC004A92DD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B041D3121AC004A92DD /* SecondViewController.swift */; };
+		F56D2B081D3121AC004A92DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56D2B061D3121AC004A92DD /* Main.storyboard */; };
+		F56D2B0A1D3121AC004A92DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F56D2B091D3121AC004A92DD /* Assets.xcassets */; };
+		F56D2B0D1D3121AC004A92DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56D2B0B1D3121AC004A92DD /* LaunchScreen.storyboard */; };
+		F56D2B181D3121AC004A92DD /* DazaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B171D3121AC004A92DD /* DazaTests.swift */; };
+		F56D2B231D3121AC004A92DD /* DazaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B221D3121AC004A92DD /* DazaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F56D2B141D3121AC004A92DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F56D2AF51D3121AB004A92DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F56D2AFC1D3121AC004A92DD;
+			remoteInfo = Daza;
+		};
+		F56D2B1F1D3121AC004A92DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F56D2AF51D3121AB004A92DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F56D2AFC1D3121AC004A92DD;
+			remoteInfo = Daza;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		567A82E691D0DB693735A9DB /* Pods-DazaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DazaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DazaUITests/Pods-DazaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		56F87294E8F607D52133F939 /* Pods-DazaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DazaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DazaTests/Pods-DazaTests.release.xcconfig"; sourceTree = "<group>"; };
+		5F6D34763D9344032CC65175 /* Pods-DazaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DazaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DazaTests/Pods-DazaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		77DCAD0F35B9AC7D13EB644C /* Pods-Daza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Daza/Pods-Daza.debug.xcconfig"; sourceTree = "<group>"; };
+		87A9E0BEEFF8C60CD427F145 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		87A9E29C83BFF3795EE8716E /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		87A9E3C2357F783C0D6EEC72 /* EventLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLike.swift; sourceTree = "<group>"; };
+		87A9E3D950B7DDD592BFB1FF /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = file.gitkeep; path = .gitkeep; sourceTree = "<group>"; };
+		87A9E55993BF199D4903D243 /* ArticleComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleComment.swift; sourceTree = "<group>"; };
+		87A9E5BC47D483E2E85EAEBD /* EventMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMember.swift; sourceTree = "<group>"; };
+		87A9E604BB94E87DB92A27CE /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		87A9E6FBE730848C0539CFAB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		87A9E72A1D10D0CC1228D179 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		87A9E7EBD782B2C9B9416FA7 /* ArticleLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleLike.swift; sourceTree = "<group>"; };
+		87A9EA740E0CC0C8EC58DED8 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		87A9EAD8B7E0DF77E26EDF64 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = file.gitkeep; path = .gitkeep; sourceTree = "<group>"; };
+		87A9EC9EACEF7EA84A069AEE /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		87A9EE2C991C5D4C6847BA5E /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		87A9EE31E285E30572DD3EF4 /* EventComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventComment.swift; sourceTree = "<group>"; };
+		87A9EE86D9879DE72044DAF9 /* TweetComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetComment.swift; sourceTree = "<group>"; };
+		87A9EE96890D245D5AB59524 /* TweetLike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetLike.swift; sourceTree = "<group>"; };
+		87A9EF44F702E9045B64697D /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		8C4D813867A740C3F0DC5296 /* Pods_DazaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DazaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC039F93BC51F3874BC22538 /* Pods_DazaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DazaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7F162B90DA60CD6533A6022 /* Pods-Daza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Daza/Pods-Daza.release.xcconfig"; sourceTree = "<group>"; };
+		E8FE8D8F603C29202F719D14 /* Pods_Daza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F56D2AFD1D3121AC004A92DD /* Daza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daza.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F56D2B001D3121AC004A92DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F56D2B021D3121AC004A92DD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		F56D2B041D3121AC004A92DD /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		F56D2B071D3121AC004A92DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F56D2B091D3121AC004A92DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F56D2B0C1D3121AC004A92DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F56D2B0E1D3121AC004A92DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F56D2B131D3121AC004A92DD /* DazaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DazaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F56D2B171D3121AC004A92DD /* DazaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DazaTests.swift; sourceTree = "<group>"; };
+		F56D2B191D3121AC004A92DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F56D2B1E1D3121AC004A92DD /* DazaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DazaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F56D2B221D3121AC004A92DD /* DazaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DazaUITests.swift; sourceTree = "<group>"; };
+		F56D2B241D3121AC004A92DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC6C9DB5D25909607728FCB2 /* Pods-DazaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DazaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DazaUITests/Pods-DazaUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F56D2AFA1D3121AC004A92DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57F281865FD8154099281280 /* Pods_Daza.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F56D2B101D3121AC004A92DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A3736963DF62D544E5F34D9 /* Pods_DazaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F56D2B1B1D3121AC004A92DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34D61A55424D9306A1CE7AF4 /* Pods_DazaUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		87A9E8CC006EAD99528D2E58 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				87A9EAD8B7E0DF77E26EDF64 /* .gitkeep */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		87A9EB23B9EE744469DCA117 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				87A9E29C83BFF3795EE8716E /* LoginController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		87A9EBA6A756C230C11874A5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				87A9EE2C991C5D4C6847BA5E /* Tag.swift */,
+				87A9E6FBE730848C0539CFAB /* User.swift */,
+				87A9EC9EACEF7EA84A069AEE /* Asset.swift */,
+				87A9E0BEEFF8C60CD427F145 /* Event.swift */,
+				87A9E604BB94E87DB92A27CE /* Topic.swift */,
+				87A9EA740E0CC0C8EC58DED8 /* Tweet.swift */,
+				87A9E72A1D10D0CC1228D179 /* Article.swift */,
+				87A9E3C2357F783C0D6EEC72 /* EventLike.swift */,
+				87A9EE96890D245D5AB59524 /* TweetLike.swift */,
+				87A9E7EBD782B2C9B9416FA7 /* ArticleLike.swift */,
+				87A9E5BC47D483E2E85EAEBD /* EventMember.swift */,
+				87A9EE31E285E30572DD3EF4 /* EventComment.swift */,
+				87A9EF44F702E9045B64697D /* Notification.swift */,
+				87A9EE86D9879DE72044DAF9 /* TweetComment.swift */,
+				87A9E55993BF199D4903D243 /* ArticleComment.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		87A9EDBED9750E641CD44FD6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				87A9E3D950B7DDD592BFB1FF /* .gitkeep */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CF87670CD61C918CC9793B80 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77DCAD0F35B9AC7D13EB644C /* Pods-Daza.debug.xcconfig */,
+				B7F162B90DA60CD6533A6022 /* Pods-Daza.release.xcconfig */,
+				5F6D34763D9344032CC65175 /* Pods-DazaTests.debug.xcconfig */,
+				56F87294E8F607D52133F939 /* Pods-DazaTests.release.xcconfig */,
+				567A82E691D0DB693735A9DB /* Pods-DazaUITests.debug.xcconfig */,
+				FC6C9DB5D25909607728FCB2 /* Pods-DazaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DAF3D11576E59A30216886D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8FE8D8F603C29202F719D14 /* Pods_Daza.framework */,
+				8C4D813867A740C3F0DC5296 /* Pods_DazaTests.framework */,
+				AC039F93BC51F3874BC22538 /* Pods_DazaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F56D2AF41D3121AB004A92DD = {
+			isa = PBXGroup;
+			children = (
+				F56D2AFF1D3121AC004A92DD /* Daza */,
+				F56D2B161D3121AC004A92DD /* DazaTests */,
+				F56D2B211D3121AC004A92DD /* DazaUITests */,
+				F56D2AFE1D3121AC004A92DD /* Products */,
+				CF87670CD61C918CC9793B80 /* Pods */,
+				DAF3D11576E59A30216886D3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F56D2AFE1D3121AC004A92DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F56D2AFD1D3121AC004A92DD /* Daza.app */,
+				F56D2B131D3121AC004A92DD /* DazaTests.xctest */,
+				F56D2B1E1D3121AC004A92DD /* DazaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F56D2AFF1D3121AC004A92DD /* Daza */ = {
+			isa = PBXGroup;
+			children = (
+				F56D2B001D3121AC004A92DD /* AppDelegate.swift */,
+				F56D2B021D3121AC004A92DD /* FirstViewController.swift */,
+				F56D2B041D3121AC004A92DD /* SecondViewController.swift */,
+				F56D2B061D3121AC004A92DD /* Main.storyboard */,
+				F56D2B091D3121AC004A92DD /* Assets.xcassets */,
+				F56D2B0B1D3121AC004A92DD /* LaunchScreen.storyboard */,
+				F56D2B0E1D3121AC004A92DD /* Info.plist */,
+				87A9EBA6A756C230C11874A5 /* Models */,
+				87A9EB23B9EE744469DCA117 /* Controllers */,
+				87A9E8CC006EAD99528D2E58 /* Events */,
+				87A9EDBED9750E641CD44FD6 /* Utils */,
+			);
+			path = Daza;
+			sourceTree = "<group>";
+		};
+		F56D2B161D3121AC004A92DD /* DazaTests */ = {
+			isa = PBXGroup;
+			children = (
+				F56D2B171D3121AC004A92DD /* DazaTests.swift */,
+				F56D2B191D3121AC004A92DD /* Info.plist */,
+			);
+			path = DazaTests;
+			sourceTree = "<group>";
+		};
+		F56D2B211D3121AC004A92DD /* DazaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F56D2B221D3121AC004A92DD /* DazaUITests.swift */,
+				F56D2B241D3121AC004A92DD /* Info.plist */,
+			);
+			path = DazaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F56D2AFC1D3121AC004A92DD /* Daza */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F56D2B271D3121AC004A92DD /* Build configuration list for PBXNativeTarget "Daza" */;
+			buildPhases = (
+				34026463DC25CC9F03E62A41 /* 📦 Check Pods Manifest.lock */,
+				F56D2AF91D3121AC004A92DD /* Sources */,
+				F56D2AFA1D3121AC004A92DD /* Frameworks */,
+				F56D2AFB1D3121AC004A92DD /* Resources */,
+				0C25A8A466011BD095A58303 /* 📦 Embed Pods Frameworks */,
+				466D776BE558AA804664DF01 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Daza;
+			productName = Daza;
+			productReference = F56D2AFD1D3121AC004A92DD /* Daza.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F56D2B121D3121AC004A92DD /* DazaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F56D2B2A1D3121AC004A92DD /* Build configuration list for PBXNativeTarget "DazaTests" */;
+			buildPhases = (
+				53E7CFF364B35F8008BFD334 /* 📦 Check Pods Manifest.lock */,
+				F56D2B0F1D3121AC004A92DD /* Sources */,
+				F56D2B101D3121AC004A92DD /* Frameworks */,
+				F56D2B111D3121AC004A92DD /* Resources */,
+				951EC745AE91631875FC04B4 /* 📦 Embed Pods Frameworks */,
+				9F2B84FF04E47E8A68652224 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F56D2B151D3121AC004A92DD /* PBXTargetDependency */,
+			);
+			name = DazaTests;
+			productName = DazaTests;
+			productReference = F56D2B131D3121AC004A92DD /* DazaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F56D2B1D1D3121AC004A92DD /* DazaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F56D2B2D1D3121AC004A92DD /* Build configuration list for PBXNativeTarget "DazaUITests" */;
+			buildPhases = (
+				A31EF10B93AE28F830C08D6F /* 📦 Check Pods Manifest.lock */,
+				F56D2B1A1D3121AC004A92DD /* Sources */,
+				F56D2B1B1D3121AC004A92DD /* Frameworks */,
+				F56D2B1C1D3121AC004A92DD /* Resources */,
+				649C113C5F1A09EDD4D0AF62 /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F56D2B201D3121AC004A92DD /* PBXTargetDependency */,
+			);
+			name = DazaUITests;
+			productName = DazaUITests;
+			productReference = F56D2B1E1D3121AC004A92DD /* DazaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F56D2AF51D3121AB004A92DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = JianyingLi;
+				TargetAttributes = {
+					F56D2AFC1D3121AC004A92DD = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8CBW3QTZNP;
+					};
+					F56D2B121D3121AC004A92DD = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = F56D2AFC1D3121AC004A92DD;
+					};
+					F56D2B1D1D3121AC004A92DD = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = F56D2AFC1D3121AC004A92DD;
+					};
+				};
+			};
+			buildConfigurationList = F56D2AF81D3121AB004A92DD /* Build configuration list for PBXProject "Daza" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F56D2AF41D3121AB004A92DD;
+			productRefGroup = F56D2AFE1D3121AC004A92DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F56D2AFC1D3121AC004A92DD /* Daza */,
+				F56D2B121D3121AC004A92DD /* DazaTests */,
+				F56D2B1D1D3121AC004A92DD /* DazaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F56D2AFB1D3121AC004A92DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F56D2B0D1D3121AC004A92DD /* LaunchScreen.storyboard in Resources */,
+				F56D2B0A1D3121AC004A92DD /* Assets.xcassets in Resources */,
+				F56D2B081D3121AC004A92DD /* Main.storyboard in Resources */,
+				87A9E3316C0FA4311D494D29 /* .gitkeep in Resources */,
+				87A9EC8D414700CB32D2EC49 /* .gitkeep in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F56D2B111D3121AC004A92DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F56D2B1C1D3121AC004A92DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C25A8A466011BD095A58303 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "\uD83D\uDCE6 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Daza/Pods-Daza-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34026463DC25CC9F03E62A41 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "\uD83D\uDCE6 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		466D776BE558AA804664DF01 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "\uD83D\uDCE6 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Daza/Pods-Daza-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53E7CFF364B35F8008BFD334 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "\uD83D\uDCE6 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		649C113C5F1A09EDD4D0AF62 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "\uD83D\uDCE6 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DazaUITests/Pods-DazaUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		951EC745AE91631875FC04B4 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "\uD83D\uDCE6 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DazaTests/Pods-DazaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F2B84FF04E47E8A68652224 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "\uD83D\uDCE6 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DazaTests/Pods-DazaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A31EF10B93AE28F830C08D6F /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "\uD83D\uDCE6 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F56D2AF91D3121AC004A92DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F56D2B051D3121AC004A92DD /* SecondViewController.swift in Sources */,
+				F56D2B011D3121AC004A92DD /* AppDelegate.swift in Sources */,
+				F56D2B031D3121AC004A92DD /* FirstViewController.swift in Sources */,
+				87A9E1694B7A710269A80A3D /* Tag.swift in Sources */,
+				87A9EF8BA4E71486C947AACF /* User.swift in Sources */,
+				87A9E778BC2C5BBE943FA230 /* Asset.swift in Sources */,
+				87A9E594B0C44D18D168F9DF /* Event.swift in Sources */,
+				87A9E7D886BA6F11CF2CB320 /* Topic.swift in Sources */,
+				87A9E35735640FE22F986E66 /* Tweet.swift in Sources */,
+				87A9EEBC6C4B59CC03C29050 /* Article.swift in Sources */,
+				87A9E209FFD6EFC9509E9441 /* EventLike.swift in Sources */,
+				87A9E13E3F5C87FA705EF4DF /* TweetLike.swift in Sources */,
+				87A9E137F2134802C2C6A256 /* ArticleLike.swift in Sources */,
+				87A9EE9289CE563FA8632840 /* EventMember.swift in Sources */,
+				87A9E6EDF344AF2E9A0A2343 /* EventComment.swift in Sources */,
+				87A9EBE7A069F7FA29B9AE27 /* Notification.swift in Sources */,
+				87A9E1A19B555584EE254443 /* TweetComment.swift in Sources */,
+				87A9E6FFFD865256D58D2101 /* ArticleComment.swift in Sources */,
+				87A9ECA0E17B0C722735E6F4 /* LoginController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F56D2B0F1D3121AC004A92DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F56D2B181D3121AC004A92DD /* DazaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F56D2B1A1D3121AC004A92DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F56D2B231D3121AC004A92DD /* DazaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F56D2B151D3121AC004A92DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F56D2AFC1D3121AC004A92DD /* Daza */;
+			targetProxy = F56D2B141D3121AC004A92DD /* PBXContainerItemProxy */;
+		};
+		F56D2B201D3121AC004A92DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F56D2AFC1D3121AC004A92DD /* Daza */;
+			targetProxy = F56D2B1F1D3121AC004A92DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F56D2B061D3121AC004A92DD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F56D2B071D3121AC004A92DD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F56D2B0B1D3121AC004A92DD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F56D2B0C1D3121AC004A92DD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F56D2B251D3121AC004A92DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F56D2B261D3121AC004A92DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F56D2B281D3121AC004A92DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77DCAD0F35B9AC7D13EB644C /* Pods-Daza.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = Daza/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.daza.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		F56D2B291D3121AC004A92DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7F162B90DA60CD6533A6022 /* Pods-Daza.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = Daza/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.daza.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		F56D2B2B1D3121AC004A92DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F6D34763D9344032CC65175 /* Pods-DazaTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DazaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.daza.DazaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Daza.app/Daza";
+			};
+			name = Debug;
+		};
+		F56D2B2C1D3121AC004A92DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56F87294E8F607D52133F939 /* Pods-DazaTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DazaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.daza.DazaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Daza.app/Daza";
+			};
+			name = Release;
+		};
+		F56D2B2E1D3121AC004A92DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 567A82E691D0DB693735A9DB /* Pods-DazaUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = DazaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.daza.DazaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Daza;
+			};
+			name = Debug;
+		};
+		F56D2B2F1D3121AC004A92DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC6C9DB5D25909607728FCB2 /* Pods-DazaUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = DazaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.daza.DazaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Daza;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F56D2AF81D3121AB004A92DD /* Build configuration list for PBXProject "Daza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F56D2B251D3121AC004A92DD /* Debug */,
+				F56D2B261D3121AC004A92DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F56D2B271D3121AC004A92DD /* Build configuration list for PBXNativeTarget "Daza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F56D2B281D3121AC004A92DD /* Debug */,
+				F56D2B291D3121AC004A92DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F56D2B2A1D3121AC004A92DD /* Build configuration list for PBXNativeTarget "DazaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F56D2B2B1D3121AC004A92DD /* Debug */,
+				F56D2B2C1D3121AC004A92DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F56D2B2D1D3121AC004A92DD /* Build configuration list for PBXNativeTarget "DazaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F56D2B2E1D3121AC004A92DD /* Debug */,
+				F56D2B2F1D3121AC004A92DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F56D2AF51D3121AB004A92DD /* Project object */;
+}

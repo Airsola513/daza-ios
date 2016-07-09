@@ -1,0 +1,33 @@
+PODS:
+  - Alamofire (3.4.1)
+  - MJRefresh (3.1.1)
+  - NJKWebViewProgress (0.2.3):
+    - NJKWebViewProgress/Core (= 0.2.3)
+    - NJKWebViewProgress/ProgressView (= 0.2.3)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
+  - Reveal-iOS-SDK (1.6.2)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+  - SVProgressHUD (2.0.3)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.4)
+  - MJRefresh
+  - NJKWebViewProgress
+  - Reveal-iOS-SDK
+  - SDWebImage (~> 3.8)
+  - SVProgressHUD
+
+SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  MJRefresh: 70a47c5543b567cdaf70ead5a6e99ce820652eb9
+  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
+  Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+
+PODFILE CHECKSUM: adee25b8501b06bf1e79de3b69ae0b8d6b2d27e4
+
+COCOAPODS: 1.0.0
