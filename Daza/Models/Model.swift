@@ -17,21 +17,21 @@
 //import RealmSwift
 import ObjectMapper
 
-class ArticleComment: Model {
-    
-    var user_id: Int?       // 用户Id
-    var article_id: Int?    // 文章Id
-    var content: String?    // 内容
+class Model: Mappable {
+ 
+    var id: Int?
+    var deleted_at: String?
+    var created_at: String?
+    var updated_at: String?
     
     required init?(_ map: Map) {
-        super.init(map)
     }
     
-    override func mapping(map: Map) {
-        super.mapping(map)
-        user_id     <- map["user_id"]
-        article_id  <- map["article_id"]
-        content     <- map["content"]
+    func mapping(map: Map) {
+        id          <- map["id"]
+        deleted_at  <- map["deleted_at"]
+        updated_at  <- map["updated_at"]
+        updated_at  <- map["updated_at"]
     }
-    
+
 }

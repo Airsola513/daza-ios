@@ -14,24 +14,16 @@
  * limitations under the License.
  */
 
-//import RealmSwift
-import ObjectMapper
+import UIKit
 
-class ArticleComment: Model {
+class RegisterController: UITabBarController {
     
-    var user_id: Int?       // 用户Id
-    var article_id: Int?    // 文章Id
-    var content: String?    // 内容
-    
-    required init?(_ map: Map) {
-        super.init(map)
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
-    override func mapping(map: Map) {
-        super.mapping(map)
-        user_id     <- map["user_id"]
-        article_id  <- map["article_id"]
-        content     <- map["content"]
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
 }

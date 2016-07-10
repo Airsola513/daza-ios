@@ -3,7 +3,7 @@ PODS:
   - AlamofireObjectMapper (3.0.0):
     - Alamofire (~> 3.2)
     - ObjectMapper (~> 1.0)
-  - MJRefresh (3.1.1)
+  - MJRefresh (3.1.10)
   - NJKWebViewProgress (0.2.3):
     - NJKWebViewProgress/Core (= 0.2.3)
     - NJKWebViewProgress/ProgressView (= 0.2.3)
@@ -29,13 +29,13 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   AlamofireObjectMapper: 2d16585d06177be0116d76de73497e77437798af
-  MJRefresh: 70a47c5543b567cdaf70ead5a6e99ce820652eb9
+  MJRefresh: bb72948c985914b0b5cecac573a2c69a8915fb02
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   ObjectMapper: 4eb08a726e9791a93b2632049951b56a7c17e471
   Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 7f054043a85dac705ce9535aafbf61ad72c7212d
+PODFILE CHECKSUM: 8605e24e23b3b5540e1779098981c8a86d6f4edf
 
 COCOAPODS: 1.0.1

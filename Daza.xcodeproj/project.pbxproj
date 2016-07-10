@@ -29,13 +29,16 @@
 		87A9EF8BA4E71486C947AACF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9E6FBE730848C0539CFAB /* User.swift */; };
 		8A3736963DF62D544E5F34D9 /* Pods_DazaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4D813867A740C3F0DC5296 /* Pods_DazaTests.framework */; };
 		F56D2B011D3121AC004A92DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B001D3121AC004A92DD /* AppDelegate.swift */; };
-		F56D2B031D3121AC004A92DD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B021D3121AC004A92DD /* FirstViewController.swift */; };
-		F56D2B051D3121AC004A92DD /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B041D3121AC004A92DD /* SecondViewController.swift */; };
 		F56D2B081D3121AC004A92DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56D2B061D3121AC004A92DD /* Main.storyboard */; };
 		F56D2B0A1D3121AC004A92DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F56D2B091D3121AC004A92DD /* Assets.xcassets */; };
 		F56D2B0D1D3121AC004A92DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56D2B0B1D3121AC004A92DD /* LaunchScreen.storyboard */; };
 		F56D2B181D3121AC004A92DD /* DazaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B171D3121AC004A92DD /* DazaTests.swift */; };
 		F56D2B231D3121AC004A92DD /* DazaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B221D3121AC004A92DD /* DazaUITests.swift */; };
+		F5F23E3B1D329FE200234104 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E3A1D329FE200234104 /* Model.swift */; };
+		F5F23E3D1D32A55B00234104 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E3C1D32A55B00234104 /* RegisterController.swift */; };
+		F5F23E3F1D32A59800234104 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E3E1D32A59800234104 /* HomeController.swift */; };
+		F5F23E411D32A5EA00234104 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E401D32A5EA00234104 /* SettingsController.swift */; };
+		F5F23E431D32A5FB00234104 /* TopicDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E421D32A5FB00234104 /* TopicDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,8 +87,6 @@
 		E8FE8D8F603C29202F719D14 /* Pods_Daza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56D2AFD1D3121AC004A92DD /* Daza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56D2B001D3121AC004A92DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F56D2B021D3121AC004A92DD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		F56D2B041D3121AC004A92DD /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		F56D2B071D3121AC004A92DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F56D2B091D3121AC004A92DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F56D2B0C1D3121AC004A92DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,6 +98,11 @@
 		F56D2B221D3121AC004A92DD /* DazaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DazaUITests.swift; sourceTree = "<group>"; };
 		F56D2B241D3121AC004A92DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5F23E361D32904800234104 /* Daza-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Daza-Bridging-Header.h"; sourceTree = "<group>"; };
+		F5F23E3A1D329FE200234104 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F5F23E3C1D32A55B00234104 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		F5F23E3E1D32A59800234104 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		F5F23E401D32A5EA00234104 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		F5F23E421D32A5FB00234104 /* TopicDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailController.swift; sourceTree = "<group>"; };
 		FC6C9DB5D25909607728FCB2 /* Pods-DazaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DazaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DazaUITests/Pods-DazaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,7 +145,11 @@
 		87A9EB23B9EE744469DCA117 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F5F23E3E1D32A59800234104 /* HomeController.swift */,
 				87A9E29C83BFF3795EE8716E /* LoginController.swift */,
+				F5F23E3C1D32A55B00234104 /* RegisterController.swift */,
+				F5F23E401D32A5EA00234104 /* SettingsController.swift */,
+				F5F23E421D32A5FB00234104 /* TopicDetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -155,6 +165,7 @@
 				87A9EE31E285E30572DD3EF4 /* EventComment.swift */,
 				87A9E3C2357F783C0D6EEC72 /* EventLike.swift */,
 				87A9E5BC47D483E2E85EAEBD /* EventMember.swift */,
+				F5F23E3A1D329FE200234104 /* Model.swift */,
 				87A9EF44F702E9045B64697D /* Notification.swift */,
 				87A9EE2C991C5D4C6847BA5E /* Tag.swift */,
 				87A9E604BB94E87DB92A27CE /* Topic.swift */,
@@ -225,8 +236,6 @@
 				F5F23E361D32904800234104 /* Daza-Bridging-Header.h */,
 				F56D2B0E1D3121AC004A92DD /* Info.plist */,
 				F56D2B001D3121AC004A92DD /* AppDelegate.swift */,
-				F56D2B021D3121AC004A92DD /* FirstViewController.swift */,
-				F56D2B041D3121AC004A92DD /* SecondViewController.swift */,
 				F56D2B091D3121AC004A92DD /* Assets.xcassets */,
 				87A9EB23B9EE744469DCA117 /* Controllers */,
 				87A9E8CC006EAD99528D2E58 /* Events */,
@@ -521,9 +530,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F56D2B051D3121AC004A92DD /* SecondViewController.swift in Sources */,
 				F56D2B011D3121AC004A92DD /* AppDelegate.swift in Sources */,
-				F56D2B031D3121AC004A92DD /* FirstViewController.swift in Sources */,
+				F5F23E3F1D32A59800234104 /* HomeController.swift in Sources */,
 				87A9E1694B7A710269A80A3D /* Tag.swift in Sources */,
 				87A9EF8BA4E71486C947AACF /* User.swift in Sources */,
 				87A9E778BC2C5BBE943FA230 /* Asset.swift in Sources */,
@@ -536,8 +544,12 @@
 				87A9E137F2134802C2C6A256 /* ArticleLike.swift in Sources */,
 				87A9EE9289CE563FA8632840 /* EventMember.swift in Sources */,
 				87A9E6EDF344AF2E9A0A2343 /* EventComment.swift in Sources */,
+				F5F23E3B1D329FE200234104 /* Model.swift in Sources */,
 				87A9EBE7A069F7FA29B9AE27 /* Notification.swift in Sources */,
+				F5F23E3D1D32A55B00234104 /* RegisterController.swift in Sources */,
 				87A9E1A19B555584EE254443 /* TweetComment.swift in Sources */,
+				F5F23E431D32A5FB00234104 /* TopicDetailController.swift in Sources */,
+				F5F23E411D32A5EA00234104 /* SettingsController.swift in Sources */,
 				87A9E6FFFD865256D58D2101 /* ArticleComment.swift in Sources */,
 				87A9ECA0E17B0C722735E6F4 /* LoginController.swift in Sources */,
 			);
