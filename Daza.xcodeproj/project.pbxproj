@@ -96,6 +96,7 @@
 		F56D2B1E1D3121AC004A92DD /* DazaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DazaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56D2B221D3121AC004A92DD /* DazaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DazaUITests.swift; sourceTree = "<group>"; };
 		F56D2B241D3121AC004A92DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5F23E361D32904800234104 /* Daza-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Daza-Bridging-Header.h"; sourceTree = "<group>"; };
 		FC6C9DB5D25909607728FCB2 /* Pods-DazaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DazaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DazaUITests/Pods-DazaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,21 +147,21 @@
 		87A9EBA6A756C230C11874A5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				87A9EE2C991C5D4C6847BA5E /* Tag.swift */,
-				87A9E6FBE730848C0539CFAB /* User.swift */,
+				87A9E72A1D10D0CC1228D179 /* Article.swift */,
+				87A9E55993BF199D4903D243 /* ArticleComment.swift */,
+				87A9E7EBD782B2C9B9416FA7 /* ArticleLike.swift */,
 				87A9EC9EACEF7EA84A069AEE /* Asset.swift */,
 				87A9E0BEEFF8C60CD427F145 /* Event.swift */,
+				87A9EE31E285E30572DD3EF4 /* EventComment.swift */,
+				87A9E3C2357F783C0D6EEC72 /* EventLike.swift */,
+				87A9E5BC47D483E2E85EAEBD /* EventMember.swift */,
+				87A9EF44F702E9045B64697D /* Notification.swift */,
+				87A9EE2C991C5D4C6847BA5E /* Tag.swift */,
 				87A9E604BB94E87DB92A27CE /* Topic.swift */,
 				87A9EA740E0CC0C8EC58DED8 /* Tweet.swift */,
-				87A9E72A1D10D0CC1228D179 /* Article.swift */,
-				87A9E3C2357F783C0D6EEC72 /* EventLike.swift */,
-				87A9EE96890D245D5AB59524 /* TweetLike.swift */,
-				87A9E7EBD782B2C9B9416FA7 /* ArticleLike.swift */,
-				87A9E5BC47D483E2E85EAEBD /* EventMember.swift */,
-				87A9EE31E285E30572DD3EF4 /* EventComment.swift */,
-				87A9EF44F702E9045B64697D /* Notification.swift */,
 				87A9EE86D9879DE72044DAF9 /* TweetComment.swift */,
-				87A9E55993BF199D4903D243 /* ArticleComment.swift */,
+				87A9EE96890D245D5AB59524 /* TweetLike.swift */,
+				87A9E6FBE730848C0539CFAB /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,16 +222,17 @@
 		F56D2AFF1D3121AC004A92DD /* Daza */ = {
 			isa = PBXGroup;
 			children = (
+				F5F23E361D32904800234104 /* Daza-Bridging-Header.h */,
+				F56D2B0E1D3121AC004A92DD /* Info.plist */,
 				F56D2B001D3121AC004A92DD /* AppDelegate.swift */,
 				F56D2B021D3121AC004A92DD /* FirstViewController.swift */,
 				F56D2B041D3121AC004A92DD /* SecondViewController.swift */,
-				F56D2B061D3121AC004A92DD /* Main.storyboard */,
 				F56D2B091D3121AC004A92DD /* Assets.xcassets */,
-				F56D2B0B1D3121AC004A92DD /* LaunchScreen.storyboard */,
-				F56D2B0E1D3121AC004A92DD /* Info.plist */,
-				87A9EBA6A756C230C11874A5 /* Models */,
 				87A9EB23B9EE744469DCA117 /* Controllers */,
 				87A9E8CC006EAD99528D2E58 /* Events */,
+				F56D2B0B1D3121AC004A92DD /* LaunchScreen.storyboard */,
+				F56D2B061D3121AC004A92DD /* Main.storyboard */,
+				87A9EBA6A756C230C11874A5 /* Models */,
 				87A9EDBED9750E641CD44FD6 /* Utils */,
 			);
 			path = Daza;
@@ -261,12 +263,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F56D2B271D3121AC004A92DD /* Build configuration list for PBXNativeTarget "Daza" */;
 			buildPhases = (
-				34026463DC25CC9F03E62A41 /* 📦 Check Pods Manifest.lock */,
+				34026463DC25CC9F03E62A41 /* [CP] Check Pods Manifest.lock */,
 				F56D2AF91D3121AC004A92DD /* Sources */,
 				F56D2AFA1D3121AC004A92DD /* Frameworks */,
 				F56D2AFB1D3121AC004A92DD /* Resources */,
-				0C25A8A466011BD095A58303 /* 📦 Embed Pods Frameworks */,
-				466D776BE558AA804664DF01 /* 📦 Copy Pods Resources */,
+				0C25A8A466011BD095A58303 /* [CP] Embed Pods Frameworks */,
+				466D776BE558AA804664DF01 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -281,12 +283,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F56D2B2A1D3121AC004A92DD /* Build configuration list for PBXNativeTarget "DazaTests" */;
 			buildPhases = (
-				53E7CFF364B35F8008BFD334 /* 📦 Check Pods Manifest.lock */,
+				53E7CFF364B35F8008BFD334 /* [CP] Check Pods Manifest.lock */,
 				F56D2B0F1D3121AC004A92DD /* Sources */,
 				F56D2B101D3121AC004A92DD /* Frameworks */,
 				F56D2B111D3121AC004A92DD /* Resources */,
-				951EC745AE91631875FC04B4 /* 📦 Embed Pods Frameworks */,
-				9F2B84FF04E47E8A68652224 /* 📦 Copy Pods Resources */,
+				951EC745AE91631875FC04B4 /* [CP] Embed Pods Frameworks */,
+				9F2B84FF04E47E8A68652224 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -302,11 +304,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F56D2B2D1D3121AC004A92DD /* Build configuration list for PBXNativeTarget "DazaUITests" */;
 			buildPhases = (
-				A31EF10B93AE28F830C08D6F /* 📦 Check Pods Manifest.lock */,
+				A31EF10B93AE28F830C08D6F /* [CP] Check Pods Manifest.lock */,
 				F56D2B1A1D3121AC004A92DD /* Sources */,
 				F56D2B1B1D3121AC004A92DD /* Frameworks */,
 				F56D2B1C1D3121AC004A92DD /* Resources */,
-				649C113C5F1A09EDD4D0AF62 /* 📦 Copy Pods Resources */,
+				649C113C5F1A09EDD4D0AF62 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -392,14 +394,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0C25A8A466011BD095A58303 /* 📦 Embed Pods Frameworks */ = {
+		0C25A8A466011BD095A58303 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "\uD83D\uDCE6 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,14 +409,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Daza/Pods-Daza-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		34026463DC25CC9F03E62A41 /* 📦 Check Pods Manifest.lock */ = {
+		34026463DC25CC9F03E62A41 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "\uD83D\uDCE6 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,14 +424,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		466D776BE558AA804664DF01 /* 📦 Copy Pods Resources */ = {
+		466D776BE558AA804664DF01 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "\uD83D\uDCE6 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,14 +439,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Daza/Pods-Daza-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		53E7CFF364B35F8008BFD334 /* 📦 Check Pods Manifest.lock */ = {
+		53E7CFF364B35F8008BFD334 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "\uD83D\uDCE6 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,14 +454,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		649C113C5F1A09EDD4D0AF62 /* 📦 Copy Pods Resources */ = {
+		649C113C5F1A09EDD4D0AF62 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "\uD83D\uDCE6 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,14 +469,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DazaUITests/Pods-DazaUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		951EC745AE91631875FC04B4 /* 📦 Embed Pods Frameworks */ = {
+		951EC745AE91631875FC04B4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "\uD83D\uDCE6 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,14 +484,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DazaTests/Pods-DazaTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9F2B84FF04E47E8A68652224 /* 📦 Copy Pods Resources */ = {
+		9F2B84FF04E47E8A68652224 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "\uD83D\uDCE6 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,14 +499,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DazaTests/Pods-DazaTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A31EF10B93AE28F830C08D6F /* 📦 Check Pods Manifest.lock */ = {
+		A31EF10B93AE28F830C08D6F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "\uD83D\uDCE6 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -680,6 +682,7 @@
 			baseConfigurationReference = 77DCAD0F35B9AC7D13EB644C /* Pods-Daza.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Daza/Info.plist;
@@ -687,6 +690,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.daza.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Daza/Daza-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -695,6 +700,7 @@
 			baseConfigurationReference = B7F162B90DA60CD6533A6022 /* Pods-Daza.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Daza/Info.plist;
@@ -702,6 +708,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.daza.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Daza/Daza-Bridging-Header.h";
 			};
 			name = Release;
 		};
