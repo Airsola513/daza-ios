@@ -39,6 +39,8 @@
 		F5F23E3F1D32A59800234104 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E3E1D32A59800234104 /* HomeController.swift */; };
 		F5F23E411D32A5EA00234104 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E401D32A5EA00234104 /* SettingsController.swift */; };
 		F5F23E431D32A5FB00234104 /* TopicDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E421D32A5FB00234104 /* TopicDetailController.swift */; };
+		F5F23E511D32ABDC00234104 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = F5F23E501D32ABDC00234104 /* .gitkeep */; };
+		F5F23E541D32ABFB00234104 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5F23E561D32ABFB00234104 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,9 @@
 		F5F23E3E1D32A59800234104 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		F5F23E401D32A5EA00234104 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		F5F23E421D32A5FB00234104 /* TopicDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailController.swift; sourceTree = "<group>"; };
+		F5F23E501D32ABDC00234104 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitkeep; path = Resources/.gitkeep; sourceTree = "<group>"; };
+		F5F23E551D32ABFB00234104 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F5F23E571D32ACB300234104 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		FC6C9DB5D25909607728FCB2 /* Pods-DazaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DazaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DazaUITests/Pods-DazaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -233,6 +238,7 @@
 		F56D2AFF1D3121AC004A92DD /* Daza */ = {
 			isa = PBXGroup;
 			children = (
+				F5F23E4F1D32ABB700234104 /* Resources */,
 				F5F23E361D32904800234104 /* Daza-Bridging-Header.h */,
 				F56D2B0E1D3121AC004A92DD /* Info.plist */,
 				F56D2B001D3121AC004A92DD /* AppDelegate.swift */,
@@ -263,6 +269,15 @@
 				F56D2B241D3121AC004A92DD /* Info.plist */,
 			);
 			path = DazaUITests;
+			sourceTree = "<group>";
+		};
+		F5F23E4F1D32ABB700234104 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F5F23E501D32ABDC00234104 /* .gitkeep */,
+				F5F23E561D32ABFB00234104 /* Localizable.strings */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +375,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = F56D2AF41D3121AB004A92DD;
 			productRefGroup = F56D2AFE1D3121AC004A92DD /* Products */;
@@ -381,6 +397,8 @@
 				F56D2B0D1D3121AC004A92DD /* LaunchScreen.storyboard in Resources */,
 				F56D2B0A1D3121AC004A92DD /* Assets.xcassets in Resources */,
 				F56D2B081D3121AC004A92DD /* Main.storyboard in Resources */,
+				F5F23E541D32ABFB00234104 /* Localizable.strings in Resources */,
+				F5F23E511D32ABDC00234104 /* .gitkeep in Resources */,
 				87A9E3316C0FA4311D494D29 /* .gitkeep in Resources */,
 				87A9EC8D414700CB32D2EC49 /* .gitkeep in Resources */,
 			);
@@ -601,6 +619,16 @@
 				F56D2B0C1D3121AC004A92DD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F5F23E561D32ABFB00234104 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5F23E551D32ABFB00234104 /* en */,
+				F5F23E571D32ACB300234104 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
