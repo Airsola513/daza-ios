@@ -16,7 +16,7 @@
 
 import UIKit
 
-class HomeMineController: BaseTableViewController {
+class HomeMineController: BaseGroupedListController {
 
     var menuSettings: UIBarButtonItem?
 
@@ -29,10 +29,40 @@ class HomeMineController: BaseTableViewController {
 
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 3
     }
     
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch (section) {
+        case 0:
+            return 3
+        case 1:
+            return 2
+        default:
+            return 0
+        }
+    }
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .Value1, reuseIdentifier: "Cell")
+        cell.accessoryType = .DisclosureIndicator
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if (section == 0) {
+            return CGFloat(30)
+        }
+        return super.tableView(tableView, heightForHeaderInSection: section)
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if (section == 0) {
+            return nil
+        }
+        return super.tableView(tableView, viewForHeaderInSection: section)
+    }
     
     func clickMenuSettings(sender: UIBarButtonItem) {
         let controller: SettingsController = SettingsController()

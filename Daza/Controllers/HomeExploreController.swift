@@ -16,7 +16,7 @@
 
 import UIKit
 
-class HomeExploreController: BaseTableViewController {
+class HomeExploreController: BaseListController<Topic> {
 
     var menuSearch: UIBarButtonItem?
 

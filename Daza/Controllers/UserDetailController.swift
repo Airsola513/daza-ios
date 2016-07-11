@@ -14,13 +14,17 @@
  * limitations under the License.
  */
 
-"APP_NAME" = "DAZA";
+import UIKit
 
-"title_home_index" = "首页";
-"title_home_explore" = "探索";
-"title_home_mine" = "我的";
-
-"title_user_detail" = "用户资料";
-
-"title_search" = "搜索";
-"title_settings" = "设置";
+class UserDetailController: BaseTableViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = trans("title_user_detail")
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+}

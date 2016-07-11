@@ -16,7 +16,7 @@
 
 import UIKit
 
-class HomeIndexController: BaseTableViewController {
+class HomeIndexController: BaseListController<Article> {
     
     override func viewDidLoad() {
         super.viewDidLoad()

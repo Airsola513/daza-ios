@@ -15,15 +15,29 @@
  */
 
 import UIKit
+import MJRefresh
 
 class BaseListController<T>: UITableViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var itemsSource: [T] = []
+    
+    var mjHeader: MJRefreshNormalHeader?
+    var mjFooter: MJRefreshFooter?
+    
+    init() {
+        super.init(style: .Plain)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.mjHeader = MJRefreshNormalHeader { () -> Void in
+        }
+        self.mjFooter = MJRefreshAutoNormalFooter { () -> Void in
+        }
+        self.mjHeader!.lastUpdatedTimeLabel.hidden = true
+        
+        self.tableView.mj_header = self.mjHeader
+        self.tableView.mj_footer = self.mjFooter
     }
     
 }
