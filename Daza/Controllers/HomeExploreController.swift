@@ -16,14 +16,25 @@
 
 import UIKit
 
-class LoginController: BaseTableViewController {
-    
+class HomeExploreController: BaseTableViewController {
+
+    var menuSearch: UIBarButtonItem?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = trans("title_home_explore")
+        
+        self.menuSearch = UIBarButtonItem(image: UIImage(named: "ic_menu_search"), style: .Plain, target: self, action: #selector(clickMenuSearch(_:)))
+        self.navigationItem.rightBarButtonItem = self.menuSearch
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
+    func clickMenuSearch(sender: UIBarButtonItem) {
+        let controller: SearchController = SearchController()
+        controller.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 }

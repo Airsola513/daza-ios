@@ -18,8 +18,27 @@ import UIKit
 
 class HomeController: UITabBarController {
     
+    let homeIndexController   = HomeIndexController()
+    let homeExploreController = HomeExploreController()
+    let homeMineController    = HomeMineController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let indexController: UINavigationController = BaseNavigationController(rootViewController: homeIndexController)
+        indexController.tabBarItem.title = trans("title_home_index")
+        indexController.tabBarItem.image = UIImage(named: "ic_tab_home")
+        self.addChildViewController(indexController)
+        
+        let exploreController: UINavigationController = BaseNavigationController(rootViewController: homeExploreController)
+        exploreController.tabBarItem.title = trans("title_home_explore")
+        exploreController.tabBarItem.image = UIImage(named: "ic_tab_explore")
+        self.addChildViewController(exploreController)
+        
+        let mineController: UINavigationController = BaseNavigationController(rootViewController: homeMineController)
+        mineController.tabBarItem.title = trans("title_home_mine")
+        mineController.tabBarItem.image = UIImage(named: "ic_tab_mine")
+        self.addChildViewController(mineController)
     }
     
     override func didReceiveMemoryWarning() {

@@ -14,11 +14,16 @@
  * limitations under the License.
  */
 
-"APP_NAME" = "DAZA";
+import UIKit
 
-"title_home_index" = "Home";
-"title_home_explore" = "Explore";
-"title_home_mine" = "Mine";
+class ArticleLikesController: BaseTableViewController {
 
-"title_search" = "Search";
-"title_settings" = "Settings";
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
+}

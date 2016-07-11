@@ -16,14 +16,28 @@
 
 import UIKit
 
-class LoginController: BaseTableViewController {
-    
+class HomeMineController: BaseTableViewController {
+
+    var menuSettings: UIBarButtonItem?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = trans("title_home_mine")
+
+        self.menuSettings = UIBarButtonItem(image: UIImage(named: "ic_menu_settings"), style: .Plain, target: self, action: #selector(HomeMineController.clickMenuSettings(_:)))
+        self.navigationItem.rightBarButtonItem = self.menuSettings
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    
+    func clickMenuSettings(sender: UIBarButtonItem) {
+        let controller: SettingsController = SettingsController()
+        controller.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
 }

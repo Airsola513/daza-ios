@@ -28,6 +28,20 @@
 		87A9EEBC6C4B59CC03C29050 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9E72A1D10D0CC1228D179 /* Article.swift */; };
 		87A9EF8BA4E71486C947AACF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9E6FBE730848C0539CFAB /* User.swift */; };
 		8A3736963DF62D544E5F34D9 /* Pods_DazaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4D813867A740C3F0DC5296 /* Pods_DazaTests.framework */; };
+		F51918241D33621F0012897F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918231D33621F0012897F /* BaseTableViewController.swift */; };
+		F51918261D33629A0012897F /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918251D33629A0012897F /* BaseListController.swift */; };
+		F51918281D3363890012897F /* HomeMineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918271D3363890012897F /* HomeMineController.swift */; };
+		F519182D1D3364F80012897F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519182C1D3364F80012897F /* UIViewControllerExtension.swift */; };
+		F519182F1D33668D0012897F /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519182E1D33668D0012897F /* BaseNavigationController.swift */; };
+		F51918321D33677B0012897F /* HomeExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918301D33677B0012897F /* HomeExploreController.swift */; };
+		F51918331D33677B0012897F /* HomeIndexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918311D33677B0012897F /* HomeIndexController.swift */; };
+		F51918381D337C0B0012897F /* ArticleCommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918341D337C0A0012897F /* ArticleCommentsController.swift */; };
+		F51918391D337C0B0012897F /* ArticleDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918351D337C0B0012897F /* ArticleDetailController.swift */; };
+		F519183A1D337C0B0012897F /* ArticleLikesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918361D337C0B0012897F /* ArticleLikesController.swift */; };
+		F519183B1D337C0B0012897F /* TopicCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918371D337C0B0012897F /* TopicCreateController.swift */; };
+		F519183E1D337C540012897F /* TweetCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519183C1D337C540012897F /* TweetCreateController.swift */; };
+		F519183F1D337C540012897F /* TweetDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519183D1D337C540012897F /* TweetDetailController.swift */; };
+		F51918411D33E48C0012897F /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918401D33E48C0012897F /* SearchController.swift */; };
 		F56D2B011D3121AC004A92DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B001D3121AC004A92DD /* AppDelegate.swift */; };
 		F56D2B081D3121AC004A92DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56D2B061D3121AC004A92DD /* Main.storyboard */; };
 		F56D2B0A1D3121AC004A92DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F56D2B091D3121AC004A92DD /* Assets.xcassets */; };
@@ -39,7 +53,6 @@
 		F5F23E3F1D32A59800234104 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E3E1D32A59800234104 /* HomeController.swift */; };
 		F5F23E411D32A5EA00234104 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E401D32A5EA00234104 /* SettingsController.swift */; };
 		F5F23E431D32A5FB00234104 /* TopicDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E421D32A5FB00234104 /* TopicDetailController.swift */; };
-		F5F23E511D32ABDC00234104 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = F5F23E501D32ABDC00234104 /* .gitkeep */; };
 		F5F23E541D32ABFB00234104 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5F23E561D32ABFB00234104 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +100,20 @@
 		AC039F93BC51F3874BC22538 /* Pods_DazaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DazaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7F162B90DA60CD6533A6022 /* Pods-Daza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Daza/Pods-Daza.release.xcconfig"; sourceTree = "<group>"; };
 		E8FE8D8F603C29202F719D14 /* Pods_Daza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F51918231D33621F0012897F /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		F51918251D33629A0012897F /* BaseListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
+		F51918271D3363890012897F /* HomeMineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMineController.swift; sourceTree = "<group>"; };
+		F519182C1D3364F80012897F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		F519182E1D33668D0012897F /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		F51918301D33677B0012897F /* HomeExploreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeExploreController.swift; sourceTree = "<group>"; };
+		F51918311D33677B0012897F /* HomeIndexController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeIndexController.swift; sourceTree = "<group>"; };
+		F51918341D337C0A0012897F /* ArticleCommentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCommentsController.swift; sourceTree = "<group>"; };
+		F51918351D337C0B0012897F /* ArticleDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailController.swift; sourceTree = "<group>"; };
+		F51918361D337C0B0012897F /* ArticleLikesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleLikesController.swift; sourceTree = "<group>"; };
+		F51918371D337C0B0012897F /* TopicCreateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicCreateController.swift; sourceTree = "<group>"; };
+		F519183C1D337C540012897F /* TweetCreateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCreateController.swift; sourceTree = "<group>"; };
+		F519183D1D337C540012897F /* TweetDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailController.swift; sourceTree = "<group>"; };
+		F51918401D33E48C0012897F /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		F56D2AFD1D3121AC004A92DD /* Daza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56D2B001D3121AC004A92DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F56D2B071D3121AC004A92DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,7 +132,6 @@
 		F5F23E3E1D32A59800234104 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		F5F23E401D32A5EA00234104 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		F5F23E421D32A5FB00234104 /* TopicDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailController.swift; sourceTree = "<group>"; };
-		F5F23E501D32ABDC00234104 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitkeep; path = Resources/.gitkeep; sourceTree = "<group>"; };
 		F5F23E551D32ABFB00234104 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F5F23E571D32ACB300234104 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		FC6C9DB5D25909607728FCB2 /* Pods-DazaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DazaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DazaUITests/Pods-DazaUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,11 +176,22 @@
 		87A9EB23B9EE744469DCA117 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F51918341D337C0A0012897F /* ArticleCommentsController.swift */,
+				F51918351D337C0B0012897F /* ArticleDetailController.swift */,
+				F51918361D337C0B0012897F /* ArticleLikesController.swift */,
+				F51918221D33621F0012897F /* Base */,
 				F5F23E3E1D32A59800234104 /* HomeController.swift */,
+				F51918301D33677B0012897F /* HomeExploreController.swift */,
+				F51918311D33677B0012897F /* HomeIndexController.swift */,
+				F51918271D3363890012897F /* HomeMineController.swift */,
 				87A9E29C83BFF3795EE8716E /* LoginController.swift */,
 				F5F23E3C1D32A55B00234104 /* RegisterController.swift */,
 				F5F23E401D32A5EA00234104 /* SettingsController.swift */,
+				F51918371D337C0B0012897F /* TopicCreateController.swift */,
 				F5F23E421D32A5FB00234104 /* TopicDetailController.swift */,
+				F519183C1D337C540012897F /* TweetCreateController.swift */,
+				F519183D1D337C540012897F /* TweetDetailController.swift */,
+				F51918401D33E48C0012897F /* SearchController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -213,6 +250,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F51918221D33621F0012897F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F51918251D33629A0012897F /* BaseListController.swift */,
+				F519182E1D33668D0012897F /* BaseNavigationController.swift */,
+				F51918231D33621F0012897F /* BaseTableViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F519182B1D3364F80012897F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F519182C1D3364F80012897F /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F56D2AF41D3121AB004A92DD = {
 			isa = PBXGroup;
 			children = (
@@ -238,16 +293,17 @@
 		F56D2AFF1D3121AC004A92DD /* Daza */ = {
 			isa = PBXGroup;
 			children = (
-				F5F23E4F1D32ABB700234104 /* Resources */,
-				F5F23E361D32904800234104 /* Daza-Bridging-Header.h */,
-				F56D2B0E1D3121AC004A92DD /* Info.plist */,
 				F56D2B001D3121AC004A92DD /* AppDelegate.swift */,
 				F56D2B091D3121AC004A92DD /* Assets.xcassets */,
 				87A9EB23B9EE744469DCA117 /* Controllers */,
+				F5F23E361D32904800234104 /* Daza-Bridging-Header.h */,
 				87A9E8CC006EAD99528D2E58 /* Events */,
+				F519182B1D3364F80012897F /* Extensions */,
+				F56D2B0E1D3121AC004A92DD /* Info.plist */,
 				F56D2B0B1D3121AC004A92DD /* LaunchScreen.storyboard */,
 				F56D2B061D3121AC004A92DD /* Main.storyboard */,
 				87A9EBA6A756C230C11874A5 /* Models */,
+				F5F23E4F1D32ABB700234104 /* Resources */,
 				87A9EDBED9750E641CD44FD6 /* Utils */,
 			);
 			path = Daza;
@@ -274,7 +330,6 @@
 		F5F23E4F1D32ABB700234104 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F5F23E501D32ABDC00234104 /* .gitkeep */,
 				F5F23E561D32ABFB00234104 /* Localizable.strings */,
 			);
 			name = Resources;
@@ -398,7 +453,6 @@
 				F56D2B0A1D3121AC004A92DD /* Assets.xcassets in Resources */,
 				F56D2B081D3121AC004A92DD /* Main.storyboard in Resources */,
 				F5F23E541D32ABFB00234104 /* Localizable.strings in Resources */,
-				F5F23E511D32ABDC00234104 /* .gitkeep in Resources */,
 				87A9E3316C0FA4311D494D29 /* .gitkeep in Resources */,
 				87A9EC8D414700CB32D2EC49 /* .gitkeep in Resources */,
 			);
@@ -549,27 +603,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				F56D2B011D3121AC004A92DD /* AppDelegate.swift in Sources */,
+				F51918331D33677B0012897F /* HomeIndexController.swift in Sources */,
+				F51918321D33677B0012897F /* HomeExploreController.swift in Sources */,
+				F519183F1D337C540012897F /* TweetDetailController.swift in Sources */,
 				F5F23E3F1D32A59800234104 /* HomeController.swift in Sources */,
 				87A9E1694B7A710269A80A3D /* Tag.swift in Sources */,
 				87A9EF8BA4E71486C947AACF /* User.swift in Sources */,
+				F51918411D33E48C0012897F /* SearchController.swift in Sources */,
+				F51918381D337C0B0012897F /* ArticleCommentsController.swift in Sources */,
 				87A9E778BC2C5BBE943FA230 /* Asset.swift in Sources */,
 				87A9E594B0C44D18D168F9DF /* Event.swift in Sources */,
 				87A9E7D886BA6F11CF2CB320 /* Topic.swift in Sources */,
 				87A9E35735640FE22F986E66 /* Tweet.swift in Sources */,
 				87A9EEBC6C4B59CC03C29050 /* Article.swift in Sources */,
+				F51918281D3363890012897F /* HomeMineController.swift in Sources */,
 				87A9E209FFD6EFC9509E9441 /* EventLike.swift in Sources */,
 				87A9E13E3F5C87FA705EF4DF /* TweetLike.swift in Sources */,
+				F51918391D337C0B0012897F /* ArticleDetailController.swift in Sources */,
 				87A9E137F2134802C2C6A256 /* ArticleLike.swift in Sources */,
 				87A9EE9289CE563FA8632840 /* EventMember.swift in Sources */,
 				87A9E6EDF344AF2E9A0A2343 /* EventComment.swift in Sources */,
 				F5F23E3B1D329FE200234104 /* Model.swift in Sources */,
 				87A9EBE7A069F7FA29B9AE27 /* Notification.swift in Sources */,
 				F5F23E3D1D32A55B00234104 /* RegisterController.swift in Sources */,
+				F51918241D33621F0012897F /* BaseTableViewController.swift in Sources */,
+				F519183A1D337C0B0012897F /* ArticleLikesController.swift in Sources */,
 				87A9E1A19B555584EE254443 /* TweetComment.swift in Sources */,
 				F5F23E431D32A5FB00234104 /* TopicDetailController.swift in Sources */,
 				F5F23E411D32A5EA00234104 /* SettingsController.swift in Sources */,
+				F519182D1D3364F80012897F /* UIViewControllerExtension.swift in Sources */,
+				F519182F1D33668D0012897F /* BaseNavigationController.swift in Sources */,
 				87A9E6FFFD865256D58D2101 /* ArticleComment.swift in Sources */,
+				F51918261D33629A0012897F /* BaseListController.swift in Sources */,
+				F519183B1D337C0B0012897F /* TopicCreateController.swift in Sources */,
 				87A9ECA0E17B0C722735E6F4 /* LoginController.swift in Sources */,
+				F519183E1D337C540012897F /* TweetCreateController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

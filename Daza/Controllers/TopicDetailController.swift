@@ -16,7 +16,7 @@
 
 import UIKit
 
-class TopicDetailController: UITabBarController {
+class TopicDetailController: BaseTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

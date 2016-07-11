@@ -16,10 +16,11 @@
 
 import UIKit
 
-class SettingsController: UITabBarController {
+class SettingsController: BaseTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = trans("title_settings")
     }
     
     override func didReceiveMemoryWarning() {
