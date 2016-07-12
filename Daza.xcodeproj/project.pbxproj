@@ -45,6 +45,7 @@
 		F51918431D33E8150012897F /* UserDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918421D33E8150012897F /* UserDetailController.swift */; };
 		F51918451D33EA070012897F /* BaseGroupedListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918441D33EA070012897F /* BaseGroupedListController.swift */; };
 		F51918471D3484190012897F /* HomeEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918461D3484190012897F /* HomeEventsController.swift */; };
+		F519184C1D34BB310012897F /* BrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519184B1D34BB310012897F /* BrowserController.swift */; };
 		F56D2B011D3121AC004A92DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B001D3121AC004A92DD /* AppDelegate.swift */; };
 		F56D2B081D3121AC004A92DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56D2B061D3121AC004A92DD /* Main.storyboard */; };
 		F56D2B0A1D3121AC004A92DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F56D2B091D3121AC004A92DD /* Assets.xcassets */; };
@@ -120,6 +121,7 @@
 		F51918421D33E8150012897F /* UserDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailController.swift; sourceTree = "<group>"; };
 		F51918441D33EA070012897F /* BaseGroupedListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseGroupedListController.swift; sourceTree = "<group>"; };
 		F51918461D3484190012897F /* HomeEventsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEventsController.swift; sourceTree = "<group>"; };
+		F519184B1D34BB310012897F /* BrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserController.swift; sourceTree = "<group>"; };
 		F56D2AFD1D3121AC004A92DD /* Daza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56D2B001D3121AC004A92DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F56D2B071D3121AC004A92DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				F519183C1D337C540012897F /* TweetCreateController.swift */,
 				F519183D1D337C540012897F /* TweetDetailController.swift */,
 				F51918421D33E8150012897F /* UserDetailController.swift */,
+				F519184B1D34BB310012897F /* BrowserController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				F5F23E411D32A5EA00234104 /* SettingsController.swift in Sources */,
 				F519182D1D3364F80012897F /* UIViewControllerExtension.swift in Sources */,
 				F519182F1D33668D0012897F /* BaseNavigationController.swift in Sources */,
+				F519184C1D34BB310012897F /* BrowserController.swift in Sources */,
 				87A9E6FFFD865256D58D2101 /* ArticleComment.swift in Sources */,
 				F51918261D33629A0012897F /* BaseListController.swift in Sources */,
 				F519183B1D337C0B0012897F /* TopicCreateController.swift in Sources */,
