@@ -20,6 +20,7 @@ class HomeController: UITabBarController {
     
     let homeIndexController   = HomeIndexController()
     let homeExploreController = HomeExploreController()
+    let homeEventsController = HomeEventsController()
     let homeMineController    = HomeMineController()
     
     override func viewDidLoad() {
@@ -34,6 +35,11 @@ class HomeController: UITabBarController {
         exploreController.tabBarItem.title = trans("title_home_explore")
         exploreController.tabBarItem.image = UIImage(named: "ic_tab_explore")
         self.addChildViewController(exploreController)
+        
+        let eventsController: UINavigationController = BaseNavigationController(rootViewController: homeEventsController)
+        eventsController.tabBarItem.title = trans("title_home_events")
+        eventsController.tabBarItem.image = UIImage(named: "ic_tab_event")
+        self.addChildViewController(eventsController)
         
         let mineController: UINavigationController = BaseNavigationController(rootViewController: homeMineController)
         mineController.tabBarItem.title = trans("title_home_mine")
