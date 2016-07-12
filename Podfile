@@ -14,6 +14,7 @@ target 'Daza' do
   pod 'SDWebImage', '~>3.8'
   pod 'NJKWebViewProgress'
   pod 'SVProgressHUD'
+  pod '1PasswordExtension', '~> 1.8.2'
   pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 
   target 'DazaTests' do

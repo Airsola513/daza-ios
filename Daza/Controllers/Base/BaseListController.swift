@@ -22,7 +22,7 @@ class BaseListController<T>: UITableViewController {
     var itemsSource: [T] = []
     
     var mjHeader: MJRefreshNormalHeader?
-    var mjFooter: MJRefreshFooter?
+    var mjFooter: MJRefreshAutoNormalFooter?
     
     init() {
         super.init(style: .Plain)
@@ -30,14 +30,25 @@ class BaseListController<T>: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 初始化 MJRefresh
         self.mjHeader = MJRefreshNormalHeader { () -> Void in
+            self.delay(1, closure: {
+                self.tableView.mj_header.endRefreshing();
+                self.tableView.mj_footer.endRefreshing();
+            })
         }
         self.mjFooter = MJRefreshAutoNormalFooter { () -> Void in
+            self.delay(1, closure: {
+                self.tableView.mj_header.endRefreshing();
+                self.tableView.mj_footer.endRefreshing();
+            })
         }
         self.mjHeader!.lastUpdatedTimeLabel.hidden = true
         
         self.tableView.mj_header = self.mjHeader
         self.tableView.mj_footer = self.mjFooter
+        // 不显示多余的分割线
+        self.tableView.tableFooterView = UIView()
     }
     
 }
