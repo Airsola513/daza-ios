@@ -14,18 +14,8 @@
  * limitations under the License.
  */
 
-import UIKit
-
-class HomeIndexController: BaseListController<Article> {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = trans("title_home_index")
-        Api.getArticles(1)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
+struct URLs {
+    static let baseURL: String    = "http://daza-backend.daoapp.io"
+    static let apiVersion: String = "/v1"
+    static let apiURL: String     = baseURL + apiVersion
 }

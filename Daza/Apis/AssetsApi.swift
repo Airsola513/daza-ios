@@ -14,18 +14,6 @@
  * limitations under the License.
  */
 
-import UIKit
+extension Api {
 
-class HomeIndexController: BaseListController<Article> {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = trans("title_home_index")
-        Api.getArticles(1)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
 }

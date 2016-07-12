@@ -47,12 +47,24 @@
 		F51918471D3484190012897F /* HomeEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918461D3484190012897F /* HomeEventsController.swift */; };
 		F519184C1D34BB310012897F /* BrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519184B1D34BB310012897F /* BrowserController.swift */; };
 		F519184E1D34DA310012897F /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519184D1D34DA310012897F /* NSObjectExtension.swift */; };
+		F5338A1A1D35490B00B3D44F /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5338A191D35490B00B3D44F /* URLs.swift */; };
+		F5338A1C1D354A3500B3D44F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5338A1B1D354A3500B3D44F /* Result.swift */; };
 		F56D2B011D3121AC004A92DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B001D3121AC004A92DD /* AppDelegate.swift */; };
 		F56D2B081D3121AC004A92DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56D2B061D3121AC004A92DD /* Main.storyboard */; };
 		F56D2B0A1D3121AC004A92DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F56D2B091D3121AC004A92DD /* Assets.xcassets */; };
 		F56D2B0D1D3121AC004A92DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56D2B0B1D3121AC004A92DD /* LaunchScreen.storyboard */; };
 		F56D2B181D3121AC004A92DD /* DazaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B171D3121AC004A92DD /* DazaTests.swift */; };
 		F56D2B231D3121AC004A92DD /* DazaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B221D3121AC004A92DD /* DazaUITests.swift */; };
+		F5715BC51D353F0000F1CBE5 /* AccountApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BBB1D353F0000F1CBE5 /* AccountApi.swift */; };
+		F5715BC61D353F0000F1CBE5 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BBC1D353F0000F1CBE5 /* Api.swift */; };
+		F5715BC71D353F0000F1CBE5 /* ArticlesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BBD1D353F0000F1CBE5 /* ArticlesApi.swift */; };
+		F5715BC81D353F0000F1CBE5 /* AssetsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BBE1D353F0000F1CBE5 /* AssetsApi.swift */; };
+		F5715BC91D353F0000F1CBE5 /* EventsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BBF1D353F0000F1CBE5 /* EventsApi.swift */; };
+		F5715BCA1D353F0000F1CBE5 /* NotificationsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BC01D353F0000F1CBE5 /* NotificationsApi.swift */; };
+		F5715BCB1D353F0000F1CBE5 /* TagsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BC11D353F0000F1CBE5 /* TagsApi.swift */; };
+		F5715BCC1D353F0000F1CBE5 /* TopicsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BC21D353F0000F1CBE5 /* TopicsApi.swift */; };
+		F5715BCD1D353F0000F1CBE5 /* TweetsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BC31D353F0000F1CBE5 /* TweetsApi.swift */; };
+		F5715BCE1D353F0000F1CBE5 /* UsersApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BC41D353F0000F1CBE5 /* UsersApi.swift */; };
 		F5F23E3B1D329FE200234104 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E3A1D329FE200234104 /* Model.swift */; };
 		F5F23E3D1D32A55B00234104 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E3C1D32A55B00234104 /* RegisterController.swift */; };
 		F5F23E3F1D32A59800234104 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E3E1D32A59800234104 /* HomeController.swift */; };
@@ -124,6 +136,8 @@
 		F51918461D3484190012897F /* HomeEventsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEventsController.swift; sourceTree = "<group>"; };
 		F519184B1D34BB310012897F /* BrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserController.swift; sourceTree = "<group>"; };
 		F519184D1D34DA310012897F /* NSObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
+		F5338A191D35490B00B3D44F /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		F5338A1B1D354A3500B3D44F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		F56D2AFD1D3121AC004A92DD /* Daza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56D2B001D3121AC004A92DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F56D2B071D3121AC004A92DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,6 +150,16 @@
 		F56D2B1E1D3121AC004A92DD /* DazaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DazaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56D2B221D3121AC004A92DD /* DazaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DazaUITests.swift; sourceTree = "<group>"; };
 		F56D2B241D3121AC004A92DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5715BBB1D353F0000F1CBE5 /* AccountApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountApi.swift; sourceTree = "<group>"; };
+		F5715BBC1D353F0000F1CBE5 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		F5715BBD1D353F0000F1CBE5 /* ArticlesApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesApi.swift; sourceTree = "<group>"; };
+		F5715BBE1D353F0000F1CBE5 /* AssetsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsApi.swift; sourceTree = "<group>"; };
+		F5715BBF1D353F0000F1CBE5 /* EventsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsApi.swift; sourceTree = "<group>"; };
+		F5715BC01D353F0000F1CBE5 /* NotificationsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsApi.swift; sourceTree = "<group>"; };
+		F5715BC11D353F0000F1CBE5 /* TagsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsApi.swift; sourceTree = "<group>"; };
+		F5715BC21D353F0000F1CBE5 /* TopicsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsApi.swift; sourceTree = "<group>"; };
+		F5715BC31D353F0000F1CBE5 /* TweetsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsApi.swift; sourceTree = "<group>"; };
+		F5715BC41D353F0000F1CBE5 /* UsersApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersApi.swift; sourceTree = "<group>"; };
 		F5F23E361D32904800234104 /* Daza-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Daza-Bridging-Header.h"; sourceTree = "<group>"; };
 		F5F23E3A1D329FE200234104 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		F5F23E3C1D32A55B00234104 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
@@ -228,6 +252,7 @@
 				87A9EE86D9879DE72044DAF9 /* TweetComment.swift */,
 				87A9EE96890D245D5AB59524 /* TweetLike.swift */,
 				87A9E6FBE730848C0539CFAB /* User.swift */,
+				F5338A1B1D354A3500B3D44F /* Result.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -308,6 +333,7 @@
 		F56D2AFF1D3121AC004A92DD /* Daza */ = {
 			isa = PBXGroup;
 			children = (
+				F5715BBA1D353F0000F1CBE5 /* Apis */,
 				F56D2B001D3121AC004A92DD /* AppDelegate.swift */,
 				F56D2B091D3121AC004A92DD /* Assets.xcassets */,
 				87A9EB23B9EE744469DCA117 /* Controllers */,
@@ -340,6 +366,24 @@
 				F56D2B241D3121AC004A92DD /* Info.plist */,
 			);
 			path = DazaUITests;
+			sourceTree = "<group>";
+		};
+		F5715BBA1D353F0000F1CBE5 /* Apis */ = {
+			isa = PBXGroup;
+			children = (
+				F5338A191D35490B00B3D44F /* URLs.swift */,
+				F5715BBB1D353F0000F1CBE5 /* AccountApi.swift */,
+				F5715BBC1D353F0000F1CBE5 /* Api.swift */,
+				F5715BBD1D353F0000F1CBE5 /* ArticlesApi.swift */,
+				F5715BBE1D353F0000F1CBE5 /* AssetsApi.swift */,
+				F5715BBF1D353F0000F1CBE5 /* EventsApi.swift */,
+				F5715BC01D353F0000F1CBE5 /* NotificationsApi.swift */,
+				F5715BC11D353F0000F1CBE5 /* TagsApi.swift */,
+				F5715BC21D353F0000F1CBE5 /* TopicsApi.swift */,
+				F5715BC31D353F0000F1CBE5 /* TweetsApi.swift */,
+				F5715BC41D353F0000F1CBE5 /* UsersApi.swift */,
+			);
+			path = Apis;
 			sourceTree = "<group>";
 		};
 		F5F23E4F1D32ABB700234104 /* Resources */ = {
@@ -624,32 +668,43 @@
 				F519183F1D337C540012897F /* TweetDetailController.swift in Sources */,
 				F5F23E3F1D32A59800234104 /* HomeController.swift in Sources */,
 				87A9E1694B7A710269A80A3D /* Tag.swift in Sources */,
+				F5715BCE1D353F0000F1CBE5 /* UsersApi.swift in Sources */,
 				87A9EF8BA4E71486C947AACF /* User.swift in Sources */,
 				F51918411D33E48C0012897F /* SearchController.swift in Sources */,
 				F51918381D337C0B0012897F /* ArticleCommentsController.swift in Sources */,
+				F5715BCA1D353F0000F1CBE5 /* NotificationsApi.swift in Sources */,
 				87A9E778BC2C5BBE943FA230 /* Asset.swift in Sources */,
 				87A9E594B0C44D18D168F9DF /* Event.swift in Sources */,
 				87A9E7D886BA6F11CF2CB320 /* Topic.swift in Sources */,
+				F5715BC71D353F0000F1CBE5 /* ArticlesApi.swift in Sources */,
 				87A9E35735640FE22F986E66 /* Tweet.swift in Sources */,
+				F5715BC61D353F0000F1CBE5 /* Api.swift in Sources */,
+				F5715BCB1D353F0000F1CBE5 /* TagsApi.swift in Sources */,
 				87A9EEBC6C4B59CC03C29050 /* Article.swift in Sources */,
 				F51918281D3363890012897F /* HomeMineController.swift in Sources */,
+				F5338A1C1D354A3500B3D44F /* Result.swift in Sources */,
 				87A9E209FFD6EFC9509E9441 /* EventLike.swift in Sources */,
 				87A9E13E3F5C87FA705EF4DF /* TweetLike.swift in Sources */,
 				F51918391D337C0B0012897F /* ArticleDetailController.swift in Sources */,
+				F5715BC81D353F0000F1CBE5 /* AssetsApi.swift in Sources */,
 				F519184E1D34DA310012897F /* NSObjectExtension.swift in Sources */,
 				87A9E137F2134802C2C6A256 /* ArticleLike.swift in Sources */,
+				F5338A1A1D35490B00B3D44F /* URLs.swift in Sources */,
 				87A9EE9289CE563FA8632840 /* EventMember.swift in Sources */,
+				F5715BC91D353F0000F1CBE5 /* EventsApi.swift in Sources */,
 				87A9E6EDF344AF2E9A0A2343 /* EventComment.swift in Sources */,
 				F5F23E3B1D329FE200234104 /* Model.swift in Sources */,
 				87A9EBE7A069F7FA29B9AE27 /* Notification.swift in Sources */,
 				F5F23E3D1D32A55B00234104 /* RegisterController.swift in Sources */,
 				F51918241D33621F0012897F /* BaseTableViewController.swift in Sources */,
 				F51918431D33E8150012897F /* UserDetailController.swift in Sources */,
+				F5715BC51D353F0000F1CBE5 /* AccountApi.swift in Sources */,
 				F519183A1D337C0B0012897F /* ArticleLikesController.swift in Sources */,
 				F51918451D33EA070012897F /* BaseGroupedListController.swift in Sources */,
 				87A9E1A19B555584EE254443 /* TweetComment.swift in Sources */,
 				F5F23E431D32A5FB00234104 /* TopicDetailController.swift in Sources */,
 				F5F23E411D32A5EA00234104 /* SettingsController.swift in Sources */,
+				F5715BCD1D353F0000F1CBE5 /* TweetsApi.swift in Sources */,
 				F519182D1D3364F80012897F /* UIViewControllerExtension.swift in Sources */,
 				F519182F1D33668D0012897F /* BaseNavigationController.swift in Sources */,
 				F519184C1D34BB310012897F /* BrowserController.swift in Sources */,
@@ -657,6 +712,7 @@
 				F51918261D33629A0012897F /* BaseListController.swift in Sources */,
 				F519183B1D337C0B0012897F /* TopicCreateController.swift in Sources */,
 				87A9ECA0E17B0C722735E6F4 /* LoginController.swift in Sources */,
+				F5715BCC1D353F0000F1CBE5 /* TopicsApi.swift in Sources */,
 				F519183E1D337C540012897F /* TweetCreateController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

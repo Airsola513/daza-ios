@@ -14,18 +14,15 @@
  * limitations under the License.
  */
 
-import UIKit
+import Alamofire
+import AlamofireObjectMapper
 
-class HomeIndexController: BaseListController<Article> {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = trans("title_home_index")
-        Api.getArticles(1)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+extension Api {
+
+    static func getArticles(page: Int) {
+        Alamofire.request(.GET, URLs.apiURL + "/articles").responseObject { (response: Response<Result<Article>, NSError>) in
+            print(response.result)
+        }
     }
     
 }

@@ -46,9 +46,5 @@ class HomeController: UITabBarController {
         mineController.tabBarItem.image = UIImage(named: "ic_tab_mine")
         self.addChildViewController(mineController)
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 
 }

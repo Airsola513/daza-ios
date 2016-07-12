@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-import UIKit
+extension Api {
+    
+    static func register(username: String, _ email: String, _ password: String)  {
+        
+    }
+    
+    static func login(email: String, _ password: String) {
+        
+    }
+    
+    static func profile() {
+        
+    }
 
-class HomeIndexController: BaseListController<Article> {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = trans("title_home_index")
-        Api.getArticles(1)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
 }
