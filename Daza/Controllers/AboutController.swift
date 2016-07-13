@@ -14,25 +14,17 @@
  * limitations under the License.
  */
 
-"APP_NAME" = "DAZA";
+import UIKit
 
-// Home
-"title_home_index" = "Home";
-"title_home_explore" = "Explore";
-"title_home_events" = "Events";
-"title_home_mine" = "Mine";
-// Account
-"title_register" = "Register";
-"title_login" = "Login";
-// Users
-"title_user_detail" = "Profile";
-
-"title_search" = "Search";
-"title_settings" = "Settings";
-"title_about" = "About";
-
-"home_mine_topics" = "My topics";
-
-"settings_item_notification" = "Notification";
-"settings_item_feedback" = "Feedback";
-"settings_item_about" = "About DAZA";
+class AboutController: BrowserController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = trans("title_about")
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+}

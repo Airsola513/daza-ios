@@ -32,8 +32,14 @@ class SettingsController: BaseGroupedListController {
                 DefaultRow(title: "ITEM3")
             ]),
             Section(title: nil, rows: [
-                DefaultRow(title: trans("settings_item_feedback")),
-                DefaultRow(title: trans("settings_item_about")),
+                DefaultRow(title: trans("settings_item_feedback"), subtitle: nil, action: { _ in
+                    let controller = BrowserController()
+                    self.navigationController?.pushViewController(controller, animated: true)
+                }),
+                DefaultRow(title: trans("settings_item_about"), subtitle: nil, action: { _ in
+                    let controller = AboutController()
+                    self.navigationController?.pushViewController(controller, animated: true)
+                }),
             ]),
         ]
         self.tableView.reloadData()

@@ -12,6 +12,7 @@ target 'Daza' do
   pod 'AlamofireObjectMapper', '~> 3.0'
   # pod 'RealmSwift'
   pod 'SDWebImage', '~>3.8'
+  pod 'SnapKit', '~> 0.15.0'
   pod 'NJKWebViewProgress'
   pod 'SVProgressHUD'
   pod '1PasswordExtension', '~> 1.8.2'

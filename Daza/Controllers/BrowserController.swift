@@ -15,11 +15,54 @@
  */
 
 import UIKit
+import SnapKit
+import NJKWebViewProgress
 
-class BrowserController: BaseTableViewController {
+class BrowserController: BaseViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
+
+    var webView: UIWebView = UIWebView()
+    var progressView: NJKWebViewProgressView?
+    var progressProxy: NJKWebViewProgress = NJKWebViewProgress()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.webView.delegate = progressProxy
+        self.progressProxy.webViewProxyDelegate = self
+        self.progressProxy.progressDelegate = self
+        
+        let progressBarHeight: CGFloat = 2.0
+        let navigationBarBounds: CGRect  = self.navigationController!.navigationBar.bounds;
+        let barFrame: CGRect = CGRectMake(0, navigationBarBounds.size.height - progressBarHeight, navigationBarBounds.size.width, progressBarHeight)
+        self.progressView = NJKWebViewProgressView(frame: barFrame)
+        self.progressView?.setProgress(0, animated: true)
+        
+        self.view.addSubview(self.webView)
+        
+        self.webView.snp_makeConstraints { (make) -> Void in
+            make.left.equalTo(0)
+            make.right.equalTo(0)
+            make.top.equalTo(0)
+            make.bottom.equalTo(0)
+        }
+        
+        let urlRequest = NSURLRequest(URL: NSURL(string: "http://daza.io/")!)
+        self.webView.loadRequest(urlRequest)
+
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.addSubview(self.progressView!)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.progressView?.removeFromSuperview()
+    }
+    
+    func webViewProgress(webViewProgress: NJKWebViewProgress!, updateProgress progress: Float) {
+        self.progressView!.setProgress(progress, animated: true)
     }
 
 }
