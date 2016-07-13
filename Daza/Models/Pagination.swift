@@ -17,17 +17,29 @@
 //import RealmSwift
 import ObjectMapper
 
-class Result: Mappable {
-    
-    var status: String?
-    var pagination: Pagination?
-    
+class Pagination: Mappable {
+
+    var total: Int?
+    var per_page: Int?
+    var current_page: Int?
+    var last_page: Int?
+    var next_page_url: String?
+    var prev_page_url: String?
+    var from: Int?
+    var to: Int?
+
     required init?(_ map: Map) {
     }
-    
+
     func mapping(map: Map) {
-        status      <- map["status"]
-        pagination  <- map["pagination"]
+        total           <- map["total"]
+        per_page        <- map["per_page"]
+        current_page    <- map["current_page"]
+        last_page       <- map["last_page"]
+        next_page_url   <- map["next_page_url"]
+        prev_page_url   <- map["prev_page_url"]
+        from            <- map["from"]
+        to              <- map["to"]
     }
-    
+
 }

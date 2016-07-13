@@ -15,5 +15,26 @@
  */
 
 extension Api {
+    
+    static func getEventList(page: Int) {
+        
+    }
+    
+    static func showEvent(eventId: Int) {
+        
+    }
+    
+    static func createEvent() {
+        
+    }
+    
+    static func updateEvent() {
+        
+    }
+    
+    static func deleteEvent(eventId: Int) {
+        
+    }
+    
 
 }

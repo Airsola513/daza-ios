@@ -19,6 +19,7 @@ import MJRefresh
 
 class BaseListController<T>: UITableViewController {
     
+    var pagination: Pagination?
     var itemsSource: [T] = []
     
     var mjHeader: MJRefreshNormalHeader?
@@ -32,23 +33,53 @@ class BaseListController<T>: UITableViewController {
         super.viewDidLoad()
         // 初始化 MJRefresh
         self.mjHeader = MJRefreshNormalHeader { () -> Void in
-            self.delay(1, closure: {
-                self.tableView.mj_header.endRefreshing();
-                self.tableView.mj_footer.endRefreshing();
-            })
+            self.loadData(1)
         }
         self.mjFooter = MJRefreshAutoNormalFooter { () -> Void in
-            self.delay(1, closure: {
-                self.tableView.mj_header.endRefreshing();
-                self.tableView.mj_footer.endRefreshing();
-            })
+            self.loadData(1)
         }
         self.mjHeader!.lastUpdatedTimeLabel.hidden = true
+        self.mjFooter!.automaticallyHidden = true
         
         self.tableView.mj_header = self.mjHeader
         self.tableView.mj_footer = self.mjFooter
         // 不显示多余的分割线
         self.tableView.tableFooterView = UIView()
     }
+    // TableView 数量默认为 itemsSource.count
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.itemsSource.count
+    }
+
+    // 首次进入时刷新数据
+    func firstRefreshing() {
+        // 延时0.3秒后执行加载数据操作，延时是为了Loading不会因为加载速度过快造成一闪而过的不好体验
+        self.delay(0.3) { () -> () in
+            self.loadData(1)
+        }
+    }
+    
+    // 默认进入下拉刷新状态，如需要进入上拉加载状态请使用self.tableView.mj_footer.beginRefreshing()
+    func beginRefreshing() {
+        self.tableView.mj_header.beginRefreshing()
+    }
+    
+    // 默认会结束下拉刷新及上拉加载刷新状态
+    func endRefreshing() {
+        if (self.tableView.mj_header.isRefreshing()) {
+            self.tableView.mj_header.endRefreshing()
+        }
+        if (self.tableView.mj_footer.isRefreshing()) {
+            self.tableView.mj_footer.endRefreshing()
+        }
+    }
+    
+    // 加载数据
+    func loadData(page: Int) {
+        delay(1) { () -> () in
+            self.endRefreshing()
+        }
+    }
+    
     
 }

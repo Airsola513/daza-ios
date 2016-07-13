@@ -14,17 +14,19 @@
  * limitations under the License.
  */
 
-import UIKit
+//import RealmSwift
+import ObjectMapper
 
-class HomeIndexController: BaseListController<Article> {
+class ResultOfObject<T: Mappable>: Result {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = trans("title_home_index")
+    var data: T?
+    
+    required init?(_ map: Map) {
+        super.init(map)
     }
     
-    override func loadData(page: Int) {
-        Api.getArticleList(page)
+    override func mapping(map: Map) {
+        super.mapping(map)
+        self.data <- map["data"]
     }
-    
 }

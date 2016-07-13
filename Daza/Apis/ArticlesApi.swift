@@ -19,10 +19,31 @@ import AlamofireObjectMapper
 
 extension Api {
 
-    static func getArticles(page: Int) {
-        Alamofire.request(.GET, URLs.apiURL + "/articles").responseObject { (response: Response<Result<Article>, NSError>) in
+    static func getArticleList(page: Int) {
+        let URL = URLs.apiURL + "/articles";
+        Alamofire.request(.GET, URL).responseObject { (response: Response<ResultOfArray<Article>, NSError>) in
+            print(response.result.value)
+        }
+    }
+    
+    static func createArticle() {
+        let URL = URLs.apiURL + "/articles";
+        Alamofire.request(.GET, URL).responseObject { (response: Response<ResultOfObject<Article>, NSError>) in
             print(response.result)
         }
     }
     
+    static func updateArticle(articleId: Int) {
+        let URL = URLs.apiURL + "/articles";
+        Alamofire.request(.GET, URL).responseObject { (response: Response<ResultOfObject<Article>, NSError>) in
+            print(response.result)
+        }
+    }
+
+    static func deleteArticle(articleId: Int) {
+        let URL = URLs.apiURL + "/articles";
+        Alamofire.request(.GET, URL).responseObject { (response: Response<Result, NSError>) in
+            print(response.result)
+        }
+    }
 }

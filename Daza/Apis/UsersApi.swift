@@ -15,5 +15,9 @@
  */
 
 extension Api {
+    
+    static func showUser(userId: Int) {
+        
+    }
 
 }

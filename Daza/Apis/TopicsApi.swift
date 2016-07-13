@@ -16,4 +16,24 @@
 
 extension Api {
 
+    static func getTopicList(page: Int) {
+        
+    }
+    
+    static func showTopic(topicId: Int) {
+        
+    }
+    
+    static func createTopic() {
+        
+    }
+    
+    static func updateTopic() {
+        
+    }
+    
+    static func deleteTopic(topicId: Int) {
+        
+    }
+    
 }
