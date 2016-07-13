@@ -16,14 +16,31 @@
 
 import UIKit
 
-class LoginController: BaseTableViewController {
+class LoginController: BaseGroupedListController {
+    
+    var menuClose: UIBarButtonItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = trans("title_login")
+        
+        self.menuClose = UIBarButtonItem(image: UIImage(named: "ic_menu_close"), style: .Plain, target: self, action: #selector(clickMenuClose(_:)))
+        self.navigationItem.leftBarButtonItem = self.menuClose
+        
+        self.itemsSource = [
+            Section(title: nil, rows: [
+                DefaultRow(title: trans("register"), subtitle: nil, action: { _ in
+                    let controller = RegisterController()
+                    self.navigationController?.pushViewController(controller, animated: true)
+                }),
+            ])
+        ]
+        self.tableView.reloadData()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    func clickMenuClose(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
 }

@@ -16,10 +16,11 @@
 
 import UIKit
 
-class RegisterController: UITabBarController {
+class RegisterController: BaseGroupedListController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = trans("title_register")
     }
     
     override func didReceiveMemoryWarning() {

@@ -25,6 +25,7 @@ class HomeIndexController: BaseListController<Article> {
     
     override func loadData(page: Int) {
         Api.getArticleList(page)
+        self.endRefreshing()
     }
     
 }

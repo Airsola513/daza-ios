@@ -26,42 +26,23 @@ class HomeMineController: BaseGroupedListController {
 
         self.menuSettings = UIBarButtonItem(image: UIImage(named: "ic_menu_settings"), style: .Plain, target: self, action: #selector(HomeMineController.clickMenuSettings(_:)))
         self.navigationItem.rightBarButtonItem = self.menuSettings
-
-    }
-    
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch (section) {
-        case 0:
-            return 3
-        case 1:
-            return 2
-        default:
-            return 0
-        }
-    }
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .Value1, reuseIdentifier: "Cell")
-        cell.accessoryType = .DisclosureIndicator
-        return cell
-    }
-    
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if (section == 0) {
-            return CGFloat(30)
-        }
-        return super.tableView(tableView, heightForHeaderInSection: section)
-    }
-    
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if (section == 0) {
-            return nil
-        }
-        return super.tableView(tableView, viewForHeaderInSection: section)
+        
+        self.itemsSource = [
+            Section(title: nil, rows: [
+                DefaultRow(title: trans("home_mine_login"), subtitle: nil, action: { _ in
+                    let controller: BaseNavigationController = BaseNavigationController(rootViewController: LoginController())
+                    self.presentViewController(controller, animated: true, completion: { _ in })
+                }),
+            ]),
+            Section(title: nil, rows: [
+                DefaultRow(title: trans("home_mine_topics"), subtitle: nil, action: { _ in
+                    print("click item");
+                }),
+                DefaultRow(title: "ITEM2"),
+                DefaultRow(title: "ITEM3")
+            ]),
+        ]
+        self.tableView.reloadData()
     }
     
     func clickMenuSettings(sender: UIBarButtonItem) {

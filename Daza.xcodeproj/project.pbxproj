@@ -220,6 +220,7 @@
 				F51918351D337C0B0012897F /* ArticleDetailController.swift */,
 				F51918361D337C0B0012897F /* ArticleLikesController.swift */,
 				F51918221D33621F0012897F /* Base */,
+				F519184B1D34BB310012897F /* BrowserController.swift */,
 				F5F23E3E1D32A59800234104 /* HomeController.swift */,
 				F51918461D3484190012897F /* HomeEventsController.swift */,
 				F51918301D33677B0012897F /* HomeExploreController.swift */,
@@ -234,7 +235,6 @@
 				F519183C1D337C540012897F /* TweetCreateController.swift */,
 				F519183D1D337C540012897F /* TweetDetailController.swift */,
 				F51918421D33E8150012897F /* UserDetailController.swift */,
-				F519184B1D34BB310012897F /* BrowserController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

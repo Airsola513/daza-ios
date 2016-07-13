@@ -21,41 +21,22 @@ class SettingsController: BaseGroupedListController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("title_settings")
-    }
-    
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch (section) {
-        case 0:
-            return 3
-        case 1:
-            return 2
-        default:
-            return 0
-        }
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .Value1, reuseIdentifier: "Cell")
-        cell.accessoryType = .DisclosureIndicator
-        return cell
-    }
-    
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if (section == 0) {
-            return CGFloat(30)
-        }
-        return super.tableView(tableView, heightForHeaderInSection: section)
-    }
-    
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if (section == 0) {
-            return nil
-        }
-        return super.tableView(tableView, viewForHeaderInSection: section)
+        
+        self.itemsSource = [
+            Section(title: nil, rows: [
+                DefaultRow(title: trans("settings_item_notification")),
+            ]),
+            Section(title: nil, rows: [
+                DefaultRow(title: "ITEM1"),
+                DefaultRow(title: "ITEM2"),
+                DefaultRow(title: "ITEM3")
+            ]),
+            Section(title: nil, rows: [
+                DefaultRow(title: trans("settings_item_feedback")),
+                DefaultRow(title: trans("settings_item_about")),
+            ]),
+        ]
+        self.tableView.reloadData()
     }
     
 }

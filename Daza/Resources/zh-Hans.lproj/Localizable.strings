@@ -16,12 +16,22 @@
 
 "APP_NAME" = "DAZA";
 
+// Home
 "title_home_index" = "首页";
 "title_home_explore" = "探索";
 "title_home_events" = "活动";
 "title_home_mine" = "我的";
-
+// Account
+"title_register" = "注册";
+"title_login" = "登录";
+// Users
 "title_user_detail" = "用户资料";
 
 "title_search" = "搜索";
 "title_settings" = "设置";
+
+"home_mine_topics" = "我的主题";
+
+"settings_item_notification" = "推送通知";
+"settings_item_feedback" = "意见反馈";
+"settings_item_about" = " 关于 DAZA";
