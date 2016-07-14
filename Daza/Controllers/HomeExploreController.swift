@@ -26,10 +26,12 @@ class HomeExploreController: BaseListController<Topic> {
         
         self.menuSearch = UIBarButtonItem(image: UIImage(named: "ic_menu_search"), style: .Plain, target: self, action: #selector(searchButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuSearch
+        
+        self.firstRefreshing()
     }
 
     func searchButtonPressed(sender: UIBarButtonItem) {
-        let controller: SearchController = SearchController()
+        let controller = SearchController()
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
@@ -39,6 +41,15 @@ class HomeExploreController: BaseListController<Topic> {
             self.loadComplete(pagination, data)
         }
         Api.getTopicList(page, success: loadDataSuccess)
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
+        let data = self.itemsSource[indexPath.row]
+
+        let controller = TopicDetailController()
+        controller.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
 }

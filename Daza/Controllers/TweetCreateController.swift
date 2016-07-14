@@ -20,10 +20,7 @@ class TweetCreateController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        self.title = trans("title_tweet_create")
     }
 
 }

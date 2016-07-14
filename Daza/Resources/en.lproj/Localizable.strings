@@ -26,6 +26,14 @@
 "title_login" = "Login";
 // Users
 "title_user_detail" = "Profile";
+// Topics
+"title_topic_create" = "New Topic";
+"title_topic_detail" = "Topic Detail";
+// Articles
+"title_article_create" = "New Article";
+"title_article_detail" = "Article Detail";
+"title_article_likes" = "Article Likes";
+"title_article_comments" = "Article Comments";
 
 "title_search" = "Search";
 "title_settings" = "Settings";

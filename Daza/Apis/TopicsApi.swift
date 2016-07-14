@@ -21,7 +21,10 @@ extension Api {
 
     static func getTopicList(page: Int, success: (pagination: Pagination, data: [Topic]) -> Void) {
         let URL = URLs.apiURL + "/topics";
-        Alamofire.request(.GET, URL).responseObject { (response: Response<ResultOfArray<Topic>, NSError>) in
+        let parameters: [String: AnyObject] = [
+            "page": page,
+        ]
+        Alamofire.request(.GET, URL, parameters: parameters).responseObject { (response: Response<ResultOfArray<Topic>, NSError>) in
             let value = response.result.value
             success(pagination: (value?.pagination)!, data: (value?.data)!)
         }

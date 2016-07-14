@@ -23,8 +23,4 @@ class SearchController: BaseTableViewController {
         self.title = trans("title_search")
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
 }

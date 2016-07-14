@@ -23,8 +23,4 @@ class RegisterController: BaseGroupedListController {
         self.title = trans("title_register")
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
 }

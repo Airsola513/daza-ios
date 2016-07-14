@@ -26,6 +26,14 @@
 "title_login" = "登录";
 // Users
 "title_user_detail" = "用户资料";
+// Topics
+"title_topic_create" = "创建主题";
+"title_topic_detail" = "主题详情";
+// Articles
+"title_article_create" = "创建文章";
+"title_article_detail" = "文章详情";
+"title_article_likes" = "文章喜欢者";
+"title_article_comments" = "文章评论";
 
 "title_search" = "搜索";
 "title_settings" = "设置";

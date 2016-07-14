@@ -21,7 +21,10 @@ extension Api {
 
     static func getArticleList(page: Int, success: (pagination: Pagination, data: [Article]) -> Void) {
         let URL = URLs.apiURL + "/articles";
-        Alamofire.request(.GET, URL).responseObject { (response: Response<ResultOfArray<Article>, NSError>) in
+        let parameters: [String: AnyObject] = [
+            "page": page,
+        ]
+        Alamofire.request(.GET, URL, parameters: parameters).responseObject { (response: Response<ResultOfArray<Article>, NSError>) in
             let value = response.result.value
             success(pagination: (value?.pagination)!, data: (value?.data)!)
         }
@@ -29,21 +32,21 @@ extension Api {
     
     static func createArticle() {
         let URL = URLs.apiURL + "/articles";
-        Alamofire.request(.GET, URL).responseObject { (response: Response<ResultOfObject<Article>, NSError>) in
+        Alamofire.request(.POST, URL).responseObject { (response: Response<ResultOfObject<Article>, NSError>) in
             print(response.result)
         }
     }
     
     static func updateArticle(articleId: Int) {
         let URL = URLs.apiURL + "/articles";
-        Alamofire.request(.GET, URL).responseObject { (response: Response<ResultOfObject<Article>, NSError>) in
+        Alamofire.request(.PUT, URL).responseObject { (response: Response<ResultOfObject<Article>, NSError>) in
             print(response.result)
         }
     }
 
     static func deleteArticle(articleId: Int) {
         let URL = URLs.apiURL + "/articles";
-        Alamofire.request(.GET, URL).responseObject { (response: Response<Result, NSError>) in
+        Alamofire.request(.DELETE, URL).responseObject { (response: Response<Result, NSError>) in
             print(response.result)
         }
     }

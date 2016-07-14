@@ -20,6 +20,7 @@ class ArticleLikesController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = trans("title_article_likes")
     }
 
 }

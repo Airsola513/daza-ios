@@ -20,11 +20,12 @@ import ObjectMapper
 class Topic: Model {
     
     var type: String?            // 类型
-    var source_program: String?  // 来源程序 = ['wordpress', 'jekyll', 'ghost', 'hexo', 'typecho', 'farbox']
-    var source_link: String?     // 来源链接
     var name: String?            // 名称
     var image_url: String?       // 图片网址
     var description: String?     // 描述
+    var source_format: String?   // 文章来源格式 = ['atom', 'rss']
+    var source_program: String?  // 文章来源程序 = ['wordpress', 'jekyll', 'ghost', 'hexo', 'typecho', 'farbox']
+    var source_link: String?     // 文章来源链接
     
     required init?(_ map: Map) {
         super.init(map)
@@ -33,11 +34,12 @@ class Topic: Model {
     override func mapping(map: Map) {
         super.mapping(map)
         type            <- map["type"]
-        source_program  <- map["source_program"]
-        source_link     <- map["source_link"]
         name            <- map["name"]
         image_url       <- map["image_url"]
         description     <- map["description"]
+        source_format   <- map["source_format"]
+        source_program  <- map["source_program"]
+        source_link     <- map["source_link"]
     }
     
 }

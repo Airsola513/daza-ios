@@ -103,7 +103,7 @@ class BaseGroupedListController: UITableViewController {
             break
         }
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
 }

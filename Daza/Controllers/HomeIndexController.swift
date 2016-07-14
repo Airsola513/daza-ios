@@ -21,6 +21,8 @@ class HomeIndexController: BaseListController<Article> {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("title_home_index")
+        
+        self.firstRefreshing()
     }
     
     override func loadData(page: Int) {
@@ -28,6 +30,15 @@ class HomeIndexController: BaseListController<Article> {
             self.loadComplete(pagination, data)
         }
         Api.getArticleList(page, success: loadDataSuccess)
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
+        let data = self.itemsSource[indexPath.row]
+        
+        let controller = ArticleDetailController()
+        controller.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
 }

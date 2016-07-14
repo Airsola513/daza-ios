@@ -24,6 +24,7 @@ class BaseListController<T>: UITableViewController {
     
     var mjHeader: MJRefreshNormalHeader?
     var mjFooter: MJRefreshAutoNormalFooter?
+    var loadIndicatorView: LoadIndicatorView?
     
     init() {
         super.init(style: .Plain)
@@ -48,22 +49,32 @@ class BaseListController<T>: UITableViewController {
         self.tableView.mj_footer = self.mjFooter
         // 不显示多余的分割线
         self.tableView.tableFooterView = UIView()
+        // 加载状态视图
+        self.loadIndicatorView = LoadIndicatorView(frame: self.view.bounds)
+        self.view.addSubview(self.loadIndicatorView!)
     }
-    // TableView 数量默认为 itemsSource.count
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.itemsSource.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let row = itemsSource[indexPath.row]
-        var cell: UITableViewCell! = UITableViewCell(style: .Default, reuseIdentifier: "cell")
-        return cell
+        return UITableViewCell(style: .Default, reuseIdentifier: nil)
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
     // 首次进入时刷新数据
     func firstRefreshing() {
+        if (self.itemsSource.count == 0) {
+            self.loadIndicatorView?.showLoading()
+        } else {
+            self.loadIndicatorView?.hide()
+        }
         // 延时0.3秒后执行加载数据操作，延时是为了Loading不会因为加载速度过快造成一闪而过的不好体验
-        self.delay(0.3) { () -> () in
+        self.delay(0.1) { () -> () in
             self.loadData(1)
         }
     }
@@ -87,6 +98,11 @@ class BaseListController<T>: UITableViewController {
             } else {
                 self.tableView.mj_footer.endRefreshing()
             }
+        }
+        if (self.itemsSource.count == 0) {
+            self.loadIndicatorView?.showEmpty("空空如也~")
+        } else {
+            self.loadIndicatorView?.hide()
         }
     }
     

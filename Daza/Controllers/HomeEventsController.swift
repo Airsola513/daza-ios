@@ -21,6 +21,8 @@ class HomeEventsController: BaseListController<Event> {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("title_home_events")
+        
+        self.firstRefreshing()
     }
     
     override func loadData(page: Int) {
@@ -28,6 +30,11 @@ class HomeEventsController: BaseListController<Event> {
             self.loadComplete(pagination, data)
         }
         Api.getEventList(page, success: loadDataSuccess)
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
+        let data = self.itemsSource[indexPath.row]
     }
     
 }

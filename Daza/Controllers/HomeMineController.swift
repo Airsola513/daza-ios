@@ -46,7 +46,7 @@ class HomeMineController: BaseGroupedListController {
     }
     
     func settingsButtonPressed(sender: UIBarButtonItem) {
-        let controller: SettingsController = SettingsController()
+        let controller = SettingsController()
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
