@@ -14,10 +14,17 @@
  * limitations under the License.
  */
 
+import Alamofire
+import AlamofireObjectMapper
+
 extension Api {
     
-    static func getEventList(page: Int) {
-        
+    static func getEventList(page: Int, success: (pagination: Pagination, data: [Event]) -> Void) {
+        let URL = URLs.apiURL + "/events";
+        Alamofire.request(.GET, URL).responseObject { (response: Response<ResultOfArray<Event>, NSError>) in
+            let value = response.result.value
+            success(pagination: (value?.pagination)!, data: (value?.data)!)
+        }
     }
     
     static func showEvent(eventId: Int) {

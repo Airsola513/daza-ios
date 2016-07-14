@@ -20,12 +20,19 @@ import NJKWebViewProgress
 
 class BrowserController: BaseViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
 
+    var menuRefresh: UIBarButtonItem?
+    var menuMore: UIBarButtonItem?
+    
     var webView: UIWebView = UIWebView()
     var progressView: NJKWebViewProgressView?
     var progressProxy: NJKWebViewProgress = NJKWebViewProgress()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.menuRefresh = UIBarButtonItem(image: UIImage(named: "ic_menu_refresh"), style: .Plain, target: self, action: #selector(refreshButtonPressed(_:)))
+        self.menuMore = UIBarButtonItem(image: UIImage(named: "ic_menu_more"), style: .Plain, target: self, action: #selector(moreButtonPressed(_:)))
+        self.navigationItem.rightBarButtonItems = [self.menuMore!, self.menuRefresh!]
 
         self.webView.delegate = progressProxy
         self.progressProxy.webViewProxyDelegate = self
@@ -63,6 +70,14 @@ class BrowserController: BaseViewController, UIWebViewDelegate, NJKWebViewProgre
     
     func webViewProgress(webViewProgress: NJKWebViewProgress!, updateProgress progress: Float) {
         self.progressView!.setProgress(progress, animated: true)
+    }
+    
+    func refreshButtonPressed(sender: UIBarButtonItem) {
+        
+    }
+
+    func moreButtonPressed(sender: UIBarButtonItem) {
+        
     }
 
 }

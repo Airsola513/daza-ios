@@ -14,10 +14,17 @@
  * limitations under the License.
  */
 
+import Alamofire
+import AlamofireObjectMapper
+
 extension Api {
 
-    static func getTopicList(page: Int) {
-        
+    static func getTopicList(page: Int, success: (pagination: Pagination, data: [Topic]) -> Void) {
+        let URL = URLs.apiURL + "/topics";
+        Alamofire.request(.GET, URL).responseObject { (response: Response<ResultOfArray<Topic>, NSError>) in
+            let value = response.result.value
+            success(pagination: (value?.pagination)!, data: (value?.data)!)
+        }
     }
     
     static func showTopic(topicId: Int) {

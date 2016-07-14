@@ -14,18 +14,41 @@
  * limitations under the License.
  */
 
+import Alamofire
+import AlamofireObjectMapper
+
 extension Api {
     
-    static func register(username: String, _ email: String, _ password: String)  {
-        
+    static func register(username: String, _ email: String, _ password: String, success: (data: User) -> Void)  {
+        let URL = URLs.apiURL + "/account/register";
+        Alamofire.request(.POST, URL).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
+            let value = response.result.value
+            success(data: (value?.data)!)
+        }
     }
     
-    static func login(email: String, _ password: String) {
-        
+    static func login(email: String, _ password: String, success: (data: User) -> Void) {
+        let URL = URLs.apiURL + "/account/login";
+        Alamofire.request(.POST, URL).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
+            let value = response.result.value
+            success(data: (value?.data)!)
+        }
     }
     
-    static func profile() {
-        
+    static func logout(success: () -> Void) {
+        let URL = URLs.apiURL + "/account/login";
+        Alamofire.request(.POST, URL).responseObject { (response: Response<Result, NSError>) in
+            let value = response.result.value
+            success()
+        }
+    }
+    
+    static func profile(success: (data: User) -> Void) {
+        let URL = URLs.apiURL + "/account/profile";
+        Alamofire.request(.GET, URL).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
+            let value = response.result.value
+            success(data: (value?.data)!)
+        }
     }
 
 }

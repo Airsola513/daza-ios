@@ -16,11 +16,18 @@
 
 import UIKit
 
-class HomeEventsController: BaseListController<Article> {
+class HomeEventsController: BaseListController<Event> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("title_home_events")
+    }
+    
+    override func loadData(page: Int) {
+        let loadDataSuccess = { (pagination: Pagination, data: [Event]) -> Void in
+            self.loadComplete(pagination, data)
+        }
+        Api.getEventList(page, success: loadDataSuccess)
     }
     
 }

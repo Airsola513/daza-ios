@@ -19,7 +19,7 @@ import MJRefresh
 
 class BaseListController<T>: UITableViewController {
     
-    var pagination: Pagination?
+    var pagination: Pagination? = nil
     var itemsSource: [T] = []
     
     var mjHeader: MJRefreshNormalHeader?
@@ -33,10 +33,13 @@ class BaseListController<T>: UITableViewController {
         super.viewDidLoad()
         // 初始化 MJRefresh
         self.mjHeader = MJRefreshNormalHeader { () -> Void in
+            self.pagination = nil
+            self.tableView.mj_footer.resetNoMoreData()
             self.loadData(1)
         }
         self.mjFooter = MJRefreshAutoNormalFooter { () -> Void in
-            self.loadData(1)
+            let currentPage: Int = (self.pagination?.current_page)!
+            self.loadData(currentPage + 1)
         }
         self.mjHeader!.lastUpdatedTimeLabel.hidden = true
         self.mjFooter!.automaticallyHidden = true
@@ -49,6 +52,12 @@ class BaseListController<T>: UITableViewController {
     // TableView 数量默认为 itemsSource.count
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.itemsSource.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let row = itemsSource[indexPath.row]
+        var cell: UITableViewCell! = UITableViewCell(style: .Default, reuseIdentifier: "cell")
+        return cell
     }
 
     // 首次进入时刷新数据
@@ -69,8 +78,15 @@ class BaseListController<T>: UITableViewController {
         if (self.tableView.mj_header.isRefreshing()) {
             self.tableView.mj_header.endRefreshing()
         }
-        if (self.tableView.mj_footer.isRefreshing()) {
-            self.tableView.mj_footer.endRefreshing()
+        if (self.tableView.mj_footer.state != MJRefreshState.NoMoreData) {
+            let currentPage = self.pagination!.current_page;
+            let lastPage = self.pagination!.last_page;
+            // 没有更多数据时禁止上拉加载
+            if (lastPage == 0 || currentPage == lastPage) {
+                self.tableView.mj_footer.endRefreshingWithNoMoreData()
+            } else {
+                self.tableView.mj_footer.endRefreshing()
+            }
         }
     }
     
@@ -79,6 +95,18 @@ class BaseListController<T>: UITableViewController {
         delay(1) { () -> () in
             self.endRefreshing()
         }
+    }
+    
+    func loadComplete(pagination: Pagination, _ data: [T]) {
+        // 下拉刷新时清空数据源
+        if (pagination.current_page == 1) {
+            self.itemsSource = []
+        }
+        self.pagination = pagination
+        self.itemsSource += data
+        // 停止正在刷新
+        self.endRefreshing()
+        self.tableView.reloadData()
     }
     
     

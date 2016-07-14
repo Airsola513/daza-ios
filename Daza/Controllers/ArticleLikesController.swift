@@ -22,8 +22,4 @@ class ArticleLikesController: BaseTableViewController {
         super.viewDidLoad()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
 }

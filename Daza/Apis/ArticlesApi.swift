@@ -19,10 +19,11 @@ import AlamofireObjectMapper
 
 extension Api {
 
-    static func getArticleList(page: Int) {
+    static func getArticleList(page: Int, success: (pagination: Pagination, data: [Article]) -> Void) {
         let URL = URLs.apiURL + "/articles";
         Alamofire.request(.GET, URL).responseObject { (response: Response<ResultOfArray<Article>, NSError>) in
-            print(response.result.value)
+            let value = response.result.value
+            success(pagination: (value?.pagination)!, data: (value?.data)!)
         }
     }
     

@@ -24,7 +24,7 @@ class HomeMineController: BaseGroupedListController {
         super.viewDidLoad()
         self.title = trans("title_home_mine")
 
-        self.menuSettings = UIBarButtonItem(image: UIImage(named: "ic_menu_settings"), style: .Plain, target: self, action: #selector(HomeMineController.clickMenuSettings(_:)))
+        self.menuSettings = UIBarButtonItem(image: UIImage(named: "ic_menu_settings"), style: .Plain, target: self, action: #selector(settingsButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuSettings
         
         self.itemsSource = [
@@ -45,7 +45,7 @@ class HomeMineController: BaseGroupedListController {
         self.tableView.reloadData()
     }
     
-    func clickMenuSettings(sender: UIBarButtonItem) {
+    func settingsButtonPressed(sender: UIBarButtonItem) {
         let controller: SettingsController = SettingsController()
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)

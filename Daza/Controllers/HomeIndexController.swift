@@ -24,8 +24,10 @@ class HomeIndexController: BaseListController<Article> {
     }
     
     override func loadData(page: Int) {
-        Api.getArticleList(page)
-        self.endRefreshing()
+        let loadDataSuccess = { (pagination: Pagination, data: [Article]) -> Void in
+            self.loadComplete(pagination, data)
+        }
+        Api.getArticleList(page, success: loadDataSuccess)
     }
     
 }

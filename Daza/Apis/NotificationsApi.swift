@@ -14,6 +14,9 @@
  * limitations under the License.
  */
 
+import Alamofire
+import AlamofireObjectMapper
+
 extension Api {
 
 }

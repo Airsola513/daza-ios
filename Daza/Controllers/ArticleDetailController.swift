@@ -22,8 +22,4 @@ class ArticleDetailController: BaseTableViewController {
         super.viewDidLoad()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
 }

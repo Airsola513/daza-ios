@@ -24,17 +24,21 @@ class HomeExploreController: BaseListController<Topic> {
         super.viewDidLoad()
         self.title = trans("title_home_explore")
         
-        self.menuSearch = UIBarButtonItem(image: UIImage(named: "ic_menu_search"), style: .Plain, target: self, action: #selector(clickMenuSearch(_:)))
+        self.menuSearch = UIBarButtonItem(image: UIImage(named: "ic_menu_search"), style: .Plain, target: self, action: #selector(searchButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuSearch
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 
-    func clickMenuSearch(sender: UIBarButtonItem) {
+    func searchButtonPressed(sender: UIBarButtonItem) {
         let controller: SearchController = SearchController()
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
+    
+    override func loadData(page: Int) {
+        let loadDataSuccess = { (pagination: Pagination, data: [Topic]) -> Void in
+            self.loadComplete(pagination, data)
+        }
+        Api.getTopicList(page, success: loadDataSuccess)
+    }
+    
 }

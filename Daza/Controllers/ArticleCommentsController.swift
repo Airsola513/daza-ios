@@ -22,8 +22,4 @@ class ArticleCommentsController: BaseTableViewController {
         super.viewDidLoad()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
 }

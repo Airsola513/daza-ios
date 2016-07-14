@@ -44,5 +44,5 @@ class SettingsController: BaseGroupedListController {
         ]
         self.tableView.reloadData()
     }
-    
+
 }

@@ -15,6 +15,7 @@
  */
 
 import Alamofire
+import AlamofireObjectMapper
 
 class Api {
 }
