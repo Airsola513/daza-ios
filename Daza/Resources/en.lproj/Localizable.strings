@@ -39,7 +39,9 @@
 "title_settings" = "Settings";
 "title_about" = "About";
 
-"home_mine_topics" = "My topics";
+"home_mine_my_topics" = "My topics";
+"home_mine_my_favorites" = "My favorites";
+"home_mine_my_notifications" = "My notifications";
 
 "settings_item_notification" = "Notification";
 "settings_item_feedback" = "Feedback";

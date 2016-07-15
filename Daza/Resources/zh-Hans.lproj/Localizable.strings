@@ -39,7 +39,9 @@
 "title_settings" = "设置";
 "title_about" = "关于";
 
-"home_mine_topics" = "我的主题";
+"home_mine_my_topics" = "我的主题";
+"home_mine_my_favorites" = "我的收藏";
+"home_mine_my_notifications" = "我的通知";
 
 "settings_item_notification" = "推送通知";
 "settings_item_feedback" = "意见反馈";

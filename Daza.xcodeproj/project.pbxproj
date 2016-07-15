@@ -65,7 +65,7 @@
 		F5715BCC1D353F0000F1CBE5 /* TopicsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BC21D353F0000F1CBE5 /* TopicsApi.swift */; };
 		F5715BCD1D353F0000F1CBE5 /* TweetsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BC31D353F0000F1CBE5 /* TweetsApi.swift */; };
 		F5715BCE1D353F0000F1CBE5 /* UsersApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BC41D353F0000F1CBE5 /* UsersApi.swift */; };
-		F58710191D37ADE0001D7011 /* LoadIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58710181D37ADE0001D7011 /* LoadIndicatorView.swift */; };
+		F5993DAF1D38B02600495E06 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = F5993DAE1D38B02600495E06 /* .gitkeep */; };
 		F5F23E3B1D329FE200234104 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E3A1D329FE200234104 /* Model.swift */; };
 		F5F23E3D1D32A55B00234104 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E3C1D32A55B00234104 /* RegisterController.swift */; };
 		F5F23E3F1D32A59800234104 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E3E1D32A59800234104 /* HomeController.swift */; };
@@ -166,7 +166,7 @@
 		F5715BC21D353F0000F1CBE5 /* TopicsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsApi.swift; sourceTree = "<group>"; };
 		F5715BC31D353F0000F1CBE5 /* TweetsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsApi.swift; sourceTree = "<group>"; };
 		F5715BC41D353F0000F1CBE5 /* UsersApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersApi.swift; sourceTree = "<group>"; };
-		F58710181D37ADE0001D7011 /* LoadIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadIndicatorView.swift; sourceTree = "<group>"; };
+		F5993DAE1D38B02600495E06 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		F5F23E361D32904800234104 /* Daza-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Daza-Bridging-Header.h"; sourceTree = "<group>"; };
 		F5F23E3A1D329FE200234104 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		F5F23E3C1D32A55B00234104 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
@@ -350,7 +350,7 @@
 		F56D2AFF1D3121AC004A92DD /* Daza */ = {
 			isa = PBXGroup;
 			children = (
-				F58710171D37ADE0001D7011 /* Views */,
+				F5993DAD1D38B02600495E06 /* Views */,
 				F5715BBA1D353F0000F1CBE5 /* Apis */,
 				F56D2B001D3121AC004A92DD /* AppDelegate.swift */,
 				F56D2B091D3121AC004A92DD /* Assets.xcassets */,
@@ -404,10 +404,10 @@
 			path = Apis;
 			sourceTree = "<group>";
 		};
-		F58710171D37ADE0001D7011 /* Views */ = {
+		F5993DAD1D38B02600495E06 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F58710181D37ADE0001D7011 /* LoadIndicatorView.swift */,
+				F5993DAE1D38B02600495E06 /* .gitkeep */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -540,6 +540,7 @@
 				F5F23E541D32ABFB00234104 /* Localizable.strings in Resources */,
 				87A9E3316C0FA4311D494D29 /* .gitkeep in Resources */,
 				87A9EC8D414700CB32D2EC49 /* .gitkeep in Resources */,
+				F5993DAF1D38B02600495E06 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,7 +699,6 @@
 				87A9EF8BA4E71486C947AACF /* User.swift in Sources */,
 				F51918411D33E48C0012897F /* SearchController.swift in Sources */,
 				F51918381D337C0B0012897F /* ArticleCommentsController.swift in Sources */,
-				F58710191D37ADE0001D7011 /* LoadIndicatorView.swift in Sources */,
 				F5715BCA1D353F0000F1CBE5 /* NotificationsApi.swift in Sources */,
 				87A9E778BC2C5BBE943FA230 /* Asset.swift in Sources */,
 				87A9E594B0C44D18D168F9DF /* Event.swift in Sources */,

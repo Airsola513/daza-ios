@@ -16,6 +16,11 @@ target 'Daza' do
   pod 'NJKWebViewProgress'
   pod 'SVProgressHUD'
   pod '1PasswordExtension', '~> 1.8.2'
+  pod 'JVFloatLabeledTextField'
+  pod 'DZNEmptyDataSet'
+  pod "Former"
+  pod "GSKStretchyHeaderView"
+  pod 'R.swift'
   pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 
   target 'DazaTests' do

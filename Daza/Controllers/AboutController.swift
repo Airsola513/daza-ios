@@ -16,15 +16,20 @@
 
 import UIKit
 
-class AboutController: BrowserController {
+class AboutController: BaseGroupedListController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("title_about")
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+
+        self.itemsSource = [
+            Section(title: nil, rows: [
+                DefaultRow(title: "去评分"),
+                DefaultRow(title: "功能介绍"),
+                DefaultRow(title: "推荐给好友"),
+            ]),
+        ]
+        self.tableView.reloadData()
     }
     
 }

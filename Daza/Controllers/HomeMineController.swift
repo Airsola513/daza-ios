@@ -35,11 +35,9 @@ class HomeMineController: BaseGroupedListController {
                 }),
             ]),
             Section(title: nil, rows: [
-                DefaultRow(title: trans("home_mine_topics"), subtitle: nil, action: { _ in
-                    print("click item");
-                }),
-                DefaultRow(title: "ITEM2"),
-                DefaultRow(title: "ITEM3")
+                DefaultRow(title: trans("home_mine_my_topics")),
+                DefaultRow(title: trans("home_mine_my_favorites")),
+                DefaultRow(title: trans("home_mine_my_notifications"))
             ]),
         ]
         self.tableView.reloadData()

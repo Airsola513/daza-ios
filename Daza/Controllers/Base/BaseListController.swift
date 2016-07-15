@@ -16,16 +16,16 @@
 
 import UIKit
 import MJRefresh
+import DZNEmptyDataSet
 
-class BaseListController<T>: UITableViewController {
+class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     var pagination: Pagination? = nil
     var itemsSource: [T] = []
     
     var mjHeader: MJRefreshNormalHeader?
     var mjFooter: MJRefreshAutoNormalFooter?
-    var loadIndicatorView: LoadIndicatorView?
-    
+
     init() {
         super.init(style: .Plain)
     }
@@ -50,8 +50,8 @@ class BaseListController<T>: UITableViewController {
         // 不显示多余的分割线
         self.tableView.tableFooterView = UIView()
         // 加载状态视图
-        self.loadIndicatorView = LoadIndicatorView(frame: self.view.bounds)
-        self.view.addSubview(self.loadIndicatorView!)
+        self.tableView.emptyDataSetSource = self;
+        self.tableView.emptyDataSetDelegate = self;
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,11 +68,6 @@ class BaseListController<T>: UITableViewController {
 
     // 首次进入时刷新数据
     func firstRefreshing() {
-        if (self.itemsSource.count == 0) {
-            self.loadIndicatorView?.showLoading()
-        } else {
-            self.loadIndicatorView?.hide()
-        }
         // 延时0.3秒后执行加载数据操作，延时是为了Loading不会因为加载速度过快造成一闪而过的不好体验
         self.delay(0.1) { () -> () in
             self.loadData(1)
@@ -99,11 +94,6 @@ class BaseListController<T>: UITableViewController {
                 self.tableView.mj_footer.endRefreshing()
             }
         }
-        if (self.itemsSource.count == 0) {
-            self.loadIndicatorView?.showEmpty("空空如也~")
-        } else {
-            self.loadIndicatorView?.hide()
-        }
     }
     
     // 加载数据
@@ -125,5 +115,12 @@ class BaseListController<T>: UITableViewController {
         self.tableView.reloadData()
     }
     
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: "Empty");
+    }
+    
+    func emptyDataSetShouldAllowScroll(scrollView: UIScrollView!) -> Bool {
+        return true
+    }
     
 }

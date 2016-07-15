@@ -29,7 +29,7 @@ class SettingsController: BaseGroupedListController {
             Section(title: nil, rows: [
                 DefaultRow(title: "ITEM1"),
                 DefaultRow(title: "ITEM2"),
-                DefaultRow(title: "ITEM3")
+                DefaultRow(title: "清理缓存")
             ]),
             Section(title: nil, rows: [
                 DefaultRow(title: trans("settings_item_feedback"), subtitle: nil, action: { _ in
