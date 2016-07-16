@@ -27,6 +27,12 @@ class HomeExploreController: BaseListController<Topic> {
         self.menuSearch = UIBarButtonItem(image: UIImage(named: "ic_menu_search"), style: .Plain, target: self, action: #selector(searchButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuSearch
         
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 44.0
+        
+        self.tableView.registerClass(TopicItemCell.self, forCellReuseIdentifier: "TopicItemCell")
+        self.tableView.registerNib(UINib(nibName: "TopicItemCell", bundle: nil), forCellReuseIdentifier: "TopicItemCell")
+
         self.firstRefreshing()
     }
 
@@ -43,11 +49,23 @@ class HomeExploreController: BaseListController<Topic> {
         Api.getTopicList(page, success: loadDataSuccess)
     }
     
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: TopicItemCell = tableView.dequeueReusableCellWithIdentifier("TopicItemCell", forIndexPath: indexPath) as! TopicItemCell
+        
+        let data = self.itemsSource[indexPath.row]
+        
+        cell.nameLabel.text = data.name
+        cell.descriptionLabel.text = data.description
+        
+        return cell
+    }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
+
         let data = self.itemsSource[indexPath.row]
 
-        let controller = TopicDetailController()
+        let controller = TopicDetailController(data)
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }

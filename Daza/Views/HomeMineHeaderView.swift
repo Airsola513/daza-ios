@@ -15,23 +15,7 @@
  */
 
 import UIKit
+import GSKStretchyHeaderView
 
-class TopicDetailController: BaseTableViewController {
-    
-    var topic: Topic?
-    
-    init(_ data: Topic) {
-        super.init(style: UITableViewStyle.Plain)
-        self.topic = data
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = trans("title_topic_detail")
-    }
-    
+class HomeMineHeaderView: GSKStretchyHeaderView {
 }

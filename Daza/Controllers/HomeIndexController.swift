@@ -21,6 +21,12 @@ class HomeIndexController: BaseListController<Article> {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("title_home_index")
+
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 44.0
+        
+        self.tableView.registerClass(TopicItemCell.self, forCellReuseIdentifier: "ArticleItemCell")
+        self.tableView.registerNib(UINib(nibName: "ArticleItemCell", bundle: nil), forCellReuseIdentifier: "ArticleItemCell")
         
         self.firstRefreshing()
     }
@@ -30,6 +36,20 @@ class HomeIndexController: BaseListController<Article> {
             self.loadComplete(pagination, data)
         }
         Api.getArticleList(page, success: loadDataSuccess)
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: ArticleItemCell = tableView.dequeueReusableCellWithIdentifier("ArticleItemCell", forIndexPath: indexPath) as! ArticleItemCell
+        
+        let data = self.itemsSource[indexPath.row]
+        
+        cell.titleLabel.text = data.title
+        cell.timeLabel.text = "刚刚"
+        cell.topicLabel.text = "TOPICTOPIC"
+        cell.commentCountButton.setTitle("100个评论", forState: UIControlState.Normal)
+        cell.viewCountButton.setTitle("100个阅读", forState: UIControlState.Normal)
+
+        return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

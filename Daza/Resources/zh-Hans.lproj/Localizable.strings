@@ -16,6 +16,15 @@
 
 "APP_NAME" = "DAZA";
 
+// MJRefresh
+"MJRefreshHeaderIdleText" = "下拉刷新";
+"MJRefreshHeaderPullingText" = "松开即可刷新";
+"MJRefreshHeaderRefreshingText" = "加载中...";
+
+"MJRefreshAutoFooterIdleText" = "上拉加载更多";
+"MJRefreshAutoFooterRefreshingText" = "加载中...";
+"MJRefreshAutoFooterNoMoreDataText" = "暂无更多数据";
+
 // Home
 "title_home_index" = "首页";
 "title_home_explore" = "探索";

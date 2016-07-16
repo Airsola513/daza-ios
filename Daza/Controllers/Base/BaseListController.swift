@@ -35,7 +35,6 @@ class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEm
         // 初始化 MJRefresh
         self.mjHeader = MJRefreshNormalHeader { () -> Void in
             self.pagination = nil
-            self.tableView.mj_footer.resetNoMoreData()
             self.loadData(1)
         }
         self.mjFooter = MJRefreshAutoNormalFooter { () -> Void in
@@ -47,6 +46,9 @@ class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEm
         
         self.tableView.mj_header = self.mjHeader
         self.tableView.mj_footer = self.mjFooter
+        // 去除分割线左边距
+        self.tableView.separatorInset = UIEdgeInsetsZero
+        self.tableView.layoutMargins = UIEdgeInsetsZero
         // 不显示多余的分割线
         self.tableView.tableFooterView = UIView()
         // 加载状态视图
@@ -64,6 +66,11 @@ class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEm
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.separatorInset = UIEdgeInsetsZero
+        cell.layoutMargins = UIEdgeInsetsZero
     }
 
     // 首次进入时刷新数据
@@ -84,15 +91,15 @@ class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEm
         if (self.tableView.mj_header.isRefreshing()) {
             self.tableView.mj_header.endRefreshing()
         }
-        if (self.tableView.mj_footer.state != MJRefreshState.NoMoreData) {
-            let currentPage = self.pagination!.current_page;
-            let lastPage = self.pagination!.last_page;
-            // 没有更多数据时禁止上拉加载
-            if (lastPage == 0 || currentPage == lastPage) {
-                self.tableView.mj_footer.endRefreshingWithNoMoreData()
-            } else {
-                self.tableView.mj_footer.endRefreshing()
-            }
+
+        let currentPage = self.pagination!.current_page;
+        let lastPage = self.pagination!.last_page;
+        // 没有更多数据时禁止上拉加载
+        if (lastPage == 0 || currentPage == lastPage) {
+            self.tableView.mj_footer.endRefreshingWithNoMoreData()
+        } else {
+            self.tableView.mj_footer.resetNoMoreData()
+            self.tableView.mj_footer.endRefreshing()
         }
     }
     
@@ -116,7 +123,7 @@ class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEm
     }
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return NSAttributedString(string: "Empty");
+        return NSAttributedString(string: ":-( Sad... No result found! ");
     }
     
     func emptyDataSetShouldAllowScroll(scrollView: UIScrollView!) -> Bool {

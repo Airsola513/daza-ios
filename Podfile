@@ -18,8 +18,8 @@ target 'Daza' do
   pod '1PasswordExtension', '~> 1.8.2'
   pod 'JVFloatLabeledTextField'
   pod 'DZNEmptyDataSet'
-  pod "Former"
-  pod "GSKStretchyHeaderView"
+  pod 'Former'
+  pod 'GSKStretchyHeaderView'
   pod 'R.swift'
   pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 
