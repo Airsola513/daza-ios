@@ -31,6 +31,7 @@ class Event: Model {
     var longitude: Double?       // 经度
     var latitude: Double?        // 纬度
     var like_count: Int?         // 喜欢数
+    var view_count: Int?         // 阅读数
     var comment_count: Int?      // 评论数
     
     required init?(_ map: Map) {
@@ -51,6 +52,7 @@ class Event: Model {
         longitude       <- map["longitude"]
         latitude        <- map["latitude"]
         like_count      <- map["like_count"]
+        view_count      <- map["view_count"]
         comment_count   <- map["comment_count"]
     }
     

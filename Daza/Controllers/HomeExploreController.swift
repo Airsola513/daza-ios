@@ -56,7 +56,7 @@ class HomeExploreController: BaseListController<Topic> {
         
         cell.nameLabel.text = data.name
         cell.descriptionLabel.text = data.description
-        
+        cell.data = data
         return cell
     }
     

@@ -30,7 +30,7 @@ class Model: Mappable {
     func mapping(map: Map) {
         id          <- map["id"]
         deleted_at  <- map["deleted_at"]
-        updated_at  <- map["updated_at"]
+        created_at  <- map["created_at"]
         updated_at  <- map["updated_at"]
     }
 

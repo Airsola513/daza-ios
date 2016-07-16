@@ -27,6 +27,7 @@ class Tweet: Model {
     var source: String?         // 来源 = ['Web', 'Android', 'iPhone', 'iPad', 'WindowsPhone', 'macOS', 'Windows']
     var source_link: String?    // 来源链接
     var like_count: String?     // 喜欢数
+    var view_count: Int?        // 阅读数
     var comment_count: String?  // 评论数
     
     required init?(_ map: Map) {
@@ -43,6 +44,7 @@ class Tweet: Model {
         source          <- map["source"]
         source_link     <- map["source_link"]
         like_count      <- map["like_count"]
+        view_count      <- map["view_count"]
         comment_count   <- map["comment_count"]
     }
     

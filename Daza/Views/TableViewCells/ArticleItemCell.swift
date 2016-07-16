@@ -24,4 +24,20 @@ class ArticleItemCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var commentCountButton: UIButton!
     @IBOutlet weak var viewCountButton: UIButton!
+    
+    var article: Article?
+    
+    var data: Article {
+        get {
+            return self.article!
+        }
+        set(newValue) {
+            self.article = newValue
+            self.titleLabel.text = article!.title
+            self.topicLabel.text = "TOPIC"
+            self.timeLabel.text = article!.created_at
+            self.commentCountButton.setTitle("\(article!.comment_count)评论", forState: UIControlState.Normal)
+            self.viewCountButton.setTitle("\(article!.view_count)阅读", forState: UIControlState.Normal)
+        }
+    }
 }

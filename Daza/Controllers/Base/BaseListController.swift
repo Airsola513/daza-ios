@@ -19,7 +19,8 @@ import MJRefresh
 import DZNEmptyDataSet
 
 class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
-    
+
+    var refreshing: Bool = false;
     var pagination: Pagination? = nil
     var itemsSource: [T] = []
     
@@ -34,10 +35,14 @@ class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEm
         super.viewDidLoad()
         // 初始化 MJRefresh
         self.mjHeader = MJRefreshNormalHeader { () -> Void in
+            self.refreshing = true
+            self.tableView.reloadEmptyDataSet()
             self.pagination = nil
             self.loadData(1)
         }
         self.mjFooter = MJRefreshAutoNormalFooter { () -> Void in
+            self.refreshing = true
+            self.tableView.reloadEmptyDataSet()
             let currentPage: Int = (self.pagination?.current_page)!
             self.loadData(currentPage + 1)
         }
@@ -72,9 +77,14 @@ class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEm
         cell.separatorInset = UIEdgeInsetsZero
         cell.layoutMargins = UIEdgeInsetsZero
     }
+    
+    func isRefreshing() -> Bool {
+        return self.refreshing;
+    }
 
     // 首次进入时刷新数据
     func firstRefreshing() {
+        self.refreshing = true
         // 延时0.3秒后执行加载数据操作，延时是为了Loading不会因为加载速度过快造成一闪而过的不好体验
         self.delay(0.1) { () -> () in
             self.loadData(1)
@@ -101,6 +111,8 @@ class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEm
             self.tableView.mj_footer.resetNoMoreData()
             self.tableView.mj_footer.endRefreshing()
         }
+        self.refreshing = false
+        self.tableView.reloadEmptyDataSet()
     }
     
     // 加载数据
@@ -118,12 +130,20 @@ class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEm
         self.pagination = pagination
         self.itemsSource += data
         // 停止正在刷新
-        self.endRefreshing()
         self.tableView.reloadData()
+        self.endRefreshing()
     }
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        return NSAttributedString(string: ":-( Sad... No result found! ");
+        let attributes: [String : AnyObject] = [
+            NSFontAttributeName: UIFont.boldSystemFontOfSize(14),
+            NSForegroundColorAttributeName: UIColor.darkGrayColor(),
+        ]
+        
+        if (self.isRefreshing()) {
+            return NSAttributedString(string: "Loading...", attributes: attributes);
+        }
+        return NSAttributedString(string: ":-( Sad... No result found! ", attributes: attributes);
     }
     
     func emptyDataSetShouldAllowScroll(scrollView: UIScrollView!) -> Bool {

@@ -23,4 +23,18 @@ class TopicItemCell: UITableViewCell {
     @IBOutlet weak var coverView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var subscriberCountButton: UIButton!
+    
+    var topic: Topic?
+    
+    var data: Topic {
+        get {
+            return self.topic!
+        }
+        set(newValue) {
+            self.topic = newValue
+            self.nameLabel.text = topic!.name
+            self.descriptionLabel.text = topic!.description
+            self.subscriberCountButton.setTitle("\(topic!.subscriber_count)订阅", forState: UIControlState.Normal)
+        }
+    }
 }

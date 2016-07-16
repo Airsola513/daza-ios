@@ -19,13 +19,14 @@ import ObjectMapper
 
 class Topic: Model {
     
-    var type: String?            // 类型
-    var name: String?            // 名称
-    var image_url: String?       // 图片网址
-    var description: String?     // 描述
-    var source_format: String?   // 文章来源格式 = ['atom', 'rss']
-    var source_program: String?  // 文章来源程序 = ['wordpress', 'jekyll', 'ghost', 'hexo', 'typecho', 'farbox']
-    var source_link: String?     // 文章来源链接
+    var type: String?               // 类型
+    var name: String?               // 名称
+    var image_url: String?          // 图片网址
+    var description: String?        // 描述
+    var source_format: String?      // 文章来源格式 = ['atom', 'rss']
+    var source_program: String?     // 文章来源程序 = ['wordpress', 'jekyll', 'ghost', 'hexo', 'typecho', 'farbox']
+    var source_link: String?        // 文章来源链接
+    var subscriber_count: Int = 0   // 订阅数
     
     required init?(_ map: Map) {
         super.init(map)
@@ -33,13 +34,14 @@ class Topic: Model {
     
     override func mapping(map: Map) {
         super.mapping(map)
-        type            <- map["type"]
-        name            <- map["name"]
-        image_url       <- map["image_url"]
-        description     <- map["description"]
-        source_format   <- map["source_format"]
-        source_program  <- map["source_program"]
-        source_link     <- map["source_link"]
+        type                <- map["type"]
+        name                <- map["name"]
+        image_url           <- map["image_url"]
+        description         <- map["description"]
+        source_format       <- map["source_format"]
+        source_program      <- map["source_program"]
+        source_link         <- map["source_link"]
+        subscriber_count    <- map["subscriber_count"]
     }
     
 }

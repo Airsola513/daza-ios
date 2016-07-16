@@ -48,7 +48,7 @@ class HomeIndexController: BaseListController<Article> {
         cell.topicLabel.text = "TOPICTOPIC"
         cell.commentCountButton.setTitle("100个评论", forState: UIControlState.Normal)
         cell.viewCountButton.setTitle("100个阅读", forState: UIControlState.Normal)
-
+        cell.data = data
         return cell
     }
     
