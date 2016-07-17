@@ -36,7 +36,7 @@ class ArticleItemCell: UITableViewCell {
             self.article = newValue
             self.titleLabel.text = article!.title
             self.topicLabel.text = article!.topic?.name
-            self.timeLabel.text = article!.created_at?.timeAgoSinceNow()
+            self.timeLabel.text = article!.published_at?.timeAgoSinceNow()
             self.commentCountButton.setTitle("\(article!.comment_count)评论", forState: UIControlState.Normal)
             self.viewCountButton.setTitle("\(article!.view_count)阅读", forState: UIControlState.Normal)
         }

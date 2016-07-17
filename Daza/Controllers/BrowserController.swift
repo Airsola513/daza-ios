@@ -52,10 +52,6 @@ class BrowserController: BaseViewController, UIWebViewDelegate, NJKWebViewProgre
             make.top.equalTo(0)
             make.bottom.equalTo(0)
         }
-        
-        let urlRequest = NSURLRequest(URL: NSURL(string: "http://daza.io/")!)
-        self.webView.loadRequest(urlRequest)
-
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -51,7 +51,7 @@ class HomeIndexController: BaseListController<Article> {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
         let data = self.itemsSource[indexPath.row]
         
-        let controller = ArticleDetailController()
+        let controller = ArticleDetailController(data)
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }

@@ -17,10 +17,24 @@
 import UIKit
 
 class ArticleDetailController: BrowserController {
-
+    
+    var article: Article?
+    
+    init(_ data: Article) {
+        super.init(nibName: nil, bundle: nil)
+        self.article = data
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("title_article_detail")
+        
+        let urlRequest = NSURLRequest(URL: NSURL(string: self.article!.link!)!)
+        self.webView.loadRequest(urlRequest)
     }
 
 }
