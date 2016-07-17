@@ -24,7 +24,7 @@ extension Api {
         let parameters: [String: AnyObject] = [
             "page": page,
         ]
-        Alamofire.request(.GET, URL, parameters: parameters).responseObject { (response: Response<ResultOfArray<Event>, NSError>) in
+        self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<Event>, NSError>) in
             let value = response.result.value
             success(pagination: (value?.pagination)!, data: (value?.data)!)
         }

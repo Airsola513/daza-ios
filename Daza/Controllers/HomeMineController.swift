@@ -19,6 +19,7 @@ import GSKStretchyHeaderView
 
 class HomeMineController: BaseGroupedListController {
 
+    var menuNotifications: UIBarButtonItem?
     var menuSettings: UIBarButtonItem?
     
     var stretchyHeader: HomeMineHeaderView?
@@ -32,23 +33,26 @@ class HomeMineController: BaseGroupedListController {
         self.stretchyHeader!.backgroundColor = UIColor.grayColor()
 //        self.stretchyHeader!.stretchDelegate = self
         self.tableView.addSubview(self.stretchyHeader!)
+        
+        self.menuNotifications = UIBarButtonItem(image: UIImage(named: "ic_menu_notifications_light")?.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: #selector(notificationsButtonPressed(_:)))
+        self.navigationItem.leftBarButtonItem = self.menuNotifications
 
-        self.menuSettings = UIBarButtonItem(image: UIImage(named: "ic_menu_settings"), style: .Plain, target: self, action: #selector(settingsButtonPressed(_:)))
+        self.menuSettings = UIBarButtonItem(image: UIImage(named: "ic_menu_settings_light")?.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: #selector(settingsButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuSettings
         
-        self.itemsSource = [
+//        self.itemsSource = [
+////            Section(title: nil, rows: [
+////                DefaultRow(title: trans("home_mine_login"), subtitle: nil, action: { _ in
+////                    let controller: BaseNavigationController = BaseNavigationController(rootViewController: LoginController())
+////                    self.presentViewController(controller, animated: true, completion: { _ in })
+////                }),
+////            ]),
 //            Section(title: nil, rows: [
-//                DefaultRow(title: trans("home_mine_login"), subtitle: nil, action: { _ in
-//                    let controller: BaseNavigationController = BaseNavigationController(rootViewController: LoginController())
-//                    self.presentViewController(controller, animated: true, completion: { _ in })
-//                }),
+//                DefaultRow(title: trans("home_mine_my_topics")),
+//                DefaultRow(title: trans("home_mine_my_favorites")),
+//                DefaultRow(title: trans("home_mine_my_notifications")),
 //            ]),
-            Section(title: nil, rows: [
-                DefaultRow(title: trans("home_mine_my_topics")),
-                DefaultRow(title: trans("home_mine_my_favorites")),
-                DefaultRow(title: trans("home_mine_my_notifications")),
-            ]),
-        ]
+//        ]
         self.tableView.reloadData()
     }
     
@@ -64,17 +68,28 @@ class HomeMineController: BaseGroupedListController {
         self.navigationController?.navigationBar.shadowImage = nil
     }
     
+    func notificationsButtonPressed(sender: UIBarButtonItem) {
+        if (!Auth.check()) {
+            let controller: BaseNavigationController = BaseNavigationController(rootViewController: LoginController())
+            self.presentViewController(controller, animated: true, completion: { _ in })
+            return
+        }
+        let controller = NotificationsController()
+        controller.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
     func settingsButtonPressed(sender: UIBarButtonItem) {
         let controller = SettingsController()
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if (section == 0) {
-            return CGFloat.min
-        }
-        return super.tableView(tableView, heightForHeaderInSection: section)
-    }
+//    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        if (section == 0) {
+//            return CGFloat.min
+//        }
+//        return super.tableView(tableView, heightForHeaderInSection: section)
+//    }
 
 }

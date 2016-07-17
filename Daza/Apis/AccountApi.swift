@@ -21,7 +21,12 @@ extension Api {
     
     static func register(username: String, _ email: String, _ password: String, success: (data: User) -> Void)  {
         let URL = URLs.apiURL + "/account/register";
-        Alamofire.request(.POST, URL).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
+        let parameters: [String: AnyObject] = [
+            "username": username,
+            "email": email,
+            "password": password,
+        ]
+        self.request(.POST, URL, parameters).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
             let value = response.result.value
             success(data: (value?.data)!)
         }
@@ -29,15 +34,19 @@ extension Api {
     
     static func login(email: String, _ password: String, success: (data: User) -> Void) {
         let URL = URLs.apiURL + "/account/login";
-        Alamofire.request(.POST, URL).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
+        let parameters: [String: AnyObject] = [
+            "email": email,
+            "password": password,
+        ]
+        self.request(.POST, URL, parameters).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
             let value = response.result.value
             success(data: (value?.data)!)
         }
     }
     
     static func logout(success: () -> Void) {
-        let URL = URLs.apiURL + "/account/login";
-        Alamofire.request(.POST, URL).responseObject { (response: Response<Result, NSError>) in
+        let URL = URLs.apiURL + "/account/logout";
+        self.request(.POST, URL).responseObject { (response: Response<Result, NSError>) in
             let value = response.result.value
             success()
         }

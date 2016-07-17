@@ -21,7 +21,7 @@ extension Api {
     
     static func showUser(userId: Int, success: (data: User) -> Void) {
         let URL = URLs.apiURL + "/users/\(userId)";
-        Alamofire.request(.GET, URL).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
+        self.request(.GET, URL).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
             let value = response.result.value
             success(data: (value?.data)!)
         }

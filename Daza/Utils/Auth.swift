@@ -15,8 +15,18 @@
  */
 
 import UIKit
-import Former
 
-class BaseGroupedListController: FormViewController {
+class Auth {
+
+    static func check() -> Bool {
+        return false
+    }
     
+    static func user() -> User? {
+        return nil
+    }
+
+    static func id() -> Int {
+        return 0
+    }
 }

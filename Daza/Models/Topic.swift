@@ -21,6 +21,7 @@ class Topic: Model {
     
     var type: String?               // 类型
     var name: String?               // 名称
+    var website: String?            // 主页
     var image_url: String?          // 图片网址
     var description: String?        // 描述
     var source_format: String?      // 文章来源格式 = ['atom', 'rss']
@@ -36,6 +37,7 @@ class Topic: Model {
         super.mapping(map)
         type                <- map["type"]
         name                <- map["name"]
+        website             <- map["website"]
         image_url           <- map["image_url"]
         description         <- map["description"]
         source_format       <- map["source_format"]

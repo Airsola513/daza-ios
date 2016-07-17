@@ -15,8 +15,11 @@
  */
 
 import UIKit
-import Former
 
-class BaseGroupedListController: FormViewController {
+class NotificationsController: BaseTableViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
 }

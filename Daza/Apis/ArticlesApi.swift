@@ -24,7 +24,7 @@ extension Api {
         let parameters: [String: AnyObject] = [
             "page": page,
         ]
-        Alamofire.request(.GET, URL, parameters: parameters).responseObject { (response: Response<ResultOfArray<Article>, NSError>) in
+        self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<Article>, NSError>) in
             let value = response.result.value
             success(pagination: (value?.pagination)!, data: (value?.data)!)
         }
@@ -32,21 +32,21 @@ extension Api {
     
     static func createArticle() {
         let URL = URLs.apiURL + "/articles";
-        Alamofire.request(.POST, URL).responseObject { (response: Response<ResultOfObject<Article>, NSError>) in
+        self.request(.POST, URL).responseObject { (response: Response<ResultOfObject<Article>, NSError>) in
             print(response.result)
         }
     }
     
     static func updateArticle(articleId: Int) {
         let URL = URLs.apiURL + "/articles";
-        Alamofire.request(.PUT, URL).responseObject { (response: Response<ResultOfObject<Article>, NSError>) in
+        self.request(.PUT, URL).responseObject { (response: Response<ResultOfObject<Article>, NSError>) in
             print(response.result)
         }
     }
 
     static func deleteArticle(articleId: Int) {
         let URL = URLs.apiURL + "/articles";
-        Alamofire.request(.DELETE, URL).responseObject { (response: Response<Result, NSError>) in
+        self.request(.DELETE, URL).responseObject { (response: Response<Result, NSError>) in
             print(response.result)
         }
     }

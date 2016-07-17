@@ -15,7 +15,26 @@
  */
 
 import Alamofire
-import AlamofireObjectMapper
 
 class Api {
+
+    static func request(method: Alamofire.Method,
+                        _ URLString: URLStringConvertible,
+                        _ parameters: [String: AnyObject]? = nil,
+                          encoding: ParameterEncoding = .URL,
+                          headers: [String: String]? = nil) -> Request {
+        var reqHeaders: [String: String] = [
+            "Accept": "application/json",
+        ]
+
+        // Headers 合并
+        if (headers != nil) {
+            for (key, value) in headers! {
+                reqHeaders[key] = value
+            }
+        }
+        
+        return Alamofire.request(method, URLString, parameters: parameters, encoding: encoding, headers: reqHeaders)
+    }
+
 }

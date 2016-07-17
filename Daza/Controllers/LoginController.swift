@@ -15,6 +15,7 @@
  */
 
 import UIKit
+import Former
 
 class LoginController: BaseGroupedListController {
     
@@ -27,15 +28,45 @@ class LoginController: BaseGroupedListController {
         self.menuClose = UIBarButtonItem(image: UIImage(named: "ic_menu_close"), style: .Plain, target: self, action: #selector(clickMenuClose(_:)))
         self.navigationItem.leftBarButtonItem = self.menuClose
         
-        self.itemsSource = [
-            Section(title: nil, rows: [
-                DefaultRow(title: trans("register"), subtitle: nil, action: { _ in
-                    let controller = RegisterController()
-                    self.navigationController?.pushViewController(controller, animated: true)
-                }),
-            ])
-        ]
-        self.tableView.reloadData()
+//        self.itemsSource = [
+//            Section(title: nil, rows: [
+//                DefaultRow(title: trans("register"), subtitle: nil, action: { _ in
+//                    let controller = RegisterController()
+//                    self.navigationController?.pushViewController(controller, animated: true)
+//                }),
+//            ])
+//        ]
+//        self.tableView.reloadData()
+        
+        let emailRow = TextFieldRowFormer<FormTextFieldCell>()
+            .configure { (row) in
+                row.text = ""
+                row.placeholder = "Email"
+        }
+        
+        let passwordRow = TextFieldRowFormer<FormTextFieldCell>()
+            .configure { (row) in
+                row.text = ""
+                row.placeholder = "Password"
+                row.cell.formTextField().secureTextEntry = true
+        }
+        
+        let submitRow = LabelRowFormer<FormLabelCell>()
+            .configure { (row) in
+                row.text = "Submit"
+            }.onSelected { (row) in
+                let email: String = emailRow.text!
+                let password: String = passwordRow.text!
+                Api.login(email, password, success: { (data) in
+                    print(data.id)
+                })
+        }
+    
+        let section = SectionFormer(rowFormer: emailRow, passwordRow)
+        let submitSection = SectionFormer(rowFormer: submitRow)
+        
+        former.append(sectionFormer: section)
+        former.append(sectionFormer: submitSection)
     }
     
     func clickMenuClose(sender: UIBarButtonItem) {

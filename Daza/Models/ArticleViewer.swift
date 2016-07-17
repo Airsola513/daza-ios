@@ -14,9 +14,22 @@
  * limitations under the License.
  */
 
-import UIKit
-import Former
+//import RealmSwift
+import ObjectMapper
 
-class BaseGroupedListController: FormViewController {
+class ArticleViewer: Model {
+    
+    var user_id: Int?       // 用户Id
+    var article_id: Int?    // 文章Id
+    
+    required init?(_ map: Map) {
+        super.init(map)
+    }
+    
+    override func mapping(map: Map) {
+        super.mapping(map)
+        user_id     <- map["user_id"]
+        article_id  <- map["article_id"]
+    }
     
 }

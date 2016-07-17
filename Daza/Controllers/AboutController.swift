@@ -22,14 +22,14 @@ class AboutController: BaseGroupedListController {
         super.viewDidLoad()
         self.title = trans("title_about")
 
-        self.itemsSource = [
-            Section(title: nil, rows: [
-                DefaultRow(title: "去评分"),
-                DefaultRow(title: "功能介绍"),
-                DefaultRow(title: "推荐给好友"),
-            ]),
-        ]
-        self.tableView.reloadData()
+//        self.itemsSource = [
+//            Section(title: nil, rows: [
+//                DefaultRow(title: "去评分"),
+//                DefaultRow(title: "功能介绍"),
+//                DefaultRow(title: "推荐给好友"),
+//            ]),
+//        ]
+//        self.tableView.reloadData()
     }
     
 }

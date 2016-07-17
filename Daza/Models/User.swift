@@ -22,7 +22,6 @@ class User: Model {
     var username: String?   // 用户名
     var email: String?      // 邮箱
     var mobile: String?     // 手机
-    var password: String?   // 密码
     var name: String?       // 名称
     var first_name: String? // 名
     var last_name: String?  // 姓
@@ -47,7 +46,6 @@ class User: Model {
         username    <- map["username"]
         email       <- map["email"]
         mobile      <- map["mobile"]
-        password    <- map["password"]
         name        <- map["name"]
         first_name  <- map["first_name"]
         last_name   <- map["last_name"]
