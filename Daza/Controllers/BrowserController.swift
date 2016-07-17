@@ -39,7 +39,7 @@ class BrowserController: BaseViewController, UIWebViewDelegate, NJKWebViewProgre
         self.progressProxy.progressDelegate = self
         
         let progressBarHeight: CGFloat = 2.0
-        let navigationBarBounds: CGRect  = self.navigationController!.navigationBar.bounds;
+        let navigationBarBounds: CGRect = self.navigationController!.navigationBar.bounds;
         let barFrame: CGRect = CGRectMake(0, navigationBarBounds.size.height - progressBarHeight, navigationBarBounds.size.width, progressBarHeight)
         self.progressView = NJKWebViewProgressView(frame: barFrame)
         self.progressView?.setProgress(0, animated: true)

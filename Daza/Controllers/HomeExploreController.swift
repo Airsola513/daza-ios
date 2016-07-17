@@ -54,8 +54,6 @@ class HomeExploreController: BaseListController<Topic> {
         
         let data = self.itemsSource[indexPath.row]
         
-        cell.nameLabel.text = data.name
-        cell.descriptionLabel.text = data.description
         cell.data = data
         return cell
     }

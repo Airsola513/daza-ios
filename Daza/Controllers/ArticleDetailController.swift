@@ -16,7 +16,7 @@
 
 import UIKit
 
-class ArticleDetailController: BaseTableViewController {
+class ArticleDetailController: BrowserController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

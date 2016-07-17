@@ -32,6 +32,8 @@ class Article: Model {
     var like_count: Int = 0     // 喜欢数
     var view_count: Int = 0     // 阅读数
     var comment_count: Int = 0  // 评论数
+    var user: User?
+    var topic: Topic?
     
     required init?(_ map: Map) {
         super.init(map)
@@ -53,6 +55,8 @@ class Article: Model {
         like_count      <- map["like_count"]
         view_count      <- map["view_count"]
         comment_count   <- map["comment_count"]
+        user            <- map["user"]
+        topic           <- map["topic"]
     }
     
 }

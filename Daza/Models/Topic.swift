@@ -28,6 +28,7 @@ class Topic: Model {
     var source_program: String?     // 文章来源程序 = ['wordpress', 'jekyll', 'ghost', 'hexo', 'typecho', 'farbox']
     var source_link: String?        // 文章来源链接
     var subscriber_count: Int = 0   // 订阅数
+    var user: User?
     
     required init?(_ map: Map) {
         super.init(map)
@@ -44,6 +45,7 @@ class Topic: Model {
         source_program      <- map["source_program"]
         source_link         <- map["source_link"]
         subscriber_count    <- map["subscriber_count"]
+        user                <- map["user"]
     }
     
 }

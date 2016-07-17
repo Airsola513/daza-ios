@@ -14,9 +14,6 @@
  * limitations under the License.
  */
 
-//  Use this file to import your target's public headers that you would like to expose to Swift.
+class ErrorHandler {
 
-
-#import "DZNEmptyDataSet/UIScrollView+EmptyDataSet.h"
-#import "GSKStretchyHeaderView/GSKStretchyHeaderView.h"
-#import <DateTools/DateTools.h>
+}

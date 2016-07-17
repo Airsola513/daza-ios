@@ -58,14 +58,18 @@ class HomeMineController: BaseGroupedListController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
+        let navigationController = self.navigationController as! BaseNavigationController
+        navigationController.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
-        self.navigationController?.navigationBar.shadowImage = nil
+        let navigationController = self.navigationController as! BaseNavigationController
+        navigationController.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
+        navigationController.navigationBar.shadowImage = nil
+        navigationController.navigationBar.titleTextAttributes = nil
     }
     
     func notificationsButtonPressed(sender: UIBarButtonItem) {

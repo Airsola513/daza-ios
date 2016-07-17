@@ -43,11 +43,6 @@ class HomeIndexController: BaseListController<Article> {
         
         let data = self.itemsSource[indexPath.row]
         
-        cell.titleLabel.text = data.title
-        cell.timeLabel.text = "刚刚"
-        cell.topicLabel.text = "TOPICTOPIC"
-        cell.commentCountButton.setTitle("100个评论", forState: UIControlState.Normal)
-        cell.viewCountButton.setTitle("100个阅读", forState: UIControlState.Normal)
         cell.data = data
         return cell
     }

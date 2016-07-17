@@ -15,6 +15,7 @@
  */
 
 import UIKit
+import DateTools
 
 class ArticleItemCell: UITableViewCell {
     
@@ -34,8 +35,8 @@ class ArticleItemCell: UITableViewCell {
         set(newValue) {
             self.article = newValue
             self.titleLabel.text = article!.title
-            self.topicLabel.text = "TOPIC"
-            self.timeLabel.text = article!.created_at
+            self.topicLabel.text = article!.topic?.name
+            self.timeLabel.text = article!.created_at?.timeAgoSinceNow()
             self.commentCountButton.setTitle("\(article!.comment_count)评论", forState: UIControlState.Normal)
             self.viewCountButton.setTitle("\(article!.view_count)阅读", forState: UIControlState.Normal)
         }

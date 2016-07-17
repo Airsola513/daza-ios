@@ -21,6 +21,7 @@ target 'Daza' do
   pod 'Former'
   pod 'GSKStretchyHeaderView'
   pod 'R.swift'
+  pod 'DateTools'
   pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 
   target 'DazaTests' do
