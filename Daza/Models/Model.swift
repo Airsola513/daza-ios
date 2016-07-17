@@ -18,6 +18,16 @@
 import ObjectMapper
 
 class Model: Mappable {
+    
+    var dateFormatterTransform: DateFormatterTransform {
+        get {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.locale = NSLocale(localeIdentifier: "zh_CN")
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            dateFormatter.timeZone = NSTimeZone(name: "UTC")
+            return DateFormatterTransform(dateFormatter: dateFormatter)
+        }
+    }
  
     var id: Int?
     var deleted_at: NSDate?
@@ -28,14 +38,10 @@ class Model: Mappable {
     }
     
     func mapping(map: Map) {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "zh_CN")
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        dateFormatter.timeZone = NSTimeZone(name: "UTC")
         id          <- map["id"]
-        deleted_at  <- (map["deleted_at"], DateFormatterTransform(dateFormatter: dateFormatter))
-        created_at  <- (map["created_at"], DateFormatterTransform(dateFormatter: dateFormatter))
-        updated_at  <- (map["updated_at"], DateFormatterTransform(dateFormatter: dateFormatter))
+        deleted_at  <- (map["deleted_at"], self.dateFormatterTransform)
+        created_at  <- (map["created_at"], self.dateFormatterTransform)
+        updated_at  <- (map["updated_at"], self.dateFormatterTransform)
     }
 
 }
