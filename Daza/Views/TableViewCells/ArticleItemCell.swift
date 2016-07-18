@@ -40,7 +40,9 @@ class ArticleItemCell: UITableViewCell {
             self.timeLabel.text = article!.published_at?.timeAgoSinceNow()
             self.commentCountButton.setTitle("\(article!.comment_count)评论", forState: UIControlState.Normal)
             self.viewCountButton.setTitle("\(article!.view_count)阅读", forState: UIControlState.Normal)
-            self.coverImageView.sd_setImageWithURL(NSURL(string: (article!.image_url)!))
+            if (self.coverImageView != nil) {
+                self.coverImageView.sd_setImageWithURL(NSURL(string: (article!.image_url)!))
+            }
         }
     }
 }

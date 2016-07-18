@@ -28,6 +28,9 @@ class HomeIndexController: BaseListController<Article> {
         self.tableView.registerClass(TopicItemCell.self, forCellReuseIdentifier: "ArticleItemCell")
         self.tableView.registerNib(UINib(nibName: "ArticleItemCell", bundle: nil), forCellReuseIdentifier: "ArticleItemCell")
         
+        self.tableView.registerClass(TopicItemCell.self, forCellReuseIdentifier: "ArticleNoImageItemCell")
+        self.tableView.registerNib(UINib(nibName: "ArticleNoImageItemCell", bundle: nil), forCellReuseIdentifier: "ArticleNoImageItemCell")
+        
         self.firstRefreshing()
     }
     
@@ -39,9 +42,14 @@ class HomeIndexController: BaseListController<Article> {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: ArticleItemCell = tableView.dequeueReusableCellWithIdentifier("ArticleItemCell", forIndexPath: indexPath) as! ArticleItemCell
-        
         let data = self.itemsSource[indexPath.row]
+        
+        var identifier: String = "ArticleItemCell"
+        if (data.image_url == nil || data.image_url == "") {
+            identifier = "ArticleNoImageItemCell";
+        }
+
+        let cell: ArticleItemCell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! ArticleItemCell
         
         cell.data = data
         return cell
