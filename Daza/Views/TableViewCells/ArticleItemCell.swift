@@ -16,6 +16,7 @@
 
 import UIKit
 import DateTools
+import SDWebImage
 
 class ArticleItemCell: UITableViewCell {
     
@@ -35,10 +36,11 @@ class ArticleItemCell: UITableViewCell {
         set(newValue) {
             self.article = newValue
             self.titleLabel.text = article!.title
-            self.topicLabel.text = article!.topic?.name
+            self.topicLabel.text = "\(article!.topic!.name!) · "
             self.timeLabel.text = article!.published_at?.timeAgoSinceNow()
             self.commentCountButton.setTitle("\(article!.comment_count)评论", forState: UIControlState.Normal)
             self.viewCountButton.setTitle("\(article!.view_count)阅读", forState: UIControlState.Normal)
+            self.coverImageView.sd_setImageWithURL(NSURL(string: (article!.image_url)!))
         }
     }
 }

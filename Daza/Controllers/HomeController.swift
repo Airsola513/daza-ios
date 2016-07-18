@@ -20,28 +20,29 @@ class HomeController: UITabBarController {
     
     let homeIndexController   = HomeIndexController()
     let homeExploreController = HomeExploreController()
-    let homeEventsController = HomeEventsController()
+    let homeEventsController  = HomeEventsController()
     let homeMineController    = HomeMineController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBar.barTintColor = UIColor.whiteColor()
         
-        let indexController: UINavigationController = BaseNavigationController(rootViewController: homeIndexController)
+        let indexController: UINavigationController = BaseNavigationController(rootViewController: homeIndexController, statusBarStyle: .LightContent)
         indexController.tabBarItem.title = trans("title_home_index")
         indexController.tabBarItem.image = UIImage(named: "ic_tab_home")
         self.addChildViewController(indexController)
         
-        let exploreController: UINavigationController = BaseNavigationController(rootViewController: homeExploreController)
+        let exploreController: UINavigationController = BaseNavigationController(rootViewController: homeExploreController, statusBarStyle: .LightContent)
         exploreController.tabBarItem.title = trans("title_home_explore")
         exploreController.tabBarItem.image = UIImage(named: "ic_tab_explore")
         self.addChildViewController(exploreController)
         
-        let eventsController: UINavigationController = BaseNavigationController(rootViewController: homeEventsController)
+        let eventsController: UINavigationController = BaseNavigationController(rootViewController: homeEventsController, statusBarStyle: .LightContent)
         eventsController.tabBarItem.title = trans("title_home_events")
         eventsController.tabBarItem.image = UIImage(named: "ic_tab_event")
         self.addChildViewController(eventsController)
         
-        let mineController: UINavigationController = BaseNavigationController(rootViewController: homeMineController)
+        let mineController: UINavigationController = BaseNavigationController(rootViewController: homeMineController, statusBarStyle: .LightContent)
         mineController.tabBarItem.title = trans("title_home_mine")
         mineController.tabBarItem.image = UIImage(named: "ic_tab_mine")
         self.addChildViewController(mineController)

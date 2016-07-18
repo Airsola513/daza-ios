@@ -66,6 +66,7 @@
 		F5715BCE1D353F0000F1CBE5 /* UsersApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BC41D353F0000F1CBE5 /* UsersApi.swift */; };
 		F5993DB11D38B09500495E06 /* HomeMineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5993DB01D38B09500495E06 /* HomeMineHeaderView.swift */; };
 		F5A2B5801D3B82810031AF83 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A2B57F1D3B82810031AF83 /* ErrorHandler.swift */; };
+		F5A2B5821D3CEC690031AF83 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A2B5811D3CEC690031AF83 /* UIColorExtension.swift */; };
 		F5D41DC91D38DDF00055195C /* TopicItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D41DC81D38DDF00055195C /* TopicItemCell.swift */; };
 		F5D41DCB1D38E1430055195C /* TopicItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D41DCA1D38E1430055195C /* TopicItemCell.xib */; };
 		F5D41DCD1D38E2370055195C /* ArticleItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D41DCC1D38E2370055195C /* ArticleItemCell.xib */; };
@@ -178,6 +179,7 @@
 		F5715BC41D353F0000F1CBE5 /* UsersApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersApi.swift; sourceTree = "<group>"; };
 		F5993DB01D38B09500495E06 /* HomeMineHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMineHeaderView.swift; sourceTree = "<group>"; };
 		F5A2B57F1D3B82810031AF83 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		F5A2B5811D3CEC690031AF83 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		F5D41DC81D38DDF00055195C /* TopicItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicItemCell.swift; sourceTree = "<group>"; };
 		F5D41DCA1D38E1430055195C /* TopicItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicItemCell.xib; sourceTree = "<group>"; };
 		F5D41DCC1D38E2370055195C /* ArticleItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleItemCell.xib; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				F519184D1D34DA310012897F /* NSObjectExtension.swift */,
+				F5A2B5811D3CEC690031AF83 /* UIColorExtension.swift */,
 				F519182C1D3364F80012897F /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
@@ -788,6 +791,7 @@
 				F5993DB11D38B09500495E06 /* HomeMineHeaderView.swift in Sources */,
 				F519183A1D337C0B0012897F /* ArticleLikesController.swift in Sources */,
 				F51918451D33EA070012897F /* BaseGroupedListController.swift in Sources */,
+				F5A2B5821D3CEC690031AF83 /* UIColorExtension.swift in Sources */,
 				87A9E1A19B555584EE254443 /* TweetComment.swift in Sources */,
 				F5F23E431D32A5FB00234104 /* TopicDetailController.swift in Sources */,
 				F5D41DD11D38E25A0055195C /* ArticleItemCell.swift in Sources */,

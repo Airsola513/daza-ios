@@ -59,6 +59,7 @@ class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEm
         // 加载状态视图
         self.tableView.emptyDataSetSource = self;
         self.tableView.emptyDataSetDelegate = self;
+        self.view.backgroundColor = UIColor(rgba: "#ECEFF1")
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

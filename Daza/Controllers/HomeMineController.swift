@@ -56,22 +56,6 @@ class HomeMineController: BaseGroupedListController {
         self.tableView.reloadData()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        let navigationController = self.navigationController as! BaseNavigationController
-        navigationController.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        navigationController.navigationBar.shadowImage = UIImage()
-        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        let navigationController = self.navigationController as! BaseNavigationController
-        navigationController.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
-        navigationController.navigationBar.shadowImage = nil
-        navigationController.navigationBar.titleTextAttributes = nil
-    }
-    
     func notificationsButtonPressed(sender: UIBarButtonItem) {
         if (!Auth.check()) {
             let controller: BaseNavigationController = BaseNavigationController(rootViewController: LoginController())

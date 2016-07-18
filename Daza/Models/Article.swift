@@ -26,6 +26,7 @@ class Article: Model {
     var link: String?           // 文章链接
     var title: String?          // 标题
     var summary: String?        // 摘要
+    var image_url: String?      // 图片网址
     var content: String?        // 内容
     var author: String?         // 作者
     var author_email: String?   // 作者邮箱
@@ -52,6 +53,7 @@ class Article: Model {
         link            <- map["link"]
         title           <- map["title"]
         summary         <- map["summary"]
+        image_url       <- map["image_url"]
         content         <- map["content"]
         author          <- map["author"]
         author_email    <- map["author_email"]

@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window!.rootViewController = HomeController()
         self.window!.makeKeyAndVisible()
-        self.window!.tintColor = UIColor.blackColor()
+        self.window!.tintColor = UIColor(rgba: "#455A64")
         return true
     }
 

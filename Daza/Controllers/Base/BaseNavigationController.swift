@@ -18,7 +18,7 @@ import UIKit
 
 class BaseNavigationController: UINavigationController {
     
-    var statusBarStyle: UIStatusBarStyle = .Default
+    var statusBarStyle: UIStatusBarStyle = .LightContent
 
     init(rootViewController: UIViewController, statusBarStyle: UIStatusBarStyle = .Default) {
         super.init(nibName: nil, bundle: nil)
@@ -32,6 +32,20 @@ class BaseNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var tintColor = UIColor(rgba: "#37474F")
+        var barTintColor = UIColor.whiteColor()
+        var titleTintColor = UIColor(rgba: "#37474F")
+
+        if (self.statusBarStyle == .LightContent) {
+            tintColor = UIColor.whiteColor()
+            barTintColor = UIColor(rgba: "#37474F")
+            titleTintColor = UIColor.whiteColor()
+        }
+        
+        self.navigationBar.tintColor = tintColor
+        self.navigationBar.barTintColor = barTintColor
+        self.navigationBar.translucent = false
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: titleTintColor]
     }
 
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
