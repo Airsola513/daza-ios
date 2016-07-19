@@ -8,7 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" restorationIdentifier="ArticleItemCell" id="iN0-l3-epB" customClass="ArticleItemCell" customModule="Daza" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4C-Cn-Cle">
@@ -59,13 +59,13 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="lJE-tR-gId" firstAttribute="leading" secondItem="UK3-0J-M9W" secondAttribute="trailing" id="6Kh-QE-7LX"/>
-                <constraint firstAttribute="bottom" secondItem="EVz-vB-peV" secondAttribute="bottom" constant="12" id="6cs-6C-sJj"/>
-                <constraint firstAttribute="bottom" secondItem="UK3-0J-M9W" secondAttribute="bottom" constant="12" id="9jl-24-W13"/>
-                <constraint firstAttribute="bottom" secondItem="UmC-eC-7CO" secondAttribute="bottom" constant="12" id="ABh-Rj-aPm"/>
+                <constraint firstAttribute="bottom" secondItem="EVz-vB-peV" secondAttribute="bottom" constant="10" id="6cs-6C-sJj"/>
+                <constraint firstAttribute="bottom" secondItem="UK3-0J-M9W" secondAttribute="bottom" constant="10" id="9jl-24-W13"/>
+                <constraint firstAttribute="bottom" secondItem="UmC-eC-7CO" secondAttribute="bottom" constant="10" id="ABh-Rj-aPm"/>
                 <constraint firstAttribute="trailing" secondItem="lJE-tR-gId" secondAttribute="trailing" constant="12" id="FkI-tA-ND3"/>
                 <constraint firstItem="p4C-Cn-Cle" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="JGF-5a-D0c"/>
                 <constraint firstItem="EVz-vB-peV" firstAttribute="leading" secondItem="UmC-eC-7CO" secondAttribute="trailing" id="XG3-Db-elP"/>
-                <constraint firstAttribute="bottom" secondItem="lJE-tR-gId" secondAttribute="bottom" constant="12" id="dSZ-Pb-2rs"/>
+                <constraint firstAttribute="bottom" secondItem="lJE-tR-gId" secondAttribute="bottom" constant="10" id="dSZ-Pb-2rs"/>
                 <constraint firstItem="UmC-eC-7CO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="j5B-S1-Rku"/>
                 <constraint firstAttribute="trailing" secondItem="p4C-Cn-Cle" secondAttribute="trailing" constant="12" id="mAb-nK-8NO"/>
                 <constraint firstItem="EVz-vB-peV" firstAttribute="top" secondItem="p4C-Cn-Cle" secondAttribute="bottom" constant="8" id="uaa-gK-HVY"/>

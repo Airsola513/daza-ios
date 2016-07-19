@@ -20,9 +20,9 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HgR-2c-tfG">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HgR-2c-tfG">
                     <rect key="frame" x="16" y="46" width="70" height="112"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.81176470588235294" green="0.84705882352941175" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="112" id="GJE-0a-SKl"/>
                         <constraint firstAttribute="width" constant="70" id="iVQ-cV-2vO"/>
@@ -87,7 +87,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="coverView" destination="HgR-2c-tfG" id="hAs-3J-n69"/>
+                <outlet property="coverImageView" destination="HgR-2c-tfG" id="6gH-Vy-2kX"/>
                 <outlet property="descriptionLabel" destination="AFb-Q1-QFp" id="py5-K2-cis"/>
                 <outlet property="nameLabel" destination="Yfm-ST-M3K" id="Fma-hP-WS5"/>
                 <outlet property="subscribeButton" destination="RVw-HH-84y" id="Dfm-vq-Q8e"/>

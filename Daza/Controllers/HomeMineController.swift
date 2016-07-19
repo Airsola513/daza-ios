@@ -30,14 +30,14 @@ class HomeMineController: BaseGroupedListController {
         
         let headerSize: CGSize = CGSizeMake(self.tableView.frame.size.width, 130);
         self.stretchyHeader = HomeMineHeaderView(frame: CGRectMake(0, 0, headerSize.width, headerSize.height))
-        self.stretchyHeader!.backgroundColor = UIColor.grayColor()
+        self.stretchyHeader!.backgroundColor = UIColor(rgba: "#37474F")
 //        self.stretchyHeader!.stretchDelegate = self
         self.tableView.addSubview(self.stretchyHeader!)
         
-        self.menuNotifications = UIBarButtonItem(image: UIImage(named: "ic_menu_notifications_light")?.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: #selector(notificationsButtonPressed(_:)))
+        self.menuNotifications = UIBarButtonItem(image: UIImage(named: "ic_menu_notifications"), style: .Plain, target: self, action: #selector(notificationsButtonPressed(_:)))
         self.navigationItem.leftBarButtonItem = self.menuNotifications
 
-        self.menuSettings = UIBarButtonItem(image: UIImage(named: "ic_menu_settings_light")?.imageWithRenderingMode(.AlwaysOriginal), style: .Plain, target: self, action: #selector(settingsButtonPressed(_:)))
+        self.menuSettings = UIBarButtonItem(image: UIImage(named: "ic_menu_settings"), style: .Plain, target: self, action: #selector(settingsButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuSettings
         
 //        self.itemsSource = [
