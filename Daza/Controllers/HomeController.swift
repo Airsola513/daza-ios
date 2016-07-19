@@ -25,7 +25,8 @@ class HomeController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBar.barTintColor = UIColor.whiteColor()
+
+        UITabBar.appearance().tintColor = UIColor(rgba: "#37474F")
         
         let indexController: UINavigationController = BaseNavigationController(rootViewController: homeIndexController, statusBarStyle: .LightContent)
         indexController.tabBarItem.title = trans("title_home_index")

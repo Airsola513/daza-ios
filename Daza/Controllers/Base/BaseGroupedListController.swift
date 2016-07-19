@@ -15,8 +15,36 @@
  */
 
 import UIKit
-import Former
+import Eureka
 
 class BaseGroupedListController: FormViewController {
-    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let textLabelFont = UIFont.systemFontOfSize(15)
+        let textFieldFont = UIFont.systemFontOfSize(15)
+
+        LabelRow.defaultCellUpdate = { cell, row in
+            cell.textLabel?.font = textLabelFont
+        }
+        TextRow.defaultCellUpdate = { cell, row in
+            cell.textLabel?.font = textLabelFont
+            cell.textField.font = textFieldFont
+        }
+        EmailRow.defaultCellUpdate = { cell, row in
+            cell.textLabel?.font = textLabelFont
+            cell.textField.font = textFieldFont
+        }
+        PasswordRow.defaultCellUpdate = { cell, row in
+            cell.textLabel?.font = textLabelFont
+            cell.textField.font = textFieldFont
+        }
+        ButtonRow.defaultCellUpdate = { cell, row in
+            cell.textLabel?.font = textLabelFont
+        }
+
+        self.tableView!.backgroundColor = UIColor(rgba: "#ECEFF1")
+    }
+
 }

@@ -28,11 +28,11 @@ class HomeMineController: BaseGroupedListController {
         super.viewDidLoad()
         self.title = trans("title_home_mine")
         
-        let headerSize: CGSize = CGSizeMake(self.tableView.frame.size.width, 130);
+        let headerSize: CGSize = CGSizeMake(self.tableView!.frame.size.width, 130);
         self.stretchyHeader = HomeMineHeaderView(frame: CGRectMake(0, 0, headerSize.width, headerSize.height))
         self.stretchyHeader!.backgroundColor = UIColor(rgba: "#37474F")
 //        self.stretchyHeader!.stretchDelegate = self
-        self.tableView.addSubview(self.stretchyHeader!)
+        self.tableView!.addSubview(self.stretchyHeader!)
         
         self.menuNotifications = UIBarButtonItem(image: UIImage(named: "ic_menu_notifications"), style: .Plain, target: self, action: #selector(notificationsButtonPressed(_:)))
         self.navigationItem.leftBarButtonItem = self.menuNotifications
@@ -53,7 +53,21 @@ class HomeMineController: BaseGroupedListController {
 //                DefaultRow(title: trans("home_mine_my_notifications")),
 //            ]),
 //        ]
-        self.tableView.reloadData()
+        self.tableView!.reloadData()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        let navigationController = self.navigationController as! BaseNavigationController
+        navigationController.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        navigationController.navigationBar.shadowImage = UIImage()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        let navigationController = self.navigationController as! BaseNavigationController
+        navigationController.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
+        navigationController.navigationBar.shadowImage = nil
     }
     
     func notificationsButtonPressed(sender: UIBarButtonItem) {

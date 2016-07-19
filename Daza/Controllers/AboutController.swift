@@ -15,6 +15,7 @@
  */
 
 import UIKit
+import Eureka
 
 class AboutController: BaseGroupedListController {
     
@@ -22,14 +23,33 @@ class AboutController: BaseGroupedListController {
         super.viewDidLoad()
         self.title = trans("title_about")
 
-//        self.itemsSource = [
-//            Section(title: nil, rows: [
-//                DefaultRow(title: "去评分"),
-//                DefaultRow(title: "功能介绍"),
-//                DefaultRow(title: "推荐给好友"),
-//            ]),
-//        ]
-//        self.tableView.reloadData()
+        form +++ Section()
+            <<< ButtonRow() { row in
+                row.title = "开放源代码许可"
+                row.presentationMode = .Show(controllerProvider: ControllerProvider.Callback(builder: { () -> UIViewController in
+                    return BaseTableViewController()
+                }), completionCallback: { (controller) in
+                    
+                })
+            }
+            <<< ButtonRow() { row in
+                row.title = "服务条款"
+                row.presentationMode = .Show(controllerProvider: ControllerProvider.Callback(builder: { () -> UIViewController in
+                    return BaseTableViewController()
+                }), completionCallback: { (controller) in
+                    
+                })
+            }
+            <<< ButtonRow() { row in
+                row.title = "隐私权声明"
+                row.presentationMode = .Show(controllerProvider: ControllerProvider.Callback(builder: { () -> UIViewController in
+                    return BaseTableViewController()
+                }), completionCallback: { (controller) in
+                    
+                })
+        }
+        
+
     }
     
 }

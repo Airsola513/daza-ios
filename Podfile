@@ -18,7 +18,7 @@ target 'Daza' do
   pod '1PasswordExtension', '~> 1.8.2'
   pod 'JVFloatLabeledTextField'
   pod 'DZNEmptyDataSet'
-  pod 'Former'
+  pod 'Eureka', '~> 1.7'
   pod 'GSKStretchyHeaderView'
   pod 'R.swift'
   pod 'DateTools'

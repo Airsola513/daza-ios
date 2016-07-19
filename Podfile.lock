@@ -6,7 +6,7 @@ PODS:
     - ObjectMapper (~> 1.0)
   - DateTools (1.7.0)
   - DZNEmptyDataSet (1.8.1)
-  - Former (1.3.0)
+  - Eureka (1.7.0)
   - GSKStretchyHeaderView (0.12.0)
   - JVFloatLabeledTextField (1.1.1)
   - MJRefresh (3.1.10)
@@ -32,7 +32,7 @@ DEPENDENCIES:
   - AlamofireObjectMapper (~> 3.0)
   - DateTools
   - DZNEmptyDataSet
-  - Former
+  - Eureka (~> 1.7)
   - GSKStretchyHeaderView
   - JVFloatLabeledTextField
   - MJRefresh
@@ -50,7 +50,7 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 70f97cbf45c01c48d26aa07a1a7059a60ed7411d
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  Former: 7380ef3b9bdb3bf43d9f0fe99e369987d3068705
+  Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
   GSKStretchyHeaderView: 25554059df35b7b01b37373eba1e1e57582c45a2
   JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
   MJRefresh: bb72948c985914b0b5cecac573a2c69a8915fb02
@@ -63,6 +63,6 @@ SPEC CHECKSUMS:
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 51c8e4e6641fdc103f8943f6d718832462f95552
+PODFILE CHECKSUM: fbd09169b62a757deaceb16862bd3236271e7251
 
 COCOAPODS: 1.0.1

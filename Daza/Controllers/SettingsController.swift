@@ -15,34 +15,57 @@
  */
 
 import UIKit
+import Eureka
 
 class SettingsController: BaseGroupedListController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("title_settings")
-        
-//        self.itemsSource = [
-//            Section(title: nil, rows: [
-//                DefaultRow(title: trans("settings_item_notification")),
-//            ]),
-//            Section(title: nil, rows: [
-//                DefaultRow(title: "ITEM1"),
-//                DefaultRow(title: "ITEM2"),
-//                DefaultRow(title: "清理缓存")
-//            ]),
-//            Section(title: nil, rows: [
-//                DefaultRow(title: trans("settings_item_feedback"), subtitle: nil, action: { _ in
-//                    let controller = BrowserController()
-//                    self.navigationController?.pushViewController(controller, animated: true)
-//                }),
-//                DefaultRow(title: trans("settings_item_about"), subtitle: nil, action: { _ in
-//                    let controller = AboutController()
-//                    self.navigationController?.pushViewController(controller, animated: true)
-//                }),
-//            ]),
-//        ]
-//        self.tableView.reloadData()
+
+        form +++ Section()
+            <<< ButtonRow(){ row in
+                row.title = "推送消息设置"
+                row.presentationMode = .Show(controllerProvider: ControllerProvider.Callback(builder: { () -> UIViewController in
+                    return BaseTableViewController()
+                }), completionCallback: { (controller) in
+                    
+                })
+            }
+            +++ Section()
+            <<< ButtonRow(){ row in
+                row.title = "账号和密码"
+                row.presentationMode = .Show(controllerProvider: ControllerProvider.Callback(builder: { () -> UIViewController in
+                    return BaseTableViewController()
+                }), completionCallback: { (controller) in
+                    
+                })
+            }
+            +++ Section()
+            <<< ButtonRow() { row in
+                row.title = "意见反馈"
+                row.presentationMode = .Show(controllerProvider: ControllerProvider.Callback(builder: { () -> UIViewController in
+                    return BaseTableViewController()
+                }), completionCallback: { (controller) in
+                    
+                })
+            }
+            <<< ButtonRow() { row in
+                row.title = "关于"
+                row.presentationMode = .Show(controllerProvider: ControllerProvider.Callback(builder: { () -> UIViewController in
+                    return AboutController()
+                }), completionCallback: { (controller) in
+                    
+                })
+            }
+            +++ Section()
+            <<< ButtonRow() { row in
+                row.title = "退出"
+                }.cellUpdate({ (cell, row) in
+                    cell.textLabel?.textColor = UIColor.redColor()
+                }
+        )
+    
     }
 
 }

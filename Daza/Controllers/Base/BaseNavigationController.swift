@@ -32,9 +32,9 @@ class BaseNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var tintColor = UIColor(rgba: "#37474F")
+        var tintColor = UIColor.blackColor()
         var barTintColor = UIColor.whiteColor()
-        var titleTintColor = UIColor(rgba: "#37474F")
+        var titleTintColor = UIColor.blackColor()
 
         if (self.statusBarStyle == .LightContent) {
             tintColor = UIColor.whiteColor()
