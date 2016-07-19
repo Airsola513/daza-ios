@@ -43,6 +43,7 @@ class BrowserController: BaseViewController, UIWebViewDelegate, NJKWebViewProgre
         let barFrame: CGRect = CGRectMake(0, navigationBarBounds.size.height - progressBarHeight, navigationBarBounds.size.width, progressBarHeight)
         self.progressView = NJKWebViewProgressView(frame: barFrame)
         self.progressView?.setProgress(0, animated: true)
+        self.progressView?.progressBarView.backgroundColor = UIColor(rgba: "#ECEFF1")
         
         self.view.addSubview(self.webView)
         

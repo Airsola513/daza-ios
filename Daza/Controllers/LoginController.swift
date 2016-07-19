@@ -108,9 +108,11 @@ class LoginController: BaseGroupedListController {
                         make.centerX.equalTo(cell)
                     }
                 })
-            +++ Section()
             <<< ButtonRow() { row in
                 row.title = "登录"
+            }
+            <<< ButtonRow() { row in
+                row.title = "忘记密码？"
         }
     }
     

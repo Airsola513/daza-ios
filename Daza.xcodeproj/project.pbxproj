@@ -46,6 +46,7 @@
 		F51918471D3484190012897F /* HomeEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918461D3484190012897F /* HomeEventsController.swift */; };
 		F519184C1D34BB310012897F /* BrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519184B1D34BB310012897F /* BrowserController.swift */; };
 		F519184E1D34DA310012897F /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519184D1D34DA310012897F /* NSObjectExtension.swift */; };
+		F52C55241D3E710100819C6D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52C55231D3E710100819C6D /* UIViewExtension.swift */; };
 		F5338A1A1D35490B00B3D44F /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5338A191D35490B00B3D44F /* URLs.swift */; };
 		F5338A1C1D354A3500B3D44F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5338A1B1D354A3500B3D44F /* Result.swift */; };
 		F53DCFD11D3D1C65000180E4 /* ArticleNoImageItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F53DCFD01D3D1C65000180E4 /* ArticleNoImageItemCell.xib */; };
@@ -68,6 +69,7 @@
 		F5993DB11D38B09500495E06 /* HomeMineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5993DB01D38B09500495E06 /* HomeMineHeaderView.swift */; };
 		F5A2B5801D3B82810031AF83 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A2B57F1D3B82810031AF83 /* ErrorHandler.swift */; };
 		F5A2B5821D3CEC690031AF83 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A2B5811D3CEC690031AF83 /* UIColorExtension.swift */; };
+		F5A92DD01D3E6ABE0040ED03 /* HomeMineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A92DCF1D3E6ABE0040ED03 /* HomeMineHeaderView.xib */; };
 		F5D41DC91D38DDF00055195C /* TopicItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D41DC81D38DDF00055195C /* TopicItemCell.swift */; };
 		F5D41DCB1D38E1430055195C /* TopicItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D41DCA1D38E1430055195C /* TopicItemCell.xib */; };
 		F5D41DCD1D38E2370055195C /* ArticleItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D41DCC1D38E2370055195C /* ArticleItemCell.xib */; };
@@ -154,6 +156,7 @@
 		F51918461D3484190012897F /* HomeEventsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEventsController.swift; sourceTree = "<group>"; };
 		F519184B1D34BB310012897F /* BrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserController.swift; sourceTree = "<group>"; };
 		F519184D1D34DA310012897F /* NSObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
+		F52C55231D3E710100819C6D /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F5338A191D35490B00B3D44F /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		F5338A1B1D354A3500B3D44F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		F53DCFD01D3D1C65000180E4 /* ArticleNoImageItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleNoImageItemCell.xib; sourceTree = "<group>"; };
@@ -182,6 +185,7 @@
 		F5993DB01D38B09500495E06 /* HomeMineHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMineHeaderView.swift; sourceTree = "<group>"; };
 		F5A2B57F1D3B82810031AF83 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		F5A2B5811D3CEC690031AF83 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		F5A92DCF1D3E6ABE0040ED03 /* HomeMineHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeMineHeaderView.xib; sourceTree = "<group>"; };
 		F5D41DC81D38DDF00055195C /* TopicItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicItemCell.swift; sourceTree = "<group>"; };
 		F5D41DCA1D38E1430055195C /* TopicItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicItemCell.xib; sourceTree = "<group>"; };
 		F5D41DCC1D38E2370055195C /* ArticleItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleItemCell.xib; sourceTree = "<group>"; };
@@ -352,6 +356,7 @@
 				F519184D1D34DA310012897F /* NSObjectExtension.swift */,
 				F5A2B5811D3CEC690031AF83 /* UIColorExtension.swift */,
 				F519182C1D3364F80012897F /* UIViewControllerExtension.swift */,
+				F52C55231D3E710100819C6D /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -440,6 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				F5993DB01D38B09500495E06 /* HomeMineHeaderView.swift */,
+				F5A92DCF1D3E6ABE0040ED03 /* HomeMineHeaderView.xib */,
 				F5D41DC71D38DDF00055195C /* TableViewCells */,
 			);
 			path = Views;
@@ -592,6 +598,7 @@
 				F53DCFD11D3D1C65000180E4 /* ArticleNoImageItemCell.xib in Resources */,
 				F5D41DCB1D38E1430055195C /* TopicItemCell.xib in Resources */,
 				F56D2B0D1D3121AC004A92DD /* LaunchScreen.storyboard in Resources */,
+				F5A92DD01D3E6ABE0040ED03 /* HomeMineHeaderView.xib in Resources */,
 				F56D2B0A1D3121AC004A92DD /* Assets.xcassets in Resources */,
 				F5D41DCF1D38E2440055195C /* EventItemCell.xib in Resources */,
 				F56D2B081D3121AC004A92DD /* Main.storyboard in Resources */,
@@ -805,6 +812,7 @@
 				F519182F1D33668D0012897F /* BaseNavigationController.swift in Sources */,
 				F5A2B5801D3B82810031AF83 /* ErrorHandler.swift in Sources */,
 				F519184C1D34BB310012897F /* BrowserController.swift in Sources */,
+				F52C55241D3E710100819C6D /* UIViewExtension.swift in Sources */,
 				F5D41DD71D3B2DDB0055195C /* Auth.swift in Sources */,
 				87A9E6FFFD865256D58D2101 /* ArticleComment.swift in Sources */,
 				F5F29B5C1D36A33B00071F04 /* AboutController.swift in Sources */,

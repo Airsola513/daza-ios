@@ -27,10 +27,9 @@ class HomeMineController: BaseGroupedListController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("title_home_mine")
-        
-        let headerSize: CGSize = CGSizeMake(self.tableView!.frame.size.width, 130);
-        self.stretchyHeader = HomeMineHeaderView(frame: CGRectMake(0, 0, headerSize.width, headerSize.height))
-        self.stretchyHeader!.backgroundColor = UIColor(rgba: "#37474F")
+
+        self.stretchyHeader = HomeMineHeaderView.instanceFromNib()
+
 //        self.stretchyHeader!.stretchDelegate = self
         self.tableView!.addSubview(self.stretchyHeader!)
         
@@ -39,21 +38,7 @@ class HomeMineController: BaseGroupedListController {
 
         self.menuSettings = UIBarButtonItem(image: UIImage(named: "ic_menu_settings"), style: .Plain, target: self, action: #selector(settingsButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuSettings
-        
-//        self.itemsSource = [
-////            Section(title: nil, rows: [
-////                DefaultRow(title: trans("home_mine_login"), subtitle: nil, action: { _ in
-////                    let controller: BaseNavigationController = BaseNavigationController(rootViewController: LoginController())
-////                    self.presentViewController(controller, animated: true, completion: { _ in })
-////                }),
-////            ]),
-//            Section(title: nil, rows: [
-//                DefaultRow(title: trans("home_mine_my_topics")),
-//                DefaultRow(title: trans("home_mine_my_favorites")),
-//                DefaultRow(title: trans("home_mine_my_notifications")),
-//            ]),
-//        ]
-        self.tableView!.reloadData()
+
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -86,12 +71,5 @@ class HomeMineController: BaseGroupedListController {
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
-    
-//    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        if (section == 0) {
-//            return CGFloat.min
-//        }
-//        return super.tableView(tableView, heightForHeaderInSection: section)
-//    }
 
 }

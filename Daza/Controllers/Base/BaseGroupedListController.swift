@@ -41,7 +41,7 @@ class BaseGroupedListController: FormViewController {
             cell.textField.font = textFieldFont
         }
         ButtonRow.defaultCellUpdate = { cell, row in
-            cell.textLabel?.font = textLabelFont
+            cell.textLabel?.font = UIFont.boldSystemFontOfSize(15)
         }
 
         self.tableView!.backgroundColor = UIColor(rgba: "#ECEFF1")
