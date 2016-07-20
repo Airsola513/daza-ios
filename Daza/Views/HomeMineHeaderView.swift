@@ -23,4 +23,24 @@ class HomeMineHeaderView: GSKStretchyHeaderView {
         return UINib(nibName: "HomeMineHeaderView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! HomeMineHeaderView
     }
 
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    var user: User?
+    
+    var data: User {
+        get {
+            return self.user!
+        }
+        set(newValue) {
+            self.user = newValue
+            self.nameLabel.text = user!.name
+            self.usernameLabel.text = "@\(user!.username!)"
+            self.avatarImageView.sd_setImageWithURL(NSURL(string: (user!.avatar_url)!), placeholderImage: UIImage(named: "placeholder_image"))
+        }
+    }
+
+
 }

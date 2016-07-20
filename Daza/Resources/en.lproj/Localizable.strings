@@ -24,6 +24,8 @@
 // Account
 "title_register" = "Register";
 "title_login" = "Login";
+"title_account" = "Account";
+"title_profile" = "Profile";
 // Users
 "title_user_detail" = "Profile";
 // Topics

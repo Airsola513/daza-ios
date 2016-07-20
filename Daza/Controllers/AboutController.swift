@@ -22,33 +22,21 @@ class AboutController: BaseGroupedListController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("title_about")
-
-        form +++ Section()
-            <<< ButtonRow() { row in
-                row.title = "开放源代码许可"
-                row.presentationMode = .Show(controllerProvider: ControllerProvider.Callback(builder: { () -> UIViewController in
-                    return BaseTableViewController()
-                }), completionCallback: { (controller) in
-                    
-                })
-            }
-            <<< ButtonRow() { row in
-                row.title = "服务条款"
-                row.presentationMode = .Show(controllerProvider: ControllerProvider.Callback(builder: { () -> UIViewController in
-                    return BaseTableViewController()
-                }), completionCallback: { (controller) in
-                    
-                })
-            }
-            <<< ButtonRow() { row in
-                row.title = "隐私权声明"
-                row.presentationMode = .Show(controllerProvider: ControllerProvider.Callback(builder: { () -> UIViewController in
-                    return BaseTableViewController()
-                }), completionCallback: { (controller) in
-                    
-                })
-        }
         
+        form
+            +++ Section()
+            <<< ButtonRow() { row in
+                    row.title = "开放源代码许可"
+                    row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
+                }
+            <<< ButtonRow() { row in
+                    row.title = "服务条款"
+                    row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
+                }
+            <<< ButtonRow() { row in
+                    row.title = "隐私权声明"
+                    row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
+                }
 
     }
     

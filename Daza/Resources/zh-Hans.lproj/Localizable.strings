@@ -33,6 +33,8 @@
 // Account
 "title_register" = "注册";
 "title_login" = "登录";
+"title_account" = "账号与安全";
+"title_profile" = "个人资料";
 // Users
 "title_user_detail" = "用户资料";
 // Topics

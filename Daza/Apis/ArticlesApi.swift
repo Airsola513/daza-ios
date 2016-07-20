@@ -50,4 +50,15 @@ extension Api {
             print(response.result)
         }
     }
+    
+    static func getArticleListByTopicId(page: Int, topicId: Int, success: (pagination: Pagination, data: [Article]) -> Void) {
+        let URL = URLs.apiURL + "/topics/\(topicId)/articles";
+        let parameters: [String: AnyObject] = [
+            "page": page,
+        ]
+        self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<Article>, NSError>) in
+            let value = response.result.value
+            success(pagination: (value?.pagination)!, data: (value?.data)!)
+        }
+    }
 }

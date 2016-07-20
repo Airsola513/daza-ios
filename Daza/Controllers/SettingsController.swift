@@ -22,50 +22,38 @@ class SettingsController: BaseGroupedListController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("title_settings")
-
-        form +++ Section()
-            <<< ButtonRow(){ row in
-                row.title = "推送消息设置"
-                row.presentationMode = .Show(controllerProvider: ControllerProvider.Callback(builder: { () -> UIViewController in
-                    return BaseTableViewController()
-                }), completionCallback: { (controller) in
-                    
-                })
-            }
+        
+        form
             +++ Section()
-            <<< ButtonRow(){ row in
-                row.title = "账号和密码"
-                row.presentationMode = .Show(controllerProvider: ControllerProvider.Callback(builder: { () -> UIViewController in
-                    return BaseTableViewController()
-                }), completionCallback: { (controller) in
-                    
-                })
-            }
+                <<< ButtonRow() { row in
+                        row.title = "推送消息设置"
+                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
+                    }
             +++ Section()
-            <<< ButtonRow() { row in
-                row.title = "意见反馈"
-                row.presentationMode = .Show(controllerProvider: ControllerProvider.Callback(builder: { () -> UIViewController in
-                    return BaseTableViewController()
-                }), completionCallback: { (controller) in
-                    
-                })
-            }
-            <<< ButtonRow() { row in
-                row.title = "关于"
-                row.presentationMode = .Show(controllerProvider: ControllerProvider.Callback(builder: { () -> UIViewController in
-                    return AboutController()
-                }), completionCallback: { (controller) in
-                    
-                })
-            }
+                <<< ButtonRow() { row in
+                        row.title = "账号与安全"
+                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { AccountController() }), completionCallback: nil)
+                    }
             +++ Section()
-            <<< ButtonRow() { row in
-                row.title = "退出"
-                }.cellUpdate({ (cell, row) in
-                    cell.textLabel?.textColor = UIColor.redColor()
-                }
-        )
-    
+                <<< ButtonRow() { row in
+                        row.title = "意见反馈"
+                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
+                    }
+                <<< ButtonRow() { row in
+                        row.title = "关于"
+                        row.cellStyle = .Value1
+                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { AboutController() }), completionCallback: nil)
+                    }.cellUpdate { (cell, row) in
+                        cell.detailTextLabel?.text = UIApplication.appVersion()
+                    }
+            +++ Section()
+                <<< ButtonRow() { row in
+                        row.title = "退出"
+                    }.cellUpdate { (cell, row) in
+                        cell.textLabel?.textColor = UIColor.redColor()
+                    }.onCellSelection { (cell, row) in
+                        print("Click Logout")
+                    }
     }
 
 }

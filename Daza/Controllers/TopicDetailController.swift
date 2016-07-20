@@ -16,22 +16,50 @@
 
 import UIKit
 
-class TopicDetailController: BaseTableViewController {
+class TopicDetailController: BaseListController<Article> {
     
     var topic: Topic?
     
     init(_ data: Topic) {
-        super.init(style: UITableViewStyle.Plain)
+        super.init()
         self.topic = data
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("title_topic_detail")
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 44.0
+        
+        self.tableView.registerClass(TopicItemCell.self, forCellReuseIdentifier: "ArticleItemCell")
+        self.tableView.registerNib(UINib(nibName: "ArticleItemCell", bundle: nil), forCellReuseIdentifier: "ArticleItemCell")
+        
+        self.tableView.registerClass(TopicItemCell.self, forCellReuseIdentifier: "ArticleNoImageItemCell")
+        self.tableView.registerNib(UINib(nibName: "ArticleNoImageItemCell", bundle: nil), forCellReuseIdentifier: "ArticleNoImageItemCell")
+        
+        self.firstRefreshing()
+    }
+    
+    override func loadData(page: Int) {
+        let loadDataSuccess = { (pagination: Pagination, data: [Article]) -> Void in
+            self.loadComplete(pagination, data)
+        }
+        Api.getArticleListByTopicId(page, topicId: (topic?.id)!, success: loadDataSuccess)
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let data = self.itemsSource[indexPath.row]
+        
+        var identifier: String = "ArticleItemCell"
+        if (data.image_url == nil || data.image_url == "") {
+            identifier = "ArticleNoImageItemCell";
+        }
+        
+        let cell: ArticleItemCell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! ArticleItemCell
+        
+        cell.data = data
+        return cell
     }
     
 }

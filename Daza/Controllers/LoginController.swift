@@ -142,7 +142,7 @@ class LoginController: BaseGroupedListController {
                     let forgotPasswordButton: UIButton = UIButton()
                     cell.contentView.addSubview(forgotPasswordButton)
                     
-                    forgotPasswordButton.titleLabel?.font = UIFont.boldSystemFontOfSize(14)
+                    forgotPasswordButton.titleLabel?.font = UIFont.systemFontOfSize(14)
 
                     forgotPasswordButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
                     forgotPasswordButton.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Selected)

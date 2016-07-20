@@ -14,33 +14,21 @@
  * limitations under the License.
  */
 
-extension UIView {
+
+// Code from https://gist.github.com/ashleymills/6ec9fce6d7ec2a11af9b
+extension UIApplication {
     
-    @IBInspectable var cornerRadius: CGFloat {
-        get {
-            return layer.cornerRadius
-        }
-        set {
-            layer.cornerRadius = newValue
-            layer.masksToBounds = newValue > 0
-        }
+    class func appVersion() -> String {
+        return NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
     }
     
-    @IBInspectable var borderWidth: CGFloat {
-        get {
-            return layer.borderWidth
-        }
-        set {
-            layer.borderWidth = newValue
-        }
+    class func appBuild() -> String {
+        return NSBundle.mainBundle().objectForInfoDictionaryKey(kCFBundleVersionKey as String) as! String
     }
     
-    @IBInspectable var borderColor: UIColor? {
-        get {
-            return UIColor(CGColor: layer.borderColor!)
-        }
-        set {
-            layer.borderColor = newValue?.CGColor
-        }
+    class func versionBuild() -> String {
+        let version = appVersion(), build = appBuild()
+        
+        return version == build ? "v\(version)" : "v\(version)(\(build))"
     }
 }

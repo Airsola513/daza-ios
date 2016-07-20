@@ -15,6 +15,7 @@
  */
 
 import UIKit
+import ObjectMapper
 import GSKStretchyHeaderView
 
 class HomeMineController: BaseGroupedListController {
@@ -27,9 +28,15 @@ class HomeMineController: BaseGroupedListController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("title_home_mine")
+        
+        var user: User = Mapper<User>().map("{}")!
+        user.name = "痕迹"
+        user.username = "lijy91"
+        user.avatar_url = ""
 
         self.stretchyHeader = HomeMineHeaderView.instanceFromNib()
-
+        self.stretchyHeader?.data = user
+        self.stretchyHeader?.profileButton.addTarget(self, action: Selector("profileButtonPressed:"), forControlEvents: .TouchUpInside)
 //        self.stretchyHeader!.stretchDelegate = self
         self.tableView!.addSubview(self.stretchyHeader!)
         
@@ -58,7 +65,7 @@ class HomeMineController: BaseGroupedListController {
     func notificationsButtonPressed(sender: UIBarButtonItem) {
         if (!Auth.check()) {
             let controller: BaseNavigationController = BaseNavigationController(rootViewController: LoginController())
-            self.presentViewController(controller, animated: true, completion: { _ in })
+            self.presentViewController(controller, animated: true, completion: nil)
             return
         }
         let controller = NotificationsController()
@@ -68,6 +75,12 @@ class HomeMineController: BaseGroupedListController {
     
     func settingsButtonPressed(sender: UIBarButtonItem) {
         let controller = SettingsController()
+        controller.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func profileButtonPressed(sender: UIButton!) {
+        let controller = ProfileController()
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }

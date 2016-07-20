@@ -18,7 +18,7 @@ import UIKit
 
 extension UIColor {
 
-    // MAKE: code from https://github.com/yeahdongcn/UIColor-Hex-Swift
+    // Code from https://github.com/yeahdongcn/UIColor-Hex-Swift
     public convenience init(rgba: String) {
         var red:   CGFloat = 0.0
         var green: CGFloat = 0.0
