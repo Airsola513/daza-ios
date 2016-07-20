@@ -23,7 +23,7 @@ class HomeMineHeaderView: GSKStretchyHeaderView {
         return UINib(nibName: "HomeMineHeaderView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! HomeMineHeaderView
     }
 
-    @IBOutlet weak var headerBackgroundImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!

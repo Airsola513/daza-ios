@@ -120,8 +120,8 @@ class LoginController: BaseGroupedListController {
                     submitButton.layer.masksToBounds = true
                     submitButton.layer.cornerRadius = 5.0
                     submitButton.layer.borderWidth = 1.4
-                    submitButton.layer.backgroundColor = UIColor(rgba: "#337ab7").CGColor
-                    submitButton.layer.borderColor = UIColor(rgba: "#2e6da4").CGColor
+                    submitButton.layer.backgroundColor = UIColor(rgba: "#546E7A").CGColor
+                    submitButton.layer.borderColor = UIColor(rgba: "#455A64").CGColor
                     
                     submitButton.setTitle("登录", forState: UIControlState.Normal)
                     

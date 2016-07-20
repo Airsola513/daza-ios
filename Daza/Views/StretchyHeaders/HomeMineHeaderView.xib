@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
@@ -66,6 +67,7 @@
                         <segment title="主题"/>
                         <segment title="收藏"/>
                     </segments>
+                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 </segmentedControl>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xg1-IA-qo7">
                     <rect key="frame" x="0.0" y="244" width="375" height="1"/>
@@ -110,11 +112,11 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="avatarImageView" destination="fgO-WJ-LKG" id="nWq-A7-eyE"/>
+                <outlet property="backgroundImageView" destination="9yu-fJ-Eu5" id="NEz-ES-gYX"/>
                 <outlet property="followersButton" destination="gk6-bj-cED" id="dYN-yl-fSQ"/>
                 <outlet property="followersCountLabel" destination="8bz-rf-ve4" id="oxP-NJ-ElO"/>
                 <outlet property="followingButton" destination="HiL-9R-uSW" id="vyR-5N-nUJ"/>
                 <outlet property="followingCountLabel" destination="DkA-ZE-fi1" id="yNZ-51-vo8"/>
-                <outlet property="headerBackgroundImageView" destination="9yu-fJ-Eu5" id="BSw-4M-Eet"/>
                 <outlet property="nameLabel" destination="kMC-NH-8E8" id="4Ik-4z-1hD"/>
                 <outlet property="profileButton" destination="mVh-Tl-krr" id="yNc-0W-NtF"/>
                 <outlet property="usernameLabel" destination="ezi-pc-J0f" id="ofu-LO-ZLY"/>

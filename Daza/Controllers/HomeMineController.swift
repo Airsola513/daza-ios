@@ -36,7 +36,9 @@ class HomeMineController: BaseGroupedListController {
 
         self.stretchyHeader = HomeMineHeaderView.instanceFromNib()
         self.stretchyHeader?.data = user
-        self.stretchyHeader?.profileButton.addTarget(self, action: Selector("profileButtonPressed:"), forControlEvents: .TouchUpInside)
+        self.stretchyHeader?.profileButton.addTarget(self, action: #selector(profileButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        self.stretchyHeader?.followingButton.addTarget(self, action: #selector(followingButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        self.stretchyHeader?.followersButton.addTarget(self, action: #selector(followersButtonPressed(_:)), forControlEvents: .TouchUpInside)
 //        self.stretchyHeader!.stretchDelegate = self
         self.tableView!.addSubview(self.stretchyHeader!)
         
@@ -81,6 +83,18 @@ class HomeMineController: BaseGroupedListController {
     
     func profileButtonPressed(sender: UIButton!) {
         let controller = ProfileController()
+        controller.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func followingButtonPressed(sender: UIButton!) {
+        let controller = FollowingController()
+        controller.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func followersButtonPressed(sender: UIButton!) {
+        let controller = FollowersController()
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
