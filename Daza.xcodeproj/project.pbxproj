@@ -34,6 +34,7 @@
 		F514AE8A1D4104ED00A68590 /* NotificationSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F514AE891D4104ED00A68590 /* NotificationSettingsController.swift */; };
 		F514AE8F1D410D5E00A68590 /* HomeIndexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F514AE8E1D410D5E00A68590 /* HomeIndexController.swift */; };
 		F514AE911D410D7200A68590 /* BaseButtonBarPagerTabStripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F514AE901D410D7200A68590 /* BaseButtonBarPagerTabStripViewController.swift */; };
+		F514AE931D41329F00A68590 /* ArticleNoImageItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F514AE921D41329F00A68590 /* ArticleNoImageItemCell.xib */; };
 		F51918241D33621F0012897F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918231D33621F0012897F /* BaseTableViewController.swift */; };
 		F51918261D33629A0012897F /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918251D33629A0012897F /* BaseListController.swift */; };
 		F51918281D3363890012897F /* HomeMineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918271D3363890012897F /* HomeMineController.swift */; };
@@ -63,7 +64,7 @@
 		F5342F181D3FB5920076BBF8 /* HomeMineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5342F161D3FB5920076BBF8 /* HomeMineHeaderView.xib */; };
 		F5342F191D3FB5920076BBF8 /* HomeMineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5342F171D3FB5920076BBF8 /* HomeMineHeaderView.swift */; };
 		F5342F1B1D4083D60076BBF8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5342F1A1D4083D60076BBF8 /* Category.swift */; };
-		F53DCFD11D3D1C65000180E4 /* ArticleNoImageItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F53DCFD01D3D1C65000180E4 /* ArticleNoImageItemCell.xib */; };
+		F53DCFD11D3D1C65000180E4 /* ArticleBigImageItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F53DCFD01D3D1C65000180E4 /* ArticleBigImageItemCell.xib */; };
 		F56D2B011D3121AC004A92DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B001D3121AC004A92DD /* AppDelegate.swift */; };
 		F56D2B081D3121AC004A92DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56D2B061D3121AC004A92DD /* Main.storyboard */; };
 		F56D2B0A1D3121AC004A92DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F56D2B091D3121AC004A92DD /* Assets.xcassets */; };
@@ -159,6 +160,7 @@
 		F514AE891D4104ED00A68590 /* NotificationSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingsController.swift; sourceTree = "<group>"; };
 		F514AE8E1D410D5E00A68590 /* HomeIndexController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeIndexController.swift; sourceTree = "<group>"; };
 		F514AE901D410D7200A68590 /* BaseButtonBarPagerTabStripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButtonBarPagerTabStripViewController.swift; sourceTree = "<group>"; };
+		F514AE921D41329F00A68590 /* ArticleNoImageItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleNoImageItemCell.xib; sourceTree = "<group>"; };
 		F51918231D33621F0012897F /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		F51918251D33629A0012897F /* BaseListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
 		F51918271D3363890012897F /* HomeMineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMineController.swift; sourceTree = "<group>"; };
@@ -188,7 +190,7 @@
 		F5342F161D3FB5920076BBF8 /* HomeMineHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeMineHeaderView.xib; sourceTree = "<group>"; };
 		F5342F171D3FB5920076BBF8 /* HomeMineHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMineHeaderView.swift; sourceTree = "<group>"; };
 		F5342F1A1D4083D60076BBF8 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		F53DCFD01D3D1C65000180E4 /* ArticleNoImageItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleNoImageItemCell.xib; sourceTree = "<group>"; };
+		F53DCFD01D3D1C65000180E4 /* ArticleBigImageItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleBigImageItemCell.xib; sourceTree = "<group>"; };
 		F56D2AFD1D3121AC004A92DD /* Daza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56D2B001D3121AC004A92DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F56D2B071D3121AC004A92DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -511,9 +513,10 @@
 		F5D41DC71D38DDF00055195C /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				F53DCFD01D3D1C65000180E4 /* ArticleBigImageItemCell.xib */,
 				F5D41DD01D38E25A0055195C /* ArticleItemCell.swift */,
 				F5D41DCC1D38E2370055195C /* ArticleItemCell.xib */,
-				F53DCFD01D3D1C65000180E4 /* ArticleNoImageItemCell.xib */,
+				F514AE921D41329F00A68590 /* ArticleNoImageItemCell.xib */,
 				F5D41DD21D38E2650055195C /* EventItemCell.swift */,
 				F5D41DCE1D38E2440055195C /* EventItemCell.xib */,
 				F514AE871D40DFF300A68590 /* FollowersItemCell.swift */,
@@ -648,7 +651,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F53DCFD11D3D1C65000180E4 /* ArticleNoImageItemCell.xib in Resources */,
+				F53DCFD11D3D1C65000180E4 /* ArticleBigImageItemCell.xib in Resources */,
 				F5D41DCB1D38E1430055195C /* TopicItemCell.xib in Resources */,
 				F56D2B0D1D3121AC004A92DD /* LaunchScreen.storyboard in Resources */,
 				F56D2B0A1D3121AC004A92DD /* Assets.xcassets in Resources */,
@@ -660,6 +663,7 @@
 				87A9E3316C0FA4311D494D29 /* .gitkeep in Resources */,
 				F514AE841D40DF4900A68590 /* FollowingItemCell.xib in Resources */,
 				F5D41DCD1D38E2370055195C /* ArticleItemCell.xib in Resources */,
+				F514AE931D41329F00A68590 /* ArticleNoImageItemCell.xib in Resources */,
 				F514AE861D40DFE800A68590 /* FollowersItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

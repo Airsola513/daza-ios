@@ -32,6 +32,9 @@ class ArticleListController: BaseListController<Article>, IndicatorInfoProvider 
         self.tableView.registerClass(TopicItemCell.self, forCellReuseIdentifier: "ArticleNoImageItemCell")
         self.tableView.registerNib(UINib(nibName: "ArticleNoImageItemCell", bundle: nil), forCellReuseIdentifier: "ArticleNoImageItemCell")
         
+        self.tableView.registerClass(TopicItemCell.self, forCellReuseIdentifier: "ArticleBigImageItemCell")
+        self.tableView.registerNib(UINib(nibName: "ArticleBigImageItemCell", bundle: nil), forCellReuseIdentifier: "ArticleBigImageItemCell")
+        
         self.firstRefreshing()
     }
     
@@ -48,6 +51,10 @@ class ArticleListController: BaseListController<Article>, IndicatorInfoProvider 
         var identifier: String = "ArticleItemCell"
         if (data.image_url == nil || data.image_url == "") {
             identifier = "ArticleNoImageItemCell";
+        } else {
+            if (indexPath.row < 100) {
+                identifier = "ArticleBigImageItemCell";
+            }
         }
 
         let cell: ArticleItemCell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! ArticleItemCell
