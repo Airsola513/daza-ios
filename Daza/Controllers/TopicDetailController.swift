@@ -32,7 +32,12 @@ class TopicDetailController: BaseListController<Article> {
         super.viewDidLoad()
         self.title = trans("title_topic_detail")
         
+//        self.navigationController?.navigationBar.translucent = true
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
         self.stretchyHeader = TopicDetailHeaderView.instanceFromNib()
+        self.stretchyHeader?.minimumContentHeight = 64
         self.tableView!.addSubview(self.stretchyHeader!)
         
         self.menuShare = UIBarButtonItem(image: UIImage(named: "ic_menu_share"), style: .Plain, target: self, action: #selector(shareButtonPressed(_:)))

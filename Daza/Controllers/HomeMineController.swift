@@ -35,6 +35,7 @@ class HomeMineController: BaseGroupedListController {
         user.avatar_url = ""
 
         self.stretchyHeader = HomeMineHeaderView.instanceFromNib()
+        self.stretchyHeader?.minimumContentHeight = (self.navigationController?.navigationBar.frame.height)!
         self.stretchyHeader?.data = user
         self.stretchyHeader?.profileButton.addTarget(self, action: #selector(profileButtonPressed(_:)), forControlEvents: .TouchUpInside)
         self.stretchyHeader?.followingButton.addTarget(self, action: #selector(followingButtonPressed(_:)), forControlEvents: .TouchUpInside)

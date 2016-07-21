@@ -19,6 +19,8 @@ import ObjectMapper
 
 class Topic: Model {
     
+    var user_id: Int?               // 用户Id
+    var category_id: Int?           // 分类Id
     var type: String?               // 类型
     var name: String?               // 名称
     var website: String?            // 主页
