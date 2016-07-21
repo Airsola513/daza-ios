@@ -27,7 +27,7 @@ class SettingsController: BaseGroupedListController {
             +++ Section()
                 <<< ButtonRow() { row in
                         row.title = "推送消息设置"
-                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
+                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { NotificationSettingsController() }), completionCallback: nil)
                     }
             +++ Section()
                 <<< ButtonRow() { row in

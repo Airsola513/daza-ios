@@ -19,6 +19,7 @@ target 'Daza' do
   pod 'JVFloatLabeledTextField'
   pod 'DZNEmptyDataSet'
   pod 'Eureka', '~> 1.7'
+  pod 'XLPagerTabStrip', '~> 5.0'
   pod 'GSKStretchyHeaderView'
   pod 'R.swift'
   pod 'DateTools'

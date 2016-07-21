@@ -27,13 +27,20 @@
 		87A9EEBC6C4B59CC03C29050 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9E72A1D10D0CC1228D179 /* Article.swift */; };
 		87A9EF8BA4E71486C947AACF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A9E6FBE730848C0539CFAB /* User.swift */; };
 		8A3736963DF62D544E5F34D9 /* Pods_DazaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4D813867A740C3F0DC5296 /* Pods_DazaTests.framework */; };
+		F514AE821D40DF3A00A68590 /* FollowingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F514AE811D40DF3A00A68590 /* FollowingItemCell.swift */; };
+		F514AE841D40DF4900A68590 /* FollowingItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F514AE831D40DF4900A68590 /* FollowingItemCell.xib */; };
+		F514AE861D40DFE800A68590 /* FollowersItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F514AE851D40DFE800A68590 /* FollowersItemCell.xib */; };
+		F514AE881D40DFF300A68590 /* FollowersItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F514AE871D40DFF300A68590 /* FollowersItemCell.swift */; };
+		F514AE8A1D4104ED00A68590 /* NotificationSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F514AE891D4104ED00A68590 /* NotificationSettingsController.swift */; };
+		F514AE8F1D410D5E00A68590 /* HomeIndexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F514AE8E1D410D5E00A68590 /* HomeIndexController.swift */; };
+		F514AE911D410D7200A68590 /* BaseButtonBarPagerTabStripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F514AE901D410D7200A68590 /* BaseButtonBarPagerTabStripViewController.swift */; };
 		F51918241D33621F0012897F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918231D33621F0012897F /* BaseTableViewController.swift */; };
 		F51918261D33629A0012897F /* BaseListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918251D33629A0012897F /* BaseListController.swift */; };
 		F51918281D3363890012897F /* HomeMineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918271D3363890012897F /* HomeMineController.swift */; };
 		F519182D1D3364F80012897F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519182C1D3364F80012897F /* UIViewControllerExtension.swift */; };
 		F519182F1D33668D0012897F /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519182E1D33668D0012897F /* BaseNavigationController.swift */; };
 		F51918321D33677B0012897F /* HomeExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918301D33677B0012897F /* HomeExploreController.swift */; };
-		F51918331D33677B0012897F /* HomeIndexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918311D33677B0012897F /* HomeIndexController.swift */; };
+		F51918331D33677B0012897F /* ArticleListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918311D33677B0012897F /* ArticleListController.swift */; };
 		F51918381D337C0B0012897F /* ArticleCommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918341D337C0A0012897F /* ArticleCommentsController.swift */; };
 		F51918391D337C0B0012897F /* ArticleDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918351D337C0B0012897F /* ArticleDetailController.swift */; };
 		F519183A1D337C0B0012897F /* ArticleLikesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918361D337C0B0012897F /* ArticleLikesController.swift */; };
@@ -145,13 +152,20 @@
 		AC039F93BC51F3874BC22538 /* Pods_DazaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DazaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7F162B90DA60CD6533A6022 /* Pods-Daza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Daza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Daza/Pods-Daza.release.xcconfig"; sourceTree = "<group>"; };
 		E8FE8D8F603C29202F719D14 /* Pods_Daza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Daza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F514AE811D40DF3A00A68590 /* FollowingItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingItemCell.swift; sourceTree = "<group>"; };
+		F514AE831D40DF4900A68590 /* FollowingItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowingItemCell.xib; sourceTree = "<group>"; };
+		F514AE851D40DFE800A68590 /* FollowersItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowersItemCell.xib; sourceTree = "<group>"; };
+		F514AE871D40DFF300A68590 /* FollowersItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersItemCell.swift; sourceTree = "<group>"; };
+		F514AE891D4104ED00A68590 /* NotificationSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingsController.swift; sourceTree = "<group>"; };
+		F514AE8E1D410D5E00A68590 /* HomeIndexController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeIndexController.swift; sourceTree = "<group>"; };
+		F514AE901D410D7200A68590 /* BaseButtonBarPagerTabStripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButtonBarPagerTabStripViewController.swift; sourceTree = "<group>"; };
 		F51918231D33621F0012897F /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		F51918251D33629A0012897F /* BaseListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseListController.swift; sourceTree = "<group>"; };
 		F51918271D3363890012897F /* HomeMineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMineController.swift; sourceTree = "<group>"; };
 		F519182C1D3364F80012897F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		F519182E1D33668D0012897F /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		F51918301D33677B0012897F /* HomeExploreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeExploreController.swift; sourceTree = "<group>"; };
-		F51918311D33677B0012897F /* HomeIndexController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeIndexController.swift; sourceTree = "<group>"; };
+		F51918311D33677B0012897F /* ArticleListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListController.swift; sourceTree = "<group>"; };
 		F51918341D337C0A0012897F /* ArticleCommentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCommentsController.swift; sourceTree = "<group>"; };
 		F51918351D337C0B0012897F /* ArticleDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailController.swift; sourceTree = "<group>"; };
 		F51918361D337C0B0012897F /* ArticleLikesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleLikesController.swift; sourceTree = "<group>"; };
@@ -273,6 +287,7 @@
 				F51918341D337C0A0012897F /* ArticleCommentsController.swift */,
 				F51918351D337C0B0012897F /* ArticleDetailController.swift */,
 				F51918361D337C0B0012897F /* ArticleLikesController.swift */,
+				F51918311D33677B0012897F /* ArticleListController.swift */,
 				F51918221D33621F0012897F /* Base */,
 				F519184B1D34BB310012897F /* BrowserController.swift */,
 				F5342F0D1D3FB0E10076BBF8 /* FollowersController.swift */,
@@ -280,10 +295,11 @@
 				F5F23E3E1D32A59800234104 /* HomeController.swift */,
 				F51918461D3484190012897F /* HomeEventsController.swift */,
 				F51918301D33677B0012897F /* HomeExploreController.swift */,
-				F51918311D33677B0012897F /* HomeIndexController.swift */,
+				F514AE8E1D410D5E00A68590 /* HomeIndexController.swift */,
 				F51918271D3363890012897F /* HomeMineController.swift */,
 				87A9E29C83BFF3795EE8716E /* LoginController.swift */,
 				F5D41DD41D3B2BCC0055195C /* NotificationsController.swift */,
+				F514AE891D4104ED00A68590 /* NotificationSettingsController.swift */,
 				F5B5D5EC1D3F53AE009EE5AD /* ProfileController.swift */,
 				F5F23E3C1D32A55B00234104 /* RegisterController.swift */,
 				F51918401D33E48C0012897F /* SearchController.swift */,
@@ -362,10 +378,11 @@
 		F51918221D33621F0012897F /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				F514AE901D410D7200A68590 /* BaseButtonBarPagerTabStripViewController.swift */,
+				F51918441D33EA070012897F /* BaseGroupedListController.swift */,
 				F51918251D33629A0012897F /* BaseListController.swift */,
 				F519182E1D33668D0012897F /* BaseNavigationController.swift */,
 				F51918231D33621F0012897F /* BaseTableViewController.swift */,
-				F51918441D33EA070012897F /* BaseGroupedListController.swift */,
 				F5F29B591D36A1A700071F04 /* BaseViewController.swift */,
 			);
 			path = Base;
@@ -494,11 +511,15 @@
 		F5D41DC71D38DDF00055195C /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				F53DCFD01D3D1C65000180E4 /* ArticleNoImageItemCell.xib */,
 				F5D41DD01D38E25A0055195C /* ArticleItemCell.swift */,
 				F5D41DCC1D38E2370055195C /* ArticleItemCell.xib */,
+				F53DCFD01D3D1C65000180E4 /* ArticleNoImageItemCell.xib */,
 				F5D41DD21D38E2650055195C /* EventItemCell.swift */,
 				F5D41DCE1D38E2440055195C /* EventItemCell.xib */,
+				F514AE871D40DFF300A68590 /* FollowersItemCell.swift */,
+				F514AE851D40DFE800A68590 /* FollowersItemCell.xib */,
+				F514AE811D40DF3A00A68590 /* FollowingItemCell.swift */,
+				F514AE831D40DF4900A68590 /* FollowingItemCell.xib */,
 				F5D41DC81D38DDF00055195C /* TopicItemCell.swift */,
 				F5D41DCA1D38E1430055195C /* TopicItemCell.xib */,
 			);
@@ -637,7 +658,9 @@
 				F5342F181D3FB5920076BBF8 /* HomeMineHeaderView.xib in Resources */,
 				F5F23E541D32ABFB00234104 /* Localizable.strings in Resources */,
 				87A9E3316C0FA4311D494D29 /* .gitkeep in Resources */,
+				F514AE841D40DF4900A68590 /* FollowingItemCell.xib in Resources */,
 				F5D41DCD1D38E2370055195C /* ArticleItemCell.xib in Resources */,
+				F514AE861D40DFE800A68590 /* FollowersItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,7 +810,7 @@
 			files = (
 				F56D2B011D3121AC004A92DD /* AppDelegate.swift in Sources */,
 				F51918471D3484190012897F /* HomeEventsController.swift in Sources */,
-				F51918331D33677B0012897F /* HomeIndexController.swift in Sources */,
+				F51918331D33677B0012897F /* ArticleListController.swift in Sources */,
 				F51918321D33677B0012897F /* HomeExploreController.swift in Sources */,
 				F519183F1D337C540012897F /* TweetDetailController.swift in Sources */,
 				F5F23E3F1D32A59800234104 /* HomeController.swift in Sources */,
@@ -813,7 +836,10 @@
 				F5342F141D3FB5770076BBF8 /* TopicDetailHeaderView.swift in Sources */,
 				F5715BCB1D353F0000F1CBE5 /* TagsApi.swift in Sources */,
 				87A9EEBC6C4B59CC03C29050 /* Article.swift in Sources */,
+				F514AE821D40DF3A00A68590 /* FollowingItemCell.swift in Sources */,
+				F514AE8A1D4104ED00A68590 /* NotificationSettingsController.swift in Sources */,
 				F5D41DD91D3B3C860055195C /* TopicSubscriber.swift in Sources */,
+				F514AE881D40DFF300A68590 /* FollowersItemCell.swift in Sources */,
 				F51918281D3363890012897F /* HomeMineController.swift in Sources */,
 				F5F29B5A1D36A1A700071F04 /* BaseViewController.swift in Sources */,
 				F5338A1C1D354A3500B3D44F /* Result.swift in Sources */,
@@ -839,6 +865,7 @@
 				F51918451D33EA070012897F /* BaseGroupedListController.swift in Sources */,
 				F5A2B5821D3CEC690031AF83 /* UIColorExtension.swift in Sources */,
 				F5B5D5EB1D3F4B97009EE5AD /* AccountController.swift in Sources */,
+				F514AE8F1D410D5E00A68590 /* HomeIndexController.swift in Sources */,
 				87A9E1A19B555584EE254443 /* TweetComment.swift in Sources */,
 				F5F23E431D32A5FB00234104 /* TopicDetailController.swift in Sources */,
 				F5D41DD11D38E25A0055195C /* ArticleItemCell.swift in Sources */,
@@ -857,6 +884,7 @@
 				F5F29B581D360D7100071F04 /* ResultOfArray.swift in Sources */,
 				F5B5D5E91D3F2B16009EE5AD /* UIApplicationExtension.swift in Sources */,
 				F51918261D33629A0012897F /* BaseListController.swift in Sources */,
+				F514AE911D410D7200A68590 /* BaseButtonBarPagerTabStripViewController.swift in Sources */,
 				F519183B1D337C0B0012897F /* TopicCreateController.swift in Sources */,
 				87A9ECA0E17B0C722735E6F4 /* LoginController.swift in Sources */,
 				F5715BCC1D353F0000F1CBE5 /* TopicsApi.swift in Sources */,

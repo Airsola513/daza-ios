@@ -18,7 +18,7 @@ import UIKit
 import ObjectMapper
 import GSKStretchyHeaderView
 
-class HomeMineController: BaseGroupedListController {
+class HomeMineController: BaseTableViewController {
 
     var menuNotifications: UIBarButtonItem?
     var menuSettings: UIBarButtonItem?
@@ -35,7 +35,7 @@ class HomeMineController: BaseGroupedListController {
         user.avatar_url = ""
 
         self.stretchyHeader = HomeMineHeaderView.instanceFromNib()
-        self.stretchyHeader?.minimumContentHeight = (self.navigationController?.navigationBar.frame.height)!
+        self.stretchyHeader?.minimumContentHeight = 64
         self.stretchyHeader?.data = user
         self.stretchyHeader?.profileButton.addTarget(self, action: #selector(profileButtonPressed(_:)), forControlEvents: .TouchUpInside)
         self.stretchyHeader?.followingButton.addTarget(self, action: #selector(followingButtonPressed(_:)), forControlEvents: .TouchUpInside)
@@ -99,5 +99,13 @@ class HomeMineController: BaseGroupedListController {
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
-
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 50
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: .Default, reuseIdentifier: "Cell")
+        return cell
+    }
 }

@@ -15,12 +15,24 @@
  */
 
 import UIKit
-import XLPagerTabStrip
 
-class HomeIndexController: BaseTableViewController {
+class FollowersItemCell: UITableViewCell {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    var user: User?
+    
+    var data: User {
+        get {
+            return self.user!
+        }
+        set(newValue) {
+            self.user = newValue
+            self.avatarImageView.sd_setImageWithURL(NSURL(string: (user!.avatar_url)!), placeholderImage: UIImage(named: "placeholder_image"))
+            self.nameLabel.text = user!.name
+            self.usernameLabel.text = "@\(user!.username!)"
+        }
     }
-
 }

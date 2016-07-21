@@ -15,37 +15,42 @@
  */
 
 import UIKit
-import ObjectMapper
+import XLPagerTabStrip
 
-class FollowingController: BaseListController<User> {
+class ArticleListController: BaseListController<Article>, IndicatorInfoProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = trans("title_home_index")
+
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0
         
-        self.tableView.registerClass(FollowingItemCell.self, forCellReuseIdentifier: "FollowingItemCell")
-        self.tableView.registerNib(UINib(nibName: "FollowingItemCell", bundle: nil), forCellReuseIdentifier: "FollowingItemCell")
+        self.tableView.registerClass(TopicItemCell.self, forCellReuseIdentifier: "ArticleItemCell")
+        self.tableView.registerNib(UINib(nibName: "ArticleItemCell", bundle: nil), forCellReuseIdentifier: "ArticleItemCell")
+        
+        self.tableView.registerClass(TopicItemCell.self, forCellReuseIdentifier: "ArticleNoImageItemCell")
+        self.tableView.registerNib(UINib(nibName: "ArticleNoImageItemCell", bundle: nil), forCellReuseIdentifier: "ArticleNoImageItemCell")
         
         self.firstRefreshing()
     }
     
     override func loadData(page: Int) {
-        let loadDataSuccess = { (pagination: Pagination, data: [User]) -> Void in
+        let loadDataSuccess = { (pagination: Pagination, data: [Article]) -> Void in
             self.loadComplete(pagination, data)
         }
-        let jsonString = "{\"status\": \"success\", \"pagination\": {}, \"data\": [{\"name\": \"痕迹\", \"username\": \"lijy91\", \"avatar_url\": \"\"},{\"name\": \"痕迹2\", \"username\": \"lijy912\", \"avatar_url\": \"\"}]}";
-        print(jsonString)
-        let result: ResultOfArray<User> = Mapper<ResultOfArray<User>>().map(jsonString)!
-        
-        loadDataSuccess(result.pagination!, result.data!)
+        Api.getArticleList(page, success: loadDataSuccess)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: FollowingItemCell = tableView.dequeueReusableCellWithIdentifier("FollowingItemCell", forIndexPath: indexPath) as! FollowingItemCell
-        
         let data = self.itemsSource[indexPath.row]
+        
+        var identifier: String = "ArticleItemCell"
+        if (data.image_url == nil || data.image_url == "") {
+            identifier = "ArticleNoImageItemCell";
+        }
+
+        let cell: ArticleItemCell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! ArticleItemCell
         
         cell.data = data
         return cell
@@ -53,12 +58,15 @@ class FollowingController: BaseListController<User> {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
-        
         let data = self.itemsSource[indexPath.row]
         
-        let controller = UserDetailController(data)
+        let controller = ArticleDetailController(data)
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func indicatorInfoForPagerTabStrip(pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return "推荐"
     }
     
 }

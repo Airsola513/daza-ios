@@ -25,6 +25,7 @@ PODS:
   - SDWebImage/Core (3.8.1)
   - SnapKit (0.15.0)
   - SVProgressHUD (2.0.3)
+  - XLPagerTabStrip (5.0.0)
 
 DEPENDENCIES:
   - 1PasswordExtension (~> 1.8.2)
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - SDWebImage (~> 3.8)
   - SnapKit (~> 0.15.0)
   - SVProgressHUD
+  - XLPagerTabStrip (~> 5.0)
 
 SPEC CHECKSUMS:
   1PasswordExtension: 303f2b7bbf6dc19ede3090bd6b5987530648d687
@@ -62,7 +64,8 @@ SPEC CHECKSUMS:
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  XLPagerTabStrip: 87b8b705f9a7178e76a063ffaa2d70045944a965
 
-PODFILE CHECKSUM: fbd09169b62a757deaceb16862bd3236271e7251
+PODFILE CHECKSUM: bbdb96697915b26780c6ca6249e0701e86a97e85
 
 COCOAPODS: 1.0.1

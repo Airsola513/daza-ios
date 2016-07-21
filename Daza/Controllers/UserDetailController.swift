@@ -18,6 +18,17 @@ import UIKit
 
 class UserDetailController: BaseTableViewController {
     
+    var user: User?
+    
+    init(_ data: User) {
+        super.init(nibName: nil, bundle: nil)
+        self.user = data
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("title_user_detail")

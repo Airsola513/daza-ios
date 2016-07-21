@@ -18,7 +18,7 @@ import UIKit
 
 class HomeController: UITabBarController {
     
-    let homeIndexController   = HomeIndexController()
+    let homeIndexController   = ArticleListController()
     let homeExploreController = HomeExploreController()
     let homeEventsController  = HomeEventsController()
     let homeMineController    = HomeMineController()
@@ -27,6 +27,8 @@ class HomeController: UITabBarController {
         super.viewDidLoad()
 
         UITabBar.appearance().tintColor = UIColor(rgba: "#37474F")
+        
+        self.tabBar.translucent = false
         
         let indexController: UINavigationController = BaseNavigationController(rootViewController: homeIndexController, statusBarStyle: .LightContent)
         indexController.tabBarItem.title = trans("title_home_index")

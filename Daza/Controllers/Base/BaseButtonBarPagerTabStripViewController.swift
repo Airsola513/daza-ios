@@ -17,10 +17,11 @@
 import UIKit
 import XLPagerTabStrip
 
-class HomeIndexController: BaseTableViewController {
+class BaseButtonBarPagerTabStripViewController: ButtonBarPagerTabStripViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
 }
+
