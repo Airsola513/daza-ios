@@ -22,7 +22,10 @@ import OnePasswordExtension
 class LoginController: BaseGroupedListController {
 
     var menuClose: UIBarButtonItem?
-    var onepasswordButton: UIButton = UIButton()
+
+    let onepasswordButton: UIButton = UIButton()
+    let forgotPasswordButton: UIButton = UIButton()
+    let submitButton: UIButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +39,10 @@ class LoginController: BaseGroupedListController {
         self.tableView!.scrollEnabled = false
 
         self.onepasswordButton.setBackgroundImage(UIImage(named: "ic_onepassword"), forState: UIControlState.Normal)
+        
+        self.onepasswordButton.addTarget(self, action: #selector(onepasswordButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        self.forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        self.submitButton.addTarget(self, action: #selector(submitButtonPressed(_:)), forControlEvents: .TouchUpInside)
 
         let dividerWidth: CGFloat = (self.tableView?.frame.width)! - 32
 
@@ -71,6 +78,7 @@ class LoginController: BaseGroupedListController {
                         }
                     }
                 <<< EmailRow() { row in
+                        row.tag = "emailRow"
                         row.placeholder = "电子邮箱"
                     }.onChange { (row) in
                         self.onepasswordButton.hidden = row.value != nil || row.value == ""
@@ -86,7 +94,6 @@ class LoginController: BaseGroupedListController {
                         }
                         // 添加onepassword按钮
                         if (OnePasswordExtension.sharedExtension().isAppExtensionAvailable()) {
-                            //                        self.btnOnepassword.addTarget(self, action: Selector("onepassword:"), forControlEvents: .TouchUpInside)
                             cell.contentView.addSubview(self.onepasswordButton)
                             self.onepasswordButton.snp_makeConstraints { (make) -> Void in
                                 make.height.equalTo(22)
@@ -97,6 +104,7 @@ class LoginController: BaseGroupedListController {
                         }
                     }
                 <<< PasswordRow() { row in
+                        row.tag = "passwordRow"
                         row.placeholder = "密码"
                     }.cellUpdate { (cell, row) in
                         let divider: UIView = UIView()
@@ -113,20 +121,19 @@ class LoginController: BaseGroupedListController {
                     }.cellUpdate { (cell, row) in
                         cell.height =  { 62 }
 
-                        let submitButton: UIButton = UIButton()
-                        cell.contentView.addSubview(submitButton)
+                        cell.contentView.addSubview(self.submitButton)
 
-                        submitButton.titleLabel?.font = UIFont.systemFontOfSize(15)
+                        self.submitButton.titleLabel?.font = UIFont.systemFontOfSize(15)
 
-                        submitButton.layer.masksToBounds = true
-                        submitButton.layer.cornerRadius = 5.0
-                        submitButton.layer.borderWidth = 1.4
-                        submitButton.layer.backgroundColor = UIColor(rgba: "#546E7A").CGColor
-                        submitButton.layer.borderColor = UIColor(rgba: "#455A64").CGColor
+                        self.submitButton.layer.masksToBounds = true
+                        self.submitButton.layer.cornerRadius = 5.0
+                        self.submitButton.layer.borderWidth = 1.4
+                        self.submitButton.layer.backgroundColor = UIColor(rgba: "#546E7A").CGColor
+                        self.submitButton.layer.borderColor = UIColor(rgba: "#455A64").CGColor
 
-                        submitButton.setTitle("登录", forState: UIControlState.Normal)
+                        self.submitButton.setTitle("登录", forState: UIControlState.Normal)
 
-                        submitButton.snp_makeConstraints { (make) -> Void in
+                        self.submitButton.snp_makeConstraints { (make) -> Void in
                             make.width.equalTo(dividerWidth)
                             make.height.equalTo(38)
                             make.centerX.equalTo(cell)
@@ -139,16 +146,14 @@ class LoginController: BaseGroupedListController {
                     }.cellUpdate { (cell, row) in
                         cell.height =  { 22 }
 
-                        let forgotPasswordButton: UIButton = UIButton()
-                        cell.contentView.addSubview(forgotPasswordButton)
+                        cell.contentView.addSubview(self.forgotPasswordButton)
 
-                        forgotPasswordButton.titleLabel?.font = UIFont.systemFontOfSize(14)
+                        self.forgotPasswordButton.titleLabel?.font = UIFont.systemFontOfSize(14)
+                        self.forgotPasswordButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+                        self.forgotPasswordButton.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Selected)
+                        self.forgotPasswordButton.setTitle("忘记密码？", forState: UIControlState.Normal)
 
-                        forgotPasswordButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
-                        forgotPasswordButton.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Selected)
-                        forgotPasswordButton.setTitle("忘记密码？", forState: UIControlState.Normal)
-
-                        forgotPasswordButton.snp_makeConstraints { (make) -> Void in
+                        self.forgotPasswordButton.snp_makeConstraints { (make) -> Void in
                             make.width.equalTo(dividerWidth)
                             make.height.equalTo(22)
                             make.centerX.equalTo(cell)
@@ -160,6 +165,40 @@ class LoginController: BaseGroupedListController {
     func clickMenuClose(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
         self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+
+    func onepasswordButtonPressed(sender: UIButton!) {
+        OnePasswordExtension.sharedExtension().findLoginForURLString(URLs.baseURL, forViewController: self, sender: sender) { (loginDictionary, error) in
+            if loginDictionary == nil {
+                if error!.code != Int(AppExtensionErrorCodeCancelledByUser) {
+                    print("Error invoking 1Password App Extension for find login: \(error)")
+                }
+                return
+            }
+            
+            self.form.setValues([
+                "emailRow": loginDictionary?[AppExtensionUsernameKey] as? String,
+                "passwordRow": loginDictionary?[AppExtensionPasswordKey] as? String
+            ])
+            self.tableView?.reloadData()
+        }
+    }
+    
+    func forgotPasswordButtonPressed(sender: UIButton) {
+        let controller = ResetPasswordController()
+        controller.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func submitButtonPressed(sender: UIButton) {
+        let values = form.values()
+        let email = values["emailRow"] as! String
+        let password = values["passwordRow"] as! String
+
+        Api.login(email, password) { (data) in
+            print(data)
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
 }

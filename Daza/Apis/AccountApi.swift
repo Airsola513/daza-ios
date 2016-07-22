@@ -40,7 +40,12 @@ extension Api {
         ]
         self.request(.POST, URL, parameters).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
             let value = response.result.value
-            success(data: (value?.data)!)
+            
+            let data = (value?.data)!
+            
+            Auth.user(data)
+            
+            success(data: data)
         }
     }
     

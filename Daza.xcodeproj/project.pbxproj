@@ -109,6 +109,8 @@
 		F5F29B5A1D36A1A700071F04 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F29B591D36A1A700071F04 /* BaseViewController.swift */; };
 		F5F29B5C1D36A33B00071F04 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F29B5B1D36A33B00071F04 /* AboutController.swift */; };
 		F5FC7D8A1D41F96000C6CB17 /* UserRelationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FC7D891D41F96000C6CB17 /* UserRelationship.swift */; };
+		F5FC7D8C1D427A9C00C6CB17 /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FC7D8B1D427A9C00C6CB17 /* ResetPasswordController.swift */; };
+		F5FC7D8E1D427AD500C6CB17 /* ModifyPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FC7D8D1D427AD500C6CB17 /* ModifyPasswordController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -244,6 +246,8 @@
 		F5F29B591D36A1A700071F04 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F5F29B5B1D36A33B00071F04 /* AboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
 		F5FC7D891D41F96000C6CB17 /* UserRelationship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRelationship.swift; sourceTree = "<group>"; };
+		F5FC7D8B1D427A9C00C6CB17 /* ResetPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
+		F5FC7D8D1D427AD500C6CB17 /* ModifyPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyPasswordController.swift; sourceTree = "<group>"; };
 		FC6C9DB5D25909607728FCB2 /* Pods-DazaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DazaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DazaUITests/Pods-DazaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -313,6 +317,8 @@
 				F519183C1D337C540012897F /* TweetCreateController.swift */,
 				F519183D1D337C540012897F /* TweetDetailController.swift */,
 				F51918421D33E8150012897F /* UserDetailController.swift */,
+				F5FC7D8B1D427A9C00C6CB17 /* ResetPasswordController.swift */,
+				F5FC7D8D1D427AD500C6CB17 /* ModifyPasswordController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -863,8 +869,10 @@
 				87A9E6EDF344AF2E9A0A2343 /* EventComment.swift in Sources */,
 				F5F23E3B1D329FE200234104 /* Model.swift in Sources */,
 				87A9EBE7A069F7FA29B9AE27 /* Notification.swift in Sources */,
+				F5FC7D8E1D427AD500C6CB17 /* ModifyPasswordController.swift in Sources */,
 				F5F23E3D1D32A55B00234104 /* RegisterController.swift in Sources */,
 				F5D41DD51D3B2BCC0055195C /* NotificationsController.swift in Sources */,
+				F5FC7D8C1D427A9C00C6CB17 /* ResetPasswordController.swift in Sources */,
 				F5D41DD31D38E2650055195C /* EventItemCell.swift in Sources */,
 				F51918241D33621F0012897F /* BaseTableViewController.swift in Sources */,
 				F51918431D33E8150012897F /* UserDetailController.swift in Sources */,

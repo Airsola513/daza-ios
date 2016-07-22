@@ -49,11 +49,15 @@ class SettingsController: BaseGroupedListController {
             +++ Section()
                 <<< ButtonRow() { row in
                         row.title = "退出"
+                        row.hidden = Auth.check() ? false : true
                     }.cellUpdate { (cell, row) in
                         cell.textLabel?.textColor = UIColor.redColor()
                     }.onCellSelection { (cell, row) in
-                        print("Click Logout")
+                        Auth.user(nil)
+                        row.hidden = true
+                        row.updateCell()
                     }
+        
     }
 
 }

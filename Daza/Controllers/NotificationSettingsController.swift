@@ -28,6 +28,8 @@ class NotificationSettingsController: BaseGroupedListController {
                         row.title = "接收推送通知"
                     }.cellUpdate { (cell, row) in
                         cell.detailTextLabel?.text = "未开启"
+                    }.onCellSelection { (cell, row) in
+                        UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
                     }
             +++ Section("通知项目")
                 <<< SwitchRow() { row in

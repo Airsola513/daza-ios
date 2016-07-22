@@ -14,26 +14,14 @@
  * limitations under the License.
  */
 
-//import RealmSwift
-import ObjectMapper
+import UIKit
+import Eureka
 
-class UserRelationship: Model {
+class ResetPasswordController: BaseGroupedListController {
     
-    var user_id: Int?           // 用户Id
-    var target_user_id: Int?    // 目标用户Id
-    var user: User?
-    var target_user: User?
-    
-    required init?(_ map: Map) {
-        super.init(map)
-    }
-    
-    override func mapping(map: Map) {
-        super.mapping(map)
-        user_id         <- map["user_id"]
-        target_user_id  <- map["target_user_id"]
-        user            <- map["user"]
-        target_user     <- map["target_user"]
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
     }
     
 }

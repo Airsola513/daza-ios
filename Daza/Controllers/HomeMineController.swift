@@ -30,10 +30,13 @@ class HomeMineController: BaseTableViewController {
         super.viewDidLoad()
         self.title = trans("title_home_mine")
         
-        let user: User = Mapper<User>().map("{}")!
+        var user: User = Mapper<User>().map("{}")!
         user.name = "痕迹"
         user.username = "lijy91"
         user.avatar_url = ""
+        if (Auth.check()) {
+            user = Auth.user()!
+        }
 
         self.stretchyHeader = HomeMineHeaderView.instanceFromNib()
         self.stretchyHeader?.data = user
@@ -89,13 +92,13 @@ class HomeMineController: BaseTableViewController {
     }
     
     func followingButtonPressed(sender: UIButton!) {
-        let controller = FollowingController()
+        let controller = FollowingController(Auth.user())
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func followersButtonPressed(sender: UIButton!) {
-        let controller = FollowersController()
+        let controller = FollowersController(Auth.user())
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }

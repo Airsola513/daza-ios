@@ -14,19 +14,34 @@
  * limitations under the License.
  */
 
-import UIKit
+import ObjectMapper
 
 class Auth {
 
     static func check() -> Bool {
-        return false
+        return user() != nil
     }
     
     static func user() -> User? {
+        let standardUserDefaults = NSUserDefaults.standardUserDefaults()
+        let jsonString = standardUserDefaults.stringForKey("auth.user")
+        if (jsonString != nil && jsonString != "") {
+            let user: User? = Mapper<User>().map(jsonString!)
+            return user
+        }
         return nil
+    }
+    
+    static func user(user: User?) {
+        let standardUserDefaults = NSUserDefaults.standardUserDefaults()
+        let jsonString = user == nil ? "" : Mapper<User>().toJSONString(user!, prettyPrint: false)
+        standardUserDefaults.setValue(jsonString, forKey: "auth.user")
     }
 
     static func id() -> Int {
+        if (user() != nil) {
+            return (user()?.id)!
+        }
         return 0
     }
 }

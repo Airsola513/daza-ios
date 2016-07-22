@@ -17,7 +17,14 @@
 import UIKit
 import ObjectMapper
 
-class FollowingController: BaseListController<User> {
+class FollowingController: BaseListController<UserRelationship> {
+    
+    var user: User?
+    
+    init(_ data: User?) {
+        super.init()
+        self.user = data
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +39,10 @@ class FollowingController: BaseListController<User> {
     }
     
     override func loadData(page: Int) {
-        let loadDataSuccess = { (pagination: Pagination, data: [User]) -> Void in
+        let loadDataSuccess = { (pagination: Pagination, data: [UserRelationship]) -> Void in
             self.loadComplete(pagination, data)
         }
-        let jsonString = "{\"status\": \"success\", \"pagination\": {}, \"data\": [{\"name\": \"痕迹\", \"username\": \"lijy91\", \"avatar_url\": \"\"},{\"name\": \"痕迹2\", \"username\": \"lijy912\", \"avatar_url\": \"\"}]}";
-        print(jsonString)
-        let result: ResultOfArray<User> = Mapper<ResultOfArray<User>>().map(jsonString)!
-        
-        loadDataSuccess(result.pagination!, result.data!)
+        Api.following(page, userId: user!.id!, success: loadDataSuccess)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -47,7 +50,7 @@ class FollowingController: BaseListController<User> {
         
         let data = self.itemsSource[indexPath.row]
         
-        cell.data = data
+        cell.data = data.target_user!
         return cell
     }
     
@@ -56,7 +59,7 @@ class FollowingController: BaseListController<User> {
         
         let data = self.itemsSource[indexPath.row]
         
-        let controller = UserDetailController(data)
+        let controller = UserDetailController(data.target_user)
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }

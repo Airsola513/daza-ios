@@ -26,5 +26,27 @@ extension Api {
             success(data: (value?.data)!)
         }
     }
+    
+    static func followers(page: Int, userId: Int, success: (pagination: Pagination, data: [UserRelationship]) -> Void) {
+        let URL = URLs.apiURL + "/users/\(userId)/followers";
+        let parameters: [String: AnyObject] = [
+            "page": page,
+        ]
+        self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<UserRelationship>, NSError>) in
+            let value = response.result.value
+            success(pagination: (value?.pagination)!, data: (value?.data)!)
+        }
+    }
+    
+    static func following(page: Int, userId: Int, success: (pagination: Pagination, data: [UserRelationship]) -> Void) {
+        let URL = URLs.apiURL + "/users/\(userId)/following";
+        let parameters: [String: AnyObject] = [
+            "page": page,
+        ]
+        self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<UserRelationship>, NSError>) in
+            let value = response.result.value
+            success(pagination: (value?.pagination)!, data: (value?.data)!)
+        }
+    }
 
 }
