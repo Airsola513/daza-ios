@@ -95,7 +95,7 @@
                     <integer key="value" value="220"/>
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="number" keyPath="minimumContentHeight">
-                    <integer key="value" value="64"/>
+                    <integer key="value" value="0"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>

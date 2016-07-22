@@ -59,7 +59,7 @@ class ArticleListController: BaseListController<Article>, IndicatorInfoProvider 
         if (data.image_url == nil || data.image_url == "") {
             identifier = "ArticleNoImageItemCell";
         } else {
-            if (indexPath.row < 100) {
+            if (indexPath.row < 10) {
                 identifier = "ArticleBigImageItemCell";
             }
         }

@@ -33,10 +33,8 @@ class TopicDetailController: BaseListController<Article> {
         self.title = trans("title_topic_detail")
         
         self.stretchyHeader = TopicDetailHeaderView.instanceFromNib()
-        self.stretchyHeader?.minimumContentHeight = 64
         self.stretchyHeader!.data = self.topic!
         self.tableView!.addSubview(self.stretchyHeader!)
-        self.tableView!.mj_header.frame.size.height = 100
         
         self.menuShare = UIBarButtonItem(image: UIImage(named: "ic_menu_share"), style: .Plain, target: self, action: #selector(shareButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuShare

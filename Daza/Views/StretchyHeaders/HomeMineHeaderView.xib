@@ -125,7 +125,7 @@
                     <real key="value" value="245"/>
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="number" keyPath="minimumContentHeight">
-                    <real key="value" value="245"/>
+                    <integer key="value" value="44"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>

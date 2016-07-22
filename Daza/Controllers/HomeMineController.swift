@@ -36,7 +36,6 @@ class HomeMineController: BaseTableViewController {
         user.avatar_url = ""
 
         self.stretchyHeader = HomeMineHeaderView.instanceFromNib()
-        self.stretchyHeader?.minimumContentHeight = 28 + 8 + 8
         self.stretchyHeader?.data = user
         self.stretchyHeader?.profileButton.addTarget(self, action: #selector(editProfileButtonPressed(_:)), forControlEvents: .TouchUpInside)
         self.stretchyHeader?.followingButton.addTarget(self, action: #selector(followingButtonPressed(_:)), forControlEvents: .TouchUpInside)
