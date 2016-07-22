@@ -15,11 +15,18 @@
  */
 
 import UIKit
+import XLPagerTabStrip
 
-class BaseTableViewController: UITableViewController {
+class BaseTableViewController: UITableViewController, IndicatorInfoProvider {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    // MARK: - IndicatorInfoProvider
+    
+    func indicatorInfoForPagerTabStrip(pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return "TEST"
     }
 
 }

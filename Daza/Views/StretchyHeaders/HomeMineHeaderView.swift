@@ -32,6 +32,7 @@ class HomeMineHeaderView: GSKStretchyHeaderView {
     @IBOutlet weak var followingButton: UIButton!
     @IBOutlet weak var followersCountLabel: UILabel!
     @IBOutlet weak var followersButton: UIButton!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var user: User?
     

@@ -17,7 +17,7 @@
 import UIKit
 import Eureka
 
-class ProfileController: BaseGroupedListController {
+class EditProfileController: BaseGroupedListController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

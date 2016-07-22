@@ -19,6 +19,13 @@ import XLPagerTabStrip
 
 class ArticleListController: BaseListController<Article>, IndicatorInfoProvider {
     
+    var category: Category?
+    
+//    init(category: Category) {
+//        super.init()
+//        self.category = category;
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("title_home_index")
@@ -73,7 +80,11 @@ class ArticleListController: BaseListController<Article>, IndicatorInfoProvider 
     }
     
     func indicatorInfoForPagerTabStrip(pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "推荐"
+        if (self.category != nil) {
+            let categoryName: String = (self.category!.name)!
+            return IndicatorInfo(title: categoryName)
+        }
+        return "N/A"
     }
     
 }

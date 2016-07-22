@@ -41,6 +41,7 @@ class TopicDetailHeaderView: GSKStretchyHeaderView {
             self.nameLabel.text = topic!.name
             self.descriptionLabel.text = topic!.description!
             self.coverImageView.sd_setImageWithURL(NSURL(string: (topic!.image_url)!), placeholderImage: UIImage(named: "placeholder_image"))
+            self.subscriberCountButton.setTitle("\(self.topic!.subscriber_count)订阅", forState: UIControlState.Normal)
         }
     }
 

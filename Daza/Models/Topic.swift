@@ -27,7 +27,6 @@ class Topic: Model {
     var image_url: String?          // 图片网址
     var description: String?        // 描述
     var source_format: String?      // 文章来源格式 = ['atom', 'rss']
-    var source_program: String?     // 文章来源程序 = ['wordpress', 'jekyll', 'ghost', 'hexo', 'typecho', 'farbox']
     var source_link: String?        // 文章来源链接
     var article_count: Int = 0      // 文章数
     var subscriber_count: Int = 0   // 订阅数
@@ -45,7 +44,6 @@ class Topic: Model {
         image_url           <- map["image_url"]
         description         <- map["description"]
         source_format       <- map["source_format"]
-        source_program      <- map["source_program"]
         source_link         <- map["source_link"]
         article_count       <- map["article_count"]
         subscriber_count    <- map["subscriber_count"]

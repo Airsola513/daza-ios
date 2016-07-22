@@ -85,7 +85,7 @@
 		F5A2B5821D3CEC690031AF83 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A2B5811D3CEC690031AF83 /* UIColorExtension.swift */; };
 		F5B5D5E91D3F2B16009EE5AD /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5D5E81D3F2B16009EE5AD /* UIApplicationExtension.swift */; };
 		F5B5D5EB1D3F4B97009EE5AD /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5D5EA1D3F4B97009EE5AD /* AccountController.swift */; };
-		F5B5D5ED1D3F53AE009EE5AD /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5D5EC1D3F53AE009EE5AD /* ProfileController.swift */; };
+		F5B5D5ED1D3F53AE009EE5AD /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5D5EC1D3F53AE009EE5AD /* EditProfileController.swift */; };
 		F5D41DC91D38DDF00055195C /* TopicItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D41DC81D38DDF00055195C /* TopicItemCell.swift */; };
 		F5D41DCB1D38E1430055195C /* TopicItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D41DCA1D38E1430055195C /* TopicItemCell.xib */; };
 		F5D41DCD1D38E2370055195C /* ArticleItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D41DCC1D38E2370055195C /* ArticleItemCell.xib */; };
@@ -108,6 +108,7 @@
 		F5F29B581D360D7100071F04 /* ResultOfArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F29B571D360D7100071F04 /* ResultOfArray.swift */; };
 		F5F29B5A1D36A1A700071F04 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F29B591D36A1A700071F04 /* BaseViewController.swift */; };
 		F5F29B5C1D36A33B00071F04 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F29B5B1D36A33B00071F04 /* AboutController.swift */; };
+		F5FC7D8A1D41F96000C6CB17 /* UserRelationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FC7D891D41F96000C6CB17 /* UserRelationship.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -217,7 +218,7 @@
 		F5A2B5811D3CEC690031AF83 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		F5B5D5E81D3F2B16009EE5AD /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		F5B5D5EA1D3F4B97009EE5AD /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
-		F5B5D5EC1D3F53AE009EE5AD /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		F5B5D5EC1D3F53AE009EE5AD /* EditProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
 		F5D41DC81D38DDF00055195C /* TopicItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicItemCell.swift; sourceTree = "<group>"; };
 		F5D41DCA1D38E1430055195C /* TopicItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicItemCell.xib; sourceTree = "<group>"; };
 		F5D41DCC1D38E2370055195C /* ArticleItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleItemCell.xib; sourceTree = "<group>"; };
@@ -242,6 +243,7 @@
 		F5F29B571D360D7100071F04 /* ResultOfArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultOfArray.swift; sourceTree = "<group>"; };
 		F5F29B591D36A1A700071F04 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F5F29B5B1D36A33B00071F04 /* AboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
+		F5FC7D891D41F96000C6CB17 /* UserRelationship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRelationship.swift; sourceTree = "<group>"; };
 		FC6C9DB5D25909607728FCB2 /* Pods-DazaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DazaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DazaUITests/Pods-DazaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -292,6 +294,7 @@
 				F51918311D33677B0012897F /* ArticleListController.swift */,
 				F51918221D33621F0012897F /* Base */,
 				F519184B1D34BB310012897F /* BrowserController.swift */,
+				F5B5D5EC1D3F53AE009EE5AD /* EditProfileController.swift */,
 				F5342F0D1D3FB0E10076BBF8 /* FollowersController.swift */,
 				F5342F0F1D3FB0F50076BBF8 /* FollowingController.swift */,
 				F5F23E3E1D32A59800234104 /* HomeController.swift */,
@@ -302,7 +305,6 @@
 				87A9E29C83BFF3795EE8716E /* LoginController.swift */,
 				F5D41DD41D3B2BCC0055195C /* NotificationsController.swift */,
 				F514AE891D4104ED00A68590 /* NotificationSettingsController.swift */,
-				F5B5D5EC1D3F53AE009EE5AD /* ProfileController.swift */,
 				F5F23E3C1D32A55B00234104 /* RegisterController.swift */,
 				F51918401D33E48C0012897F /* SearchController.swift */,
 				F5F23E401D32A5EA00234104 /* SettingsController.swift */,
@@ -342,6 +344,7 @@
 				87A9EE96890D245D5AB59524 /* TweetLike.swift */,
 				87A9E6FBE730848C0539CFAB /* User.swift */,
 				F5D41DDC1D3B3D300055195C /* UserPointRecord.swift */,
+				F5FC7D891D41F96000C6CB17 /* UserRelationship.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -853,6 +856,7 @@
 				F5715BC81D353F0000F1CBE5 /* AssetsApi.swift in Sources */,
 				F519184E1D34DA310012897F /* NSObjectExtension.swift in Sources */,
 				87A9E137F2134802C2C6A256 /* ArticleLike.swift in Sources */,
+				F5FC7D8A1D41F96000C6CB17 /* UserRelationship.swift in Sources */,
 				F5338A1A1D35490B00B3D44F /* URLs.swift in Sources */,
 				87A9EE9289CE563FA8632840 /* EventMember.swift in Sources */,
 				F5715BC91D353F0000F1CBE5 /* EventsApi.swift in Sources */,
@@ -876,7 +880,7 @@
 				F5F23E411D32A5EA00234104 /* SettingsController.swift in Sources */,
 				F5715BCD1D353F0000F1CBE5 /* TweetsApi.swift in Sources */,
 				F519182D1D3364F80012897F /* UIViewControllerExtension.swift in Sources */,
-				F5B5D5ED1D3F53AE009EE5AD /* ProfileController.swift in Sources */,
+				F5B5D5ED1D3F53AE009EE5AD /* EditProfileController.swift in Sources */,
 				F519182F1D33668D0012897F /* BaseNavigationController.swift in Sources */,
 				F5A2B5801D3B82810031AF83 /* ErrorHandler.swift in Sources */,
 				F5342F0E1D3FB0E10076BBF8 /* FollowersController.swift in Sources */,

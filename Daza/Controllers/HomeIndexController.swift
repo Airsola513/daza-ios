@@ -15,12 +15,64 @@
  */
 
 import UIKit
+import ObjectMapper
 import XLPagerTabStrip
 
-class HomeIndexController: BaseTableViewController {
+class HomeIndexController: ButtonBarPagerTabStripViewController {
     
     override func viewDidLoad() {
+        // set up style before super view did load is executed
+        settings.style.buttonBarBackgroundColor = .clearColor()
+        settings.style.selectedBarBackgroundColor = .clearColor()
+        //-
         super.viewDidLoad()
+        
+        self.containerView.frame = CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height)
+        
+        self.changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+            guard changeCurrentIndex == true else { return }
+            
+            oldCell?.label.textColor = UIColor(white: 1, alpha: 0.6)
+            newCell?.label.textColor = .whiteColor()
+            
+            if animated {
+                UIView.animateWithDuration(0.1, animations: { () -> Void in
+                    newCell?.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                    oldCell?.transform = CGAffineTransformMakeScale(0.8, 0.8)
+                })
+            }
+            else {
+                newCell?.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                oldCell?.transform = CGAffineTransformMakeScale(0.8, 0.8)
+            }
+        }
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.buttonBarView.removeFromSuperview()
+        self.navigationController?.navigationBar.addSubview(buttonBarView)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.buttonBarView.removeFromSuperview()
+    }
+    
+    // MARK: - PagerTabStripDataSource
+    
+    override func viewControllersForPagerTabStrip(pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+        
+        var childViewControllers: [UIViewController] = []
+        
+        
+        childViewControllers.append(ArticleListController())
+        
+        return childViewControllers
+    }
+    
+    override func configureCell(cell: ButtonBarViewCell, indicatorInfo: IndicatorInfo) {
+        super.configureCell(cell, indicatorInfo: indicatorInfo)
+        cell.backgroundColor = .clearColor()
+    }
 }

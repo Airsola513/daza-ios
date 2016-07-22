@@ -65,13 +65,6 @@
                     <rect key="frame" x="0.0" y="244" width="375" height="1"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiL-9R-uSW">
-                    <rect key="frame" x="31" y="166" width="52" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <state key="normal" title="正在关注">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkA-ZE-fi1">
                     <rect key="frame" x="12" y="171" width="11" height="21"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
@@ -115,6 +108,13 @@
                             <color key="value" red="0.21568627450980393" green="0.27843137254901962" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiL-9R-uSW">
+                    <rect key="frame" x="31" y="166" width="52" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="正在关注">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -172,6 +172,7 @@
                 <outlet property="followingCountLabel" destination="DkA-ZE-fi1" id="yNZ-51-vo8"/>
                 <outlet property="nameLabel" destination="kMC-NH-8E8" id="4Ik-4z-1hD"/>
                 <outlet property="profileButton" destination="mVh-Tl-krr" id="yNc-0W-NtF"/>
+                <outlet property="segmentedControl" destination="wtd-pN-35O" id="dhe-nZ-12b"/>
                 <outlet property="usernameLabel" destination="ezi-pc-J0f" id="ofu-LO-ZLY"/>
             </connections>
             <point key="canvasLocation" x="224.5" y="-0.5"/>

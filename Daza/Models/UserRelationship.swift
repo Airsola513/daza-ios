@@ -14,14 +14,22 @@
  * limitations under the License.
  */
 
-import UIKit
-import XLPagerTabStrip
+//import RealmSwift
+import ObjectMapper
 
-class BaseButtonBarPagerTabStripViewController: ButtonBarPagerTabStripViewController {
+class UserRelationship: Model {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var user_id: Int?           // 用户Id
+    var target_user_id: Int?    // 文章Id
+    
+    required init?(_ map: Map) {
+        super.init(map)
     }
-
+    
+    override func mapping(map: Map) {
+        super.mapping(map)
+        user_id         <- map["user_id"]
+        target_user_id  <- map["target_user_id"]
+    }
+    
 }
-

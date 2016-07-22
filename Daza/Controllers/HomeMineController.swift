@@ -17,6 +17,7 @@
 import UIKit
 import ObjectMapper
 import GSKStretchyHeaderView
+import XLPagerTabStrip
 
 class HomeMineController: BaseTableViewController {
 
@@ -37,11 +38,13 @@ class HomeMineController: BaseTableViewController {
         self.stretchyHeader = HomeMineHeaderView.instanceFromNib()
         self.stretchyHeader?.minimumContentHeight = 64
         self.stretchyHeader?.data = user
-        self.stretchyHeader?.profileButton.addTarget(self, action: #selector(profileButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        self.stretchyHeader?.profileButton.addTarget(self, action: #selector(editProfileButtonPressed(_:)), forControlEvents: .TouchUpInside)
         self.stretchyHeader?.followingButton.addTarget(self, action: #selector(followingButtonPressed(_:)), forControlEvents: .TouchUpInside)
         self.stretchyHeader?.followersButton.addTarget(self, action: #selector(followersButtonPressed(_:)), forControlEvents: .TouchUpInside)
 //        self.stretchyHeader!.stretchDelegate = self
-        self.tableView!.addSubview(self.stretchyHeader!)
+//        self.segmentedControl = self.stretchyHeader?.segmentedControl
+        self.tableView.addSubview(self.stretchyHeader!)
+//        self.containerView.addSubview(self.segmentedControl)
         
         self.menuNotifications = UIBarButtonItem(image: UIImage(named: "ic_menu_notifications"), style: .Plain, target: self, action: #selector(notificationsButtonPressed(_:)))
         self.navigationItem.leftBarButtonItem = self.menuNotifications
@@ -82,8 +85,8 @@ class HomeMineController: BaseTableViewController {
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
-    func profileButtonPressed(sender: UIButton!) {
-        let controller = ProfileController()
+    func editProfileButtonPressed(sender: UIButton!) {
+        let controller = EditProfileController()
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
@@ -108,4 +111,5 @@ class HomeMineController: BaseTableViewController {
         let cell: UITableViewCell = UITableViewCell(style: .Default, reuseIdentifier: "Cell")
         return cell
     }
+    
 }
