@@ -20,146 +20,146 @@ import Eureka
 import OnePasswordExtension
 
 class LoginController: BaseGroupedListController {
-    
+
     var menuClose: UIBarButtonItem?
     var onepasswordButton: UIButton = UIButton()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("title_login")
-        
+
         self.menuClose = UIBarButtonItem(image: UIImage(named: "ic_menu_close"), style: .Plain, target: self, action: #selector(clickMenuClose(_:)))
         self.navigationItem.leftBarButtonItem = self.menuClose
-        
+
         self.tableView!.backgroundColor = UIColor.whiteColor()
         self.tableView!.separatorStyle = .None
         self.tableView!.scrollEnabled = false
-        
+
         self.onepasswordButton.setBackgroundImage(UIImage(named: "ic_onepassword"), forState: UIControlState.Normal)
-        
+
         let dividerWidth: CGFloat = (self.tableView?.frame.width)! - 32
 
-        form +++ Section()
-            <<< LabelRow() { row in
-                row.title = "欢迎回来"
-                row.cellStyle = .Subtitle
-                }.cellUpdate({ (cell, row) in
-                    cell.textLabel?.font = UIFont.boldSystemFontOfSize(16)
-                    cell.detailTextLabel?.textColor = UIColor.grayColor()
-                    cell.detailTextLabel?.font = UIFont.systemFontOfSize(14)
-                    cell.detailTextLabel?.text = "用邮箱登录，看看之前都错过了什么好文章吧。"
-                    
-                    cell.textLabel?.snp_makeConstraints{ (make) -> Void in
-                        make.centerX.equalTo(cell.contentView)
-                        make.top.equalTo(16)
-                    }
-                    cell.detailTextLabel?.snp_makeConstraints{ (make) -> Void in
-                        make.top.equalTo((cell.textLabel?.snp_bottom)!).inset(-5)
-                        make.centerX.equalTo(cell.contentView)
-                    }
-                    cell.height =  { 72 }
-                    
-                    let divider: UIView = UIView()
-                    divider.backgroundColor = UIColor(rgba: "#e6e7e8")
-                    cell.contentView.addSubview(divider)
-                    divider.snp_makeConstraints { (make) -> Void in
-                        make.width.equalTo(dividerWidth)
-                        make.bottom.equalTo(0)
-                        make.height.equalTo(1)
-                        make.centerX.equalTo(cell)
-                    }
-                })
-            <<< EmailRow() { row in
-                row.placeholder = "电子邮箱"
-                }.onChange { (row) in
-                    self.onepasswordButton.hidden = row.value != nil || row.value == ""
-                }.cellUpdate({ (cell, row) in
-                    let divider: UIView = UIView()
-                    divider.backgroundColor = UIColor(rgba: "#e6e7e8")
-                    cell.contentView.addSubview(divider)
-                    divider.snp_makeConstraints { (make) -> Void in
-                        make.width.equalTo(dividerWidth)
-                        make.bottom.equalTo(0)
-                        make.height.equalTo(1)
-                        make.centerX.equalTo(cell)
-                    }
-                    // 添加onepassword按钮
-                    if (OnePasswordExtension.sharedExtension().isAppExtensionAvailable()) {
-                        //                        self.btnOnepassword.addTarget(self, action: Selector("onepassword:"), forControlEvents: .TouchUpInside)
-                        cell.contentView.addSubview(self.onepasswordButton)
-                        self.onepasswordButton.snp_makeConstraints { (make) -> Void in
-                            make.height.equalTo(22)
-                            make.width.equalTo(22)
-                            make.right.equalTo(cell.textField).inset(4)
-                            make.centerY.equalTo(cell.textField)
+        form
+            +++ Section()
+                <<< LabelRow() { row in
+                        row.title = "欢迎回来"
+                        row.cellStyle = .Subtitle
+                    }.cellUpdate { (cell, row) in
+                        cell.textLabel?.font = UIFont.boldSystemFontOfSize(16)
+                        cell.detailTextLabel?.textColor = UIColor.grayColor()
+                        cell.detailTextLabel?.font = UIFont.systemFontOfSize(14)
+                        cell.detailTextLabel?.text = "用邮箱登录，看看之前都错过了什么好文章吧。"
+
+                        cell.textLabel?.snp_makeConstraints{ (make) -> Void in
+                            make.centerX.equalTo(cell.contentView)
+                            make.top.equalTo(16)
+                        }
+                        cell.detailTextLabel?.snp_makeConstraints{ (make) -> Void in
+                            make.top.equalTo((cell.textLabel?.snp_bottom)!).inset(-5)
+                            make.centerX.equalTo(cell.contentView)
+                        }
+                        cell.height =  { 72 }
+
+                        let divider: UIView = UIView()
+                        divider.backgroundColor = UIColor(rgba: "#e6e7e8")
+                        cell.contentView.addSubview(divider)
+                        divider.snp_makeConstraints { (make) -> Void in
+                            make.width.equalTo(dividerWidth)
+                            make.bottom.equalTo(0)
+                            make.height.equalTo(1)
+                            make.centerX.equalTo(cell)
                         }
                     }
-                })
-            <<< PasswordRow() { row in
-                row.placeholder = "密码"
-                }.cellUpdate({ (cell, row) in
-                    let divider: UIView = UIView()
-                    divider.backgroundColor = UIColor(rgba: "#e6e7e8")
-                    cell.contentView.addSubview(divider)
-                    divider.snp_makeConstraints { (make) -> Void in
-                        make.width.equalTo(dividerWidth)
-                        make.bottom.equalTo(0)
-                        make.height.equalTo(1)
-                        make.centerX.equalTo(cell)
+                <<< EmailRow() { row in
+                        row.placeholder = "电子邮箱"
+                    }.onChange { (row) in
+                        self.onepasswordButton.hidden = row.value != nil || row.value == ""
+                    }.cellUpdate { (cell, row) in
+                        let divider: UIView = UIView()
+                        divider.backgroundColor = UIColor(rgba: "#e6e7e8")
+                        cell.contentView.addSubview(divider)
+                        divider.snp_makeConstraints { (make) -> Void in
+                            make.width.equalTo(dividerWidth)
+                            make.bottom.equalTo(0)
+                            make.height.equalTo(1)
+                            make.centerX.equalTo(cell)
+                        }
+                        // 添加onepassword按钮
+                        if (OnePasswordExtension.sharedExtension().isAppExtensionAvailable()) {
+                            //                        self.btnOnepassword.addTarget(self, action: Selector("onepassword:"), forControlEvents: .TouchUpInside)
+                            cell.contentView.addSubview(self.onepasswordButton)
+                            self.onepasswordButton.snp_makeConstraints { (make) -> Void in
+                                make.height.equalTo(22)
+                                make.width.equalTo(22)
+                                make.right.equalTo(cell.textField).inset(4)
+                                make.centerY.equalTo(cell.textField)
+                            }
+                        }
                     }
-                })
-            <<< LabelRow() { row in
-                }.cellUpdate({ (cell, row) in
-                    cell.height =  { 62 }
-
-                    let submitButton: UIButton = UIButton()
-                    cell.contentView.addSubview(submitButton)
-                    
-                    submitButton.titleLabel?.font = UIFont.systemFontOfSize(15)
-                    
-                    submitButton.layer.masksToBounds = true
-                    submitButton.layer.cornerRadius = 5.0
-                    submitButton.layer.borderWidth = 1.4
-                    submitButton.layer.backgroundColor = UIColor(rgba: "#546E7A").CGColor
-                    submitButton.layer.borderColor = UIColor(rgba: "#455A64").CGColor
-                    
-                    submitButton.setTitle("登录", forState: UIControlState.Normal)
-                    
-                    submitButton.snp_makeConstraints { (make) -> Void in
-                        make.width.equalTo(dividerWidth)
-                        make.height.equalTo(38)
-                        make.centerX.equalTo(cell)
-                        make.centerY.equalTo(cell)
-                        make.top.equalTo(12)
-                        make.bottom.equalTo(12)
+                <<< PasswordRow() { row in
+                        row.placeholder = "密码"
+                    }.cellUpdate { (cell, row) in
+                        let divider: UIView = UIView()
+                        divider.backgroundColor = UIColor(rgba: "#e6e7e8")
+                        cell.contentView.addSubview(divider)
+                        divider.snp_makeConstraints { (make) -> Void in
+                            make.width.equalTo(dividerWidth)
+                            make.bottom.equalTo(0)
+                            make.height.equalTo(1)
+                            make.centerX.equalTo(cell)
+                        }
                     }
-                })
-            <<< LabelRow() { row in
-                
-                }.cellUpdate({ (cell, row) in
-                    cell.height =  { 22 }
+                <<< LabelRow() { row in
+                    }.cellUpdate { (cell, row) in
+                        cell.height =  { 62 }
 
-                    let forgotPasswordButton: UIButton = UIButton()
-                    cell.contentView.addSubview(forgotPasswordButton)
-                    
-                    forgotPasswordButton.titleLabel?.font = UIFont.systemFontOfSize(14)
+                        let submitButton: UIButton = UIButton()
+                        cell.contentView.addSubview(submitButton)
 
-                    forgotPasswordButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
-                    forgotPasswordButton.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Selected)
-                    forgotPasswordButton.setTitle("忘记密码？", forState: UIControlState.Normal)
-                    
-                    forgotPasswordButton.snp_makeConstraints { (make) -> Void in
-                        make.width.equalTo(dividerWidth)
-                        make.height.equalTo(22)
-                        make.centerX.equalTo(cell)
-                        make.centerY.equalTo(cell)
+                        submitButton.titleLabel?.font = UIFont.systemFontOfSize(15)
+
+                        submitButton.layer.masksToBounds = true
+                        submitButton.layer.cornerRadius = 5.0
+                        submitButton.layer.borderWidth = 1.4
+                        submitButton.layer.backgroundColor = UIColor(rgba: "#546E7A").CGColor
+                        submitButton.layer.borderColor = UIColor(rgba: "#455A64").CGColor
+
+                        submitButton.setTitle("登录", forState: UIControlState.Normal)
+
+                        submitButton.snp_makeConstraints { (make) -> Void in
+                            make.width.equalTo(dividerWidth)
+                            make.height.equalTo(38)
+                            make.centerX.equalTo(cell)
+                            make.centerY.equalTo(cell)
+                            make.top.equalTo(12)
+                            make.bottom.equalTo(12)
+                        }
                     }
-                })
+                <<< LabelRow() { row in
+                    }.cellUpdate { (cell, row) in
+                        cell.height =  { 22 }
+
+                        let forgotPasswordButton: UIButton = UIButton()
+                        cell.contentView.addSubview(forgotPasswordButton)
+
+                        forgotPasswordButton.titleLabel?.font = UIFont.systemFontOfSize(14)
+
+                        forgotPasswordButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+                        forgotPasswordButton.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Selected)
+                        forgotPasswordButton.setTitle("忘记密码？", forState: UIControlState.Normal)
+
+                        forgotPasswordButton.snp_makeConstraints { (make) -> Void in
+                            make.width.equalTo(dividerWidth)
+                            make.height.equalTo(22)
+                            make.centerX.equalTo(cell)
+                            make.centerY.equalTo(cell)
+                        }
+                    }
     }
-    
+
     func clickMenuClose(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
-    
+
 }

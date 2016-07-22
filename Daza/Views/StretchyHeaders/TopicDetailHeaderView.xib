@@ -99,10 +99,10 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="maximumContentHeight">
-                    <real key="value" value="245"/>
+                    <integer key="value" value="223"/>
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="number" keyPath="minimumContentHeight">
-                    <real key="value" value="245"/>
+                    <integer key="value" value="64"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>

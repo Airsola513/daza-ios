@@ -30,21 +30,19 @@ class HomeMineController: BaseTableViewController {
         super.viewDidLoad()
         self.title = trans("title_home_mine")
         
-        var user: User = Mapper<User>().map("{}")!
+        let user: User = Mapper<User>().map("{}")!
         user.name = "痕迹"
         user.username = "lijy91"
         user.avatar_url = ""
 
         self.stretchyHeader = HomeMineHeaderView.instanceFromNib()
-        self.stretchyHeader?.minimumContentHeight = 64
+        self.stretchyHeader?.minimumContentHeight = 28 + 8 + 8
         self.stretchyHeader?.data = user
         self.stretchyHeader?.profileButton.addTarget(self, action: #selector(editProfileButtonPressed(_:)), forControlEvents: .TouchUpInside)
         self.stretchyHeader?.followingButton.addTarget(self, action: #selector(followingButtonPressed(_:)), forControlEvents: .TouchUpInside)
         self.stretchyHeader?.followersButton.addTarget(self, action: #selector(followersButtonPressed(_:)), forControlEvents: .TouchUpInside)
-//        self.stretchyHeader!.stretchDelegate = self
-//        self.segmentedControl = self.stretchyHeader?.segmentedControl
-        self.tableView.addSubview(self.stretchyHeader!)
-//        self.containerView.addSubview(self.segmentedControl)
+
+        self.tableView!.addSubview(self.stretchyHeader!)
         
         self.menuNotifications = UIBarButtonItem(image: UIImage(named: "ic_menu_notifications"), style: .Plain, target: self, action: #selector(notificationsButtonPressed(_:)))
         self.navigationItem.leftBarButtonItem = self.menuNotifications

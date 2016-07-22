@@ -36,7 +36,6 @@ class TopicDetailController: BaseListController<Article> {
         self.stretchyHeader?.minimumContentHeight = 64
         self.stretchyHeader!.data = self.topic!
         self.tableView!.insertSubview(self.stretchyHeader!, atIndex: 0)
-//        self.tableView!.addSubview(self.stretchyHeader!)
         self.tableView!.mj_header.frame.size.height = 100
         
         self.menuShare = UIBarButtonItem(image: UIImage(named: "ic_menu_share"), style: .Plain, target: self, action: #selector(shareButtonPressed(_:)))
