@@ -20,7 +20,7 @@ class RegisterController: BaseGroupedListController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("title_register")
+        self.title = trans("register.title")
     }
     
 }

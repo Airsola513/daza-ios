@@ -29,7 +29,7 @@ class LoginController: BaseGroupedListController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("title_login")
+        self.title = trans("login.title")
 
         self.menuClose = UIBarButtonItem(image: UIImage(named: "ic_menu_close"), style: .Plain, target: self, action: #selector(clickMenuClose(_:)))
         self.navigationItem.leftBarButtonItem = self.menuClose
@@ -40,6 +40,19 @@ class LoginController: BaseGroupedListController {
 
         self.onepasswordButton.setBackgroundImage(UIImage(named: "ic_onepassword"), forState: UIControlState.Normal)
         
+        self.submitButton.titleLabel?.font = UIFont.systemFontOfSize(15)
+        self.submitButton.layer.masksToBounds = true
+        self.submitButton.layer.cornerRadius = 5.0
+        self.submitButton.layer.borderWidth = 1.4
+        self.submitButton.layer.backgroundColor = UIColor(rgba: "#546E7A").CGColor
+        self.submitButton.layer.borderColor = UIColor(rgba: "#455A64").CGColor
+        self.submitButton.setTitle(trans("login.submit.title"), forState: UIControlState.Normal)
+        
+        self.forgotPasswordButton.titleLabel?.font = UIFont.systemFontOfSize(14)
+        self.forgotPasswordButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+        self.forgotPasswordButton.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Selected)
+        self.forgotPasswordButton.setTitle(trans("login.forgot_password.title"), forState: UIControlState.Normal)
+        
         self.onepasswordButton.addTarget(self, action: #selector(onepasswordButtonPressed(_:)), forControlEvents: .TouchUpInside)
         self.forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonPressed(_:)), forControlEvents: .TouchUpInside)
         self.submitButton.addTarget(self, action: #selector(submitButtonPressed(_:)), forControlEvents: .TouchUpInside)
@@ -49,13 +62,13 @@ class LoginController: BaseGroupedListController {
         form
             +++ Section()
                 <<< LabelRow() { row in
-                        row.title = "欢迎回来"
+                        row.title = trans("login.welcome_back.title")
                         row.cellStyle = .Subtitle
                     }.cellUpdate { (cell, row) in
                         cell.textLabel?.font = UIFont.boldSystemFontOfSize(16)
                         cell.detailTextLabel?.textColor = UIColor.grayColor()
                         cell.detailTextLabel?.font = UIFont.systemFontOfSize(14)
-                        cell.detailTextLabel?.text = "用邮箱登录，看看之前都错过了什么好文章吧。"
+                        cell.detailTextLabel?.text = self.trans("login.welcome_back.subtitle")
 
                         cell.textLabel?.snp_makeConstraints{ (make) -> Void in
                             make.centerX.equalTo(cell.contentView)
@@ -79,7 +92,7 @@ class LoginController: BaseGroupedListController {
                     }
                 <<< EmailRow() { row in
                         row.tag = "emailRow"
-                        row.placeholder = "电子邮箱"
+                        row.placeholder = trans("login.email.placeholder")
                     }.onChange { (row) in
                         self.onepasswordButton.hidden = row.value != nil || row.value == ""
                     }.cellUpdate { (cell, row) in
@@ -105,7 +118,7 @@ class LoginController: BaseGroupedListController {
                     }
                 <<< PasswordRow() { row in
                         row.tag = "passwordRow"
-                        row.placeholder = "密码"
+                        row.placeholder = trans("login.password.placeholder")
                     }.cellUpdate { (cell, row) in
                         let divider: UIView = UIView()
                         divider.backgroundColor = UIColor(rgba: "#e6e7e8")
@@ -123,16 +136,6 @@ class LoginController: BaseGroupedListController {
 
                         cell.contentView.addSubview(self.submitButton)
 
-                        self.submitButton.titleLabel?.font = UIFont.systemFontOfSize(15)
-
-                        self.submitButton.layer.masksToBounds = true
-                        self.submitButton.layer.cornerRadius = 5.0
-                        self.submitButton.layer.borderWidth = 1.4
-                        self.submitButton.layer.backgroundColor = UIColor(rgba: "#546E7A").CGColor
-                        self.submitButton.layer.borderColor = UIColor(rgba: "#455A64").CGColor
-
-                        self.submitButton.setTitle("登录", forState: UIControlState.Normal)
-
                         self.submitButton.snp_makeConstraints { (make) -> Void in
                             make.width.equalTo(dividerWidth)
                             make.height.equalTo(38)
@@ -147,11 +150,6 @@ class LoginController: BaseGroupedListController {
                         cell.height =  { 22 }
 
                         cell.contentView.addSubview(self.forgotPasswordButton)
-
-                        self.forgotPasswordButton.titleLabel?.font = UIFont.systemFontOfSize(14)
-                        self.forgotPasswordButton.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
-                        self.forgotPasswordButton.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Selected)
-                        self.forgotPasswordButton.setTitle("忘记密码？", forState: UIControlState.Normal)
 
                         self.forgotPasswordButton.snp_makeConstraints { (make) -> Void in
                             make.width.equalTo(dividerWidth)

@@ -34,6 +34,13 @@ class HomeMineHeaderView: GSKStretchyHeaderView {
     @IBOutlet weak var followersButton: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.profileButton.setTitle(trans("home.mine.modify_profile.title"), forState: .Normal)
+        self.followingButton.setTitle(trans("home.mine.following.title"), forState: .Normal)
+        self.followersButton.setTitle(trans("home.mine.followers.title"), forState: .Normal)
+    }
+    
     var user: User?
     
     var data: User {

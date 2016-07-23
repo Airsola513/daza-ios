@@ -28,6 +28,7 @@ class FollowersController: BaseListController<UserRelationship> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = trans("user_followers.title")
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0

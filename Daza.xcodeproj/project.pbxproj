@@ -85,7 +85,7 @@
 		F5A2B5821D3CEC690031AF83 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A2B5811D3CEC690031AF83 /* UIColorExtension.swift */; };
 		F5B5D5E91D3F2B16009EE5AD /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5D5E81D3F2B16009EE5AD /* UIApplicationExtension.swift */; };
 		F5B5D5EB1D3F4B97009EE5AD /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5D5EA1D3F4B97009EE5AD /* AccountController.swift */; };
-		F5B5D5ED1D3F53AE009EE5AD /* EditProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5D5EC1D3F53AE009EE5AD /* EditProfileController.swift */; };
+		F5B5D5ED1D3F53AE009EE5AD /* ModifyProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5D5EC1D3F53AE009EE5AD /* ModifyProfileController.swift */; };
 		F5D41DC91D38DDF00055195C /* TopicItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D41DC81D38DDF00055195C /* TopicItemCell.swift */; };
 		F5D41DCB1D38E1430055195C /* TopicItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D41DCA1D38E1430055195C /* TopicItemCell.xib */; };
 		F5D41DCD1D38E2370055195C /* ArticleItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D41DCC1D38E2370055195C /* ArticleItemCell.xib */; };
@@ -224,7 +224,7 @@
 		F5A2B5811D3CEC690031AF83 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		F5B5D5E81D3F2B16009EE5AD /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		F5B5D5EA1D3F4B97009EE5AD /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
-		F5B5D5EC1D3F53AE009EE5AD /* EditProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileController.swift; sourceTree = "<group>"; };
+		F5B5D5EC1D3F53AE009EE5AD /* ModifyProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyProfileController.swift; sourceTree = "<group>"; };
 		F5D41DC81D38DDF00055195C /* TopicItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicItemCell.swift; sourceTree = "<group>"; };
 		F5D41DCA1D38E1430055195C /* TopicItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicItemCell.xib; sourceTree = "<group>"; };
 		F5D41DCC1D38E2370055195C /* ArticleItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleItemCell.xib; sourceTree = "<group>"; };
@@ -306,7 +306,7 @@
 				F51918311D33677B0012897F /* ArticleListController.swift */,
 				F51918221D33621F0012897F /* Base */,
 				F519184B1D34BB310012897F /* BrowserController.swift */,
-				F5B5D5EC1D3F53AE009EE5AD /* EditProfileController.swift */,
+				F5B5D5EC1D3F53AE009EE5AD /* ModifyProfileController.swift */,
 				F5FC7D971D43A7BD00C6CB17 /* EventDetailController.swift */,
 				F5342F0D1D3FB0E10076BBF8 /* FollowersController.swift */,
 				F5342F0F1D3FB0F50076BBF8 /* FollowingController.swift */,
@@ -424,8 +424,8 @@
 		F5342F111D3FB5770076BBF8 /* StretchyHeaders */ = {
 			isa = PBXGroup;
 			children = (
-				F5342F161D3FB5920076BBF8 /* HomeMineHeaderView.xib */,
 				F5342F171D3FB5920076BBF8 /* HomeMineHeaderView.swift */,
+				F5342F161D3FB5920076BBF8 /* HomeMineHeaderView.xib */,
 				F5342F121D3FB5770076BBF8 /* TopicDetailHeaderView.swift */,
 				F5342F131D3FB5770076BBF8 /* TopicDetailHeaderView.xib */,
 			);
@@ -902,7 +902,7 @@
 				F5F23E411D32A5EA00234104 /* SettingsController.swift in Sources */,
 				F5715BCD1D353F0000F1CBE5 /* TweetsApi.swift in Sources */,
 				F519182D1D3364F80012897F /* UIViewControllerExtension.swift in Sources */,
-				F5B5D5ED1D3F53AE009EE5AD /* EditProfileController.swift in Sources */,
+				F5B5D5ED1D3F53AE009EE5AD /* ModifyProfileController.swift in Sources */,
 				F519182F1D33668D0012897F /* BaseNavigationController.swift in Sources */,
 				F5A2B5801D3B82810031AF83 /* ErrorHandler.swift in Sources */,
 				F5342F0E1D3FB0E10076BBF8 /* FollowersController.swift in Sources */,

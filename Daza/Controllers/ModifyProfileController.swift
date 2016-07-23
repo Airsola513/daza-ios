@@ -17,21 +17,21 @@
 import UIKit
 import Eureka
 
-class EditProfileController: BaseGroupedListController {
+class ModifyProfileController: BaseGroupedListController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("title_profile")
+        self.title = trans("modify_profile.title")
 
         form
             +++ Section()
                 <<< ImageRow() { row in
-                        row.title = "头像"
+                        row.title = trans("modify_profile.avatar.title")
                     }
             +++ Section()
                 <<< TextRow() { row in
-                        row.title = "姓名"
-                        row.placeholder = "添加你的姓名"
+                        row.title = trans("modify_profile.name.title")
+                        row.placeholder = trans("modify_profile.name.placeholder")
                         row.textFieldPercentage = 0.7
                     }.cellUpdate { (cell, row) in
                         cell.textField.textAlignment = .Left
@@ -54,21 +54,21 @@ class EditProfileController: BaseGroupedListController {
 //                        cell.textField.textAlignment = .Left
 //                    }
                 <<< TextRow() { row in
-                        row.title = "城市"
-                        row.placeholder = "添加你的城市"
+                        row.title = trans("modify_profile.city.title")
+                        row.placeholder = trans("modify_profile.city.placeholder")
                         row.textFieldPercentage = 0.7
                     }.cellUpdate { (cell, row) in
                         cell.textField.textAlignment = .Left
                     }
                 <<< TextRow() { row in
-                        row.title = "网站"
-                        row.placeholder = "添加你的网站"
+                        row.title = trans("modify_profile.website.title")
+                        row.placeholder = trans("modify_profile.website.placeholder")
                         row.textFieldPercentage = 0.7
                     }.cellUpdate { (cell, row) in
                         cell.textField.textAlignment = .Left
                     }
                 <<< TextAreaRow() { row in
-                        row.placeholder = "在你的个人资料页中添加简介"
+                        row.placeholder = trans("modify_profile.bio.placeholder")
                     }
 
     }

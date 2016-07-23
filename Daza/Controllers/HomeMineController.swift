@@ -28,7 +28,7 @@ class HomeMineController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("title_home_mine")
+        self.title = trans("home.mine.title")
         
         var user: User = Mapper<User>().map("{}")!
         user.name = "痕迹"
@@ -40,7 +40,7 @@ class HomeMineController: BaseTableViewController {
 
         self.stretchyHeader = HomeMineHeaderView.instanceFromNib()
         self.stretchyHeader?.data = user
-        self.stretchyHeader?.profileButton.addTarget(self, action: #selector(editProfileButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        self.stretchyHeader?.profileButton.addTarget(self, action: #selector(modifyProfileButtonPressed(_:)), forControlEvents: .TouchUpInside)
         self.stretchyHeader?.followingButton.addTarget(self, action: #selector(followingButtonPressed(_:)), forControlEvents: .TouchUpInside)
         self.stretchyHeader?.followersButton.addTarget(self, action: #selector(followersButtonPressed(_:)), forControlEvents: .TouchUpInside)
 
@@ -85,8 +85,8 @@ class HomeMineController: BaseTableViewController {
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
-    func editProfileButtonPressed(sender: UIButton!) {
-        let controller = EditProfileController()
+    func modifyProfileButtonPressed(sender: UIButton!) {
+        let controller = ModifyProfileController()
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }

@@ -20,7 +20,7 @@ class HomeEventsController: BaseListController<Event> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("title_home_events")
+        self.title = trans("home.events.title")
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0

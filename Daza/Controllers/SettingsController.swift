@@ -21,26 +21,26 @@ class SettingsController: BaseGroupedListController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("title_settings")
+        self.title = trans("settings.title")
         
         form
             +++ Section()
                 <<< ButtonRow() { row in
-                        row.title = "推送消息设置"
+                        row.title = trans("settings.notifications.title")
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { NotificationSettingsController() }), completionCallback: nil)
                     }
             +++ Section()
                 <<< ButtonRow() { row in
-                        row.title = "账号与安全"
+                        row.title = trans("settings.account.title")
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { AccountController() }), completionCallback: nil)
                     }
             +++ Section()
                 <<< ButtonRow() { row in
-                        row.title = "意见反馈"
+                        row.title = trans("settings.feedback.title")
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
                     }
                 <<< ButtonRow() { row in
-                        row.title = "关于"
+                        row.title = trans("settings.about.title")
                         row.cellStyle = .Value1
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { AboutController() }), completionCallback: nil)
                     }.cellUpdate { (cell, row) in
@@ -48,7 +48,7 @@ class SettingsController: BaseGroupedListController {
                     }
             +++ Section()
                 <<< ButtonRow() { row in
-                        row.title = "退出"
+                        row.title = trans("settings.logout.title")
                         row.hidden = Auth.check() ? false : true
                     }.cellUpdate { (cell, row) in
                         cell.textLabel?.textColor = UIColor.redColor()

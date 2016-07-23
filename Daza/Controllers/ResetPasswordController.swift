@@ -21,6 +21,7 @@ class ResetPasswordController: BaseGroupedListController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = trans("reset_password.title")
         
     }
     

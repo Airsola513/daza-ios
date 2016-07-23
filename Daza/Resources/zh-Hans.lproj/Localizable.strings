@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-"APP_NAME" = "DAZA";
+"APP_NAME" = "Daza";
 
 // MJRefresh
 "MJRefreshHeaderIdleText" = "下拉刷新";
@@ -25,35 +25,97 @@
 "MJRefreshAutoFooterRefreshingText" = "加载中...";
 "MJRefreshAutoFooterNoMoreDataText" = "暂无更多数据";
 
+// General
+"general.yes" = "Yes";
+"general.no" = "No";
+"general.ok" = "OK";
+"general.cancel" = "Cancel";
+
 // Home
-"title_home_index" = "首页";
-"title_home_explore" = "探索";
-"title_home_events" = "活动";
-"title_home_mine" = "我的";
+"home.index.title" = "首页";
+"home.explore.title" = "探索";
+"home.events.title" = "活动";
+"home.mine.title" = "我的";
+
+// >> Home mine
+"home.mine.modify_profile.title" = "编辑个人资料";
+"home.mine.following.title" = "正在关注";
+"home.mine.followers.title" = "关注者";
+"home.mine.tabs.articles.title" = "文章";
+"home.mine.tabs.topics.title" = "主题";
+"home.mine.tabs.favorites.title" = "收藏";
+
+// Settings
+"settings.title" = "设置";
+
+"settings.notifications.title" = "推送消息设置";
+"settings.notifications.push_notification.title" = "接收推送通知";
+"settings.notifications.push_notification.footer" = "请在 iPhone 的 \"设置\" - \"通知\" 中进行设置。";
+
+"settings.notifications.itmes.header" = "接收通知";
+"settings.notifications.itmes.at_me" = "@我的";
+"settings.notifications.itmes.likes" = "喜欢";
+"settings.notifications.itmes.comments" = "评论";
+"settings.notifications.itmes.other" = "其他";
+
+"settings.account.title" = "账号与安全";
+"settings.account.modify_email.title" = "邮箱";
+"settings.account.modify_mobile.title" = "手机号";
+"settings.account.modify_password.title" = "修改账号密码";
+"settings.account.bind_wechat.title" = "微信账号";
+"settings.account.bind_weibo.title" = "微博账号";
+"settings.account.bind_github.title" = "GitHub 账号";
+
+"settings.feedback.title" = "意见反馈";
+"settings.about.title" = "关于 Daza";
+"settings.logout.title" = "退出";
+
 // Account
-"title_register" = "注册";
-"title_login" = "登录";
-"title_account" = "账号与安全";
-"title_profile" = "个人资料";
+
+// >> Register
+"register.title" = "注册";
+
+// >> Login
+"login.title" = "登录";
+"login.welcome_back.title" = "欢迎回来";
+"login.welcome_back.subtitle" = "用邮箱登录，看看之前都错过了什么好文章吧。";
+"login.email.placeholder" = "邮箱";
+"login.password.placeholder" = "密码";
+"login.submit.title" = "登录";
+"login.forgot_password.title" = "忘记密码？";
+
+// >> Modify profile
+"modify_profile.title" = "修改个人资料";
+"modify_profile.avatar.title" = "头像";
+"modify_profile.name.title" = "姓名";
+"modify_profile.name.placeholder" = "添加你的姓名";
+"modify_profile.city.title" = "城市";
+"modify_profile.city.placeholder" = "添加你的城市";
+"modify_profile.website.title" = "网站";
+"modify_profile.website.placeholder" = "添加你的网站";
+"modify_profile.bio.placeholder" = "在你的个人资料页中添加简介";
+
+// >> Reset password
+"reset_password.title" = "重置你的密码";
+
 // Users
-"title_user_detail" = "用户资料";
+
+// >> User detail
+"user_detail.title" = "用户资料";
+// >> User following
+"user_following.title" = "正在关注";
+// >> User followers
+"user_followers.title" = "关注者";
+
 // Topics
-"title_topic_create" = "创建主题";
-"title_topic_detail" = "主题详情";
+
+// >> Topic detail
+"topic_detail.title" = "主题详情";
+
+// Articles
+
 // Articles
 "title_article_create" = "创建文章";
 "title_article_detail" = "文章详情";
 "title_article_likes" = "文章喜欢者";
 "title_article_comments" = "文章评论";
-
-"title_search" = "搜索";
-"title_settings" = "设置";
-"title_about" = "关于";
-
-"home_mine_my_topics" = "我的主题";
-"home_mine_my_favorites" = "我的收藏";
-"home_mine_my_notifications" = "我的通知";
-
-"settings_item_notification" = "推送通知";
-"settings_item_feedback" = "意见反馈";
-"settings_item_about" = "关于 DAZA";

@@ -22,7 +22,7 @@ class HomeExploreController: BaseListController<Topic> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("title_home_explore")
+        self.title = trans("home.explore.title")
         
         self.menuSearch = UIBarButtonItem(image: UIImage(named: "ic_menu_search"), style: .Plain, target: self, action: #selector(searchButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuSearch

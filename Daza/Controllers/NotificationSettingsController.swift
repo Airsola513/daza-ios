@@ -21,25 +21,29 @@ class NotificationSettingsController: BaseGroupedListController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = trans("settings.notifications.title")
 
         form
-            +++ Section(footer: "请在 iPhone 的 \"设置\" - \"通知\" 中进行设置。")
+            +++ Section(footer: trans("settings.notifications.push_notification.footer"))
                 <<< LabelRow() { row in
-                        row.title = "接收推送通知"
+                        row.title = trans("settings.notifications.push_notification.title")
                     }.cellUpdate { (cell, row) in
                         cell.detailTextLabel?.text = "未开启"
                     }.onCellSelection { (cell, row) in
                         UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
                     }
-            +++ Section("通知项目")
+            +++ Section(trans("settings.notifications.itmes.header"))
                 <<< SwitchRow() { row in
-                        row.title = "主题"
+                        row.title = trans("settings.notifications.itmes.at_me")
                     }
                 <<< SwitchRow() { row in
-                        row.title = "文章"
+                        row.title = trans("settings.notifications.itmes.likes")
                     }
                 <<< SwitchRow() { row in
-                        row.title = "系统消息"
+                        row.title = trans("settings.notifications.itmes.comments")
+                    }
+                <<< SwitchRow() { row in
+                        row.title = trans("settings.notifications.itmes.other")
                     }
     }
 

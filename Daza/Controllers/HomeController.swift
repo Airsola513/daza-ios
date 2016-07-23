@@ -29,22 +29,22 @@ class HomeController: UITabBarController {
         UITabBar.appearance().tintColor = UIColor(rgba: "#37474F")
         
         let indexController: UINavigationController = BaseNavigationController(rootViewController: homeIndexController, statusBarStyle: .LightContent)
-        indexController.tabBarItem.title = trans("title_home_index")
+        indexController.tabBarItem.title = trans("home.index.title")
         indexController.tabBarItem.image = UIImage(named: "ic_tab_home")
         self.addChildViewController(indexController)
         
         let exploreController: UINavigationController = BaseNavigationController(rootViewController: homeExploreController, statusBarStyle: .LightContent)
-        exploreController.tabBarItem.title = trans("title_home_explore")
+        exploreController.tabBarItem.title = trans("home.explore.title")
         exploreController.tabBarItem.image = UIImage(named: "ic_tab_explore")
         self.addChildViewController(exploreController)
         
         let eventsController: UINavigationController = BaseNavigationController(rootViewController: homeEventsController, statusBarStyle: .LightContent)
-        eventsController.tabBarItem.title = trans("title_home_events")
+        eventsController.tabBarItem.title = trans("home.events.title")
         eventsController.tabBarItem.image = UIImage(named: "ic_tab_event")
         self.addChildViewController(eventsController)
         
         let mineController: UINavigationController = BaseNavigationController(rootViewController: homeMineController, statusBarStyle: .LightContent)
-        mineController.tabBarItem.title = trans("title_home_mine")
+        mineController.tabBarItem.title = trans("home.mine.title")
         mineController.tabBarItem.image = UIImage(named: "ic_tab_mine")
         self.addChildViewController(mineController)
     }

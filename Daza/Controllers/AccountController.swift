@@ -21,26 +21,26 @@ class AccountController: BaseGroupedListController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("title_account")
+        self.title = trans("settings.account.title")
         
         form
             +++ Section()
                 <<< ButtonRow() { row in
-                        row.title = "邮箱"
+                        row.title = trans("settings.account.modify_email.title")
                         row.cellStyle = .Value1
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
                     }.cellUpdate { (cell, row) in
                         cell.detailTextLabel?.text = "未设置"
                     }
                 <<< ButtonRow() { row in
-                        row.title = "手机号"
+                        row.title = trans("settings.account.modify_mobile.title")
                         row.cellStyle = .Value1
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
                     }.cellUpdate { (cell, row) in
                         cell.detailTextLabel?.text = "未设置"
                     }
                 <<< ButtonRow() { row in
-                        row.title = "修改账号密码"
+                        row.title = trans("settings.account.modify_password.title")
                         row.cellStyle = .Value1
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
                     }.cellUpdate { (cell, row) in
@@ -48,19 +48,19 @@ class AccountController: BaseGroupedListController {
                     }
             +++ Section()
                 <<< SwitchRow() { row in
-                        row.title = "微信账号"
+                        row.title = trans("settings.account.bind_wechat.title")
                         row.cellStyle = .Subtitle
                     }.cellUpdate { (cell, row) in
                         cell.detailTextLabel?.text = "未设置"
                     }
                 <<< SwitchRow() { row in
-                        row.title = "微博账号"
+                        row.title = trans("settings.account.bind_weibo.title")
                         row.cellStyle = .Subtitle
                     }.cellUpdate { (cell, row) in
                         cell.detailTextLabel?.text = "未设置"
                     }
                 <<< SwitchRow() { row in
-                        row.title = "GitHub 账号"
+                        row.title = trans("settings.account.bind_github.title")
                         row.cellStyle = .Subtitle
                     }.cellUpdate { (cell, row) in
                         cell.detailTextLabel?.text = "未设置"
