@@ -24,27 +24,20 @@ class HomeMineController: BaseTableViewController {
     var menuNotifications: UIBarButtonItem?
     var menuSettings: UIBarButtonItem?
     
-    var stretchyHeader: HomeMineHeaderView?
+    var stretchyHeader: HomeMineHeaderView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("home.mine.title")
-        
-        var user: User = Mapper<User>().map("{}")!
-        user.name = "痕迹"
-        user.username = "lijy91"
-        user.avatar_url = ""
-        if (Auth.check()) {
-            user = Auth.user()!
-        }
 
         self.stretchyHeader = HomeMineHeaderView.instanceFromNib()
-        self.stretchyHeader?.data = user
-        self.stretchyHeader?.profileButton.addTarget(self, action: #selector(modifyProfileButtonPressed(_:)), forControlEvents: .TouchUpInside)
-        self.stretchyHeader?.followingButton.addTarget(self, action: #selector(followingButtonPressed(_:)), forControlEvents: .TouchUpInside)
-        self.stretchyHeader?.followersButton.addTarget(self, action: #selector(followersButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        self.stretchyHeader.updateIfNeeded()
+        self.stretchyHeader.nameButton.addTarget(self, action: #selector(nameButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        self.stretchyHeader.modifyProfileButton.addTarget(self, action: #selector(modifyProfileButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        self.stretchyHeader.followingButton.addTarget(self, action: #selector(followingButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        self.stretchyHeader.followersButton.addTarget(self, action: #selector(followersButtonPressed(_:)), forControlEvents: .TouchUpInside)
 
-        self.tableView!.addSubview(self.stretchyHeader!)
+        self.tableView!.addSubview(self.stretchyHeader)
         
         self.menuNotifications = UIBarButtonItem(image: UIImage(named: "ic_menu_notifications"), style: .Plain, target: self, action: #selector(notificationsButtonPressed(_:)))
         self.navigationItem.leftBarButtonItem = self.menuNotifications
@@ -52,6 +45,7 @@ class HomeMineController: BaseTableViewController {
         self.menuSettings = UIBarButtonItem(image: UIImage(named: "ic_menu_settings"), style: .Plain, target: self, action: #selector(settingsButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuSettings
 
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(loginStatusChanged(_:)), name: "LoginStatusChangedEvent", object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -85,6 +79,17 @@ class HomeMineController: BaseTableViewController {
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
+    func nameButtonPressed(sender: UIButton!) {
+        if (!Auth.check()) {
+            let controller: BaseNavigationController = BaseNavigationController(rootViewController: LoginController())
+            self.presentViewController(controller, animated: true, completion: nil)
+            return
+        }
+        let controller = UserDetailController(Auth.user())
+        controller.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
     func modifyProfileButtonPressed(sender: UIButton!) {
         let controller = ModifyProfileController()
         controller.hidesBottomBarWhenPushed = true
@@ -110,6 +115,12 @@ class HomeMineController: BaseTableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: .Default, reuseIdentifier: "Cell")
         return cell
+    }
+    
+    
+    // 我的问题列表发生变化
+    @objc func loginStatusChanged(notification: NSNotification) {
+        self.stretchyHeader?.updateIfNeeded()
     }
     
 }

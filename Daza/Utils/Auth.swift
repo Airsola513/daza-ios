@@ -22,7 +22,7 @@ class Auth {
         return user() != nil
     }
     
-    static func user() -> User? {
+    static func user() -> User! {
         let standardUserDefaults = NSUserDefaults.standardUserDefaults()
         let jsonString = standardUserDefaults.stringForKey("auth.user")
         if (jsonString != nil && jsonString != "") {
@@ -37,7 +37,7 @@ class Auth {
         let jsonString = user == nil ? "" : Mapper<User>().toJSONString(user!, prettyPrint: false)
         standardUserDefaults.setValue(jsonString, forKey: "auth.user")
         
-        // NSNotificationCenter.defaultCenter().postNotificationName("", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("LoginStatusChangedEvent", object: nil)
     }
 
     static func id() -> Int {

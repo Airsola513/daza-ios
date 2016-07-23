@@ -25,8 +25,8 @@ class HomeMineHeaderView: GSKStretchyHeaderView {
 
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var profileButton: UIButton!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var modifyProfileButton: UIButton!
+    @IBOutlet weak var nameButton: UIButton!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var followingCountLabel: UILabel!
     @IBOutlet weak var followingButton: UIButton!
@@ -36,23 +36,33 @@ class HomeMineHeaderView: GSKStretchyHeaderView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.profileButton.setTitle(trans("home.mine.modify_profile.title"), forState: .Normal)
+        self.modifyProfileButton.setTitle(trans("home.mine.modify_profile.title"), forState: .Normal)
         self.followingButton.setTitle(trans("home.mine.following.title"), forState: .Normal)
         self.followersButton.setTitle(trans("home.mine.followers.title"), forState: .Normal)
     }
     
-    var user: User?
+    var user: User!
     
-    var data: User {
+    var data: User! {
         get {
-            return self.user!
+            return self.user
         }
         set(newValue) {
             self.user = newValue
-            self.nameLabel.text = user!.name
-            self.usernameLabel.text = "@\(user!.username!)"
-            self.avatarImageView.sd_setImageWithURL(NSURL(string: (user!.avatar_url)!), placeholderImage: UIImage(named: "placeholder_image"))
+            if (Auth.check()) {
+                self.nameButton.setTitle(user.name, forState: UIControlState.Normal)
+                self.usernameLabel.text = "@\(user!.username!)"
+                self.avatarImageView.sd_setImageWithURL(NSURL(string: (user!.avatar_url)!), placeholderImage: UIImage(named: "placeholder_image"))
+            } else {
+                self.nameButton.setTitle(trans("home.mine.name.not_logged.title"), forState: UIControlState.Normal)
+                self.usernameLabel.text = ""
+                self.avatarImageView.sd_setImageWithURL(NSURL(string: ""), placeholderImage: UIImage(named: "placeholder_image"))
+            }
         }
+    }
+    
+    func updateIfNeeded() {
+        self.data = Auth.user()
     }
 
 

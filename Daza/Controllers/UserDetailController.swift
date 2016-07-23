@@ -18,9 +18,9 @@ import UIKit
 
 class UserDetailController: BaseTableViewController {
     
-    var user: User?
+    var user: User!
     
-    init(_ data: User?) {
+    init(_ data: User!) {
         super.init(nibName: nil, bundle: nil)
         self.user = data
     }

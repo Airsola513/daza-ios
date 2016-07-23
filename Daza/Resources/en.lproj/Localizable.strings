@@ -30,6 +30,7 @@
 
 // >> Home mine
 "home.mine.modify_profile.title" = "Modify profile";
+"home.mine.name.not_logged.title" = "Login/Register";
 "home.mine.following.title" = "Following";
 "home.mine.followers.title" = "Followers";
 "home.mine.tabs.articles.title" = "Articles";

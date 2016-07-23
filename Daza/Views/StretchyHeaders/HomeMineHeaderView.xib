@@ -33,12 +33,13 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMC-NH-8E8">
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNk-7F-9Zf">
                             <rect key="frame" x="12" y="78" width="70" height="21"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                            <state key="normal" title="N/A">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" fixedFrame="YES" text="@N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezi-pc-J0f">
                             <rect key="frame" x="12" y="100" width="70" height="16"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
@@ -135,8 +136,8 @@
                 <outlet property="followersCountLabel" destination="8bz-rf-ve4" id="oxP-NJ-ElO"/>
                 <outlet property="followingButton" destination="HiL-9R-uSW" id="vyR-5N-nUJ"/>
                 <outlet property="followingCountLabel" destination="DkA-ZE-fi1" id="yNZ-51-vo8"/>
-                <outlet property="nameLabel" destination="kMC-NH-8E8" id="4Ik-4z-1hD"/>
-                <outlet property="profileButton" destination="mVh-Tl-krr" id="yNc-0W-NtF"/>
+                <outlet property="modifyProfileButton" destination="mVh-Tl-krr" id="gVn-f6-hRC"/>
+                <outlet property="nameButton" destination="zNk-7F-9Zf" id="h1d-K0-FlN"/>
                 <outlet property="segmentedControl" destination="wtd-pN-35O" id="dhe-nZ-12b"/>
                 <outlet property="usernameLabel" destination="ezi-pc-J0f" id="ofu-LO-ZLY"/>
             </connections>

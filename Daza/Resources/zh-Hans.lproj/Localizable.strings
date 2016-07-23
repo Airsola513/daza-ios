@@ -39,6 +39,7 @@
 
 // >> Home mine
 "home.mine.modify_profile.title" = "编辑个人资料";
+"home.mine.name.not_logged.title" = "登录/注册";
 "home.mine.following.title" = "正在关注";
 "home.mine.followers.title" = "关注者";
 "home.mine.tabs.articles.title" = "文章";
