@@ -19,9 +19,9 @@ import ObjectMapper
 
 class EventMember: Model {
     
-    var user_id: Int?        // 用户Id
-    var event_id: Int?       // 活动Id
-    var joined_at: String?   // 加入时间
+    var user_id: Int!        // 用户Id
+    var event_id: Int!       // 活动Id
+    var joined_at: String!   // 加入时间
     
     required init?(_ map: Map) {
         super.init(map)

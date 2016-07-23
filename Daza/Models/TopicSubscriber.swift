@@ -19,8 +19,8 @@ import ObjectMapper
 
 class TopicSubscriber: Model {
     
-    var user_id: Int?       // 用户Id
-    var topic_id: Int?      // 主题Id
+    var user_id: Int!       // 用户Id
+    var topic_id: Int!      // 主题Id
     
     required init?(_ map: Map) {
         super.init(map)

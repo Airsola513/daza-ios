@@ -22,17 +22,17 @@ class Model: Mappable {
     var dateFormatterTransform: DateFormatterTransform {
         get {
             let dateFormatter = NSDateFormatter()
-            dateFormatter.locale = NSLocale(localeIdentifier: "zh_CN")
+            dateFormatter.locale = NSLocale.systemLocale()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            dateFormatter.timeZone = NSTimeZone(name: "UTC")
+            dateFormatter.timeZone = NSTimeZone.systemTimeZone()
             return DateFormatterTransform(dateFormatter: dateFormatter)
         }
     }
  
-    var id: Int?
-    var deleted_at: NSDate?
-    var created_at: NSDate?
-    var updated_at: NSDate?
+    var id: Int!
+    var deleted_at: NSDate!
+    var created_at: NSDate!
+    var updated_at: NSDate!
     
     required init?(_ map: Map) {
     }

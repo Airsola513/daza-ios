@@ -19,20 +19,20 @@ import ObjectMapper
 
 class Event: Model {
     
-    var user_id: Int?            // 用户Id
-    var title: String?           // 标题
-    var content: String?         // 内容
-    var start_at: String?        // 开始时间
-    var end_at: String?          // 结束时间
-    var organizer: String?       // 主办方
-    var organizer_link: String?  // 主办方链接
-    var city: String?            // 城市
-    var location: String?        // 位置
-    var longitude: Double?       // 经度
-    var latitude: Double?        // 纬度
-    var like_count: Int?         // 喜欢数
-    var view_count: Int?         // 阅读数
-    var comment_count: Int?      // 评论数
+    var user_id: Int!            // 用户Id
+    var title: String!           // 标题
+    var content: String!         // 内容
+    var start_at: String!        // 开始时间
+    var end_at: String!          // 结束时间
+    var organizer: String!       // 主办方
+    var organizer_link: String!  // 主办方链接
+    var city: String!            // 城市
+    var location: String!        // 位置
+    var longitude: Double!       // 经度
+    var latitude: Double!        // 纬度
+    var view_count: Int = 0      // 阅读数
+    var like_count: Int = 0      // 喜欢数
+    var comment_count: Int = 0   // 评论数
     
     required init?(_ map: Map) {
         super.init(map)
@@ -51,8 +51,8 @@ class Event: Model {
         location        <- map["location"]
         longitude       <- map["longitude"]
         latitude        <- map["latitude"]
-        like_count      <- map["like_count"]
         view_count      <- map["view_count"]
+        like_count      <- map["like_count"]
         comment_count   <- map["comment_count"]
     }
     

@@ -19,8 +19,8 @@ import ObjectMapper
 
 class TweetLike: Model {
     
-    var user_id: Int?       // 用户Id
-    var tweet_id: Int?      // 推文Id
+    var user_id: Int!       // 用户Id
+    var tweet_id: Int!      // 推文Id
     
     required init?(_ map: Map) {
         super.init(map)

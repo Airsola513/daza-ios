@@ -19,9 +19,9 @@ import ObjectMapper
 
 class ArticleComment: Model {
     
-    var user_id: Int?       // 用户Id
-    var article_id: Int?    // 文章Id
-    var content: String?    // 内容
+    var user_id: Int!       // 用户Id
+    var article_id: Int!    // 文章Id
+    var content: String!    // 内容
     
     required init?(_ map: Map) {
         super.init(map)

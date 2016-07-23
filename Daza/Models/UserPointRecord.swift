@@ -19,12 +19,12 @@ import ObjectMapper
 
 class UserPointRecord: Model {
     
-    var user_id: Int?               // 用户Id
-    var point: Int?                 // 当前积分值
-    var used_type: String?          // 变化类型
-    var used_point: Int?            // 变化积分值
-    var used_target_type: String?   // 变化目标类型
-    var used_target_id: Int?        // 变化目标Id
+    var user_id: Int!               // 用户Id
+    var point: Int = 0              // 当前积分值
+    var used_type: String!          // 变化类型
+    var used_point: Int!            // 变化积分值
+    var used_target_type: String!   // 变化目标类型
+    var used_target_id: Int!        // 变化目标Id
     
     required init?(_ map: Map) {
         super.init(map)

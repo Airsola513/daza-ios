@@ -19,10 +19,10 @@ import ObjectMapper
 
 class UserRelationship: Model {
     
-    var user_id: Int?           // 用户Id
-    var target_user_id: Int?    // 目标用户Id
-    var user: User?
-    var target_user: User?
+    var user_id: Int!           // 用户Id
+    var target_user_id: Int!    // 目标用户Id
+    var user: User!
+    var target_user: User!
     
     required init?(_ map: Map) {
         super.init(map)

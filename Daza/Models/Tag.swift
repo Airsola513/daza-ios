@@ -19,9 +19,9 @@ import ObjectMapper
 
 class Tag: Model {
     
-    var name: String?        // 名称
-    var image_url: String?   // 图片网址
-    var description: String? // 描述
+    var name: String!        // 名称
+    var image_url: String!   // 图片网址
+    var description: String! // 描述
     
     required init?(_ map: Map) {
         super.init(map)

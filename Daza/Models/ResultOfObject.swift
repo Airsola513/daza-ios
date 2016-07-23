@@ -19,7 +19,7 @@ import ObjectMapper
 
 class ResultOfObject<T: Mappable>: Result {
     
-    var data: T?
+    var data: T!
     
     required init?(_ map: Map) {
         super.init(map)

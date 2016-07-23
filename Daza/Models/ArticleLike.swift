@@ -19,8 +19,8 @@ import ObjectMapper
 
 class ArticleLike: Model {
     
-    var user_id: Int?       // 用户Id
-    var article_id: Int?    // 文章Id
+    var user_id: Int!       // 用户Id
+    var article_id: Int!    // 文章Id
     
     required init?(_ map: Map) {
         super.init(map)

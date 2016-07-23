@@ -19,12 +19,12 @@ import ObjectMapper
 
 class Pagination: Mappable {
 
-    var total: Int?
-    var per_page: Int?
-    var current_page: Int?
-    var last_page: Int?
-    var from: Int?
-    var to: Int?
+    var total: Int!
+    var per_page: Int!
+    var current_page: Int!
+    var last_page: Int!
+    var from: Int!
+    var to: Int!
 
     required init?(_ map: Map) {
     }

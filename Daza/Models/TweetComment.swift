@@ -19,9 +19,10 @@ import ObjectMapper
 
 class TweetComment: Model {
     
-    var user_id: Int?       // 用户Id
-    var tweet_id: Int?      // 推文Id
-    var content: String?    // 内容
+    var user_id: Int!       // 用户Id
+    var tweet_id: Int!      // 推文Id
+    var content: String!    // 内容
+    var user: User!
     
     required init?(_ map: Map) {
         super.init(map)
@@ -32,6 +33,7 @@ class TweetComment: Model {
         user_id     <- map["user_id"]
         tweet_id    <- map["tweet_id"]
         content     <- map["content"]
+        user        <- map["user"]
     }
     
 }

@@ -19,8 +19,8 @@ import ObjectMapper
 
 class Result: Mappable {
     
-    var status: String?
-    var pagination: Pagination?
+    var status: String!
+    var pagination: Pagination!
     
     required init?(_ map: Map) {
     }
@@ -28,6 +28,14 @@ class Result: Mappable {
     func mapping(map: Map) {
         status      <- map["status"]
         pagination  <- map["pagination"]
+    }
+    
+    func isSuccess() -> Bool {
+        return (status == "success")
+    }
+    
+    func isFailure() -> Bool {
+        return !isSuccess()
     }
     
 }
