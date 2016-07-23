@@ -22,7 +22,7 @@ class FollowingItemCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     
-    var user: User?
+    var user: User!
     
     var data: User {
         get {
@@ -30,9 +30,9 @@ class FollowingItemCell: UITableViewCell {
         }
         set(newValue) {
             self.user = newValue
-            self.avatarImageView.sd_setImageWithURL(NSURL(string: (user!.avatar_url)!), placeholderImage: UIImage(named: "placeholder_image"))
-            self.nameLabel.text = user!.name
-            self.usernameLabel.text = "@\(user!.username!)"
+            self.avatarImageView.sd_setImageWithURL(NSURL(string: user.avatar_url), placeholderImage: UIImage(named: "placeholder_image"))
+            self.nameLabel.text = user.name
+            self.usernameLabel.text = "@\(user.username)"
         }
     }
 }

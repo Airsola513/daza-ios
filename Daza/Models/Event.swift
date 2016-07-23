@@ -22,6 +22,7 @@ class Event: Model {
     var user_id: Int!            // 用户Id
     var title: String!           // 标题
     var content: String!         // 内容
+    var image_url: String!       // 图片网址
     var start_at: String!        // 开始时间
     var end_at: String!          // 结束时间
     var organizer: String!       // 主办方
@@ -43,6 +44,7 @@ class Event: Model {
         user_id         <- map["user_id"]
         title           <- map["title"]
         content         <- map["content"]
+        image_url       <- map["image_url"]
         start_at        <- map["start_at"]
         end_at          <- map["end_at"]
         organizer       <- map["organizer"]

@@ -18,7 +18,7 @@ import UIKit
 
 class TopicDetailController: BaseListController<Article> {
     
-    var topic: Topic?
+    var topic: Topic!
     
     init(_ data: Topic) {
         super.init()

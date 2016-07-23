@@ -24,8 +24,6 @@ class Tweet: Model {
     var location: String!       // 位置
     var longitude: String!      // 经度
     var latitude: String!       // 纬度
-    var source: String!         // 来源 = ['Web', 'Android', 'iPhone', 'iPad', 'WindowsPhone', 'macOS', 'Windows']
-    var source_link: String!    // 来源链接
     var view_count: Int = 0     // 阅读数
     var like_count: Int = 0     // 喜欢数
     var comment_count: Int = 0  // 评论数
@@ -42,8 +40,6 @@ class Tweet: Model {
         location        <- map["location"]
         longitude       <- map["longitude"]
         latitude        <- map["latitude"]
-        source          <- map["source"]
-        source_link     <- map["source_link"]
         view_count      <- map["view_count"]
         like_count      <- map["like_count"]
         comment_count   <- map["comment_count"]

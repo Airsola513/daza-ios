@@ -7,10 +7,86 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EventItemCell" customModule="EventItemCell">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EventItemCell" customModule="Daza" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPO-F0-13c">
+                    <rect key="frame" x="144" y="12" width="219" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dFI-Me-VPq">
+                    <rect key="frame" x="12" y="12" width="124" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="124" id="P7T-pB-2rt"/>
+                        <constraint firstAttribute="height" constant="70" id="cYo-cR-KY6"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbE-YV-JBR">
+                    <rect key="frame" x="144" y="45" width="219" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="FdS-3r-gxF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgw-VW-Ics">
+                    <rect key="frame" x="144" y="64" width="50" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="Fah-Az-esR"/>
+                        <constraint firstAttribute="height" constant="18" id="aSe-eX-Exm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="N/A">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fde-hq-YPP">
+                    <rect key="frame" x="313" y="64" width="50" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="oTF-Ql-Otb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="yPO-F0-13c" secondAttribute="trailing" constant="12" id="4jG-kC-qHV"/>
+                <constraint firstItem="dFI-Me-VPq" firstAttribute="top" secondItem="yPO-F0-13c" secondAttribute="top" id="Bf6-yb-6JR"/>
+                <constraint firstItem="yPO-F0-13c" firstAttribute="leading" secondItem="IbE-YV-JBR" secondAttribute="leading" id="DYK-IB-FJq"/>
+                <constraint firstItem="dFI-Me-VPq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="MBS-Yb-kh3"/>
+                <constraint firstItem="IbE-YV-JBR" firstAttribute="top" secondItem="yPO-F0-13c" secondAttribute="bottom" constant="12" id="MHs-xf-oIe"/>
+                <constraint firstItem="IbE-YV-JBR" firstAttribute="leading" secondItem="Sgw-VW-Ics" secondAttribute="leading" id="NTu-ZT-tqI"/>
+                <constraint firstItem="Sgw-VW-Ics" firstAttribute="bottom" secondItem="Fde-hq-YPP" secondAttribute="bottom" id="NoZ-hQ-P8q"/>
+                <constraint firstItem="dFI-Me-VPq" firstAttribute="bottom" secondItem="Sgw-VW-Ics" secondAttribute="bottom" id="QDq-xX-YxC"/>
+                <constraint firstItem="yPO-F0-13c" firstAttribute="trailing" secondItem="IbE-YV-JBR" secondAttribute="trailing" id="apd-fo-Sbe"/>
+                <constraint firstItem="Sgw-VW-Ics" firstAttribute="top" secondItem="Fde-hq-YPP" secondAttribute="top" id="cbX-EX-0yd"/>
+                <constraint firstItem="dFI-Me-VPq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="daf-e3-Ejx"/>
+                <constraint firstItem="dFI-Me-VPq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ff7-dl-ZfJ"/>
+                <constraint firstItem="Sgw-VW-Ics" firstAttribute="top" secondItem="IbE-YV-JBR" secondAttribute="bottom" constant="1" id="h4H-75-CWe"/>
+                <constraint firstItem="yPO-F0-13c" firstAttribute="leading" secondItem="dFI-Me-VPq" secondAttribute="trailing" constant="8" symbolic="YES" id="oh6-CI-zCV"/>
+                <constraint firstItem="IbE-YV-JBR" firstAttribute="trailing" secondItem="Fde-hq-YPP" secondAttribute="trailing" id="vIC-0U-PCF"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="cityLabel" destination="IbE-YV-JBR" id="ccG-Bj-DmQ"/>
+                <outlet property="coverImageView" destination="dFI-Me-VPq" id="lCy-uK-yws"/>
+                <outlet property="timeLabel" destination="Fde-hq-YPP" id="r0r-4Y-6d5"/>
+                <outlet property="titleLabel" destination="yPO-F0-13c" id="2ub-Xe-1pj"/>
+                <outlet property="viewCountButton" destination="Sgw-VW-Ics" id="Ahb-ES-C3n"/>
+            </connections>
+            <point key="canvasLocation" x="181.5" y="234"/>
         </view>
     </objects>
 </document>

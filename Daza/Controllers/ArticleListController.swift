@@ -58,10 +58,10 @@ class ArticleListController: BaseListController<Article>, IndicatorInfoProvider 
         var identifier: String = "ArticleItemCell"
         if (data.image_url == nil || data.image_url == "") {
             identifier = "ArticleNoImageItemCell";
-        } else {
-            if (indexPath.row < 10) {
-                identifier = "ArticleBigImageItemCell";
-            }
+//        } else {
+//            if (indexPath.row < 10) {
+//                identifier = "ArticleBigImageItemCell";
+//            }
         }
 
         let cell: ArticleItemCell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! ArticleItemCell

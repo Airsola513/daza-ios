@@ -35,14 +35,15 @@ class ArticleItemCell: UITableViewCell {
         }
         set(newValue) {
             self.article = newValue
-            self.titleLabel.text = article.title
-            self.topicLabel.text = "\(article.topic.name) · "
-            self.timeLabel.text = article.published_at.timeAgoSinceNow()
-            self.commentCountButton.setTitle("\(article.comment_count)评论", forState: UIControlState.Normal)
-            self.viewCountButton.setTitle("\(article.view_count)阅读", forState: UIControlState.Normal)
+            self.titleLabel.text = self.article.title
+            self.topicLabel.text = self.article.topic == nil ? "" : "\(article.topic.name) · "
+            self.timeLabel.text = self.article.published_at.timeAgoSinceNow()
+            self.commentCountButton.setTitle("\(self.article.comment_count)评论", forState: UIControlState.Normal)
+            self.viewCountButton.setTitle("\(self.article.view_count)阅读", forState: UIControlState.Normal)
             if (self.coverImageView != nil) {
-                self.coverImageView.sd_setImageWithURL(NSURL(string: (article.image_url)!), placeholderImage: UIImage(named: "placeholder_image"))
+                self.coverImageView.sd_setImageWithURL(NSURL(string: (self.article.image_url)!), placeholderImage: UIImage(named: "placeholder_image"))
             }
+            
         }
     }
 }

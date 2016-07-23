@@ -18,4 +18,25 @@ import UIKit
 
 class EventItemCell: UITableViewCell {
     
+    @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var viewCountButton: UIButton!
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    var event: Event!
+    
+    var data: Event {
+        get {
+            return self.event
+        }
+        set(newValue) {
+            self.event = newValue
+            self.coverImageView.sd_setImageWithURL(NSURL(string: (self.event.image_url)!), placeholderImage: UIImage(named: "placeholder_image"))
+            self.titleLabel.text = self.event.title
+            self.cityLabel.text = self.event.city
+            self.viewCountButton.setTitle("\(self.event.view_count)阅读", forState: UIControlState.Normal)
+            self.timeLabel.text = self.event.updated_at.timeAgoSinceNow()
+        }
+    }
 }

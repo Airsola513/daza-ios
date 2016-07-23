@@ -16,23 +16,21 @@
 
 import UIKit
 
-class FollowersItemCell: UITableViewCell {
+class EventDetailController: BaseTableViewController {
     
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var usernameLabel: UILabel!
+    var event: Event!
     
-    var user: User!
-    
-    var data: User {
-        get {
-            return self.user
-        }
-        set(newValue) {
-            self.user = newValue
-            self.avatarImageView.sd_setImageWithURL(NSURL(string: user.avatar_url), placeholderImage: UIImage(named: "placeholder_image"))
-            self.nameLabel.text = user.name
-            self.usernameLabel.text = "@\(user.username)"
-        }
+    init(_ data: Event) {
+        super.init(style: .Plain)
+        self.event = data
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
 }

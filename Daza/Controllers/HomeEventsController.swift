@@ -22,6 +22,12 @@ class HomeEventsController: BaseListController<Event> {
         super.viewDidLoad()
         self.title = trans("title_home_events")
         
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 44.0
+        
+        self.tableView.registerClass(EventItemCell.self, forCellReuseIdentifier: "EventItemCell")
+        self.tableView.registerNib(UINib(nibName: "EventItemCell", bundle: nil), forCellReuseIdentifier: "EventItemCell")
+        
         self.firstRefreshing()
     }
     
@@ -32,9 +38,23 @@ class HomeEventsController: BaseListController<Event> {
         Api.getEventList(page, success: loadDataSuccess)
     }
     
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: EventItemCell = tableView.dequeueReusableCellWithIdentifier("EventItemCell", forIndexPath: indexPath) as! EventItemCell
+        
+        let data = self.itemsSource[indexPath.row]
+        
+        cell.data = data
+        return cell
+    }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
+        
         let data = self.itemsSource[indexPath.row]
+        
+        let controller = EventDetailController(data)
+        controller.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
 }
