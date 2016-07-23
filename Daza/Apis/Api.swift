@@ -18,6 +18,17 @@ import Alamofire
 
 class Api {
 
+    static func isSuccessful<T: Result>(response: Response<T, NSError>) -> T? {
+        if (response.result.isSuccess) {
+            let result: T = response.result.value!;
+            
+            if (result.isSuccess()) {
+                return result
+            }
+        }
+        return nil
+    }
+    
     static func request(method: Alamofire.Method,
                         _ URLString: URLStringConvertible,
                         _ parameters: [String: AnyObject]? = nil,

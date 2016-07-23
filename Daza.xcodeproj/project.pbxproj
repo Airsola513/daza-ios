@@ -111,6 +111,9 @@
 		F5FC7D8A1D41F96000C6CB17 /* UserRelationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FC7D891D41F96000C6CB17 /* UserRelationship.swift */; };
 		F5FC7D8C1D427A9C00C6CB17 /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FC7D8B1D427A9C00C6CB17 /* ResetPasswordController.swift */; };
 		F5FC7D8E1D427AD500C6CB17 /* ModifyPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FC7D8D1D427AD500C6CB17 /* ModifyPasswordController.swift */; };
+		F5FC7D901D431C7600C6CB17 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FC7D8F1D431C7600C6CB17 /* BuildConfig.swift */; };
+		F5FC7D941D431E9400C6CB17 /* DefaultErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FC7D931D431E9400C6CB17 /* DefaultErrorHandler.swift */; };
+		F5FC7D961D438D9D00C6CB17 /* CategoriesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FC7D951D438D9D00C6CB17 /* CategoriesApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +251,9 @@
 		F5FC7D891D41F96000C6CB17 /* UserRelationship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRelationship.swift; sourceTree = "<group>"; };
 		F5FC7D8B1D427A9C00C6CB17 /* ResetPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
 		F5FC7D8D1D427AD500C6CB17 /* ModifyPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyPasswordController.swift; sourceTree = "<group>"; };
+		F5FC7D8F1D431C7600C6CB17 /* BuildConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildConfig.swift; sourceTree = "<group>"; };
+		F5FC7D931D431E9400C6CB17 /* DefaultErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultErrorHandler.swift; sourceTree = "<group>"; };
+		F5FC7D951D438D9D00C6CB17 /* CategoriesApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesApi.swift; sourceTree = "<group>"; };
 		FC6C9DB5D25909607728FCB2 /* Pods-DazaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DazaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DazaUITests/Pods-DazaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -359,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				F5D41DD61D3B2DDB0055195C /* Auth.swift */,
+				F5FC7D8F1D431C7600C6CB17 /* BuildConfig.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -498,6 +505,7 @@
 				F5715BC31D353F0000F1CBE5 /* TweetsApi.swift */,
 				F5338A191D35490B00B3D44F /* URLs.swift */,
 				F5715BC41D353F0000F1CBE5 /* UsersApi.swift */,
+				F5FC7D951D438D9D00C6CB17 /* CategoriesApi.swift */,
 			);
 			path = Apis;
 			sourceTree = "<group>";
@@ -515,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				F5A2B57F1D3B82810031AF83 /* ErrorHandler.swift */,
+				F5FC7D931D431E9400C6CB17 /* DefaultErrorHandler.swift */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -859,6 +868,7 @@
 				87A9E209FFD6EFC9509E9441 /* EventLike.swift in Sources */,
 				87A9E13E3F5C87FA705EF4DF /* TweetLike.swift in Sources */,
 				F51918391D337C0B0012897F /* ArticleDetailController.swift in Sources */,
+				F5FC7D961D438D9D00C6CB17 /* CategoriesApi.swift in Sources */,
 				F5715BC81D353F0000F1CBE5 /* AssetsApi.swift in Sources */,
 				F519184E1D34DA310012897F /* NSObjectExtension.swift in Sources */,
 				87A9E137F2134802C2C6A256 /* ArticleLike.swift in Sources */,
@@ -867,6 +877,7 @@
 				87A9EE9289CE563FA8632840 /* EventMember.swift in Sources */,
 				F5715BC91D353F0000F1CBE5 /* EventsApi.swift in Sources */,
 				87A9E6EDF344AF2E9A0A2343 /* EventComment.swift in Sources */,
+				F5FC7D941D431E9400C6CB17 /* DefaultErrorHandler.swift in Sources */,
 				F5F23E3B1D329FE200234104 /* Model.swift in Sources */,
 				87A9EBE7A069F7FA29B9AE27 /* Notification.swift in Sources */,
 				F5FC7D8E1D427AD500C6CB17 /* ModifyPasswordController.swift in Sources */,
@@ -897,6 +908,7 @@
 				F5D41DD71D3B2DDB0055195C /* Auth.swift in Sources */,
 				87A9E6FFFD865256D58D2101 /* ArticleComment.swift in Sources */,
 				F5F29B5C1D36A33B00071F04 /* AboutController.swift in Sources */,
+				F5FC7D901D431C7600C6CB17 /* BuildConfig.swift in Sources */,
 				F5F29B581D360D7100071F04 /* ResultOfArray.swift in Sources */,
 				F5B5D5E91D3F2B16009EE5AD /* UIApplicationExtension.swift in Sources */,
 				F51918261D33629A0012897F /* BaseListController.swift in Sources */,

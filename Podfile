@@ -23,6 +23,7 @@ target 'Daza' do
   pod 'GSKStretchyHeaderView'
   pod 'R.swift'
   pod 'DateTools'
+  pod 'GrowingIO'
   pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 
   target 'DazaTests' do

@@ -27,41 +27,51 @@ extension Api {
             "password": password,
         ]
         self.request(.POST, URL, parameters).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
-            let value = response.result.value
-            success(data: (value?.data)!)
+            if let result = isSuccessful(response) {
+                Auth.user(result.data!)
+                success(data: result.data!)
+            }
         }
     }
     
-    static func login(email: String, _ password: String, success: (data: User) -> Void) {
+    static func login(email: String, _ password: String, completion: (data: User?, error: NSError?) -> Void) {
         let URL = URLs.apiURL + "/account/login";
         let parameters: [String: AnyObject] = [
             "email": email,
             "password": password,
         ]
         self.request(.POST, URL, parameters).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
-            let value = response.result.value
-            
-            let data = (value?.data)!
-            
-            Auth.user(data)
-            
-            success(data: data)
+            if let result = isSuccessful(response) {
+                Auth.user(result.data)
+                completion(data: result.data, error: nil)
+                return
+            }
+            completion(data: nil, error: response.result.error)
+//            try {
+//                let result = isSuccessful(response)
+//                Auth.user(result.data!)
+//                success(data: result.data!)
+//            }(); catch (NSError error)
+//                s
+//            }
         }
     }
     
     static func logout(success: () -> Void) {
         let URL = URLs.apiURL + "/account/logout";
         self.request(.POST, URL).responseObject { (response: Response<Result, NSError>) in
-            let value = response.result.value
-            success()
+            if isSuccessful(response) != nil {
+                success()
+            }
         }
     }
     
     static func profile(success: (data: User) -> Void) {
         let URL = URLs.apiURL + "/account/profile";
         Alamofire.request(.GET, URL).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
-            let value = response.result.value
-            success(data: (value?.data)!)
+            if let result = isSuccessful(response) {
+                success(data: result.data!)
+            }
         }
     }
 

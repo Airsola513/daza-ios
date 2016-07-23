@@ -53,9 +53,11 @@ class SettingsController: BaseGroupedListController {
                     }.cellUpdate { (cell, row) in
                         cell.textLabel?.textColor = UIColor.redColor()
                     }.onCellSelection { (cell, row) in
-                        Auth.user(nil)
-                        row.hidden = true
-                        row.updateCell()
+                        Api.logout({
+                            Auth.user(nil)
+                            row.hidden = true
+                            row.evaluateHidden()
+                        })
                     }
         
     }

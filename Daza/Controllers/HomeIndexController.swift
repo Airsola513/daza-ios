@@ -20,6 +20,8 @@ import XLPagerTabStrip
 
 class HomeIndexController: ButtonBarPagerTabStripViewController {
     
+    var categories: [Category] = []
+    
     override func viewDidLoad() {
         // set up style before super view did load is executed
         settings.style.buttonBarBackgroundColor = .clearColor()
@@ -46,6 +48,12 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
                 oldCell?.transform = CGAffineTransformMakeScale(0.8, 0.8)
             }
         }
+
+        Api.getCategoryList(1) { (pagination, data) in
+            self.categories = []
+            self.categories += data
+            self.reloadPagerTabStripView()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -64,9 +72,13 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
     override func viewControllersForPagerTabStrip(pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         
         var childViewControllers: [UIViewController] = []
-        
-        
-        childViewControllers.append(ArticleListController())
+        if (self.categories.count > 0) {
+            for category in categories {
+                childViewControllers.append(ArticleListController(category))
+            }
+        } else {
+            childViewControllers.append(BaseTableViewController())
+        }
         
         return childViewControllers
     }

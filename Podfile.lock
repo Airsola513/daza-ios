@@ -7,6 +7,7 @@ PODS:
   - DateTools (1.7.0)
   - DZNEmptyDataSet (1.8.1)
   - Eureka (1.7.0)
+  - GrowingIO (0.9.28)
   - GSKStretchyHeaderView (0.12.0)
   - JVFloatLabeledTextField (1.1.1)
   - MJRefresh (3.1.10)
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - DateTools
   - DZNEmptyDataSet
   - Eureka (~> 1.7)
+  - GrowingIO
   - GSKStretchyHeaderView
   - JVFloatLabeledTextField
   - MJRefresh
@@ -53,6 +55,7 @@ SPEC CHECKSUMS:
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
+  GrowingIO: 65c6ac4f395184236aa8b2e0266c249dcbd8b76a
   GSKStretchyHeaderView: 25554059df35b7b01b37373eba1e1e57582c45a2
   JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
   MJRefresh: bb72948c985914b0b5cecac573a2c69a8915fb02
@@ -66,6 +69,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   XLPagerTabStrip: 87b8b705f9a7178e76a063ffaa2d70045944a965
 
-PODFILE CHECKSUM: bbdb96697915b26780c6ca6249e0701e86a97e85
+PODFILE CHECKSUM: d75d6492fd9199c60d83ce7a557532e249f64e5a
 
 COCOAPODS: 1.0.1

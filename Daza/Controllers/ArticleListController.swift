@@ -19,12 +19,12 @@ import XLPagerTabStrip
 
 class ArticleListController: BaseListController<Article>, IndicatorInfoProvider {
     
-    var category: Category?
+    var category: Category!
     
-//    init(category: Category) {
-//        super.init()
-//        self.category = category;
-//    }
+    init(_ category: Category!) {
+        super.init()
+        self.category = category;
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

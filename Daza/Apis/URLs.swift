@@ -15,7 +15,7 @@
  */
 
 struct URLs {
-    static let baseURL: String    = "http://daza-backend.daoapp.io"
+    static let baseURL: String    = BuildConfig.API_BASE_URL
     static let apiVersion: String = "/v1"
     static let apiURL: String     = baseURL + apiVersion
 }

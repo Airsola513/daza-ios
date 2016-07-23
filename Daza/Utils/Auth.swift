@@ -36,6 +36,8 @@ class Auth {
         let standardUserDefaults = NSUserDefaults.standardUserDefaults()
         let jsonString = user == nil ? "" : Mapper<User>().toJSONString(user!, prettyPrint: false)
         standardUserDefaults.setValue(jsonString, forKey: "auth.user")
+        
+        // NSNotificationCenter.defaultCenter().postNotificationName("", object: nil)
     }
 
     static func id() -> Int {

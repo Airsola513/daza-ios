@@ -27,21 +27,21 @@ class ArticleItemCell: UITableViewCell {
     @IBOutlet weak var commentCountButton: UIButton!
     @IBOutlet weak var viewCountButton: UIButton!
     
-    var article: Article?
+    var article: Article!
     
     var data: Article {
         get {
-            return self.article!
+            return self.article
         }
         set(newValue) {
             self.article = newValue
-            self.titleLabel.text = article!.title
-            self.topicLabel.text = "\(article!.topic!.name!) · "
-            self.timeLabel.text = article!.published_at?.timeAgoSinceNow()
-            self.commentCountButton.setTitle("\(article!.comment_count)评论", forState: UIControlState.Normal)
-            self.viewCountButton.setTitle("\(article!.view_count)阅读", forState: UIControlState.Normal)
+            self.titleLabel.text = article.title
+            self.topicLabel.text = "\(article.topic.name) · "
+            self.timeLabel.text = article.published_at.timeAgoSinceNow()
+            self.commentCountButton.setTitle("\(article.comment_count)评论", forState: UIControlState.Normal)
+            self.viewCountButton.setTitle("\(article.view_count)阅读", forState: UIControlState.Normal)
             if (self.coverImageView != nil) {
-                self.coverImageView.sd_setImageWithURL(NSURL(string: (article!.image_url)!), placeholderImage: UIImage(named: "placeholder_image"))
+                self.coverImageView.sd_setImageWithURL(NSURL(string: (article.image_url)!), placeholderImage: UIImage(named: "placeholder_image"))
             }
         }
     }

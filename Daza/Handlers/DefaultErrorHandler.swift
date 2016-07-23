@@ -14,19 +14,8 @@
  * limitations under the License.
  */
 
-import UIKit
-import XLPagerTabStrip
+import Foundation
 
-class BaseTableViewController: UITableViewController, IndicatorInfoProvider {
+class DefaultErrorHandler: ErrorHandler {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    // MARK: - IndicatorInfoProvider
-    
-    func indicatorInfoForPagerTabStrip(pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "N/A"
-    }
-
 }
