@@ -33,7 +33,7 @@ class ArticleDetailController: BrowserController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("title_article_detail")
+        self.title = trans("article_detail.title")
 
         self.menuShare = UIBarButtonItem(image: UIImage(named: "ic_menu_share"), style: .Plain, target: self, action: #selector(shareButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuShare

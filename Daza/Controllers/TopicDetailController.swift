@@ -30,7 +30,7 @@ class TopicDetailController: BaseListController<Article> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("title_topic_detail")
+        self.title = trans("topic_detail.title")
 //        self.tableView.mj_header.ignoredScrollViewContentInsetTop = 30
         
         self.stretchyHeader = TopicDetailHeaderView.instanceFromNib()

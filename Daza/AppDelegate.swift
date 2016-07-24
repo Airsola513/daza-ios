@@ -34,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SVProgressHUD.setDefaultStyle(.Dark)
         SVProgressHUD.setMinimumDismissTimeInterval(1)
         
+        Growing.startWithAccountId(BuildConfig.GROWING_ID)
+        
         return true
     }
 
@@ -59,6 +61,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        if (Growing.handleUrl(url)) {
+            return true
+        }
+        return false
+    }
 }
 

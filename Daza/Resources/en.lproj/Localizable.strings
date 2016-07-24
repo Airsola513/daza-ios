@@ -17,10 +17,16 @@
 "APP_NAME" = "DAZA";
 
 // General
-"general.yes" = "Yes";
-"general.no" = "No";
+"general.abort" = "Abort";
+"general.retry" = "Retry";
+"general.ignore" = "Ignore";
 "general.ok" = "OK";
 "general.cancel" = "Cancel";
+"general.yes" = "Yes";
+"general.no" = "No";
+"general.list.loading" = "Loading...";
+"general.list.no_result_found" = "No result found!";
+"general.list.an_error_occured" = "An error occured, please try again later";
 
 // Home
 "home.index.title" = "Home";
@@ -106,8 +112,10 @@
 
 // Articles
 
-// Articles
-"title_article_create" = "New Article";
-"title_article_detail" = "Article Detail";
-"title_article_likes" = "Article Likes";
-"title_article_comments" = "Article Comments";
+// >> Article detail
+"article_detail.title" = "Article detail";
+
+// Events
+
+// >> Event detail
+"event_detail.title" = "Event detail";

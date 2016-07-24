@@ -16,21 +16,34 @@
 
 import UIKit
 
-class EventDetailController: BaseTableViewController {
-    
+class EventDetailController: BrowserController {
+
     var event: Event!
     
     init(_ data: Event) {
-        super.init(style: .Plain)
+        super.init(nibName: nil, bundle: nil)
         self.event = data
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    var menuShare: UIBarButtonItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = trans("event_detail.title")
+        
+        self.menuShare = UIBarButtonItem(image: UIImage(named: "ic_menu_share"), style: .Plain, target: self, action: #selector(shareButtonPressed(_:)))
+        self.navigationItem.rightBarButtonItem = self.menuShare
+        
+        let urlRequest = NSURLRequest(URL: NSURL(string: "\(URLs.inappURL)/events/\(self.event.id)")!)
+        self.webView.loadRequest(urlRequest)
+    }
+    
+    func shareButtonPressed(sender: UIBarButtonItem) {
+        
     }
     
 }

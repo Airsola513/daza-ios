@@ -31,7 +31,7 @@ class UserDetailController: BaseTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("title_user_detail")
+        self.title = trans("user_detail.title")
     }
     
 }

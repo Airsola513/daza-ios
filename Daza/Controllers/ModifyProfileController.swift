@@ -80,15 +80,15 @@ class ModifyProfileController: BaseGroupedListController {
                     }
         
         let completionBlock = { (data: User!, error: NSError!) in
-            self.form.setValues([
-                "avatarRow": NSURL(string: data.avatar_url),
-                "nameRow": data.name,
-                "cityRow": data.city,
-                "website": data.website,
-                "bio": data.bio,
-            ])
-//            let avatarRow = self.form.rowByTag("avatarRow") as! ImageRow
-//            avatarRow.cell.imageView!.sd_setImageWithURL(NSURL(string: data.avatar_url), placeholderImage: UIImage(named: "placeholder_image"))
+            if (error == nil) {
+                self.form.setValues([
+                    "avatarRow": NSURL(string: data.avatar_url),
+                    "nameRow": data.name,
+                    "cityRow": data.city,
+                    "website": data.website,
+                    "bio": data.bio,
+                ])
+            }
             self.tableView?.reloadData()
         }
         

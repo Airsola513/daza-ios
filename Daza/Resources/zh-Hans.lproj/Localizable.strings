@@ -26,10 +26,16 @@
 "MJRefreshAutoFooterNoMoreDataText" = "暂无更多数据";
 
 // General
-"general.yes" = "Yes";
-"general.no" = "No";
-"general.ok" = "OK";
-"general.cancel" = "Cancel";
+"general.abort" = "终止";
+"general.retry" = "重试";
+"general.ignore" = "忽略";
+"general.ok" = "确定";
+"general.cancel" = "取消";
+"general.yes" = "是";
+"general.no" = "否";
+"general.list.loading" = "加载中...";
+"general.list.no_result_found" = "没有发现结果！";
+"general.list.an_error_occured" = "发生了一个错误，请稍后重试。";
 
 // Home
 "home.index.title" = "首页";
@@ -115,8 +121,10 @@
 
 // Articles
 
-// Articles
-"title_article_create" = "创建文章";
-"title_article_detail" = "文章详情";
-"title_article_likes" = "文章喜欢者";
-"title_article_comments" = "文章评论";
+// >> Article detail
+"article_detail.title" = "文章详情";
+
+// Events
+
+// >> Event detail
+"event_detail.title" = "活动详情";

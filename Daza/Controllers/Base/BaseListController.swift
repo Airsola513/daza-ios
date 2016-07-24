@@ -165,9 +165,9 @@ class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEm
         ]
         
         if (self.isRefreshing()) {
-            return NSAttributedString(string: "Loading...", attributes: attributes);
+            return NSAttributedString(string: trans("general.list.loading"), attributes: attributes);
         }
-        return NSAttributedString(string: "No result found! ", attributes: attributes);
+        return NSAttributedString(string: trans("general.list.no_result_found"), attributes: attributes);
     }
     
     func emptyDataSetShouldAllowScroll(scrollView: UIScrollView!) -> Bool {
