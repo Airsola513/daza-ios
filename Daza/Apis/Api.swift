@@ -18,6 +18,7 @@ import Alamofire
 
 class Api {
     
+    // MARK: 响应公共处理逻辑
     static func handleResponse<T: Result>(response: Response<T, NSError>,
                                         _ errorHandler: ErrorHandler!,
                                           completion: (result: T!, error: NSError!) -> Void) {
@@ -28,7 +29,7 @@ class Api {
         if (result.isSuccess) {
             value = response.result.value!
             if (value.isFailure()) {
-                error = NSError(domain: BuildConfig.WEB_BASE_URL, code: 500, userInfo: [:])
+                error = NSError(domain: URLs.webURL, code: 0, userInfo: [:])
             }
         } else {
             error = result.error
@@ -38,7 +39,7 @@ class Api {
             errorHandler.handleError(error)
         }
 
-        return completion(result: value, error: response.result.error)
+        return completion(result: value, error: error)
     }
     
     static func request(method: Alamofire.Method,

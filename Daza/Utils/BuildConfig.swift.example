@@ -15,6 +15,6 @@
  */
 
 struct BuildConfig {
-    public static let WEB_BASE_URL = "http://daza.io"
-    public static let API_BASE_URL = "http://api.daza.io"
+    internal static let WEB_BASE_URL = "http://mock-web.daza.io"
+    internal static let API_BASE_URL = "http://mock-api.daza.io"
 }

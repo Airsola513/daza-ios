@@ -18,7 +18,7 @@ import UIKit
 
 class ArticleDetailController: BrowserController {
 
-    var article: Article?
+    var article: Article!
 
     init(_ data: Article) {
         super.init(nibName: nil, bundle: nil)
@@ -38,7 +38,7 @@ class ArticleDetailController: BrowserController {
         self.menuShare = UIBarButtonItem(image: UIImage(named: "ic_menu_share"), style: .Plain, target: self, action: #selector(shareButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuShare
 
-        let urlRequest = NSURLRequest(URL: NSURL(string: self.article!.link!)!)
+        let urlRequest = NSURLRequest(URL: NSURL(string: "\(URLs.inappURL)/articles/\(self.article.id)")!)
         self.webView.loadRequest(urlRequest)
     }
 
