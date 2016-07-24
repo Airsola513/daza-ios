@@ -26,16 +26,20 @@ class ModifyProfileController: BaseGroupedListController {
         form
             +++ Section()
                 <<< ImageRow() { row in
+                        row.tag = "avatarRow"
                         row.title = trans("modify_profile.avatar.title")
+                    }.cellUpdate { (cell, row) in
+                        cell.height =  { 60 }
+//                        cell.imageView!.sd_setImageWithURL(NSURL(string: ""), placeholderImage: UIImage(named: "placeholder_image"))
                     }
             +++ Section()
                 <<< TextRow() { row in
                         row.tag = "nameRow"
                         row.title = trans("modify_profile.name.title")
                         row.placeholder = trans("modify_profile.name.placeholder")
-                        row.textFieldPercentage = 0.7
+//                        row.textFieldPercentage = 0.7
                     }.cellUpdate { (cell, row) in
-                        cell.textField.textAlignment = .Left
+//                        cell.textField.textAlignment = .Left
                     }
 //                <<< AlertRow<String>() { row in
 //                        row.title = "性别"
@@ -58,17 +62,17 @@ class ModifyProfileController: BaseGroupedListController {
                         row.tag = "cityRow"
                         row.title = trans("modify_profile.city.title")
                         row.placeholder = trans("modify_profile.city.placeholder")
-                        row.textFieldPercentage = 0.7
+//                        row.textFieldPercentage = 0.7
                     }.cellUpdate { (cell, row) in
-                        cell.textField.textAlignment = .Left
+//                        cell.textField.textAlignment = .Left
                     }
                 <<< TextRow() { row in
                         row.tag = "websiteRow"
                         row.title = trans("modify_profile.website.title")
                         row.placeholder = trans("modify_profile.website.placeholder")
-                        row.textFieldPercentage = 0.7
+//                        row.textFieldPercentage = 0.7
                     }.cellUpdate { (cell, row) in
-                        cell.textField.textAlignment = .Left
+//                        cell.textField.textAlignment = .Left
                     }
                 <<< TextAreaRow() { row in
                         row.tag = "bioRow"
@@ -77,11 +81,14 @@ class ModifyProfileController: BaseGroupedListController {
         
         let completionBlock = { (data: User!, error: NSError!) in
             self.form.setValues([
+                "avatarRow": NSURL(string: data.avatar_url),
                 "nameRow": data.name,
                 "cityRow": data.city,
                 "website": data.website,
                 "bio": data.bio,
             ])
+//            let avatarRow = self.form.rowByTag("avatarRow") as! ImageRow
+//            avatarRow.cell.imageView!.sd_setImageWithURL(NSURL(string: data.avatar_url), placeholderImage: UIImage(named: "placeholder_image"))
             self.tableView?.reloadData()
         }
         

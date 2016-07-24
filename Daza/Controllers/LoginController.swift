@@ -110,9 +110,9 @@ class LoginController: BaseGroupedListController {
                         if (OnePasswordExtension.sharedExtension().isAppExtensionAvailable()) {
                             cell.contentView.addSubview(self.onepasswordButton)
                             self.onepasswordButton.snp_makeConstraints { (make) -> Void in
-                                make.height.equalTo(22)
-                                make.width.equalTo(22)
-                                make.right.equalTo(cell.textField).inset(4)
+                                make.height.equalTo(cell.contentView.snp_height)
+                                make.width.equalTo(cell.contentView.snp_height)
+                                make.right.equalTo(cell.textField)
                                 make.centerY.equalTo(cell.textField)
                             }
                         }

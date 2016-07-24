@@ -15,8 +15,8 @@
                     <rect key="frame" x="12" y="12" width="40" height="40"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="40" id="gpR-l9-Mik"/>
-                        <constraint firstAttribute="height" constant="40" id="hPU-G4-qKK"/>
+                        <constraint firstAttribute="width" constant="40" id="gKE-WL-w4a"/>
+                        <constraint firstAttribute="height" constant="40" id="j7M-u0-FYk"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -31,25 +31,38 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUL-hP-C9C">
-                    <rect key="frame" x="60" y="31" width="70" height="16"/>
+                    <rect key="frame" x="60" y="31" width="32.5" height="16"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="16" id="i2w-9N-5C5"/>
-                        <constraint firstAttribute="width" constant="70" id="wsx-sZ-twr"/>
+                        <constraint firstAttribute="height" constant="16" id="hnT-KN-VuL"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9R-gU-5RS">
+                    <rect key="frame" x="308" y="17" width="55" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="55" id="eN8-EV-aNf"/>
+                        <constraint firstAttribute="height" constant="30" id="jio-ul-hkD"/>
+                    </constraints>
+                    <state key="normal" title="Follow"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Wlk-bn-hrm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="50x-QW-3Tb"/>
-                <constraint firstItem="RUL-hP-C9C" firstAttribute="top" secondItem="ihF-uD-gca" secondAttribute="bottom" constant="1" id="aRC-Le-VaW"/>
-                <constraint firstItem="RUL-hP-C9C" firstAttribute="leading" secondItem="ihF-uD-gca" secondAttribute="leading" id="fjw-cN-Iln"/>
-                <constraint firstItem="ihF-uD-gca" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="mny-AR-Bn2"/>
-                <constraint firstItem="ihF-uD-gca" firstAttribute="leading" secondItem="Wlk-bn-hrm" secondAttribute="trailing" constant="8" id="qW9-Lj-dUk"/>
-                <constraint firstItem="Wlk-bn-hrm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="tv4-qP-3KQ"/>
-                <constraint firstAttribute="bottom" secondItem="Wlk-bn-hrm" secondAttribute="bottom" constant="12" id="wbn-c7-i8y"/>
+                <constraint firstAttribute="bottom" secondItem="RUL-hP-C9C" secondAttribute="bottom" constant="17" id="0lu-kW-BPA"/>
+                <constraint firstItem="RUL-hP-C9C" firstAttribute="leading" secondItem="Wlk-bn-hrm" secondAttribute="trailing" constant="8" id="4AR-FH-d6Y"/>
+                <constraint firstAttribute="trailing" secondItem="Q9R-gU-5RS" secondAttribute="trailing" constant="12" id="95M-91-M8X"/>
+                <constraint firstItem="RUL-hP-C9C" firstAttribute="leading" secondItem="Wlk-bn-hrm" secondAttribute="trailing" constant="8" id="BA9-vQ-cKt"/>
+                <constraint firstItem="RUL-hP-C9C" firstAttribute="top" secondItem="ihF-uD-gca" secondAttribute="bottom" constant="1" id="Jf0-6i-zca"/>
+                <constraint firstItem="Wlk-bn-hrm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="RJI-hL-Gj7"/>
+                <constraint firstItem="RUL-hP-C9C" firstAttribute="top" secondItem="ihF-uD-gca" secondAttribute="bottom" constant="1" id="UQE-KO-20Z"/>
+                <constraint firstAttribute="bottom" secondItem="Q9R-gU-5RS" secondAttribute="bottom" constant="17" id="WzH-Jj-ZKO"/>
+                <constraint firstAttribute="bottom" secondItem="Wlk-bn-hrm" secondAttribute="bottom" constant="12" id="ewd-O6-XCk"/>
+                <constraint firstItem="ihF-uD-gca" firstAttribute="leading" secondItem="Wlk-bn-hrm" secondAttribute="trailing" constant="8" id="lJQ-az-zq6"/>
+                <constraint firstItem="Q9R-gU-5RS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="17" id="p3G-GX-9IA"/>
+                <constraint firstItem="ihF-uD-gca" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="pu4-zL-LeT"/>
+                <constraint firstItem="Wlk-bn-hrm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="swH-RZ-x7o"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

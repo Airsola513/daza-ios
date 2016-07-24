@@ -24,8 +24,8 @@ class Auth {
     
     static func check(controller: UIViewController) -> Bool {
         if (!check()) {
-            let controller: BaseNavigationController = BaseNavigationController(rootViewController: LoginController())
-            controller.presentViewController(controller, animated: true, completion: nil)
+            let loginController: BaseNavigationController = BaseNavigationController(rootViewController: LoginController())
+            controller.presentViewController(loginController, animated: true, completion: nil)
             return false
         }
         return true
