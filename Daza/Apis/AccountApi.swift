@@ -57,7 +57,7 @@ extension Api {
         self.request(.POST, URL, parameters).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
             handleResponse(response, errorHandler, completion: { (result, error) in
                 var data: User! = nil
-                if (result != nil) {
+                if (error == nil) {
                     data = result.data
                     Auth.user(data)
                 }
@@ -72,7 +72,7 @@ extension Api {
         let URL = URLs.apiURL + "/account/logout";
         self.request(.POST, URL).responseObject { (response: Response<Result, NSError>) in
             handleResponse(response, errorHandler, completion: { (result, error) in
-                if (result != nil) {
+                if (error == nil) {
                     Auth.user(nil)
                 }
                 completion(error: error)
@@ -87,7 +87,7 @@ extension Api {
         Alamofire.request(.GET, URL).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
             handleResponse(response, errorHandler, completion: { (result, error) in
                 var data: User! = nil
-                if (result != nil) {
+                if (error == nil) {
                     data = result.data
                     Auth.user(data)
                 }

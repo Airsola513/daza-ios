@@ -72,9 +72,7 @@ class HomeMineController: BaseTableViewController {
     }
     
     func notificationsButtonPressed(sender: UIBarButtonItem) {
-        if (!Auth.check()) {
-            let controller: BaseNavigationController = BaseNavigationController(rootViewController: LoginController())
-            self.presentViewController(controller, animated: true, completion: nil)
+        if (!Auth.check(self)) {
             return
         }
         let controller = NotificationsController()
@@ -89,9 +87,7 @@ class HomeMineController: BaseTableViewController {
     }
     
     func nameButtonPressed(sender: UIButton!) {
-        if (!Auth.check()) {
-            let controller: BaseNavigationController = BaseNavigationController(rootViewController: LoginController())
-            self.presentViewController(controller, animated: true, completion: nil)
+        if (!Auth.check(self)) {
             return
         }
         let controller = UserDetailController(Auth.user())
@@ -100,18 +96,27 @@ class HomeMineController: BaseTableViewController {
     }
     
     func modifyProfileButtonPressed(sender: UIButton!) {
+        if (!Auth.check(self)) {
+            return
+        }
         let controller = ModifyProfileController()
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func followingButtonPressed(sender: UIButton!) {
+        if (!Auth.check(self)) {
+            return
+        }
         let controller = FollowingController(Auth.user())
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func followersButtonPressed(sender: UIButton!) {
+        if (!Auth.check(self)) {
+            return
+        }
         let controller = FollowersController(Auth.user())
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
@@ -125,7 +130,6 @@ class HomeMineController: BaseTableViewController {
 //        let cell: UITableViewCell = UITableViewCell(style: .Default, reuseIdentifier: "Cell")
 //        return cell
 //    }
-    
     
     // 我的问题列表发生变化
     @objc func loginStatusChanged(notification: NSNotification) {

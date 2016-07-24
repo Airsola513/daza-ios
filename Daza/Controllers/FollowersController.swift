@@ -19,9 +19,9 @@ import ObjectMapper
 
 class FollowersController: BaseListController<UserRelationship> {
     
-    var user: User?
+    var user: User!
     
-    init(_ data: User?) {
+    init(_ data: User!) {
         super.init()
         self.user = data
     }
@@ -40,10 +40,10 @@ class FollowersController: BaseListController<UserRelationship> {
     }
     
     override func loadData(page: Int) {
-        let loadDataSuccess = { (pagination: Pagination, data: [UserRelationship]) -> Void in
+        let completionBlock = { (pagination: Pagination!, data: [UserRelationship]!, error: NSError!) -> Void in
             self.loadComplete(pagination, data)
         }
-        Api.followers(page, userId: user!.id!, success: loadDataSuccess)
+        Api.followers(page, userId: user.id, completion: completionBlock)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -51,7 +51,7 @@ class FollowersController: BaseListController<UserRelationship> {
         
         let data = self.itemsSource[indexPath.row]
         
-        cell.data = data.user!
+        cell.data = data.user
         return cell
     }
     

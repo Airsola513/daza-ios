@@ -21,8 +21,9 @@ import DZNEmptyDataSet
 class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
     var refreshing: Bool = false;
-    var pagination: Pagination? = nil
+    var pagination: Pagination! = nil
     var itemsSource: [T] = []
+    var errorHandler: ErrorHandler! = DefaultErrorHandler()
     
     var mjHeader: MJRefreshNormalHeader?
     var mjFooter: MJRefreshAutoNormalFooter?
@@ -43,7 +44,10 @@ class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEm
         self.mjFooter = MJRefreshAutoNormalFooter { () -> Void in
             self.refreshing = true
             self.tableView.reloadEmptyDataSet()
-            let currentPage: Int = (self.pagination?.current_page)!
+            var currentPage: Int = 0
+            if (self.pagination != nil) {
+                currentPage = self.pagination.current_page
+            }
             self.loadData(currentPage + 1)
         }
         self.mjHeader!.lastUpdatedTimeLabel.hidden = true
@@ -103,8 +107,12 @@ class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEm
             self.tableView.mj_header.endRefreshing()
         }
 
-        let currentPage = self.pagination!.current_page;
-        let lastPage = self.pagination!.last_page;
+        var currentPage = 0
+        var lastPage = 0
+        if (self.pagination != nil) {
+            currentPage = self.pagination.current_page;
+            lastPage = self.pagination.last_page;
+        }
         // 没有更多数据时禁止上拉加载
         if (lastPage == 0 || currentPage == lastPage) {
             self.tableView.mj_footer.endRefreshingWithNoMoreData()
@@ -122,17 +130,32 @@ class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEm
             self.endRefreshing()
         }
     }
-    
-    func loadComplete(pagination: Pagination, _ data: [T]) {
-        // 下拉刷新时清空数据源
-        if (pagination.current_page == 1) {
-            self.itemsSource = []
+
+    func loadComplete(pagination: Pagination!, _ data: [T]!) {
+        var error: NSError! = nil
+        if (pagination == nil || data == nil) {
+            error = NSError(domain: BuildConfig.WEB_BASE_URL, code: 400, userInfo: [:])
         }
-        self.pagination = pagination
-        self.itemsSource += data
+        self.loadComplete(pagination, data, error: error)
+    }
+    
+    func loadComplete(pagination: Pagination!, _ data: [T]!, error: NSError!) {
+        if (error == nil) {
+            // 下拉刷新时清空数据源
+            if (pagination.current_page == 1) {
+                self.itemsSource = []
+            }
+            self.pagination = pagination
+            self.itemsSource += data
+        }
         // 停止正在刷新
         self.tableView.reloadData()
         self.endRefreshing()
+        
+        // 加载错误处理
+        if (error != nil && errorHandler != nil) {
+            errorHandler.handleError(error)
+        }
     }
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {

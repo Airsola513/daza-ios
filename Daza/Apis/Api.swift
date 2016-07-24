@@ -28,7 +28,7 @@ class Api {
         if (result.isSuccess) {
             value = response.result.value!
             if (value.isFailure()) {
-                error = NSError(domain: URLs.baseURL, code: 500, userInfo: [:])
+                error = NSError(domain: BuildConfig.WEB_BASE_URL, code: 500, userInfo: [:])
             }
         } else {
             error = result.error
