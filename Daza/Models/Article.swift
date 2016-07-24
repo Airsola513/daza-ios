@@ -26,8 +26,10 @@ class Article: Model {
     var link: String!           // 文章链接
     var title: String!          // 标题
     var summary: String!        // 摘要
-    var image_url: String!      // 图片网址
     var content: String!        // 内容
+    var image_url: String!      // 图片网址
+    var audio_url: String!      // 音频网址
+    var video_url: String!      // 视频网址
     var author: String!         // 作者
     var author_email: String!   // 作者邮箱
     var author_link: String!    // 作者链接
@@ -53,8 +55,10 @@ class Article: Model {
         link            <- map["link"]
         title           <- map["title"]
         summary         <- map["summary"]
-        image_url       <- map["image_url"]
         content         <- map["content"]
+        image_url       <- map["image_url"]
+        audio_url       <- map["audio_url"]
+        video_url       <- map["video_url"]
         author          <- map["author"]
         author_email    <- map["author_email"]
         author_link     <- map["author_link"]

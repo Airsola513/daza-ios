@@ -26,7 +26,7 @@ class BaseTableViewController: UITableViewController, IndicatorInfoProvider {
     // MARK: - IndicatorInfoProvider
     
     func indicatorInfoForPagerTabStrip(pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return "N/A"
+        return "Loading..."
     }
 
 }

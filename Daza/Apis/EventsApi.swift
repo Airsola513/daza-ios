@@ -19,18 +19,39 @@ import AlamofireObjectMapper
 
 extension Api {
     
-    static func getEventList(page: Int, success: (pagination: Pagination, data: [Event]) -> Void) {
+    static func getEventList(page: Int,
+                             errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                             completion: (pagination: Pagination!, data: [Event]!, error: NSError!) -> Void) {
         let URL = URLs.apiURL + "/events";
         let parameters: [String: AnyObject] = [
             "page": page,
         ]
         self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<Event>, NSError>) in
-            let value = response.result.value
-            success(pagination: (value?.pagination)!, data: (value?.data)!)
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var pagination: Pagination! = nil
+                var data: [Event]! = nil
+                if (error == nil) {
+                    pagination = result.pagination
+                    data = result.data
+                }
+                completion(pagination: pagination, data: data, error: error)
+            })
         }
     }
     
-    static func showEvent(eventId: Int) {
+    static func showEvent(eventId: Int,
+                          errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                          completion: (data: Event!, error: NSError!) -> Void) {
+        let URL = URLs.apiURL + "/events/\(eventId)";
+        self.request(.GET, URL).responseObject { (response: Response<ResultOfObject<Event>, NSError>) in
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var data: Event! = nil
+                if (error == nil) {
+                    data = result.data
+                }
+                completion(data: data, error: error)
+            })
+        }
         
     }
     

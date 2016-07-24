@@ -19,18 +19,39 @@ import AlamofireObjectMapper
 
 extension Api {
 
-    static func getTopicList(page: Int, success: (pagination: Pagination, data: [Topic]) -> Void) {
+    static func getTopicList(page: Int,
+                             errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                             completion: (pagination: Pagination!, data: [Topic]!, error: NSError!) -> Void) {
         let URL = URLs.apiURL + "/topics";
         let parameters: [String: AnyObject] = [
             "page": page,
         ]
         self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<Topic>, NSError>) in
-            let value = response.result.value
-            success(pagination: (value?.pagination)!, data: (value?.data)!)
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var pagination: Pagination! = nil
+                var data: [Topic]! = nil
+                if (error == nil) {
+                    pagination = result.pagination
+                    data = result.data
+                }
+                completion(pagination: pagination, data: data, error: error)
+            })
         }
     }
     
-    static func showTopic(topicId: Int) {
+    static func showTopic(topicId: Int,
+                          errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                          completion: (data: Topic!, error: NSError!) -> Void) {
+        let URL = URLs.apiURL + "/topics/\(topicId)";
+        self.request(.GET, URL).responseObject { (response: Response<ResultOfObject<Topic>, NSError>) in
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var data: Topic! = nil
+                if (error == nil) {
+                    data = result.data
+                }
+                completion(data: data, error: error)
+            })
+        }
         
     }
     

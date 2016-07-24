@@ -43,10 +43,10 @@ class HomeExploreController: BaseListController<Topic> {
     }
     
     override func loadData(page: Int) {
-        let loadDataSuccess = { (pagination: Pagination, data: [Topic]) -> Void in
+        let completionBlock = { (pagination: Pagination!, data: [Topic]!, error: NSError!) -> Void in
             self.loadComplete(pagination, data)
         }
-        Api.getTopicList(page, success: loadDataSuccess)
+        Api.getTopicList(page, completion: completionBlock)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

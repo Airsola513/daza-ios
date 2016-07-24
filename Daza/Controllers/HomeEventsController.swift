@@ -32,10 +32,10 @@ class HomeEventsController: BaseListController<Event> {
     }
     
     override func loadData(page: Int) {
-        let loadDataSuccess = { (pagination: Pagination, data: [Event]) -> Void in
+        let completionBlock = { (pagination: Pagination!, data: [Event]!, error: NSError!) -> Void in
             self.loadComplete(pagination, data)
         }
-        Api.getEventList(page, success: loadDataSuccess)
+        Api.getEventList(page, completion: completionBlock)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

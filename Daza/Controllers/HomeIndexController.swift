@@ -49,11 +49,14 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
             }
         }
 
-        Api.getCategoryList(1) { (pagination, data) in
+        let completionBlock = { (pagination: Pagination!, data: [Category]!, error: NSError!) in
             self.categories = []
-            self.categories += data
+            if (error == nil) {
+                self.categories += data
+            }
             self.reloadPagerTabStripView()
         }
+        Api.getCategoryList(1, completion: completionBlock)
     }
     
     override func viewWillAppear(animated: Bool) {

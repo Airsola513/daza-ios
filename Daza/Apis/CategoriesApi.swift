@@ -19,22 +19,38 @@ import AlamofireObjectMapper
 
 extension Api {
     
-    static func getCategoryList(page: Int, success: (pagination: Pagination, data: [Category]) -> Void) {
+    static func getCategoryList(page: Int,
+                                errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                                completion: (pagination: Pagination!, data: [Category]!, error: NSError!) -> Void) {
         let URL = URLs.apiURL + "/categories";
         let parameters: [String: AnyObject] = [
             "page": page,
         ]
         self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<Category>, NSError>) in
-            let value = response.result.value
-            success(pagination: (value?.pagination)!, data: (value?.data)!)
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var pagination: Pagination! = nil
+                var data: [Category]! = nil
+                if (error == nil) {
+                    pagination = result.pagination
+                    data = result.data
+                }
+                completion(pagination: pagination, data: data, error: error)
+            })
         }
     }
     
-    static func showCategory(categoryId: Int, success: (data: Category) -> Void) {
+    static func showCategory(categoryId: Int,
+                             errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                             completion: (data: Category!, error: NSError!) -> Void) {
         let URL = URLs.apiURL + "/categories/\(categoryId)";
         self.request(.GET, URL).responseObject { (response: Response<ResultOfObject<Category>, NSError>) in
-            let value = response.result.value
-            success(data: (value?.data)!)
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var data: Category! = nil
+                if (error == nil) {
+                    data = result.data
+                }
+                completion(data: data, error: error)
+            })
         }
     }
     

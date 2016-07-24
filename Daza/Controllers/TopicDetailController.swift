@@ -34,10 +34,10 @@ class TopicDetailController: BaseListController<Article> {
 //        self.tableView.mj_header.ignoredScrollViewContentInsetTop = 30
         
         self.stretchyHeader = TopicDetailHeaderView.instanceFromNib()
-        self.stretchyHeader!.data = self.topic!
-//        self.tableView!.addSubview(self.stretchyHeader!)
+        self.stretchyHeader!.data = self.topic
+        self.tableView!.addSubview(self.stretchyHeader!)
 //        self.tableView.tableHeaderView = self.stretchyHeader!
-        self.tableView.mj_header.insertSubview(self.stretchyHeader!, atIndex: 0)
+//        self.tableView.mj_header.insertSubview(self.stretchyHeader!, atIndex: 0)
         
         self.menuShare = UIBarButtonItem(image: UIImage(named: "ic_menu_share"), style: .Plain, target: self, action: #selector(shareButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuShare
@@ -69,10 +69,10 @@ class TopicDetailController: BaseListController<Article> {
     }
     
     override func loadData(page: Int) {
-        let loadDataSuccess = { (pagination: Pagination, data: [Article]) -> Void in
+        let completionBlock = { (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void in
             self.loadComplete(pagination, data)
         }
-        Api.getArticleListByTopicId(page, topicId: (topic?.id)!, success: loadDataSuccess)
+        Api.getArticleListByTopicId(page, topicId: topic.id, completion: completionBlock)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
