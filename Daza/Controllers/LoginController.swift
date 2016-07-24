@@ -18,6 +18,7 @@ import UIKit
 import SnapKit
 import Eureka
 import OnePasswordExtension
+import SVProgressHUD
 
 class LoginController: BaseGroupedListController {
 
@@ -190,13 +191,22 @@ class LoginController: BaseGroupedListController {
     
     func submitButtonPressed(sender: UIButton) {
         let values = form.values()
-        let email = values["emailRow"] as! String
-        let password = values["passwordRow"] as! String
-
-        Api.login(email, password) { (data) in
-            print(data)
+        let email = values["emailRow"] as? String
+        let password = values["passwordRow"] as? String
+        
+        if (email == nil || password == nil) {
+            SVProgressHUD.showErrorWithStatus("用户名和密码不能为空")
+            return
+        }
+        
+        let completionBlock = { (data: User!, error: NSError!) in
+            if (error != nil) {
+                return
+            }
             self.dismissViewControllerAnimated(true, completion: nil)
         }
+
+        Api.login(email, password, completion: completionBlock)
     }
 
 }

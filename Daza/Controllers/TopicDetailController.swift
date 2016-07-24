@@ -31,10 +31,13 @@ class TopicDetailController: BaseListController<Article> {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("title_topic_detail")
+//        self.tableView.mj_header.ignoredScrollViewContentInsetTop = 30
         
         self.stretchyHeader = TopicDetailHeaderView.instanceFromNib()
         self.stretchyHeader!.data = self.topic!
-        self.tableView!.addSubview(self.stretchyHeader!)
+//        self.tableView!.addSubview(self.stretchyHeader!)
+//        self.tableView.tableHeaderView = self.stretchyHeader!
+        self.tableView.mj_header.insertSubview(self.stretchyHeader!, atIndex: 0)
         
         self.menuShare = UIBarButtonItem(image: UIImage(named: "ic_menu_share"), style: .Plain, target: self, action: #selector(shareButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuShare

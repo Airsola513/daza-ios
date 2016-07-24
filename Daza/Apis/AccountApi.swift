@@ -19,7 +19,11 @@ import AlamofireObjectMapper
 
 extension Api {
     
-    static func register(username: String, _ email: String, _ password: String, success: (data: User) -> Void)  {
+    static func register(username: String!,
+                       _ email: String!,
+                       _ password: String!,
+                         errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                         completion: (data: User!, error: NSError!) -> Void) {
         let URL = URLs.apiURL + "/account/register";
         let parameters: [String: AnyObject] = [
             "username": username,
@@ -27,51 +31,68 @@ extension Api {
             "password": password,
         ]
         self.request(.POST, URL, parameters).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
-            if let result = isSuccessful(response) {
-                Auth.user(result.data!)
-                success(data: result.data!)
+            let result = response.result
+            if (result.isSuccess) {
+                let value = result.value!
+                if (value.isSuccess()) {
+                    Auth.user(value.data)
+                    completion(data: value.data, error: nil)
+                }
+                return
             }
+            completion(data: nil, error: result.error)
         }
     }
     
-    static func login(email: String, _ password: String, completion: (data: User?, error: NSError?) -> Void) {
+    static func login(email: String!,
+                    _ password: String!,
+                      errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                      completion: (data: User!, error: NSError!) -> Void) {
+
         let URL = URLs.apiURL + "/account/login";
         let parameters: [String: AnyObject] = [
             "email": email,
             "password": password,
         ]
         self.request(.POST, URL, parameters).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
-            if let result = isSuccessful(response) {
-                Auth.user(result.data)
-                completion(data: result.data, error: nil)
-                return
-            }
-            completion(data: nil, error: response.result.error)
-//            try {
-//                let result = isSuccessful(response)
-//                Auth.user(result.data!)
-//                success(data: result.data!)
-//            }(); catch (NSError error)
-//                s
-//            }
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var data: User! = nil
+                if (result != nil) {
+                    data = result.data
+                    Auth.user(data)
+                }
+                completion(data: data, error: error)
+            })
         }
     }
     
-    static func logout(success: () -> Void) {
+    static func logout(errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                       completion: (error: NSError!) -> Void) {
+
         let URL = URLs.apiURL + "/account/logout";
         self.request(.POST, URL).responseObject { (response: Response<Result, NSError>) in
-            if isSuccessful(response) != nil {
-                success()
-            }
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                if (result != nil) {
+                    Auth.user(nil)
+                }
+                completion(error: error)
+            })
         }
     }
     
-    static func profile(success: (data: User) -> Void) {
+    static func profile(errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                        completion: (data: User!, error: NSError!) -> Void) {
+
         let URL = URLs.apiURL + "/account/profile";
         Alamofire.request(.GET, URL).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
-            if let result = isSuccessful(response) {
-                success(data: result.data!)
-            }
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var data: User! = nil
+                if (result != nil) {
+                    data = result.data
+                    Auth.user(data)
+                }
+                completion(data: data, error: error)
+            })
         }
     }
 

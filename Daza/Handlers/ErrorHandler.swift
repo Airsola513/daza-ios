@@ -15,5 +15,7 @@
  */
 
 protocol ErrorHandler {
-    
+
+    func handleError(error: NSError) -> Void
+
 }

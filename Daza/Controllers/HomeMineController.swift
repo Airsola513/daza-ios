@@ -29,6 +29,8 @@ class HomeMineController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("home.mine.title")
+        
+        self.tableView.tableFooterView = UIView()
 
         self.stretchyHeader = HomeMineHeaderView.instanceFromNib()
         self.stretchyHeader.updateIfNeeded()
@@ -46,6 +48,13 @@ class HomeMineController: BaseTableViewController {
         self.navigationItem.rightBarButtonItem = self.menuSettings
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(loginStatusChanged(_:)), name: "LoginStatusChangedEvent", object: nil)
+        
+        let controller = ArticleListController(nil)
+        controller.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
+        controller.tableView.mj_header.hidden = true
+        controller.tableView.scrollEnabled = false
+//        self.view.addSubview(controller.view)
+        self.view.addSubview(controller.view)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -108,14 +117,14 @@ class HomeMineController: BaseTableViewController {
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: .Default, reuseIdentifier: "Cell")
-        return cell
-    }
+//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 50
+//    }
+//    
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        let cell: UITableViewCell = UITableViewCell(style: .Default, reuseIdentifier: "Cell")
+//        return cell
+//    }
     
     
     // 我的问题列表发生变化

@@ -17,23 +17,36 @@
 import Alamofire
 
 class Api {
+    
+    static func handleResponse<T: Result>(response: Response<T, NSError>,
+                                        _ errorHandler: ErrorHandler!,
+                                          completion: (result: T!, error: NSError!) -> Void) {
+        let result = response.result
+        var value: T! = nil
+        var error: NSError! = nil
 
-    static func isSuccessful<T: Result>(response: Response<T, NSError>) -> T? {
-        if (response.result.isSuccess) {
-            let result: T = response.result.value!;
-            
-            if (result.isSuccess()) {
-                return result
+        if (result.isSuccess) {
+            value = response.result.value!
+            if (value.isFailure()) {
+                error = NSError(domain: URLs.baseURL, code: 500, userInfo: [:])
             }
+        } else {
+            error = result.error
         }
-        return nil
+        
+        if (error != nil && errorHandler != nil) {
+            errorHandler.handleError(error)
+        }
+
+        return completion(result: value, error: response.result.error)
     }
     
     static func request(method: Alamofire.Method,
-                        _ URLString: URLStringConvertible,
-                        _ parameters: [String: AnyObject]? = nil,
-                          encoding: ParameterEncoding = .URL,
-                          headers: [String: String]? = nil) -> Request {
+                      _ URLString: URLStringConvertible,
+                      _ parameters: [String: AnyObject]? = nil,
+                        encoding: ParameterEncoding = .URL,
+                        headers: [String: String]? = nil) -> Request {
+
         var reqHeaders: [String: String] = [
             "Accept": "application/json",
         ]

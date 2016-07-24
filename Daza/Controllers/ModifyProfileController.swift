@@ -30,6 +30,7 @@ class ModifyProfileController: BaseGroupedListController {
                     }
             +++ Section()
                 <<< TextRow() { row in
+                        row.tag = "nameRow"
                         row.title = trans("modify_profile.name.title")
                         row.placeholder = trans("modify_profile.name.placeholder")
                         row.textFieldPercentage = 0.7
@@ -54,6 +55,7 @@ class ModifyProfileController: BaseGroupedListController {
 //                        cell.textField.textAlignment = .Left
 //                    }
                 <<< TextRow() { row in
+                        row.tag = "cityRow"
                         row.title = trans("modify_profile.city.title")
                         row.placeholder = trans("modify_profile.city.placeholder")
                         row.textFieldPercentage = 0.7
@@ -61,6 +63,7 @@ class ModifyProfileController: BaseGroupedListController {
                         cell.textField.textAlignment = .Left
                     }
                 <<< TextRow() { row in
+                        row.tag = "websiteRow"
                         row.title = trans("modify_profile.website.title")
                         row.placeholder = trans("modify_profile.website.placeholder")
                         row.textFieldPercentage = 0.7
@@ -68,9 +71,21 @@ class ModifyProfileController: BaseGroupedListController {
                         cell.textField.textAlignment = .Left
                     }
                 <<< TextAreaRow() { row in
+                        row.tag = "bioRow"
                         row.placeholder = trans("modify_profile.bio.placeholder")
                     }
-
+        
+        let completionBlock = { (data: User!, error: NSError!) in
+            self.form.setValues([
+                "nameRow": data.name,
+                "cityRow": data.city,
+                "website": data.website,
+                "bio": data.bio,
+            ])
+            self.tableView?.reloadData()
+        }
+        
+        Api.profile(completion: completionBlock)
     }
 
 }

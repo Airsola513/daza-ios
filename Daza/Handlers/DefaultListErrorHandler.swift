@@ -14,12 +14,18 @@
  * limitations under the License.
  */
 
-import SVProgressHUD
+import Foundation
 
-class DefaultErrorHandler: ErrorHandler {
+class DefaultListErrorHandler<T>: ErrorHandler {
+    
+    var viewController: BaseListController<T>!
+    
+    init(viewController: BaseListController<T>!) {
+        self.viewController = viewController
+    }
     
     func handleError(error: NSError) -> Void {
-        SVProgressHUD.showErrorWithStatus(error.localizedDescription)
+        
     }
-
+    
 }
