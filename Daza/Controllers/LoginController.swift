@@ -39,7 +39,7 @@ class LoginController: BaseGroupedListController {
         self.tableView!.separatorStyle = .None
         self.tableView!.scrollEnabled = false
 
-        self.onepasswordButton.setBackgroundImage(UIImage(named: "ic_onepassword"), forState: UIControlState.Normal)
+        self.onepasswordButton.setImage(UIImage(named: "ic_onepassword"), forState: UIControlState.Normal)
         
         self.submitButton.titleLabel?.font = UIFont.systemFontOfSize(15)
         self.submitButton.layer.masksToBounds = true
