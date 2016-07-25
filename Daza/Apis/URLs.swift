@@ -19,5 +19,5 @@ struct URLs {
     static let webURL: String     = BuildConfig.WEB_BASE_URL
     static let apiVersion: String = "/v1"
     static let apiURL: String     = baseURL + apiVersion
-    static let inappURL: String   = "\(webURL)/in-app/"
+    static let inappURL: String   = "\(webURL)/in-app"
 }
