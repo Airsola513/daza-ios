@@ -14,30 +14,22 @@
  * limitations under the License.
  */
 
-//import RealmSwift
-import ObjectMapper
+import UIKit
 
-class Result: Mappable {
+class OwnFavoritesController: BaseTableViewController {
     
-    var status: String!
-    var error: Error!
-    var pagination: Pagination!
-    
-    required init?(_ map: Map) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
-    func mapping(map: Map) {
-        status      <- map["status"]
-        error       <- map["error"]
-        pagination  <- map["pagination"]
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
     }
     
-    func isSuccess() -> Bool {
-        return (status == "success")
-    }
-    
-    func isFailure() -> Bool {
-        return !isSuccess()
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: .Default, reuseIdentifier: "Cell")
+        cell.textLabel?.text = "hehe3"
+        return cell
     }
     
 }

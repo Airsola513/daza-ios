@@ -23,8 +23,10 @@ class Api {
                                         _ errorHandler: ErrorHandler!,
                                           completion: (result: T!, error: NSError!) -> Void) {
         let result = response.result
-        var value: T! = nil
-        var error: NSError! = nil
+        var value: T! = result.value
+        var error: NSError! = result.error
+//        print(value)
+//        print(response.response?.statusCode)
 
         if (result.isSuccess) {
             value = response.result.value!

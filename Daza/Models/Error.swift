@@ -17,27 +17,17 @@
 //import RealmSwift
 import ObjectMapper
 
-class Result: Mappable {
+class Error: Mappable {
     
-    var status: String!
-    var error: Error!
-    var pagination: Pagination!
+    var code: Int!
+    var message: String!
     
     required init?(_ map: Map) {
     }
     
     func mapping(map: Map) {
-        status      <- map["status"]
-        error       <- map["error"]
-        pagination  <- map["pagination"]
+        code    <- map["code"]
+        message <- map["message"]
     }
-    
-    func isSuccess() -> Bool {
-        return (status == "success")
-    }
-    
-    func isFailure() -> Bool {
-        return !isSuccess()
-    }
-    
+
 }

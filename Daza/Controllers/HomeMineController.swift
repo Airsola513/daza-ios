@@ -25,6 +25,11 @@ class HomeMineController: BaseTableViewController {
     var menuSettings: UIBarButtonItem?
     
     var stretchyHeader: HomeMineHeaderView!
+    
+    var currentViewController: UIViewController!
+    var ownArticlesController: OwnArticlesController = OwnArticlesController()
+    var ownTopicsController: OwnTopicsController = OwnTopicsController()
+    var ownFavoritesController: OwnFavoritesController = OwnFavoritesController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +43,7 @@ class HomeMineController: BaseTableViewController {
         self.stretchyHeader.modifyProfileButton.addTarget(self, action: #selector(modifyProfileButtonPressed(_:)), forControlEvents: .TouchUpInside)
         self.stretchyHeader.followingButton.addTarget(self, action: #selector(followingButtonPressed(_:)), forControlEvents: .TouchUpInside)
         self.stretchyHeader.followersButton.addTarget(self, action: #selector(followersButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        self.stretchyHeader.segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
 
         self.tableView!.addSubview(self.stretchyHeader)
         
@@ -48,13 +54,11 @@ class HomeMineController: BaseTableViewController {
         self.navigationItem.rightBarButtonItem = self.menuSettings
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(loginStatusChanged(_:)), name: "LoginStatusChangedEvent", object: nil)
-        
-        let controller = ArticleListController(nil)
-        controller.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
-        controller.tableView.mj_header.hidden = true
-        controller.tableView.scrollEnabled = false
-//        self.view.addSubview(controller.view)
-        self.view.addSubview(controller.view)
+
+        currentViewController = ownArticlesController
+        addChildViewController(currentViewController)
+        currentViewController.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
+        self.tableView.addSubview(currentViewController.view)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -123,13 +127,46 @@ class HomeMineController: BaseTableViewController {
     }
     
 //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 50
+//        return 10
 //    }
 //    
 //    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell: UITableViewCell = UITableViewCell(style: .Default, reuseIdentifier: "Cell")
-//        return cell
+//        return UITableViewCell()
 //    }
+
+    func segmentedControlValueChanged(sender: UISegmentedControl) {
+        let newController: UITableViewController!
+        let oldController = currentViewController
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            newController = ownArticlesController
+            break
+        case 1:
+            newController = ownTopicsController
+            break
+        case 2:
+            newController = ownFavoritesController
+            break
+        default:
+            newController = ownArticlesController
+            break
+        }
+        
+        currentViewController = newController
+        
+        oldController.willMoveToParentViewController(nil)
+        addChildViewController(newController)
+        newController.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
+        self.tableView.addSubview(newController.view)
+        
+        transitionFromViewController(oldController, toViewController: newController, duration: 0, options: .TransitionCrossDissolve, animations:{ () -> Void in
+            // nothing needed here
+            }, completion: { (finished) -> Void in
+                oldController.removeFromParentViewController()
+                newController.didMoveToParentViewController(self)
+        })
+    }
     
     // 我的问题列表发生变化
     @objc func loginStatusChanged(notification: NSNotification) {

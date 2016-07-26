@@ -29,6 +29,7 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
         //-
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor(rgba: "#ECEFF1")
         self.containerView.frame = CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height)
         
         self.changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
@@ -77,7 +78,7 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
         var childViewControllers: [UIViewController] = []
         if (self.categories.count > 0) {
             for category in categories {
-                childViewControllers.append(ArticleListController(category))
+                childViewControllers.append(ArticlesController(category))
             }
         } else {
             childViewControllers.append(BaseTableViewController())

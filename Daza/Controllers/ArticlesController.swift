@@ -17,7 +17,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class ArticleListController: BaseListController<Article>, IndicatorInfoProvider {
+class ArticlesController: BaseListController<Article>, IndicatorInfoProvider {
     
     var category: Category!
     

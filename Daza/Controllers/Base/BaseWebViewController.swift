@@ -18,7 +18,7 @@ import UIKit
 import SnapKit
 import NJKWebViewProgress
 
-class BrowserController: BaseViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
+class BaseWebViewController: BaseViewController, UIWebViewDelegate, NJKWebViewProgressDelegate {
     
     var webView: UIWebView = UIWebView()
     var progressView: NJKWebViewProgressView?
@@ -26,6 +26,9 @@ class BrowserController: BaseViewController, UIWebViewDelegate, NJKWebViewProgre
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.webView.scrollView.backgroundColor = UIColor(rgba: "ECEFF1")
+//        self.webView.tintColor = UIColor(rgba: "ECEFF1")
         
         self.webView.delegate = progressProxy
         self.progressProxy.webViewProxyDelegate = self
@@ -61,5 +64,5 @@ class BrowserController: BaseViewController, UIWebViewDelegate, NJKWebViewProgre
     func webViewProgress(webViewProgress: NJKWebViewProgress!, updateProgress progress: Float) {
         self.progressView!.setProgress(progress, animated: true)
     }
-
+    
 }

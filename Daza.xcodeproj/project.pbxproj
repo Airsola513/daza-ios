@@ -42,7 +42,7 @@
 		F519182D1D3364F80012897F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519182C1D3364F80012897F /* UIViewControllerExtension.swift */; };
 		F519182F1D33668D0012897F /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519182E1D33668D0012897F /* BaseNavigationController.swift */; };
 		F51918321D33677B0012897F /* HomeExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918301D33677B0012897F /* HomeExploreController.swift */; };
-		F51918331D33677B0012897F /* ArticleListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918311D33677B0012897F /* ArticleListController.swift */; };
+		F51918331D33677B0012897F /* ArticlesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918311D33677B0012897F /* ArticlesController.swift */; };
 		F51918381D337C0B0012897F /* ArticleCommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918341D337C0A0012897F /* ArticleCommentsController.swift */; };
 		F51918391D337C0B0012897F /* ArticleDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918351D337C0B0012897F /* ArticleDetailController.swift */; };
 		F519183A1D337C0B0012897F /* ArticleLikesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918361D337C0B0012897F /* ArticleLikesController.swift */; };
@@ -55,6 +55,10 @@
 		F51918471D3484190012897F /* HomeEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918461D3484190012897F /* HomeEventsController.swift */; };
 		F519184C1D34BB310012897F /* BrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519184B1D34BB310012897F /* BrowserController.swift */; };
 		F519184E1D34DA310012897F /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519184D1D34DA310012897F /* NSObjectExtension.swift */; };
+		F51D307D1D471ED700B3416F /* BaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D307C1D471ED700B3416F /* BaseWebViewController.swift */; };
+		F51D307F1D477F7400B3416F /* OwnArticlesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D307E1D477F7400B3416F /* OwnArticlesController.swift */; };
+		F51D30811D477F8200B3416F /* OwnTopicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D30801D477F8200B3416F /* OwnTopicsController.swift */; };
+		F51D30831D47800700B3416F /* OwnFavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D30821D47800700B3416F /* OwnFavoritesController.swift */; };
 		F52C55241D3E710100819C6D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52C55231D3E710100819C6D /* UIViewExtension.swift */; };
 		F5338A1A1D35490B00B3D44F /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5338A191D35490B00B3D44F /* URLs.swift */; };
 		F5338A1C1D354A3500B3D44F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5338A1B1D354A3500B3D44F /* Result.swift */; };
@@ -84,6 +88,7 @@
 		F5715BCE1D353F0000F1CBE5 /* UsersApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BC41D353F0000F1CBE5 /* UsersApi.swift */; };
 		F5A2B5801D3B82810031AF83 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A2B57F1D3B82810031AF83 /* ErrorHandler.swift */; };
 		F5A2B5821D3CEC690031AF83 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A2B5811D3CEC690031AF83 /* UIColorExtension.swift */; };
+		F5A6AFE01D46515000B89E7A /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A6AFDF1D46515000B89E7A /* Error.swift */; };
 		F5B5D5E91D3F2B16009EE5AD /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5D5E81D3F2B16009EE5AD /* UIApplicationExtension.swift */; };
 		F5B5D5EB1D3F4B97009EE5AD /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5D5EA1D3F4B97009EE5AD /* AccountController.swift */; };
 		F5B5D5ED1D3F53AE009EE5AD /* ModifyProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5D5EC1D3F53AE009EE5AD /* ModifyProfileController.swift */; };
@@ -176,7 +181,7 @@
 		F519182C1D3364F80012897F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		F519182E1D33668D0012897F /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		F51918301D33677B0012897F /* HomeExploreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeExploreController.swift; sourceTree = "<group>"; };
-		F51918311D33677B0012897F /* ArticleListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListController.swift; sourceTree = "<group>"; };
+		F51918311D33677B0012897F /* ArticlesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesController.swift; sourceTree = "<group>"; };
 		F51918341D337C0A0012897F /* ArticleCommentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCommentsController.swift; sourceTree = "<group>"; };
 		F51918351D337C0B0012897F /* ArticleDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailController.swift; sourceTree = "<group>"; };
 		F51918361D337C0B0012897F /* ArticleLikesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleLikesController.swift; sourceTree = "<group>"; };
@@ -189,6 +194,10 @@
 		F51918461D3484190012897F /* HomeEventsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEventsController.swift; sourceTree = "<group>"; };
 		F519184B1D34BB310012897F /* BrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserController.swift; sourceTree = "<group>"; };
 		F519184D1D34DA310012897F /* NSObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
+		F51D307C1D471ED700B3416F /* BaseWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebViewController.swift; sourceTree = "<group>"; };
+		F51D307E1D477F7400B3416F /* OwnArticlesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnArticlesController.swift; sourceTree = "<group>"; };
+		F51D30801D477F8200B3416F /* OwnTopicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnTopicsController.swift; sourceTree = "<group>"; };
+		F51D30821D47800700B3416F /* OwnFavoritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnFavoritesController.swift; sourceTree = "<group>"; };
 		F52C55231D3E710100819C6D /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F5338A191D35490B00B3D44F /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		F5338A1B1D354A3500B3D44F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -224,6 +233,7 @@
 		F5715BC41D353F0000F1CBE5 /* UsersApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersApi.swift; sourceTree = "<group>"; };
 		F5A2B57F1D3B82810031AF83 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		F5A2B5811D3CEC690031AF83 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		F5A6AFDF1D46515000B89E7A /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		F5B5D5E81D3F2B16009EE5AD /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		F5B5D5EA1D3F4B97009EE5AD /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		F5B5D5EC1D3F53AE009EE5AD /* ModifyProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyProfileController.swift; sourceTree = "<group>"; };
@@ -305,7 +315,7 @@
 				F51918341D337C0A0012897F /* ArticleCommentsController.swift */,
 				F51918351D337C0B0012897F /* ArticleDetailController.swift */,
 				F51918361D337C0B0012897F /* ArticleLikesController.swift */,
-				F51918311D33677B0012897F /* ArticleListController.swift */,
+				F51918311D33677B0012897F /* ArticlesController.swift */,
 				F51918221D33621F0012897F /* Base */,
 				F519184B1D34BB310012897F /* BrowserController.swift */,
 				F5B5D5EC1D3F53AE009EE5AD /* ModifyProfileController.swift */,
@@ -330,6 +340,9 @@
 				F519183C1D337C540012897F /* TweetCreateController.swift */,
 				F519183D1D337C540012897F /* TweetDetailController.swift */,
 				F51918421D33E8150012897F /* UserDetailController.swift */,
+				F51D307E1D477F7400B3416F /* OwnArticlesController.swift */,
+				F51D30801D477F8200B3416F /* OwnTopicsController.swift */,
+				F51D30821D47800700B3416F /* OwnFavoritesController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -362,6 +375,7 @@
 				87A9E6FBE730848C0539CFAB /* User.swift */,
 				F5D41DDC1D3B3D300055195C /* UserPointRecord.swift */,
 				F5FC7D891D41F96000C6CB17 /* UserRelationship.swift */,
+				F5A6AFDF1D46515000B89E7A /* Error.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -407,6 +421,7 @@
 				F519182E1D33668D0012897F /* BaseNavigationController.swift */,
 				F51918231D33621F0012897F /* BaseTableViewController.swift */,
 				F5F29B591D36A1A700071F04 /* BaseViewController.swift */,
+				F51D307C1D471ED700B3416F /* BaseWebViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -838,7 +853,7 @@
 			files = (
 				F56D2B011D3121AC004A92DD /* AppDelegate.swift in Sources */,
 				F51918471D3484190012897F /* HomeEventsController.swift in Sources */,
-				F51918331D33677B0012897F /* ArticleListController.swift in Sources */,
+				F51918331D33677B0012897F /* ArticlesController.swift in Sources */,
 				F51918321D33677B0012897F /* HomeExploreController.swift in Sources */,
 				F519183F1D337C540012897F /* TweetDetailController.swift in Sources */,
 				F5F23E3F1D32A59800234104 /* HomeController.swift in Sources */,
@@ -850,6 +865,7 @@
 				F5D41DDB1D3B3CD50055195C /* ArticleViewer.swift in Sources */,
 				F51918381D337C0B0012897F /* ArticleCommentsController.swift in Sources */,
 				F5342F191D3FB5920076BBF8 /* HomeMineHeaderView.swift in Sources */,
+				F51D307D1D471ED700B3416F /* BaseWebViewController.swift in Sources */,
 				F5715BCA1D353F0000F1CBE5 /* NotificationsApi.swift in Sources */,
 				F5342F101D3FB0F50076BBF8 /* FollowingController.swift in Sources */,
 				87A9E778BC2C5BBE943FA230 /* Asset.swift in Sources */,
@@ -865,6 +881,7 @@
 				F5342F141D3FB5770076BBF8 /* TopicDetailHeaderView.swift in Sources */,
 				F5715BCB1D353F0000F1CBE5 /* TagsApi.swift in Sources */,
 				87A9EEBC6C4B59CC03C29050 /* Article.swift in Sources */,
+				F51D30831D47800700B3416F /* OwnFavoritesController.swift in Sources */,
 				F514AE821D40DF3A00A68590 /* FollowingItemCell.swift in Sources */,
 				F514AE8A1D4104ED00A68590 /* NotificationSettingsController.swift in Sources */,
 				F5D41DD91D3B3C860055195C /* TopicSubscriber.swift in Sources */,
@@ -877,6 +894,7 @@
 				F51918391D337C0B0012897F /* ArticleDetailController.swift in Sources */,
 				F5FC7D961D438D9D00C6CB17 /* CategoriesApi.swift in Sources */,
 				F5715BC81D353F0000F1CBE5 /* AssetsApi.swift in Sources */,
+				F51D307F1D477F7400B3416F /* OwnArticlesController.swift in Sources */,
 				F519184E1D34DA310012897F /* NSObjectExtension.swift in Sources */,
 				87A9E137F2134802C2C6A256 /* ArticleLike.swift in Sources */,
 				F5FC7D8A1D41F96000C6CB17 /* UserRelationship.swift in Sources */,
@@ -894,6 +912,7 @@
 				F5D41DD31D38E2650055195C /* EventItemCell.swift in Sources */,
 				F51918241D33621F0012897F /* BaseTableViewController.swift in Sources */,
 				F51918431D33E8150012897F /* UserDetailController.swift in Sources */,
+				F51D30811D477F8200B3416F /* OwnTopicsController.swift in Sources */,
 				F5715BC51D353F0000F1CBE5 /* AccountApi.swift in Sources */,
 				F519183A1D337C0B0012897F /* ArticleLikesController.swift in Sources */,
 				F51918451D33EA070012897F /* BaseGroupedListController.swift in Sources */,
@@ -904,6 +923,7 @@
 				F5F23E431D32A5FB00234104 /* TopicDetailController.swift in Sources */,
 				F5D41DD11D38E25A0055195C /* ArticleItemCell.swift in Sources */,
 				F5F23E411D32A5EA00234104 /* SettingsController.swift in Sources */,
+				F5A6AFE01D46515000B89E7A /* Error.swift in Sources */,
 				F5715BCD1D353F0000F1CBE5 /* TweetsApi.swift in Sources */,
 				F519182D1D3364F80012897F /* UIViewControllerExtension.swift in Sources */,
 				F5B5D5ED1D3F53AE009EE5AD /* ModifyProfileController.swift in Sources */,

@@ -21,7 +21,7 @@ class AboutController: BaseGroupedListController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("title_about")
+        self.title = trans("settings.about.title")
         
         form
             +++ Section()
