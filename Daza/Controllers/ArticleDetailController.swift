@@ -16,7 +16,7 @@
 
 import UIKit
 
-class ArticleDetailController: BrowserController {
+class ArticleDetailController: InAppBrowserController {
 
     var article: Article!
 

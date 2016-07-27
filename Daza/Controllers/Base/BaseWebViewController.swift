@@ -27,9 +27,6 @@ class BaseWebViewController: BaseViewController, UIWebViewDelegate, NJKWebViewPr
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.webView.scrollView.backgroundColor = UIColor(rgba: "ECEFF1")
-//        self.webView.tintColor = UIColor(rgba: "ECEFF1")
-        
         self.webView.delegate = progressProxy
         self.progressProxy.webViewProxyDelegate = self
         self.progressProxy.progressDelegate = self

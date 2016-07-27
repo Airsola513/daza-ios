@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-"APP_NAME" = "Daza";
-
 // MJRefresh
 "MJRefreshHeaderIdleText" = "下拉刷新";
 "MJRefreshHeaderPullingText" = "松开即可刷新";
@@ -24,6 +22,13 @@
 "MJRefreshAutoFooterIdleText" = "上拉加载更多";
 "MJRefreshAutoFooterRefreshingText" = "加载中...";
 "MJRefreshAutoFooterNoMoreDataText" = "暂无更多数据";
+
+// Eureka
+"Take photo" = "拍照";
+"Photo Library" = "照片";
+"Saved Photos" = "时刻";
+"Clear Photo" = "清除照片";
+"Cancel" = "取消";
 
 // General
 "general.abort" = "终止";
@@ -74,7 +79,7 @@
 "settings.account.bind_github.title" = "GitHub 账号";
 
 "settings.feedback.title" = "意见反馈";
-"settings.about.title" = "关于 Daza";
+"settings.about.title" = "关于 daza.io";
 "settings.logout.title" = "退出";
 
 // Account

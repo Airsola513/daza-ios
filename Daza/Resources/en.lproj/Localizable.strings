@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-"APP_NAME" = "DAZA";
-
 // General
 "general.abort" = "Abort";
 "general.retry" = "Retry";
@@ -65,7 +63,7 @@
 "settings.account.bind_github.title" = "GitHub";
 
 "settings.feedback.title" = "Feedback";
-"settings.about.title" = "About Daza";
+"settings.about.title" = "About daza.io";
 "settings.logout.title" = "Logout";
 
 // Account

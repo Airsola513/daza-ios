@@ -18,11 +18,17 @@ import UIKit
 import Eureka
 
 class ModifyProfileController: BaseGroupedListController {
+    
+    var menuSave: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("modify_profile.title")
 
+        
+        self.menuSave = UIBarButtonItem(image: UIImage(named: "ic_menu_save"), style: .Plain, target: self, action: #selector(saveButtonPressed(_:)))
+        self.navigationItem.rightBarButtonItem = self.menuSave
+        
         form
             +++ Section()
                 <<< ImageRow() { row in
@@ -93,6 +99,10 @@ class ModifyProfileController: BaseGroupedListController {
         }
         
         Api.profile(completion: completionBlock)
+    }
+    
+    func saveButtonPressed(sender: UIBarButtonItem) {
+        
     }
 
 }

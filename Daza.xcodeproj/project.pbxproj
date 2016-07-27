@@ -53,7 +53,7 @@
 		F51918431D33E8150012897F /* UserDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918421D33E8150012897F /* UserDetailController.swift */; };
 		F51918451D33EA070012897F /* BaseGroupedListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918441D33EA070012897F /* BaseGroupedListController.swift */; };
 		F51918471D3484190012897F /* HomeEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51918461D3484190012897F /* HomeEventsController.swift */; };
-		F519184C1D34BB310012897F /* BrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519184B1D34BB310012897F /* BrowserController.swift */; };
+		F519184C1D34BB310012897F /* InAppBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519184B1D34BB310012897F /* InAppBrowserController.swift */; };
 		F519184E1D34DA310012897F /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519184D1D34DA310012897F /* NSObjectExtension.swift */; };
 		F51D307D1D471ED700B3416F /* BaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D307C1D471ED700B3416F /* BaseWebViewController.swift */; };
 		F51D307F1D477F7400B3416F /* OwnArticlesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D307E1D477F7400B3416F /* OwnArticlesController.swift */; };
@@ -192,7 +192,7 @@
 		F51918421D33E8150012897F /* UserDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailController.swift; sourceTree = "<group>"; };
 		F51918441D33EA070012897F /* BaseGroupedListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseGroupedListController.swift; sourceTree = "<group>"; };
 		F51918461D3484190012897F /* HomeEventsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEventsController.swift; sourceTree = "<group>"; };
-		F519184B1D34BB310012897F /* BrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserController.swift; sourceTree = "<group>"; };
+		F519184B1D34BB310012897F /* InAppBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppBrowserController.swift; sourceTree = "<group>"; };
 		F519184D1D34DA310012897F /* NSObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		F51D307C1D471ED700B3416F /* BaseWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebViewController.swift; sourceTree = "<group>"; };
 		F51D307E1D477F7400B3416F /* OwnArticlesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnArticlesController.swift; sourceTree = "<group>"; };
@@ -317,7 +317,7 @@
 				F51918361D337C0B0012897F /* ArticleLikesController.swift */,
 				F51918311D33677B0012897F /* ArticlesController.swift */,
 				F51918221D33621F0012897F /* Base */,
-				F519184B1D34BB310012897F /* BrowserController.swift */,
+				F519184B1D34BB310012897F /* InAppBrowserController.swift */,
 				F5B5D5EC1D3F53AE009EE5AD /* ModifyProfileController.swift */,
 				F5FC7D971D43A7BD00C6CB17 /* EventDetailController.swift */,
 				F5342F0D1D3FB0E10076BBF8 /* FollowersController.swift */,
@@ -930,7 +930,7 @@
 				F519182F1D33668D0012897F /* BaseNavigationController.swift in Sources */,
 				F5A2B5801D3B82810031AF83 /* ErrorHandler.swift in Sources */,
 				F5342F0E1D3FB0E10076BBF8 /* FollowersController.swift in Sources */,
-				F519184C1D34BB310012897F /* BrowserController.swift in Sources */,
+				F519184C1D34BB310012897F /* InAppBrowserController.swift in Sources */,
 				F52C55241D3E710100819C6D /* UIViewExtension.swift in Sources */,
 				F5D41DD71D3B2DDB0055195C /* Auth.swift in Sources */,
 				87A9E6FFFD865256D58D2101 /* ArticleComment.swift in Sources */,

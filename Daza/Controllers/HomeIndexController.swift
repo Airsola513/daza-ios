@@ -60,16 +60,27 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
         Api.getCategoryList(1, completion: completionBlock)
     }
     
-    override func viewWillAppear(animated: Bool) {
+//    override func viewWillAppear(animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.buttonBarView.removeFromSuperview()
+//        self.navigationController?.navigationBar.addSubview(buttonBarView)
+//    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.buttonBarView.removeFromSuperview()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.buttonBarView.removeFromSuperview()
         self.navigationController?.navigationBar.addSubview(buttonBarView)
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        self.buttonBarView.removeFromSuperview()
-    }
+//    override func viewDidDisappear(animated: Bool) {
+//        super.viewDidDisappear(animated)
+//        self.buttonBarView.removeFromSuperview()
+//    }
     
     // MARK: - PagerTabStripDataSource
     

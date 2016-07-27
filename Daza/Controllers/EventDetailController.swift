@@ -16,7 +16,7 @@
 
 import UIKit
 
-class EventDetailController: BrowserController {
+class EventDetailController: InAppBrowserController {
 
     var event: Event!
     
