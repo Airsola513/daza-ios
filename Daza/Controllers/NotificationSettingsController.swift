@@ -28,7 +28,7 @@ class NotificationSettingsController: BaseGroupedListController {
                 <<< LabelRow() { row in
                         row.title = trans("settings.notifications.push_notification.title")
                     }.cellUpdate { (cell, row) in
-                        cell.detailTextLabel?.text = "未开启"
+                        cell.detailTextLabel?.text = UIApplication.sharedApplication().isRegisteredForRemoteNotifications() ? "已开启" : "未开启"
                     }.onCellSelection { (cell, row) in
                         UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
                     }

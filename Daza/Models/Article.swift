@@ -42,6 +42,10 @@ class Article: Model {
     var user: User!
     var topic: Topic!
     
+    override init() {
+        super.init()
+    }
+
     required init?(_ map: Map) {
         super.init(map)
     }

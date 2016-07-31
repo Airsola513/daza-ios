@@ -19,6 +19,8 @@ import UIKit
 class ArticleDetailController: InAppBrowserController {
 
     var article: Article!
+    
+    var articleCommentBarView: ArticleCommentBarView = ArticleCommentBarView.instanceFromNib()
 
     init(_ data: Article) {
         super.init(nibName: nil, bundle: nil)
@@ -37,6 +39,9 @@ class ArticleDetailController: InAppBrowserController {
 
         self.menuShare = UIBarButtonItem(image: UIImage(named: "ic_menu_share"), style: .Plain, target: self, action: #selector(shareButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuShare
+        
+        self.articleCommentBarView.frame = CGRectMake(0, self.view.frame.height - 64 - 44, self.view.frame.width, 44)
+        self.view.addSubview(self.articleCommentBarView)
 
         let urlRequest = NSURLRequest(URL: NSURL(string: "\(URLs.inappURL)/articles/\(self.article.id)")!)
         self.webView.loadRequest(urlRequest)

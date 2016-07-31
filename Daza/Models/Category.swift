@@ -19,9 +19,22 @@ import ObjectMapper
 
 class Category: Model {
     
+    static let ID_LATEST: Int  = -1; // 最新
+    static let ID_POPULAR: Int = -2; // 推荐
+    
     var name: String!        // 名称
     var image_url: String!   // 图片网址
     var description: String! // 描述
+
+    override init() {
+        super.init()
+    }
+    
+    init(id: Int, name: String) {
+        super.init()
+        self.id = id
+        self.name = name
+    }
     
     required init?(_ map: Map) {
         super.init(map)
@@ -33,5 +46,12 @@ class Category: Model {
         image_url  	<- map["image_url"]
         description	<- map["description"]
     }
-    
+
+    static func latest() -> Category {
+        return Category(id: ID_LATEST, name: "最新")
+    }
+
+    static func popular() -> Category {
+        return Category(id: ID_POPULAR, name: "推荐")
+    }
 }

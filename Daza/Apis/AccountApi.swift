@@ -84,7 +84,36 @@ extension Api {
                         completion: (data: User!, error: NSError!) -> Void) {
 
         let URL = URLs.apiURL + "/account/profile";
-        Alamofire.request(.GET, URL).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
+        self.request(.GET, URL).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var data: User! = nil
+                if (error == nil) {
+                    data = result.data
+                    Auth.user(data)
+                }
+                completion(data: data, error: error)
+            })
+        }
+    }
+    
+    static func updateProfile(avatarUrl: String!,
+                            _ name: String!,
+                            _ city: String!,
+                            _ website: String!,
+                            _ bio: String!,
+                              errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                              completion: (data: User!, error: NSError!) -> Void) {
+        
+        let URL = URLs.apiURL + "/account/profile";
+        let parameters: [String: AnyObject] = [
+            "avatar_url": avatarUrl,
+            "name": name,
+            "city": city,
+            "website": website,
+            "bio": bio,
+        ]
+
+        self.request(.PUT, URL, parameters).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
             handleResponse(response, errorHandler, completion: { (result, error) in
                 var data: User! = nil
                 if (error == nil) {

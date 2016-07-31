@@ -17,17 +17,27 @@
 import UIKit
 import ObjectMapper
 import XLPagerTabStrip
+import SVProgressHUD
 
 class HomeIndexController: ButtonBarPagerTabStripViewController {
     
-    var categories: [Category] = []
+    var menuRefresh: UIBarButtonItem!
+    var pagerChildViewControllers: [UIViewController] = []
+    
+    var latestArticlesController: UIViewController  = ArticlesController(Category.latest())
+    var popularArticlesController: UIViewController = ArticlesController(Category.popular())
     
     override func viewDidLoad() {
         // set up style before super view did load is executed
         settings.style.buttonBarBackgroundColor = .clearColor()
         settings.style.selectedBarBackgroundColor = .clearColor()
+        settings.style.buttonBarItemLeftRightMargin = 12
+        settings.style.buttonBarItemsShouldFillAvailiableWidth = false
         //-
         super.viewDidLoad()
+        
+        self.menuRefresh = UIBarButtonItem(image: UIImage(named: "ic_menu_refresh"), style: .Plain, target: self, action: #selector(refreshButtonPressed(_:)))
+        self.navigationItem.rightBarButtonItem = self.menuRefresh
         
         self.view.backgroundColor = UIColor(rgba: "#ECEFF1")
         self.containerView.frame = CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height)
@@ -49,15 +59,8 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
                 oldCell?.transform = CGAffineTransformMakeScale(0.8, 0.8)
             }
         }
-
-        let completionBlock = { (pagination: Pagination!, data: [Category]!, error: NSError!) in
-            self.categories = []
-            if (error == nil) {
-                self.categories += data
-            }
-            self.reloadPagerTabStripView()
-        }
-        Api.getCategoryList(1, completion: completionBlock)
+        // 加载分类
+        self.reloadCategories()
     }
     
 //    override func viewWillAppear(animated: Bool) {
@@ -85,21 +88,42 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
     // MARK: - PagerTabStripDataSource
     
     override func viewControllersForPagerTabStrip(pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        
-        var childViewControllers: [UIViewController] = []
-        if (self.categories.count > 0) {
-            for category in categories {
-                childViewControllers.append(ArticlesController(category))
-            }
-        } else {
-            childViewControllers.append(BaseTableViewController())
+        if (self.pagerChildViewControllers.count == 0) {
+            self.pagerChildViewControllers.append(self.latestArticlesController)
+            self.pagerChildViewControllers.append(self.popularArticlesController)
         }
-        
-        return childViewControllers
+        return pagerChildViewControllers
     }
     
     override func configureCell(cell: ButtonBarViewCell, indicatorInfo: IndicatorInfo) {
         super.configureCell(cell, indicatorInfo: indicatorInfo)
         cell.backgroundColor = .clearColor()
+    }
+
+    func refreshButtonPressed(sender: UIBarButtonItem) {
+        self.reloadCategories()
+    }
+    
+    func reloadCategories() {
+        let completionBlock = { (pagination: Pagination!, data: [Category]!, error: NSError!) in
+            self.pagerChildViewControllers = []
+            if (error == nil) {
+                self.pagerChildViewControllers.append(self.latestArticlesController)
+                self.pagerChildViewControllers.append(self.popularArticlesController)
+                
+                for category in data {
+                    self.pagerChildViewControllers.append(ArticlesController(category))
+                }
+                self.navigationItem.rightBarButtonItem = nil
+                self.buttonBarView.frame.size.width = self.view.bounds.width + 44
+            } else {
+                self.navigationItem.rightBarButtonItem = self.menuRefresh
+                self.buttonBarView.frame.size.width = self.view.bounds.width - 44
+            }
+            self.reloadPagerTabStripView()
+            SVProgressHUD.dismiss()
+        }
+        SVProgressHUD.showWithStatus("waiting...")
+        Api.getCategoryList(1, completion: completionBlock)
     }
 }

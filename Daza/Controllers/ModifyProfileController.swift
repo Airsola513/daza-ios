@@ -16,6 +16,7 @@
 
 import UIKit
 import Eureka
+import SVProgressHUD
 
 class ModifyProfileController: BaseGroupedListController {
     
@@ -91,8 +92,8 @@ class ModifyProfileController: BaseGroupedListController {
                     "avatarRow": NSURL(string: data.avatar_url),
                     "nameRow": data.name,
                     "cityRow": data.city,
-                    "website": data.website,
-                    "bio": data.bio,
+                    "websiteRow": data.website,
+                    "bioRow": data.bio,
                 ])
             }
             self.tableView?.reloadData()
@@ -102,7 +103,24 @@ class ModifyProfileController: BaseGroupedListController {
     }
     
     func saveButtonPressed(sender: UIBarButtonItem) {
+        let values = form.values()
+//        let avatarUrl = values["avatarRow"] as? String
+        let avatarUrl = ""
+        let name = values["nameRow"] as? String
+        let city = values["cityRow"] as? String
+        let website = values["websiteRow"] as? String
+        let bio = values["bioRow"] as? String
         
+        let completionBlock = { (data: User!, error: NSError!) in
+            SVProgressHUD.dismiss()
+            if (error != nil) {
+                return
+            }
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        SVProgressHUD.showWithStatus("waiting...")
+        Api.updateProfile(avatarUrl, name, city, website, bio, completion: completionBlock)
     }
 
 }

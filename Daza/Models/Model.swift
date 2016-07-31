@@ -33,7 +33,9 @@ class Model: Mappable {
     var deleted_at: NSDate!
     var created_at: NSDate!
     var updated_at: NSDate!
-    
+
+    init() {}
+
     required init?(_ map: Map) {
     }
     

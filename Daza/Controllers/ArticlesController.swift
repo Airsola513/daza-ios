@@ -49,8 +49,16 @@ class ArticlesController: BaseListController<Article>, IndicatorInfoProvider {
         let completionBlock = { (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void in
             self.loadComplete(pagination, data)
         }
+        
         if (self.category != nil) {
-            Api.getArticleListByCategoryId(page, categoryId: self.category.id, completion: completionBlock)
+            switch self.category.id {
+            case Category.ID_LATEST:
+                Api.getLatestArticleList(page, completion: completionBlock)
+            case Category.ID_POPULAR:
+                Api.getPopularArticleList(page, completion: completionBlock)
+            default:
+                Api.getArticleListByCategoryId(page, categoryId: self.category.id, completion: completionBlock)
+            }
         } else {
             Api.getArticleList(page, completion: completionBlock)
         }

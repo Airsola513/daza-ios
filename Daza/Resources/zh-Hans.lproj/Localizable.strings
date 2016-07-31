@@ -25,7 +25,7 @@
 
 // Eureka
 "Take photo" = "拍照";
-"Photo Library" = "照片";
+"Photo Library" = "从手机相册选择";
 "Saved Photos" = "时刻";
 "Clear Photo" = "清除照片";
 "Cancel" = "取消";
