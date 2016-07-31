@@ -16,7 +16,7 @@
 
 import UIKit
 
-class ArticleCommentsController: BaseTableViewController {
+class ArticleCommentCreateController: BaseTableViewController {
     
     var article: Article!
     
@@ -31,7 +31,7 @@ class ArticleCommentsController: BaseTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("article_comments.title")
+        self.title = trans("article_comment_create.title")
     }
-
+    
 }

@@ -112,6 +112,10 @@
 
 // >> Article detail
 "article_detail.title" = "Article detail";
+// >> Article comments
+"article_comments.title" = "Comments";
+// >> Article comment create
+"article_comment_create.title" = "发表评论";
 
 // Events
 

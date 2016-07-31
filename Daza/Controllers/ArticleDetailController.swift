@@ -31,24 +31,55 @@ class ArticleDetailController: InAppBrowserController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    var menuShare: UIBarButtonItem?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("article_detail.title")
-
-        self.menuShare = UIBarButtonItem(image: UIImage(named: "ic_menu_share"), style: .Plain, target: self, action: #selector(shareButtonPressed(_:)))
-        self.navigationItem.rightBarButtonItem = self.menuShare
         
-        self.articleCommentBarView.frame = CGRectMake(0, self.view.frame.height - 64 - 44, self.view.frame.width, 44)
+        self.articleCommentBarView.commentButton.addTarget(self, action: #selector(commentButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        self.articleCommentBarView.commentCountButton.addTarget(self, action: #selector(commentCountButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        self.articleCommentBarView.favoriteCountButton.addTarget(self, action: #selector(favoriteCountButtonButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        self.articleCommentBarView.shareButton.addTarget(self, action: #selector(shareButtonButtonPressed(_:)), forControlEvents: .TouchUpInside)
+
         self.view.addSubview(self.articleCommentBarView)
+        self.articleCommentBarView.snp_makeConstraints { (make) in
+            make.width.equalTo(self.view.snp_width)
+            make.height.equalTo(44)
+            make.bottom.equalTo(0)
+        }
+        
+        self.webView.snp_makeConstraints { (make) -> Void in
+            make.bottom.equalTo(-44)
+        }
 
         let urlRequest = NSURLRequest(URL: NSURL(string: "\(URLs.inappURL)/articles/\(self.article.id)")!)
         self.webView.loadRequest(urlRequest)
+        
     }
-
-    func shareButtonPressed(sender: UIBarButtonItem) {
-
+    
+    func commentButtonPressed(sender: UIButton!) {
+        if (!Auth.check(self)) {
+            return
+        }
+        let controller = ArticleCommentCreateController(self.article)
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func commentCountButtonPressed(sender: UIButton!) {
+        if (!Auth.check(self)) {
+            return
+        }
+        let controller = ArticleCommentsController(self.article)
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func favoriteCountButtonButtonPressed(sender: UIButton!) {
+        if (!Auth.check(self)) {
+            return
+        }
+    }
+    
+    func shareButtonButtonPressed(sender: UIButton!) {
+        
     }
 
 }

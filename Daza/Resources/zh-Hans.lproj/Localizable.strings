@@ -128,6 +128,10 @@
 
 // >> Article detail
 "article_detail.title" = "文章详情";
+// >> Article comments
+"article_comments.title" = "评论列表";
+// >> Article comment create
+"article_comment_create.title" = "发表评论";
 
 // Events
 

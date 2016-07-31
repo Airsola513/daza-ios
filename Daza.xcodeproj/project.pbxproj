@@ -78,6 +78,7 @@
 		F56D2B231D3121AC004A92DD /* DazaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B221D3121AC004A92DD /* DazaUITests.swift */; };
 		F56DBA4F1D4D8EF300B54D7E /* ArticleCommentBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F56DBA4E1D4D8EF300B54D7E /* ArticleCommentBarView.xib */; };
 		F56DBA511D4D8F0000B54D7E /* ArticleCommentBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56DBA501D4D8F0000B54D7E /* ArticleCommentBarView.swift */; };
+		F56DBA531D4E065C00B54D7E /* ArticleCommentCreateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56DBA521D4E065C00B54D7E /* ArticleCommentCreateController.swift */; };
 		F5715BC51D353F0000F1CBE5 /* AccountApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BBB1D353F0000F1CBE5 /* AccountApi.swift */; };
 		F5715BC61D353F0000F1CBE5 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BBC1D353F0000F1CBE5 /* Api.swift */; };
 		F5715BC71D353F0000F1CBE5 /* ArticlesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BBD1D353F0000F1CBE5 /* ArticlesApi.swift */; };
@@ -225,6 +226,7 @@
 		F56D2B241D3121AC004A92DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F56DBA4E1D4D8EF300B54D7E /* ArticleCommentBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleCommentBarView.xib; sourceTree = "<group>"; };
 		F56DBA501D4D8F0000B54D7E /* ArticleCommentBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCommentBarView.swift; sourceTree = "<group>"; };
+		F56DBA521D4E065C00B54D7E /* ArticleCommentCreateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCommentCreateController.swift; sourceTree = "<group>"; };
 		F5715BBB1D353F0000F1CBE5 /* AccountApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountApi.swift; sourceTree = "<group>"; };
 		F5715BBC1D353F0000F1CBE5 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		F5715BBD1D353F0000F1CBE5 /* ArticlesApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesApi.swift; sourceTree = "<group>"; };
@@ -316,13 +318,12 @@
 			children = (
 				F5F29B5B1D36A33B00071F04 /* AboutController.swift */,
 				F5B5D5EA1D3F4B97009EE5AD /* AccountController.swift */,
+				F56DBA521D4E065C00B54D7E /* ArticleCommentCreateController.swift */,
 				F51918341D337C0A0012897F /* ArticleCommentsController.swift */,
 				F51918351D337C0B0012897F /* ArticleDetailController.swift */,
 				F51918361D337C0B0012897F /* ArticleLikesController.swift */,
 				F51918311D33677B0012897F /* ArticlesController.swift */,
 				F51918221D33621F0012897F /* Base */,
-				F519184B1D34BB310012897F /* InAppBrowserController.swift */,
-				F5B5D5EC1D3F53AE009EE5AD /* ModifyProfileController.swift */,
 				F5FC7D971D43A7BD00C6CB17 /* EventDetailController.swift */,
 				F5342F0D1D3FB0E10076BBF8 /* FollowersController.swift */,
 				F5342F0F1D3FB0F50076BBF8 /* FollowingController.swift */,
@@ -331,10 +332,15 @@
 				F51918301D33677B0012897F /* HomeExploreController.swift */,
 				F514AE8E1D410D5E00A68590 /* HomeIndexController.swift */,
 				F51918271D3363890012897F /* HomeMineController.swift */,
+				F519184B1D34BB310012897F /* InAppBrowserController.swift */,
 				87A9E29C83BFF3795EE8716E /* LoginController.swift */,
 				F5FC7D8D1D427AD500C6CB17 /* ModifyPasswordController.swift */,
+				F5B5D5EC1D3F53AE009EE5AD /* ModifyProfileController.swift */,
 				F5D41DD41D3B2BCC0055195C /* NotificationsController.swift */,
 				F514AE891D4104ED00A68590 /* NotificationSettingsController.swift */,
+				F51D307E1D477F7400B3416F /* OwnArticlesController.swift */,
+				F51D30821D47800700B3416F /* OwnFavoritesController.swift */,
+				F51D30801D477F8200B3416F /* OwnTopicsController.swift */,
 				F5F23E3C1D32A55B00234104 /* RegisterController.swift */,
 				F5FC7D8B1D427A9C00C6CB17 /* ResetPasswordController.swift */,
 				F51918401D33E48C0012897F /* SearchController.swift */,
@@ -344,9 +350,6 @@
 				F519183C1D337C540012897F /* TweetCreateController.swift */,
 				F519183D1D337C540012897F /* TweetDetailController.swift */,
 				F51918421D33E8150012897F /* UserDetailController.swift */,
-				F51D307E1D477F7400B3416F /* OwnArticlesController.swift */,
-				F51D30801D477F8200B3416F /* OwnTopicsController.swift */,
-				F51D30821D47800700B3416F /* OwnFavoritesController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -874,6 +877,7 @@
 				F5342F191D3FB5920076BBF8 /* HomeMineHeaderView.swift in Sources */,
 				F51D307D1D471ED700B3416F /* BaseWebViewController.swift in Sources */,
 				F5715BCA1D353F0000F1CBE5 /* NotificationsApi.swift in Sources */,
+				F56DBA531D4E065C00B54D7E /* ArticleCommentCreateController.swift in Sources */,
 				F5342F101D3FB0F50076BBF8 /* FollowingController.swift in Sources */,
 				87A9E778BC2C5BBE943FA230 /* Asset.swift in Sources */,
 				F50DA7A51D446E950040995B /* DefaultListErrorHandler.swift in Sources */,
