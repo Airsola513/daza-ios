@@ -49,15 +49,17 @@ class ArticlesController: BaseListController<Article>, IndicatorInfoProvider {
         let completionBlock = { (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void in
             self.loadComplete(pagination, data)
         }
-        
         if (self.category != nil) {
             switch self.category.id {
             case Category.ID_LATEST:
                 Api.getLatestArticleList(page, completion: completionBlock)
+                break
             case Category.ID_POPULAR:
                 Api.getPopularArticleList(page, completion: completionBlock)
+                break
             default:
                 Api.getArticleListByCategoryId(page, categoryId: self.category.id, completion: completionBlock)
+                break
             }
         } else {
             Api.getArticleList(page, completion: completionBlock)
@@ -71,9 +73,9 @@ class ArticlesController: BaseListController<Article>, IndicatorInfoProvider {
         if (data.image_url == nil || data.image_url == "") {
             identifier = "ArticleNoImageItemCell";
         } else {
-            if (indexPath.row < 10) {
-                identifier = "ArticleBigImageItemCell";
-            }
+//            if (indexPath.row < 10) {
+//                identifier = "ArticleBigImageItemCell";
+//            }
         }
 
         let cell: ArticleItemCell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! ArticleItemCell
