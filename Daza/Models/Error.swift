@@ -20,6 +20,7 @@ import ObjectMapper
 class Error: Mappable {
     
     var code: Int!
+    var field: String!
     var message: String!
     
     required init?(_ map: Map) {
@@ -27,6 +28,7 @@ class Error: Mappable {
     
     func mapping(map: Map) {
         code    <- map["code"]
+        field   <- map["field"]
         message <- map["message"]
     }
 

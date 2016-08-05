@@ -363,6 +363,7 @@
 				F5D41DDA1D3B3CD50055195C /* ArticleViewer.swift */,
 				87A9EC9EACEF7EA84A069AEE /* Asset.swift */,
 				F5342F1A1D4083D60076BBF8 /* Category.swift */,
+				F5A6AFDF1D46515000B89E7A /* Error.swift */,
 				87A9E0BEEFF8C60CD427F145 /* Event.swift */,
 				87A9EE31E285E30572DD3EF4 /* EventComment.swift */,
 				87A9E3C2357F783C0D6EEC72 /* EventLike.swift */,
@@ -382,7 +383,6 @@
 				87A9E6FBE730848C0539CFAB /* User.swift */,
 				F5D41DDC1D3B3D300055195C /* UserPointRecord.swift */,
 				F5FC7D891D41F96000C6CB17 /* UserRelationship.swift */,
-				F5A6AFDF1D46515000B89E7A /* Error.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
