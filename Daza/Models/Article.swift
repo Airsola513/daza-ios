@@ -76,4 +76,14 @@ class Article: Model {
         topic           <- map["topic"]
     }
     
+    var sharingContent: [AnyObject] {
+        get {
+            let contentURL         = NSURL(string: "\(URLs.webURL)/articles/\(self.id)")!   // 要分享的链接
+            let contentTitle       = "[daza.io] \(self.title)"                              // 表示链接中的内容的标题
+//            let imageURL           = self.image_url                                         // 在帖子中显示的缩略图的网址
+//            let contentDescription = self.summary                                           // 内容的描述，通常为 2-4 个句子
+            return [contentTitle, contentURL];
+        }
+    }
+    
 }

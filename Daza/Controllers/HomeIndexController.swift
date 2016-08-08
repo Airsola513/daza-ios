@@ -40,7 +40,7 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
         self.navigationItem.rightBarButtonItem = self.menuRefresh
         
         self.view.backgroundColor = UIColor(rgba: "#ECEFF1")
-        self.containerView.frame = CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height)
+        self.containerView.frame = CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height - 49)
         
         self.changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }

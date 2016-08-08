@@ -79,7 +79,8 @@ class ArticleDetailController: InAppBrowserController {
     }
     
     func shareButtonButtonPressed(sender: UIButton!) {
-        
+        let activityViewController = UIActivityViewController(activityItems: self.article.sharingContent, applicationActivities: nil)
+        self.presentViewController(activityViewController, animated: true, completion: nil)
     }
 
 }
