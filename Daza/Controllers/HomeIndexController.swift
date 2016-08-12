@@ -31,8 +31,7 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
         // set up style before super view did load is executed
         settings.style.buttonBarBackgroundColor = .clearColor()
         settings.style.selectedBarBackgroundColor = .clearColor()
-        settings.style.buttonBarItemLeftRightMargin = 12
-        settings.style.buttonBarItemsShouldFillAvailiableWidth = false
+        settings.style.buttonBarItemsShouldFillAvailiableWidth = true
         //-
         super.viewDidLoad()
         
@@ -115,7 +114,7 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
                     self.pagerChildViewControllers.append(ArticlesController(category))
                 }
                 self.navigationItem.rightBarButtonItem = nil
-                self.buttonBarView.frame.size.width = self.view.bounds.width + 44
+                self.buttonBarView.frame.size.width = self.view.bounds.width
             } else {
                 self.navigationItem.rightBarButtonItem = self.menuRefresh
                 self.buttonBarView.frame.size.width = self.view.bounds.width - 44
