@@ -41,6 +41,7 @@ class Article: Model {
     var published_at: NSDate!   // 发表时间
     var user: User!
     var topic: Topic!
+    var tags: [ArticleTag]!
     
     override init() {
         super.init()
@@ -74,6 +75,7 @@ class Article: Model {
         published_at    <- (map["published_at"], self.dateFormatterTransform)
         user            <- map["user"]
         topic           <- map["topic"]
+        tags            <- map["tags"]
     }
     
     var sharingContent: [AnyObject] {

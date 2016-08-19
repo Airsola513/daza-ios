@@ -89,6 +89,8 @@
 		F5715BCC1D353F0000F1CBE5 /* TopicsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BC21D353F0000F1CBE5 /* TopicsApi.swift */; };
 		F5715BCD1D353F0000F1CBE5 /* TweetsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BC31D353F0000F1CBE5 /* TweetsApi.swift */; };
 		F5715BCE1D353F0000F1CBE5 /* UsersApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BC41D353F0000F1CBE5 /* UsersApi.swift */; };
+		F5985C051D66AC9C0033CE65 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5985C041D66AC9C0033CE65 /* AccessToken.swift */; };
+		F5985C071D66AD030033CE65 /* ArticleTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5985C061D66AD030033CE65 /* ArticleTag.swift */; };
 		F5A2B5801D3B82810031AF83 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A2B57F1D3B82810031AF83 /* ErrorHandler.swift */; };
 		F5A2B5821D3CEC690031AF83 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A2B5811D3CEC690031AF83 /* UIColorExtension.swift */; };
 		F5A6AFE01D46515000B89E7A /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A6AFDF1D46515000B89E7A /* Error.swift */; };
@@ -237,6 +239,8 @@
 		F5715BC21D353F0000F1CBE5 /* TopicsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsApi.swift; sourceTree = "<group>"; };
 		F5715BC31D353F0000F1CBE5 /* TweetsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsApi.swift; sourceTree = "<group>"; };
 		F5715BC41D353F0000F1CBE5 /* UsersApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersApi.swift; sourceTree = "<group>"; };
+		F5985C041D66AC9C0033CE65 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
+		F5985C061D66AD030033CE65 /* ArticleTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTag.swift; sourceTree = "<group>"; };
 		F5A2B57F1D3B82810031AF83 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		F5A2B5811D3CEC690031AF83 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		F5A6AFDF1D46515000B89E7A /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -357,9 +361,11 @@
 		87A9EBA6A756C230C11874A5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F5985C041D66AC9C0033CE65 /* AccessToken.swift */,
 				87A9E72A1D10D0CC1228D179 /* Article.swift */,
 				87A9E55993BF199D4903D243 /* ArticleComment.swift */,
 				87A9E7EBD782B2C9B9416FA7 /* ArticleLike.swift */,
+				F5985C061D66AD030033CE65 /* ArticleTag.swift */,
 				F5D41DDA1D3B3CD50055195C /* ArticleViewer.swift */,
 				87A9EC9EACEF7EA84A069AEE /* Asset.swift */,
 				F5342F1A1D4083D60076BBF8 /* Category.swift */,
@@ -873,6 +879,7 @@
 				F5D41DDD1D3B3D300055195C /* UserPointRecord.swift in Sources */,
 				F51918411D33E48C0012897F /* SearchController.swift in Sources */,
 				F5D41DDB1D3B3CD50055195C /* ArticleViewer.swift in Sources */,
+				F5985C071D66AD030033CE65 /* ArticleTag.swift in Sources */,
 				F51918381D337C0B0012897F /* ArticleCommentsController.swift in Sources */,
 				F5342F191D3FB5920076BBF8 /* HomeMineHeaderView.swift in Sources */,
 				F51D307D1D471ED700B3416F /* BaseWebViewController.swift in Sources */,
@@ -952,6 +959,7 @@
 				F5B5D5E91D3F2B16009EE5AD /* UIApplicationExtension.swift in Sources */,
 				F51918261D33629A0012897F /* BaseListController.swift in Sources */,
 				F514AE911D410D7200A68590 /* BaseButtonBarPagerTabStripViewController.swift in Sources */,
+				F5985C051D66AC9C0033CE65 /* AccessToken.swift in Sources */,
 				F5FC7D981D43A7BD00C6CB17 /* EventDetailController.swift in Sources */,
 				F519183B1D337C0B0012897F /* TopicCreateController.swift in Sources */,
 				87A9ECA0E17B0C722735E6F4 /* LoginController.swift in Sources */,
