@@ -20,12 +20,21 @@ import AlamofireObjectMapper
 extension Api {
 
     static func getArticleList(page: Int,
+                               categroyId: Int!,
+                               categroySlug: String!,
                                errorHandler: ErrorHandler! = DefaultErrorHandler(),
                                completion: (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void) {
         let URL = URLs.apiURL + "/articles";
-        let parameters: [String: AnyObject] = [
+        var parameters: [String: AnyObject] = [
             "page": page,
         ]
+        if (categroyId != nil) {
+            parameters["categroy_id"] = categroyId
+        }
+        if (categroySlug != nil) {
+            parameters["categroy_slug"] = categroySlug
+        }
+        
         self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<Article>, NSError>) in
             handleResponse(response, errorHandler, completion: { (result, error) in
                 var pagination: Pagination! = nil
@@ -86,46 +95,6 @@ extension Api {
                                         errorHandler: ErrorHandler! = DefaultErrorHandler(),
                                         completion: (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void) {
         let URL = URLs.apiURL + "/topics/\(topicId)/articles";
-        let parameters: [String: AnyObject] = [
-            "page": page,
-        ]
-        self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<Article>, NSError>) in
-            handleResponse(response, errorHandler, completion: { (result, error) in
-                var pagination: Pagination! = nil
-                var data: [Article]! = nil
-                if (error == nil) {
-                    pagination = result.pagination
-                    data = result.data
-                }
-                completion(pagination: pagination, data: data, error: error)
-            })
-        }
-    }
-    
-    static func getLatestArticleList(page: Int,
-                                           errorHandler: ErrorHandler! = DefaultErrorHandler(),
-                                           completion: (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void) {
-        let URL = URLs.apiURL + "/articles/latest";
-        let parameters: [String: AnyObject] = [
-            "page": page,
-        ]
-        self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<Article>, NSError>) in
-            handleResponse(response, errorHandler, completion: { (result, error) in
-                var pagination: Pagination! = nil
-                var data: [Article]! = nil
-                if (error == nil) {
-                    pagination = result.pagination
-                    data = result.data
-                }
-                completion(pagination: pagination, data: data, error: error)
-            })
-        }
-    }
-    
-    static func getPopularArticleList(page: Int,
-                                     errorHandler: ErrorHandler! = DefaultErrorHandler(),
-                                     completion: (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void) {
-        let URL = URLs.apiURL + "/articles/popular";
         let parameters: [String: AnyObject] = [
             "page": page,
         ]

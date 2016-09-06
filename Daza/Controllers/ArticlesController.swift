@@ -52,17 +52,17 @@ class ArticlesController: BaseListController<Article>, IndicatorInfoProvider {
         if (self.category != nil) {
             switch self.category.id {
             case Category.ID_LATEST:
-                Api.getLatestArticleList(page, completion: completionBlock)
+                Api.getArticleList(page, categroyId: nil, categroySlug: "latest", completion: completionBlock)
                 break
             case Category.ID_POPULAR:
-                Api.getPopularArticleList(page, completion: completionBlock)
+                Api.getArticleList(page, categroyId: nil, categroySlug: "popular", completion: completionBlock)
                 break
             default:
                 Api.getArticleListByCategoryId(page, categoryId: self.category.id, completion: completionBlock)
                 break
             }
         } else {
-            Api.getArticleList(page, completion: completionBlock)
+            Api.getArticleList(page, categroyId: nil, categroySlug: nil, completion: completionBlock)
         }
     }
     
