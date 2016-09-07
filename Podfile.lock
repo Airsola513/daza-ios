@@ -8,7 +8,6 @@ PODS:
   - DZNEmptyDataSet (1.8.1)
   - Eureka (1.7.0)
   - GrowingIO (0.9.28)
-  - GSKStretchyHeaderView (0.12.0)
   - JVFloatLabeledTextField (1.1.1)
   - MJRefresh (3.1.10)
   - NJKWebViewProgress (0.2.3):
@@ -17,15 +16,13 @@ PODS:
   - NJKWebViewProgress/Core (0.2.3)
   - NJKWebViewProgress/ProgressView (0.2.3)
   - ObjectMapper (1.3.0)
-  - R.swift (2.4.0):
-    - R.swift.Library (~> 2.2.0)
-  - R.swift.Library (2.2.0)
   - Reveal-iOS-SDK (1.6.2)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
   - SnapKit (0.15.0)
   - SVProgressHUD (2.0.3)
+  - TUSafariActivity (1.0.4)
   - XLPagerTabStrip (5.0.0)
 
 DEPENDENCIES:
@@ -36,16 +33,15 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - Eureka (~> 1.7)
   - GrowingIO
-  - GSKStretchyHeaderView
   - JVFloatLabeledTextField
   - MJRefresh
   - NJKWebViewProgress
   - ObjectMapper (~> 1.3)
-  - R.swift
   - Reveal-iOS-SDK
   - SDWebImage (~> 3.8)
   - SnapKit (~> 0.15.0)
   - SVProgressHUD
+  - TUSafariActivity (~> 1.0)
   - XLPagerTabStrip (~> 5.0)
 
 SPEC CHECKSUMS:
@@ -56,19 +52,17 @@ SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
   GrowingIO: 65c6ac4f395184236aa8b2e0266c249dcbd8b76a
-  GSKStretchyHeaderView: 25554059df35b7b01b37373eba1e1e57582c45a2
   JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
   MJRefresh: bb72948c985914b0b5cecac573a2c69a8915fb02
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   ObjectMapper: 4eb08a726e9791a93b2632049951b56a7c17e471
-  R.swift: 0ef9c42dc6c94ac44a3c78a7639c73f855a8e159
-  R.swift.Library: 31a487b65381f37a7d203a6f1f935b43c9be35b0
   Reveal-iOS-SDK: e2250b3c155bcfac53ae223ddc1f76d08f206c33
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
   XLPagerTabStrip: 87b8b705f9a7178e76a063ffaa2d70045944a965
 
-PODFILE CHECKSUM: d75d6492fd9199c60d83ce7a557532e249f64e5a
+PODFILE CHECKSUM: 1475c59aa876766b81b7d726e67b13d61c3d8b3c
 
 COCOAPODS: 1.0.1

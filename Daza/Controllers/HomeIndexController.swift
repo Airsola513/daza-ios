@@ -21,6 +21,9 @@ import SVProgressHUD
 
 class HomeIndexController: ButtonBarPagerTabStripViewController {
     
+    var logoImageView: UIImageView!
+    var searchBar: UISearchBar!
+    
     var menuRefresh: UIBarButtonItem!
     var pagerChildViewControllers: [UIViewController] = []
     
@@ -29,23 +32,25 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
     
     override func viewDidLoad() {
         // set up style before super view did load is executed
-        settings.style.buttonBarBackgroundColor = .clearColor()
+        settings.style.buttonBarHeight = 38
+        settings.style.buttonBarItemFont = UIFont.systemFontOfSize(16)
+        settings.style.buttonBarBackgroundColor = UIColor(rgba: "#F5F5F5")
         settings.style.selectedBarBackgroundColor = .clearColor()
         settings.style.buttonBarItemsShouldFillAvailiableWidth = true
         //-
         super.viewDidLoad()
-        
+
         self.menuRefresh = UIBarButtonItem(image: UIImage(named: "ic_menu_refresh"), style: .Plain, target: self, action: #selector(refreshButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuRefresh
         
         self.view.backgroundColor = UIColor(rgba: "#ECEFF1")
-        self.containerView.frame = CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height - 49)
+//        self.containerView.frame = CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height - 49)
         
         self.changeCurrentIndexProgressive = { (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
             
-            oldCell?.label.textColor = UIColor(white: 1, alpha: 0.6)
-            newCell?.label.textColor = .whiteColor()
+            oldCell?.label.textColor = UIColor(rgba: "#999999")
+            newCell?.label.textColor = UIColor(rgba: "#37474F")
             
             if animated {
                 UIView.animateWithDuration(0.1, animations: { () -> Void in
@@ -60,29 +65,40 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
         }
         // 加载分类
         self.reloadCategories()
+        
+        self.logoImageView = UIImageView(image: UIImage(named: "ic_logo_light"))
+        // 初始化搜索框
+        self.searchBar = UISearchBar(frame: CGRectMake(96, 0, 200, 44))
+        self.searchBar.backgroundColor = .clearColor()
+        self.searchBar.backgroundImage = UIImage()
+        self.searchBar.barTintColor = .clearColor()
+        self.searchBar.placeholder = "搜索你感兴趣的内容"
+//        for subView in self.searchBar.subviews {
+//            for ndLeveSubView in subView.subviews {
+//                if (ndLeveSubView.isKindOfClass(UITextField)) {
+//                    let textField = ndLeveSubView as? UITextField
+//                    textField?.backgroundColor = UIColor.whiteColor()
+//                    textField?.textColor = UIColor.blackColor()
+//                }
+//            }
+//        }
+        let titleView: UIView = UIView(frame: (self.navigationController?.navigationBar.frame)!)
+        titleView.backgroundColor = .clearColor()
+        titleView.addSubview(self.logoImageView)
+        titleView.addSubview(self.searchBar)
+        self.logoImageView.snp_makeConstraints { (make) in
+            make.left.equalTo(8)
+            make.width.equalTo(80)
+            make.height.equalTo(20)
+            make.centerY.equalTo(0)
+        }
+        self.searchBar.snp_makeConstraints { (make) in
+            make.left.equalTo(self.logoImageView.snp_right).inset(-12)
+            make.right.equalTo(-8)
+            make.centerY.equalTo(0)
+        }
+        self.navigationItem.titleView = titleView
     }
-    
-//    override func viewWillAppear(animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.buttonBarView.removeFromSuperview()
-//        self.navigationController?.navigationBar.addSubview(buttonBarView)
-//    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.buttonBarView.removeFromSuperview()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        self.buttonBarView.removeFromSuperview()
-        self.navigationController?.navigationBar.addSubview(buttonBarView)
-    }
-    
-//    override func viewDidDisappear(animated: Bool) {
-//        super.viewDidDisappear(animated)
-//        self.buttonBarView.removeFromSuperview()
-//    }
     
     // MARK: - PagerTabStripDataSource
     

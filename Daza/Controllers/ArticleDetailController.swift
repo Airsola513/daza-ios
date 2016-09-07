@@ -15,6 +15,7 @@
  */
 
 import UIKit
+import TUSafariActivity
 
 class ArticleDetailController: InAppBrowserController {
 
@@ -79,7 +80,8 @@ class ArticleDetailController: InAppBrowserController {
     }
     
     func shareButtonButtonPressed(sender: UIButton!) {
-        let activityViewController = UIActivityViewController(activityItems: self.article.sharingContent, applicationActivities: nil)
+        let activities: [UIActivity] = [TUSafariActivity()];
+        let activityViewController = UIActivityViewController(activityItems: self.article.sharingContent, applicationActivities: activities)
         self.presentViewController(activityViewController, animated: true, completion: nil)
     }
 

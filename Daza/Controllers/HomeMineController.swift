@@ -16,7 +16,6 @@
 
 import UIKit
 import ObjectMapper
-import GSKStretchyHeaderView
 import XLPagerTabStrip
 
 class HomeMineController: BaseTableViewController {

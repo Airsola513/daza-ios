@@ -20,10 +20,9 @@ target 'Daza' do
   pod 'DZNEmptyDataSet'
   pod 'Eureka', '~> 1.7'
   pod 'XLPagerTabStrip', '~> 5.0'
-  pod 'GSKStretchyHeaderView'
-  pod 'R.swift'
   pod 'DateTools'
   pod 'GrowingIO'
+  pod 'TUSafariActivity', '~> 1.0'
   pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 
   target 'DazaTests' do

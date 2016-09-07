@@ -15,9 +15,8 @@
  */
 
 import UIKit
-import GSKStretchyHeaderView
 
-class HomeMineHeaderView: GSKStretchyHeaderView {
+class HomeMineHeaderView: UIView {
     
     class func instanceFromNib() -> HomeMineHeaderView {
         return UINib(nibName: "HomeMineHeaderView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! HomeMineHeaderView

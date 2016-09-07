@@ -15,9 +15,8 @@
  */
 
 import UIKit
-import GSKStretchyHeaderView
 
-class TopicDetailHeaderView: GSKStretchyHeaderView {
+class TopicDetailHeaderView: UIView {
     
     class func instanceFromNib() -> TopicDetailHeaderView {
         return UINib(nibName: "TopicDetailHeaderView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! TopicDetailHeaderView
