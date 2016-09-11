@@ -22,34 +22,34 @@ class BaseGroupedListController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let defaultCellUpdate = { (cell: BaseCell, row: BaseRow) -> () in
-            cell.textLabel?.font = UIFont.boldSystemFontOfSize(15)
-            cell.detailTextLabel?.font = UIFont.systemFontOfSize(15)
-            
-            if cell is TextFieldCell {
-                let textFieldCell: TextFieldCell = cell as! TextFieldCell
-                textFieldCell.textField.font = UIFont.systemFontOfSize(15)
-            }
-            if (row.cellStyle == UITableViewCellStyle.Subtitle) {
-                cell.detailTextLabel?.font = UIFont.systemFontOfSize(13)
-            }
-        }
-        
-        LabelRow.defaultCellUpdate = defaultCellUpdate
-        TextRow.defaultCellUpdate = defaultCellUpdate
-        TextAreaRow.defaultCellUpdate = defaultCellUpdate
-        NameRow.defaultCellUpdate = defaultCellUpdate
-        EmailRow.defaultCellUpdate = defaultCellUpdate
-        PasswordRow.defaultCellUpdate = defaultCellUpdate
-        SwitchRow.defaultCellUpdate = defaultCellUpdate
-        ButtonRow.defaultCellUpdate = defaultCellUpdate
-        ImageRow.defaultCellUpdate = defaultCellUpdate
-        DateRow.defaultCellUpdate = defaultCellUpdate
-        TextAreaRow.defaultCellUpdate = { cell, row in
-            defaultCellUpdate(cell, row)
-            cell.textView.font = UIFont.systemFontOfSize(15)
-            cell.placeholderLabel.font = UIFont.systemFontOfSize(15)
-        }
+//        let defaultCellUpdate = { (cell: BaseCell, row: BaseRow) -> () in
+//            cell.textLabel?.font = UIFont.boldSystemFontOfSize(15)
+//            cell.detailTextLabel?.font = UIFont.systemFontOfSize(15)
+//            
+//            if cell is TextFieldCell {
+//                let textFieldCell: TextFieldCell = cell as! TextFieldCell
+//                textFieldCell.textField.font = UIFont.systemFontOfSize(15)
+//            }
+//            if (row.cellStyle == UITableViewCellStyle.Subtitle) {
+//                cell.detailTextLabel?.font = UIFont.systemFontOfSize(13)
+//            }
+//        }
+//        
+//        LabelRow.defaultCellUpdate = defaultCellUpdate
+//        TextRow.defaultCellUpdate = defaultCellUpdate
+//        TextAreaRow.defaultCellUpdate = defaultCellUpdate
+//        NameRow.defaultCellUpdate = defaultCellUpdate
+//        EmailRow.defaultCellUpdate = defaultCellUpdate
+//        PasswordRow.defaultCellUpdate = defaultCellUpdate
+//        SwitchRow.defaultCellUpdate = defaultCellUpdate
+//        ButtonRow.defaultCellUpdate = defaultCellUpdate
+//        ImageRow.defaultCellUpdate = defaultCellUpdate
+//        DateRow.defaultCellUpdate = defaultCellUpdate
+//        TextAreaRow.defaultCellUpdate = { cell, row in
+//            defaultCellUpdate(cell, row)
+//            cell.textView.font = UIFont.systemFontOfSize(15)
+//            cell.placeholderLabel.font = UIFont.systemFontOfSize(15)
+//        }
 
         self.tableView!.backgroundColor = UIColor(rgba: "#ECEFF1")
     }

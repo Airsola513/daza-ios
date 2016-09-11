@@ -66,8 +66,6 @@
 		F5342F101D3FB0F50076BBF8 /* FollowingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5342F0F1D3FB0F50076BBF8 /* FollowingController.swift */; };
 		F5342F141D3FB5770076BBF8 /* TopicDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5342F121D3FB5770076BBF8 /* TopicDetailHeaderView.swift */; };
 		F5342F151D3FB5770076BBF8 /* TopicDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5342F131D3FB5770076BBF8 /* TopicDetailHeaderView.xib */; };
-		F5342F181D3FB5920076BBF8 /* HomeMineHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5342F161D3FB5920076BBF8 /* HomeMineHeaderView.xib */; };
-		F5342F191D3FB5920076BBF8 /* HomeMineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5342F171D3FB5920076BBF8 /* HomeMineHeaderView.swift */; };
 		F5342F1B1D4083D60076BBF8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5342F1A1D4083D60076BBF8 /* Category.swift */; };
 		F53DCFD11D3D1C65000180E4 /* ArticleBigImageItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F53DCFD01D3D1C65000180E4 /* ArticleBigImageItemCell.xib */; };
 		F56D2B011D3121AC004A92DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B001D3121AC004A92DD /* AppDelegate.swift */; };
@@ -210,8 +208,6 @@
 		F5342F0F1D3FB0F50076BBF8 /* FollowingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingController.swift; sourceTree = "<group>"; };
 		F5342F121D3FB5770076BBF8 /* TopicDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicDetailHeaderView.swift; sourceTree = "<group>"; };
 		F5342F131D3FB5770076BBF8 /* TopicDetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicDetailHeaderView.xib; sourceTree = "<group>"; };
-		F5342F161D3FB5920076BBF8 /* HomeMineHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeMineHeaderView.xib; sourceTree = "<group>"; };
-		F5342F171D3FB5920076BBF8 /* HomeMineHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMineHeaderView.swift; sourceTree = "<group>"; };
 		F5342F1A1D4083D60076BBF8 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F53DCFD01D3D1C65000180E4 /* ArticleBigImageItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleBigImageItemCell.xib; sourceTree = "<group>"; };
 		F56D2AFD1D3121AC004A92DD /* Daza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daza.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -454,8 +450,6 @@
 		F5342F111D3FB5770076BBF8 /* StretchyHeaders */ = {
 			isa = PBXGroup;
 			children = (
-				F5342F171D3FB5920076BBF8 /* HomeMineHeaderView.swift */,
-				F5342F161D3FB5920076BBF8 /* HomeMineHeaderView.xib */,
 				F5342F121D3FB5770076BBF8 /* TopicDetailHeaderView.swift */,
 				F5342F131D3FB5770076BBF8 /* TopicDetailHeaderView.xib */,
 			);
@@ -712,7 +706,6 @@
 				F5D41DCF1D38E2440055195C /* EventItemCell.xib in Resources */,
 				F56D2B081D3121AC004A92DD /* Main.storyboard in Resources */,
 				F5342F151D3FB5770076BBF8 /* TopicDetailHeaderView.xib in Resources */,
-				F5342F181D3FB5920076BBF8 /* HomeMineHeaderView.xib in Resources */,
 				F5F23E541D32ABFB00234104 /* Localizable.strings in Resources */,
 				87A9E3316C0FA4311D494D29 /* .gitkeep in Resources */,
 				F514AE841D40DF4900A68590 /* FollowingItemCell.xib in Resources */,
@@ -881,7 +874,6 @@
 				F5D41DDB1D3B3CD50055195C /* ArticleViewer.swift in Sources */,
 				F5985C071D66AD030033CE65 /* ArticleTag.swift in Sources */,
 				F51918381D337C0B0012897F /* ArticleCommentsController.swift in Sources */,
-				F5342F191D3FB5920076BBF8 /* HomeMineHeaderView.swift in Sources */,
 				F51D307D1D471ED700B3416F /* BaseWebViewController.swift in Sources */,
 				F5715BCA1D353F0000F1CBE5 /* NotificationsApi.swift in Sources */,
 				F56DBA531D4E065C00B54D7E /* ArticleCommentCreateController.swift in Sources */,

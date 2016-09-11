@@ -19,10 +19,10 @@ import UIKit
 class TopicItemCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var subscribeButton: UIButton!
+//    @IBOutlet weak var subscribeButton: UIButton!
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var subscriberCountButton: UIButton!
+//    @IBOutlet weak var subscriberCountButton: UIButton!
     
     var topic: Topic?
     
@@ -34,7 +34,7 @@ class TopicItemCell: UITableViewCell {
             self.topic = newValue
             self.nameLabel.text = topic!.name
             self.descriptionLabel.text = topic!.description
-            self.subscriberCountButton.setTitle("\(topic!.subscriber_count)订阅", forState: UIControlState.Normal)
+//            self.subscriberCountButton.setTitle("\(topic!.subscriber_count)订阅", forState: UIControlState.Normal)
             self.coverImageView.sd_setImageWithURL(NSURL(string: (topic!.image_url)!), placeholderImage: UIImage(named: "placeholder_image"))
         }
     }
