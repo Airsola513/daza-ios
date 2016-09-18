@@ -21,5 +21,21 @@ class InAppBrowserController: BaseWebViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        if (!Auth.check()) {
+            return
+        }
+        let standardUserDefaults = NSUserDefaults.standardUserDefaults()
+        
+        let authId = Auth.id();
+        let authUser = standardUserDefaults.stringForKey("auth.user")
+        let authJwtToken = standardUserDefaults.stringForKey("auth.jwt_token")
+        var script = ""
+        script += "localStorage.setItem('auth.id', '\(authId)');\n"
+        script += "localStorage.setItem('auth.user', '\(authUser!)');\n"
+        script += "localStorage.setItem('auth.jwt_token', '\(authJwtToken!)');\n"
+        webView.stringByEvaluatingJavaScriptFromString(script)
+    }
 
 }

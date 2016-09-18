@@ -60,6 +60,7 @@ extension Api {
                 if (error == nil) {
                     data = result.data
                     Auth.user(data)
+                    Auth.jwtToken(data.jwt_token)
                 }
                 completion(data: data, error: error)
             })

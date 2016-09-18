@@ -31,6 +31,13 @@ class Auth {
         return true
     }
     
+    static func id() -> Int {
+        if (user() != nil) {
+            return (user()?.id)!
+        }
+        return 0
+    }
+    
     static func user() -> User! {
         let standardUserDefaults = NSUserDefaults.standardUserDefaults()
         let jsonString = standardUserDefaults.stringForKey("auth.user")
@@ -48,11 +55,20 @@ class Auth {
         
         NSNotificationCenter.defaultCenter().postNotificationName("LoginStatusChangedEvent", object: nil)
     }
-
-    static func id() -> Int {
-        if (user() != nil) {
-            return (user()?.id)!
+    
+    static func jwtToken() -> AccessToken! {
+        let standardUserDefaults = NSUserDefaults.standardUserDefaults()
+        let jsonString = standardUserDefaults.stringForKey("auth.jwt_token")
+        if (jsonString != nil && jsonString != "") {
+            let jwtToken: AccessToken? = Mapper<AccessToken>().map(jsonString!)
+            return jwtToken
         }
-        return 0
+        return nil
+    }
+    
+    static func jwtToken(user: AccessToken?) {
+        let standardUserDefaults = NSUserDefaults.standardUserDefaults()
+        let jsonString = user == nil ? "" : Mapper<AccessToken>().toJSONString(user!, prettyPrint: false)
+        standardUserDefaults.setValue(jsonString, forKey: "auth.jwt_token")
     }
 }
