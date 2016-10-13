@@ -64,11 +64,12 @@
 "settings.notifications.push_notification.title" = "接收推送通知";
 "settings.notifications.push_notification.footer" = "请在 iPhone 的 \"设置\" - \"通知\" 中进行设置。";
 
-"settings.notifications.itmes.header" = "接收通知";
-"settings.notifications.itmes.at_me" = "@我的";
-"settings.notifications.itmes.likes" = "喜欢";
-"settings.notifications.itmes.comments" = "评论";
-"settings.notifications.itmes.other" = "其他";
+"settings.notifications.itmes.header" = "消息设置";
+"settings.notifications.itmes.followed" = "有人关注了我";
+"settings.notifications.itmes.subscribed" = "订阅了我的主题";
+"settings.notifications.itmes.upvoted" = "赞了我的文章";
+"settings.notifications.itmes.comment" = "评论我";
+"settings.notifications.itmes.mention" = "提及我";
 
 "settings.account.title" = "账号与安全";
 "settings.account.modify_email.title" = "邮箱";
@@ -79,7 +80,7 @@
 "settings.account.bind_github.title" = "GitHub 账号";
 
 "settings.feedback.title" = "意见反馈";
-"settings.about.title" = "关于 daza.io";
+"settings.about.title" = "关于我们";
 "settings.logout.title" = "退出";
 
 // Account

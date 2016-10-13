@@ -18,14 +18,9 @@ import UIKit
 
 class HomeExploreController: BaseListController<Topic> {
 
-    var menuSearch: UIBarButtonItem?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("home.explore.title")
-        
-        self.menuSearch = UIBarButtonItem(image: UIImage(named: "ic_menu_search"), style: .Plain, target: self, action: #selector(searchButtonPressed(_:)))
-        self.navigationItem.rightBarButtonItem = self.menuSearch
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0
@@ -34,12 +29,6 @@ class HomeExploreController: BaseListController<Topic> {
         self.tableView.registerNib(UINib(nibName: "TopicItemCell", bundle: nil), forCellReuseIdentifier: "TopicItemCell")
 
         self.firstRefreshing()
-    }
-
-    func searchButtonPressed(sender: UIBarButtonItem) {
-        let controller = SearchController()
-        controller.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     override func loadData(page: Int) {

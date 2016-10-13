@@ -15,29 +15,15 @@
  */
 
 import UIKit
-import Eureka
 
-class AboutController: BaseGroupedListController {
+class AboutController: BaseWebViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("settings.about.title")
-        
-        form
-            +++ Section()
-            <<< ButtonRow() { row in
-                    row.title = "开放源代码许可"
-                    row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
-                }
-            <<< ButtonRow() { row in
-                    row.title = "服务条款"
-                    row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
-                }
-            <<< ButtonRow() { row in
-                    row.title = "隐私权声明"
-                    row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
-                }
 
+        let urlRequest = NSURLRequest(URL: NSURL(string: "\(URLs.inappURL)/articles/about")!)
+        self.webView.loadRequest(urlRequest)
     }
     
 }

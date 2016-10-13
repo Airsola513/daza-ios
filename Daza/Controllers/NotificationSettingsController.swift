@@ -34,16 +34,19 @@ class NotificationSettingsController: BaseGroupedListController {
                     }
             +++ Section(trans("settings.notifications.itmes.header"))
                 <<< SwitchRow() { row in
-                        row.title = trans("settings.notifications.itmes.at_me")
+                        row.title = trans("settings.notifications.itmes.followed")
                     }
                 <<< SwitchRow() { row in
-                        row.title = trans("settings.notifications.itmes.likes")
+                        row.title = trans("settings.notifications.itmes.subscribed")
                     }
                 <<< SwitchRow() { row in
-                        row.title = trans("settings.notifications.itmes.comments")
+                        row.title = trans("settings.notifications.itmes.upvoted")
                     }
                 <<< SwitchRow() { row in
-                        row.title = trans("settings.notifications.itmes.other")
+                        row.title = trans("settings.notifications.itmes.comment")
+                    }
+                <<< SwitchRow() { row in
+                        row.title = trans("settings.notifications.itmes.mention")
                     }
     }
 

@@ -25,22 +25,15 @@ class TopicDetailController: BaseListController<Article> {
         self.topic = data
     }
     
-    var menuShare: UIBarButtonItem?
     var stretchyHeader: TopicDetailHeaderView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("topic_detail.title")
-//        self.tableView.mj_header.ignoredScrollViewContentInsetTop = 30
         
         self.stretchyHeader = TopicDetailHeaderView.instanceFromNib()
         self.stretchyHeader!.data = self.topic
         self.tableView!.addSubview(self.stretchyHeader!)
-//        self.tableView.tableHeaderView = self.stretchyHeader!
-//        self.tableView.mj_header.insertSubview(self.stretchyHeader!, atIndex: 0)
-        
-        self.menuShare = UIBarButtonItem(image: UIImage(named: "ic_menu_share"), style: .Plain, target: self, action: #selector(shareButtonPressed(_:)))
-        self.navigationItem.rightBarButtonItem = self.menuShare
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0
@@ -87,9 +80,5 @@ class TopicDetailController: BaseListController<Article> {
         
         cell.data = data
         return cell
-    }
-    
-    func shareButtonPressed(sender: UIBarButtonItem) {
-        
     }
 }
