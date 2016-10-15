@@ -17,10 +17,11 @@
 //import RealmSwift
 import ObjectMapper
 
-class TweetLike: Model {
+class ArticleVote: Model {
     
     var user_id: Int!       // 用户Id
-    var tweet_id: Int!      // 推文Id
+    var article_id: Int!    // 文章Id
+    var type: String!       // 类型[up, down]
     
     required init?(_ map: Map) {
         super.init(map)
@@ -29,7 +30,8 @@ class TweetLike: Model {
     override func mapping(map: Map) {
         super.mapping(map)
         user_id     <- map["user_id"]
-        tweet_id    <- map["tweet_id"]
+        article_id  <- map["article_id"]
+        type        <- map["type"]
     }
     
 }

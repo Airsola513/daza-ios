@@ -21,6 +21,8 @@ class ArticleViewer: Model {
     
     var user_id: Int!       // 用户Id
     var article_id: Int!    // 文章Id
+    var ip_address: String!    // 文章Id
+    var user_agent: String!    // 文章Id
     
     required init?(_ map: Map) {
         super.init(map)
@@ -30,6 +32,8 @@ class ArticleViewer: Model {
         super.mapping(map)
         user_id     <- map["user_id"]
         article_id  <- map["article_id"]
+        ip_address  <- map["ip_address"]
+        user_agent  <- map["user_agent"]
     }
     
 }

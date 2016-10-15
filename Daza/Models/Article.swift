@@ -19,6 +19,7 @@ import ObjectMapper
 
 class Article: Model {
     
+    var short_id: Int!          // ShortId
     var user_id: Int!           // 用户Id
     var topic_id: Int!          // 主题Id
     var guid: String!           // 文章唯一标识符
@@ -26,8 +27,9 @@ class Article: Model {
     var link: String!           // 文章链接
     var title: String!          // 标题
     var summary: String!        // 摘要
+    var content_format: String! // 内容格式
     var content: String!        // 内容
-    var image_url: String!      // 图片网址
+    var image_url: String!      // 图片链接（原始尺寸）
     var audio_url: String!      // 音频网址
     var video_url: String!      // 视频网址
     var author: String!         // 作者
@@ -35,8 +37,9 @@ class Article: Model {
     var author_link: String!    // 作者链接
     var source: String!         // 来源
     var source_link: String?    // 来源链接
+    var upvote_count: Int = 0   // 赞成票数
+    var downvote_count: Int = 0 // 反对票数数
     var view_count: Int = 0     // 阅读数
-    var like_count: Int = 0     // 喜欢数
     var comment_count: Int = 0  // 评论数
     var published_at: NSDate!   // 发表时间
     var user: User!
@@ -53,13 +56,15 @@ class Article: Model {
     
     override func mapping(map: Map) {
         super.mapping(map)
-        guid            <- map["guid"]
+        short_id        <- map["short_id"]
         user_id         <- map["user_id"]
         topic_id        <- map["topic_id"]
+        guid            <- map["guid"]
         type            <- map["type"]
         link            <- map["link"]
         title           <- map["title"]
         summary         <- map["summary"]
+        content_format  <- map["content_format"]
         content         <- map["content"]
         image_url       <- map["image_url"]
         audio_url       <- map["audio_url"]
@@ -69,8 +74,9 @@ class Article: Model {
         author_link     <- map["author_link"]
         source          <- map["source"]
         source_link     <- map["source_link"]
+        upvote_count    <- map["upvote_count"]
+        downvote_count  <- map["downvote_count"]
         view_count      <- map["view_count"]
-        like_count      <- map["like_count"]
         comment_count   <- map["comment_count"]
         published_at    <- (map["published_at"], self.dateFormatterTransform)
         user            <- map["user"]

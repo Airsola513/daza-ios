@@ -17,13 +17,33 @@
 //import RealmSwift
 import ObjectMapper
 
-class Notification: Mappable {
+class Notification: Model {
+    
+    var user_id: Int!               // 用户Id
+    var unread: Bool!               // 通知未读
+    var reason: String!             // 原因
+    var from_user_id: String!       // 来自用户Id
+    var topic_id: Int!              // 主题Id
+    var article_id: Int!            // 文章Id
+    var article_comment_id: Int!    // 文章评论Id
+    var title: Int!                 // 标题
+    var content: Int!               // 内容
     
     required init?(_ map: Map) {
+        super.init(map)
     }
     
-    func mapping(map: Map) {
-        
+    override func mapping(map: Map) {
+        super.mapping(map)
+        user_id             <- map["user_id"]
+        unread              <- map["unread"]
+        reason              <- map["reason"]
+        from_user_id        <- map["from_user_id"]
+        topic_id            <- map["topic_id"]
+        article_id          <- map["article_id"]
+        article_comment_id  <- map["article_comment_id"]
+        title               <- map["title"]
+        content             <- map["content"]
     }
     
 }

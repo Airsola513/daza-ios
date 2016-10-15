@@ -19,12 +19,24 @@ import ObjectMapper
 
 class Asset: Model {
     
+    var user_id: Int!           // 用户Id
+    var target_type: String!    // 目标类型
+    var target_id: String!      // 目标Id（或ShortId）
+    var mime_type: String!      // MIME类型
+    var size: String!           // 大小
+    var url: Int!               // 链接
+    
     required init?(_ map: Map) {
         super.init(map)
     }
     
     override func mapping(map: Map) {
         super.mapping(map)
+        user_id         <- map["user_id"]
+        target_type     <- map["target_type"]
+        target_id       <- map["target_id"]
+        mime_type       <- map["mime_type"]
+        size            <- map["size"]
+        url             <- map["url"]
     }
-    
 }

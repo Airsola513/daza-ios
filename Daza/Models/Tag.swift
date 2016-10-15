@@ -18,10 +18,13 @@
 import ObjectMapper
 
 class Tag: Model {
-    
-    var name: String!        // 名称
-    var image_url: String!   // 图片网址
-    var description: String! // 描述
+
+    var name: String!           // 名称
+    var slug: String!           // Slug
+    var standard_name: String!  // 标准名称
+    var image_url: String!      // 图片链接（原始尺寸）
+    var description: String!    // 描述
+    var article_count: Int = 0  // 文章数
     
     required init?(_ map: Map) {
         super.init(map)
@@ -29,9 +32,12 @@ class Tag: Model {
     
     override func mapping(map: Map) {
         super.mapping(map)
-		name       	<- map["name"]
-		image_url  	<- map["image_url"]
-		description	<- map["description"]
+        name            <- map["name"]
+        slug            <- map["slug"]
+        standard_name   <- map["standard_name"]
+		image_url       <- map["image_url"]
+		description     <- map["description"]
+        article_count   <- map["article_count"]
     }
 
 }

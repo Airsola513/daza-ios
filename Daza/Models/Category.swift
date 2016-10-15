@@ -22,9 +22,12 @@ class Category: Model {
     static let ID_LATEST: Int  = -1; // 最新
     static let ID_POPULAR: Int = -2; // 推荐
     
-    var name: String!        // 名称
-    var image_url: String!   // 图片网址
-    var description: String! // 描述
+    var slug: String!           // Slug
+    var name: String!           // 名称
+    var image_url: String!      // 图片链接（原始尺寸）
+    var description: String!    // 描述
+    var topic_count: Int!       // 主题数
+    var article_count: Int!     // 文章数
 
     override init() {
         super.init()
@@ -42,9 +45,12 @@ class Category: Model {
     
     override func mapping(map: Map) {
         super.mapping(map)
-        name       	<- map["name"]
-        image_url  	<- map["image_url"]
-        description	<- map["description"]
+        slug            <- map["slug"]
+        name            <- map["name"]
+        image_url       <- map["image_url"]
+        description     <- map["description"]
+        topic_count     <- map["topic_count"]
+        article_count   <- map["article_count"]
     }
 
     static func latest() -> Category {

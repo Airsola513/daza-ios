@@ -17,12 +17,11 @@
 //import RealmSwift
 import ObjectMapper
 
-class TweetComment: Model {
+class UserConfig: Model {
     
-    var user_id: Int!       // 用户Id
-    var tweet_id: Int!      // 推文Id
-    var content: String!    // 内容
-    var user: User!
+    var user_id: Int!   // 用户Id
+    var key: Int!       // Key
+    var value: User!    // Value
     
     required init?(_ map: Map) {
         super.init(map)
@@ -31,9 +30,8 @@ class TweetComment: Model {
     override func mapping(map: Map) {
         super.mapping(map)
         user_id     <- map["user_id"]
-        tweet_id    <- map["tweet_id"]
-        content     <- map["content"]
-        user        <- map["user"]
+        key         <- map["key"]
+        value       <- map["value"]
     }
     
 }
