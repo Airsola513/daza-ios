@@ -110,4 +110,25 @@ extension Api {
             })
         }
     }
+    
+    static func getArticleCommentList(page: Int,
+                                      articleId: Int,
+                                      errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                                      completion: (pagination: Pagination!, data: [ArticleComment]!, error: NSError!) -> Void) {
+        let URL = URLs.apiURL + "/articles/\(articleId)/comments";
+        let parameters: [String: AnyObject] = [
+            "page": page,
+        ]
+        self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<ArticleComment>, NSError>) in
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var pagination: Pagination! = nil
+                var data: [ArticleComment]! = nil
+                if (error == nil) {
+                    pagination = result.pagination
+                    data = result.data
+                }
+                completion(pagination: pagination, data: data, error: error)
+            })
+        }
+    }
 }

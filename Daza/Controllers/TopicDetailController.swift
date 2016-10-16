@@ -25,15 +25,15 @@ class TopicDetailController: BaseListController<Article> {
         self.topic = data
     }
     
-    var stretchyHeader: TopicDetailHeaderView?
+    var headerView: TopicDetailHeaderView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("topic_detail.title")
         
-        self.stretchyHeader = TopicDetailHeaderView.instanceFromNib()
-        self.stretchyHeader!.data = self.topic
-        self.tableView!.addSubview(self.stretchyHeader!)
+        self.headerView = TopicDetailHeaderView.instanceFromNib()
+        self.headerView!.data = self.topic
+        self.tableView!.tableHeaderView = self.headerView!
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0
@@ -74,11 +74,24 @@ class TopicDetailController: BaseListController<Article> {
         var identifier: String = "ArticleItemCell"
         if (data.image_url == nil || data.image_url == "") {
             identifier = "ArticleNoImageItemCell";
+        } else {
+            //            if (indexPath.row < 10) {
+            //                identifier = "ArticleBigImageItemCell";
+            //            }
         }
         
         let cell: ArticleItemCell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! ArticleItemCell
         
         cell.data = data
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
+        let data = self.itemsSource[indexPath.row]
+        
+        let controller = ArticleDetailController(data)
+        controller.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

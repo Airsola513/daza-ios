@@ -16,12 +16,12 @@
 
 import UIKit
 
-class ArticleCommentsController: BaseTableViewController {
+class ArticleCommentsController: BaseListController<ArticleComment> {
     
     var article: Article!
     
     init(_ data: Article) {
-        super.init(nibName: nil, bundle: nil)
+        super.init()
         self.article = data
     }
     
@@ -32,6 +32,30 @@ class ArticleCommentsController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("article_comments.title")
+        
+        self.tableView.registerClass(ArticleCommentItemCell.self, forCellReuseIdentifier: "ArticleCommentItemCell")
+        self.tableView.registerNib(UINib(nibName: "ArticleCommentItemCell", bundle: nil), forCellReuseIdentifier: "ArticleCommentItemCell")
+        
+        self.firstRefreshing()
+    }
+    
+    
+    override func loadData(page: Int) {
+        let completionBlock = { (pagination: Pagination!, data: [ArticleComment]!, error: NSError!) -> Void in
+            self.loadComplete(pagination, data)
+        }
+        Api.getArticleCommentList(page, articleId: article.id, completion: completionBlock)
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let data = self.itemsSource[indexPath.row]
+        
+        var identifier: String = "ArticleCommentItemCell"
+        
+        let cell: ArticleCommentItemCell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! ArticleCommentItemCell
+        
+        cell.data = data
+        return cell
     }
 
 }
