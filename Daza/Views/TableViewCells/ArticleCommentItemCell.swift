@@ -31,6 +31,10 @@ class ArticleCommentItemCell: UITableViewCell {
         }
         set(newValue) {
             self.articleComment = newValue
+            self.avatarImageView.sd_setImageWithURL(NSURL(string: (self.articleComment.user.avatar_url)))
+            self.nameLabel.text = self.articleComment.user.name
+            self.contentLabel.text = self.articleComment.content
+            self.timeLabel.text = self.articleComment.created_at.timeAgoSinceNow()
         }
     }
 }

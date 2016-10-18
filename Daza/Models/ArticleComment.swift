@@ -22,6 +22,7 @@ class ArticleComment: Model {
     var user_id: Int!       // 用户Id
     var article_id: Int!    // 文章Id
     var content: String!    // 内容
+    var user: User!
     
     required init?(_ map: Map) {
         super.init(map)
@@ -32,6 +33,7 @@ class ArticleComment: Model {
         user_id     <- map["user_id"]
         article_id  <- map["article_id"]
         content     <- map["content"]
+        user        <- map["user"]
     }
     
 }
