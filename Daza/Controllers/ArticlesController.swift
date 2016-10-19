@@ -49,21 +49,11 @@ class ArticlesController: BaseListController<Article>, IndicatorInfoProvider {
         let completionBlock = { (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void in
             self.loadComplete(pagination, data)
         }
-        if (self.category != nil) {
-            switch self.category.id {
-            case Category.ID_LATEST:
-                Api.getArticleList(page, categroyId: nil, categroySlug: "latest", completion: completionBlock)
-                break
-            case Category.ID_POPULAR:
-                Api.getArticleList(page, categroyId: nil, categroySlug: "popular", completion: completionBlock)
-                break
-            default:
-                Api.getArticleListByCategoryId(page, categoryId: self.category.id, completion: completionBlock)
-                break
-            }
-        } else {
-            Api.getArticleList(page, categroyId: nil, categroySlug: nil, completion: completionBlock)
-        }
+        // 查询参数
+        let categoryId = self.category.id;
+        let categorySlug = self.category.slug;
+        
+        Api.getArticleList(page, categoryId: categoryId, categorySlug: categorySlug, completion: completionBlock)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

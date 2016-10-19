@@ -20,22 +20,23 @@ import AlamofireObjectMapper
 extension Api {
 
     static func getArticleList(page: Int,
-                               categroyId: Int!,
-                               categroySlug: String!,
+                               categoryId: Int!,
+                               categorySlug: String!,
                                errorHandler: ErrorHandler! = DefaultErrorHandler(),
                                completion: (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void) {
         let URL = URLs.apiURL + "/articles";
         var parameters: [String: AnyObject] = [
             "page": page,
         ]
-        if (categroyId != nil) {
-            parameters["categroy_id"] = categroyId
+        if (categoryId != nil && categoryId > 0) {
+            parameters["category_id"] = categoryId
         }
-        if (categroySlug != nil) {
-            parameters["categroy_slug"] = categroySlug
+        if (categorySlug != nil) {
+            parameters["category_slug"] = categorySlug
         }
         
         self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<Article>, NSError>) in
+            print(response.request?.URLString);
             handleResponse(response, errorHandler, completion: { (result, error) in
                 var pagination: Pagination! = nil
                 var data: [Article]! = nil
@@ -66,27 +67,6 @@ extension Api {
         let URL = URLs.apiURL + "/articles";
         self.request(.DELETE, URL).responseObject { (response: Response<Result, NSError>) in
             print(response.result)
-        }
-    }
-    
-    static func getArticleListByCategoryId(page: Int,
-                                        categoryId: Int,
-                                        errorHandler: ErrorHandler! = DefaultErrorHandler(),
-                                        completion: (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void) {
-        let URL = URLs.apiURL + "/categories/\(categoryId)/articles";
-        let parameters: [String: AnyObject] = [
-            "page": page,
-        ]
-        self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<Article>, NSError>) in
-            handleResponse(response, errorHandler, completion: { (result, error) in
-                var pagination: Pagination! = nil
-                var data: [Article]! = nil
-                if (error == nil) {
-                    pagination = result.pagination
-                    data = result.data
-                }
-                completion(pagination: pagination, data: data, error: error)
-            })
         }
     }
     

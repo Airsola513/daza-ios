@@ -79,6 +79,7 @@
 		F5715BCB1D353F0000F1CBE5 /* TagsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BC11D353F0000F1CBE5 /* TagsApi.swift */; };
 		F5715BCC1D353F0000F1CBE5 /* TopicsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BC21D353F0000F1CBE5 /* TopicsApi.swift */; };
 		F5715BCE1D353F0000F1CBE5 /* UsersApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5715BC41D353F0000F1CBE5 /* UsersApi.swift */; };
+		F58C21DC1DB7A2E300193336 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C21DB1DB7A2E300193336 /* Thumbnail.swift */; };
 		F5985C051D66AC9C0033CE65 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5985C041D66AC9C0033CE65 /* AccessToken.swift */; };
 		F5985C071D66AD030033CE65 /* ArticleTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5985C061D66AD030033CE65 /* ArticleTag.swift */; };
 		F5A2B5801D3B82810031AF83 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A2B57F1D3B82810031AF83 /* ErrorHandler.swift */; };
@@ -215,6 +216,7 @@
 		F5715BC11D353F0000F1CBE5 /* TagsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsApi.swift; sourceTree = "<group>"; };
 		F5715BC21D353F0000F1CBE5 /* TopicsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsApi.swift; sourceTree = "<group>"; };
 		F5715BC41D353F0000F1CBE5 /* UsersApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersApi.swift; sourceTree = "<group>"; };
+		F58C21DB1DB7A2E300193336 /* Thumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 		F5985C041D66AC9C0033CE65 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		F5985C061D66AD030033CE65 /* ArticleTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTag.swift; sourceTree = "<group>"; };
 		F5A2B57F1D3B82810031AF83 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 			children = (
 				F5D41DD61D3B2DDB0055195C /* Auth.swift */,
 				F5FC7D8F1D431C7600C6CB17 /* BuildConfig.swift */,
+				F58C21DB1DB7A2E300193336 /* Thumbnail.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -901,6 +904,7 @@
 				F5FC7D901D431C7600C6CB17 /* BuildConfig.swift in Sources */,
 				F5F29B581D360D7100071F04 /* ResultOfArray.swift in Sources */,
 				F5B5D5E91D3F2B16009EE5AD /* UIApplicationExtension.swift in Sources */,
+				F58C21DC1DB7A2E300193336 /* Thumbnail.swift in Sources */,
 				F51918261D33629A0012897F /* BaseListController.swift in Sources */,
 				F5342BAB1DB25E27009A5D25 /* ArticleVote.swift in Sources */,
 				F514AE911D410D7200A68590 /* BaseButtonBarPagerTabStripViewController.swift in Sources */,

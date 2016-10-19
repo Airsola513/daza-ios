@@ -33,10 +33,11 @@ class Category: Model {
         super.init()
     }
     
-    init(id: Int, name: String) {
+    init(id: Int, name: String, slug: String) {
         super.init()
         self.id = id
         self.name = name
+        self.slug = slug
     }
     
     required init?(_ map: Map) {
@@ -54,10 +55,10 @@ class Category: Model {
     }
 
     static func latest() -> Category {
-        return Category(id: ID_LATEST, name: "最新")
+        return Category(id: ID_LATEST, name: "最新", slug: "latest")
     }
 
     static func popular() -> Category {
-        return Category(id: ID_POPULAR, name: "推荐")
+        return Category(id: ID_POPULAR, name: "推荐", slug: "popular")
     }
 }

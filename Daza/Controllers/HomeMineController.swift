@@ -41,17 +41,17 @@ class HomeMineController: BaseGroupedListController {
                         row.cellStyle = UITableViewCellStyle.Subtitle
                         row.title = "未登录"
                     }.cellUpdate { (cell, row) in
-                        cell.height =  { 60 }
+                        cell.height = { 80 }
                         cell.detailTextLabel?.text = "查看或编辑个人资料"
                         cell.imageView!.sd_setImageWithURL(NSURL(string: ""), placeholderImage: UIImage(named: "placeholder_image"))
                     }
             +++ Section()
                 <<< ButtonRow() { row in
-                        row.title = "维护的主题"
+                        row.title = "我的主题"
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
                     }
                 <<< ButtonRow() { row in
-                        row.title = "维护的主题"
+                        row.title = "我的订阅"
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
                     }
                 <<< ButtonRow() { row in
