@@ -35,7 +35,7 @@ class TopicItemCell: UITableViewCell {
             self.nameLabel.text = topic!.name
             self.descriptionLabel.text = topic!.description
 //            self.subscriberCountButton.setTitle("\(topic!.subscriber_count)订阅", forState: UIControlState.Normal)
-            self.coverImageView.sd_setImageWithURL(NSURL(string: (topic!.image_url)!), placeholderImage: UIImage(named: "placeholder_image"))
+            self.coverImageView.sd_setImageWithURL(NSURL(string: (topic!.image_small_url)), placeholderImage: UIImage(named: "placeholder_image"))
         }
     }
 }

@@ -41,9 +41,8 @@ class ArticleItemCell: UITableViewCell {
             self.commentCountButton.setTitle("\(self.article.comment_count)评论", forState: UIControlState.Normal)
             self.viewCountButton.setTitle("\(self.article.view_count)阅读", forState: UIControlState.Normal)
             if (self.coverImageView != nil) {
-                self.coverImageView.sd_setImageWithURL(NSURL(string: (self.article.image_url)!), placeholderImage: UIImage(named: "placeholder_image"))
+                self.coverImageView.sd_setImageWithURL(NSURL(string: (self.article.image_small_url)), placeholderImage: UIImage(named: "placeholder_image"))
             }
-            
         }
     }
 }

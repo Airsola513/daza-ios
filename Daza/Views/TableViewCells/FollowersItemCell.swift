@@ -30,7 +30,7 @@ class FollowersItemCell: UITableViewCell {
         }
         set(newValue) {
             self.user = newValue
-            self.avatarImageView.sd_setImageWithURL(NSURL(string: user.avatar_url), placeholderImage: UIImage(named: "placeholder_image"))
+            self.avatarImageView.sd_setImageWithURL(NSURL(string: user.avatar_small_url), placeholderImage: UIImage(named: "placeholder_image"))
             self.nameLabel.text = user.name
             self.usernameLabel.text = "@\(user.username)"
         }

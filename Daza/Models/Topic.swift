@@ -56,4 +56,10 @@ class Topic: Model {
         user                <- map["user"]
     }
     
+    var image_small_url: String {
+        get {
+            return Thumbnail(value: self.image_url).small()
+        }
+    }
+    
 }

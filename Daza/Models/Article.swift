@@ -84,6 +84,12 @@ class Article: Model {
         tags            <- map["tags"]
     }
     
+    var image_small_url: String {
+        get {
+            return Thumbnail(value: self.image_url).small()
+        }
+    }
+    
     var sharingContent: [AnyObject] {
         get {
             let contentURL         = NSURL(string: "\(URLs.webURL)/articles/\(self.id)")!   // 要分享的链接

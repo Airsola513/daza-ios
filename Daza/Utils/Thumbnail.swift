@@ -15,25 +15,41 @@
  */
 
 import ObjectMapper
+import Foundation
 
 class Thumbnail {
     
-    var image_url: String = ""
+    var imageUrl: String = ""
     
-    init(image_url: String) {
-        self.image_url = image_url;
+    let defaultWidth = 120;
+    let defaultHeight = 120;
+    
+    init(value: String) {
+        self.imageUrl = value;
     }
     
+    func imageView2(size: Int) -> String {
+        var width = defaultWidth
+        var height = defaultHeight
+        if (self.imageUrl.containsString(BuildConfig.DOMAIN_NAME) || self.imageUrl.containsString("clouddn.com")) {
+            if (size > 0) {
+                width = size
+                height = size
+            }
+            return "\(self.imageUrl)?imageView2/2/w/\(width)/h/\(height)"
+        }
+        return self.imageUrl
+    }
 
     func small() -> String {
-        return image_url
+        return self.imageView2(200)
     }
     
     func medium() -> String {
-        return image_url
+        return self.imageView2(800)
     }
     
-    func Large() -> String {
-        return image_url
+    func large() -> String {
+        return self.imageView2(1200)
     }
 }

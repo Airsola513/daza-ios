@@ -82,4 +82,10 @@ class User: Model {
         jwt_token       <- map["jwt_token"]
     }
     
+    var avatar_small_url: String {
+        get {
+            return Thumbnail(value: self.avatar_url).small()
+        }
+    }
+
 }

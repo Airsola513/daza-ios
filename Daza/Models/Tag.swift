@@ -39,5 +39,11 @@ class Tag: Model {
 		description     <- map["description"]
         article_count   <- map["article_count"]
     }
+    
+    var image_small_url: String {
+        get {
+            return Thumbnail(value: self.image_url).small()
+        }
+    }
 
 }
