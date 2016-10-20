@@ -37,13 +37,19 @@ class HomeMineController: BaseGroupedListController {
         form
             +++ Section()
                 <<< LabelRow() { row in
-                        row.tag = "avatarRow"
+                        row.tag = "profileRow"
                         row.cellStyle = UITableViewCellStyle.Subtitle
-                        row.title = "未登录"
+                        self.updateProfileRow(row)
                     }.cellUpdate { (cell, row) in
-                        cell.height = { 80 }
+                        cell.height = { 70 }
                         cell.detailTextLabel?.text = "查看或编辑个人资料"
-                        cell.imageView!.sd_setImageWithURL(NSURL(string: ""), placeholderImage: UIImage(named: "placeholder_image"))
+                    }.onCellSelection { (cell, row) in
+                        if (!Auth.check(self)) {
+                            return
+                        }
+                        let controller = BaseTableViewController()
+                        controller.hidesBottomBarWhenPushed = true
+                        self.navigationController?.pushViewController(controller, animated: true)
                     }
             +++ Section()
                 <<< ButtonRow() { row in
@@ -51,17 +57,25 @@ class HomeMineController: BaseGroupedListController {
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
                     }
                 <<< ButtonRow() { row in
-                        row.title = "我的订阅"
+                        row.title = "我订阅的"
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
                     }
                 <<< ButtonRow() { row in
-                        row.title = "赞过的文章"
+                        row.title = "我赞过的"
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
                     }
-                <<< ButtonRow() { row in
-                        row.title = "收藏的文章"
-                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
-                    }
+    }
+    
+    func updateProfileRow(row: LabelRow?) {
+        if (!Auth.check()) {
+            row?.title = "未登录"
+            row?.cell.imageView!.sd_setImageWithURL(NSURL(string: ""), placeholderImage: UIImage(named: "placeholder_image"))
+        } else {
+            let user = Auth.user()
+            row?.title = user.name
+            row?.cell.imageView!.sd_setImageWithURL(NSURL(string: user.avatar_small_url), placeholderImage: UIImage(named: "placeholder_image"))
+        }
+        row?.updateCell()
     }
 
     func notificationsButtonPressed(sender: UIBarButtonItem) {
@@ -117,6 +131,8 @@ class HomeMineController: BaseGroupedListController {
 
     // 我的问题列表发生变化
     @objc func loginStatusChanged(notification: NSNotification) {
+        let row: LabelRow? = form.rowByTag("profileRow")
+        updateProfileRow(row)
     }
 
 }
