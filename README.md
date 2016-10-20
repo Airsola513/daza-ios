@@ -1,6 +1,5 @@
 # daza-ios
 
-
 ## 相关项目
 - [daza-backend](https://github.com/lijy91/daza-backend)
 - [daza-frontend](https://github.com/lijy91/daza-frontend)
@@ -11,11 +10,20 @@
 - [Material design](http://www.google.com/design/spec/style/color.html)
 - [Material icons](https://design.google.com/icons/)
 
+## 线上地址
+- 主页：[http://daza.io](http://daza.io)
+- 接口：[http://api.daza.io](http://api.daza.io)
+
 ## 演示
 [Live Demo](http://mock-web.daza.io)
 
-## 联系我
-![让我们来思想碰撞吧！](http://upload-images.jianshu.io/upload_images/397332-f28f39d0135332f7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/320)
+## 加入讨论组
+![](http://obryq3mj0.bkt.clouddn.com/topic/ByRafuLR/r1no_q9R.jpg?imageView2/2/w/480/h/480)
+
+> 微信限制，加我微信时请注明加入讨论组。
+
+## 捐赠作者
+![](http://obryq3mj0.bkt.clouddn.com/topic/ByRafuLR/r1WH8F90.jpg?imageView2/2/w/480/h/480)
 
 ## License
 
