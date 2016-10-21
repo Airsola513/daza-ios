@@ -16,10 +16,45 @@
 
 import UIKit
 
-class NotificationsController: BaseTableViewController {
+class NotificationsController: BaseListController<Notification> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = trans("notifications.title")
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 44.0
+        
+        self.tableView.registerClass(NotificationItemCell.self, forCellReuseIdentifier: "NotificationItemCell")
+        self.tableView.registerNib(UINib(nibName: "NotificationItemCell", bundle: nil), forCellReuseIdentifier: "NotificationItemCell")
+        
+        self.firstRefreshing()
+    }
+    
+    override func loadData(page: Int) {
+        let completionBlock = { (pagination: Pagination!, data: [Notification]!, error: NSError!) -> Void in
+            self.loadComplete(pagination, data)
+        }
+        Api.getNotificationList(page, completion: completionBlock)
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: NotificationItemCell = tableView.dequeueReusableCellWithIdentifier("NotificationItemCell", forIndexPath: indexPath) as! NotificationItemCell
+        
+        let data = self.itemsSource[indexPath.row]
+        
+        cell.data = data
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
+        
+        let data = self.itemsSource[indexPath.row]
+        
+        let controller = UITableViewController()
+        controller.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 
 }

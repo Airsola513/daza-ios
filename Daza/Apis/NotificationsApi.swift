@@ -18,5 +18,25 @@ import Alamofire
 import AlamofireObjectMapper
 
 extension Api {
+    
+    static func getNotificationList(page: Int,
+                                    errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                                    completion: (pagination: Pagination!, data: [Notification]!, error: NSError!) -> Void) {
+        let URL = URLs.apiURL + "/notifications";
+        let parameters: [String: AnyObject] = [
+            "page": page,
+        ]
+        self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<Notification>, NSError>) in
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var pagination: Pagination! = nil
+                var data: [Notification]! = nil
+                if (error == nil) {
+                    pagination = result.pagination
+                    data = result.data
+                }
+                completion(pagination: pagination, data: data, error: error)
+            })
+        }
+    }
 
 }

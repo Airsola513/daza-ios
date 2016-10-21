@@ -25,8 +25,6 @@ class Api {
         let result = response.result
         var value: T! = result.value
         var error: NSError! = result.error
-//        print(value)
-//        print(response.response?.statusCode)
 
         if (result.isSuccess) {
             value = response.result.value!
@@ -53,6 +51,11 @@ class Api {
         var reqHeaders: [String: String] = [
             "Accept": "application/json",
         ]
+        
+        // 添加授权请求Header
+        if (Auth.check()) {
+            reqHeaders["Authorization"] = "Bearer \(Auth.jwtToken().access_token)"
+        }
 
         // Headers 合并
         if (headers != nil) {

@@ -28,6 +28,9 @@ class Notification: Model {
     var article_comment_id: Int!    // 文章评论Id
     var title: Int!                 // 标题
     var content: Int!               // 内容
+    var from_user: User!            // 来自用户（对象）
+    var topic: Topic!
+    var article: Article!
     
     required init?(_ map: Map) {
         super.init(map)
@@ -44,6 +47,9 @@ class Notification: Model {
         article_comment_id  <- map["article_comment_id"]
         title               <- map["title"]
         content             <- map["content"]
+        from_user           <- map["from_user"]
+        topic               <- map["topic"]
+        article             <- map["article"]
     }
     
 }
