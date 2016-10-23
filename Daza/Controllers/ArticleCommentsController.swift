@@ -33,6 +33,9 @@ class ArticleCommentsController: BaseListController<ArticleComment> {
         super.viewDidLoad()
         self.title = trans("article_comments.title")
         
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 44.0
+        
         self.tableView.registerClass(ArticleCommentItemCell.self, forCellReuseIdentifier: "ArticleCommentItemCell")
         self.tableView.registerNib(UINib(nibName: "ArticleCommentItemCell", bundle: nil), forCellReuseIdentifier: "ArticleCommentItemCell")
         
