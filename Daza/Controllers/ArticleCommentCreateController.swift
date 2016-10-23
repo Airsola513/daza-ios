@@ -15,23 +15,41 @@
  */
 
 import UIKit
+import Eureka
 
-class ArticleCommentCreateController: BaseTableViewController {
-    
+class ArticleCommentCreateController: BaseGroupedListController {
+
     var article: Article!
-    
+
     init(_ data: Article) {
         super.init(nibName: nil, bundle: nil)
         self.article = data
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    var menuSend: UIBarButtonItem!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("article_comment_create.title")
+        
+        self.menuSend = UIBarButtonItem(image: UIImage(named: "ic_menu_send"), style: .Plain, target: self, action: #selector(sendButtonPressed(_:)))
+        self.navigationItem.rightBarButtonItem = self.menuSend
+
+        form
+            +++ Section()
+                <<< TextAreaRow() { row in
+                        row.tag = "contentRow"
+//                        row.placeholder = trans("login.email.placeholder")
+                    }
     }
     
+    
+    func sendButtonPressed(sender: UIBarButtonItem) {
+        // TODO: 发表评论
+    }
+
 }
