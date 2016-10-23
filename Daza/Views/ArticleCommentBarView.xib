@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -20,7 +20,7 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ER0-au-ZPP">
                             <rect key="frame" x="279" y="0.0" width="44" height="44"/>
-                            <state key="normal" image="ic_favorite"/>
+                            <state key="normal" image="ic_upvote"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3U-PN-QxC">
                             <rect key="frame" x="323" y="0.0" width="44" height="44"/>
@@ -54,15 +54,15 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="commentButton" destination="xLQ-3R-lyO" id="P3k-s0-ZQ7"/>
-                <outlet property="commentCountButton" destination="Nzk-99-z7k" id="KRk-6R-huP"/>
-                <outlet property="favoriteCountButton" destination="ER0-au-ZPP" id="pnG-0b-M8n"/>
+                <outlet property="commentListButton" destination="Nzk-99-z7k" id="j2F-Xc-xKX"/>
                 <outlet property="shareButton" destination="G3U-PN-QxC" id="Ogr-89-zTM"/>
+                <outlet property="upvoteButton" destination="ER0-au-ZPP" id="buk-h1-2It"/>
             </connections>
         </view>
     </objects>
     <resources>
         <image name="ic_comment" width="18" height="18"/>
-        <image name="ic_favorite" width="18" height="18"/>
         <image name="ic_menu_share" width="18" height="18"/>
+        <image name="ic_upvote" width="18" height="18"/>
     </resources>
 </document>

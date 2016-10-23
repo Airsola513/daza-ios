@@ -16,18 +16,17 @@
 
 import UIKit
 
-class TopicDetailHeaderView: UIView {
+class TopicDetailHeaderView: UITableViewCell {
     
     class func instanceFromNib() -> TopicDetailHeaderView {
         return UINib(nibName: "TopicDetailHeaderView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! TopicDetailHeaderView
     }
     
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var subscribeButton: UIButton!
-    @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var createrLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var subscriberCountButton: UIButton!
     
     var topic: Topic?
     
@@ -37,10 +36,11 @@ class TopicDetailHeaderView: UIView {
         }
         set(newValue) {
             self.topic = newValue
+            self.coverImageView.sd_setImageWithURL(NSURL(string: (topic!.image_small_url)), placeholderImage: UIImage(named: "placeholder_image"))
             self.nameLabel.text = topic!.name
+            self.subscribeButton.setTitle("订阅(\(self.topic!.subscriber_count))", forState: UIControlState.Normal)
+            self.createrLabel.text = "由 \(topic!.name) 维护"
             self.descriptionLabel.text = topic!.description!
-            self.coverImageView.sd_setImageWithURL(NSURL(string: (topic!.image_url)!), placeholderImage: UIImage(named: "placeholder_image"))
-            self.subscriberCountButton.setTitle("\(self.topic!.subscriber_count)订阅", forState: UIControlState.Normal)
         }
     }
 

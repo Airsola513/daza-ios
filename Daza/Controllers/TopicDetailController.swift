@@ -61,6 +61,30 @@ class TopicDetailController: BaseListController<Article> {
         navigationController.navigationBar.shadowImage = nil
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.sizeHeaderToFit()
+    }
+    
+    private func sizeHeaderToFit() {
+        if let headerView = tableView.tableHeaderView {
+            
+            headerView.setNeedsLayout()
+            headerView.layoutIfNeeded()
+            
+            let height = headerView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
+            var newFrame = headerView.frame
+            
+            // Needed or we will stay in viewDidLayoutSubviews() forever
+            if height != newFrame.size.height {
+                newFrame.size.height = height
+                headerView.frame = newFrame
+                
+                tableView.tableHeaderView = headerView
+            }
+        }
+    }
+    
     override func loadData(page: Int) {
         let completionBlock = { (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void in
             self.loadComplete(pagination, data)

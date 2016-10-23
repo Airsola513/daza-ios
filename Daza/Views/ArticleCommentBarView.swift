@@ -32,8 +32,8 @@ class ArticleCommentBarView: UIView {
     }
     
     @IBOutlet weak var commentButton: UIButton!
-    @IBOutlet weak var commentCountButton: UIButton!
-    @IBOutlet weak var favoriteCountButton: UIButton!
+    @IBOutlet weak var commentListButton: UIButton!
+    @IBOutlet weak var upvoteButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     
     var article: Article!

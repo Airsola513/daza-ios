@@ -37,8 +37,8 @@ class ArticleDetailController: InAppBrowserController {
         self.title = trans("article_detail.title")
         
         self.articleCommentBarView.commentButton.addTarget(self, action: #selector(commentButtonPressed(_:)), forControlEvents: .TouchUpInside)
-        self.articleCommentBarView.commentCountButton.addTarget(self, action: #selector(commentCountButtonPressed(_:)), forControlEvents: .TouchUpInside)
-        self.articleCommentBarView.favoriteCountButton.addTarget(self, action: #selector(favoriteCountButtonButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        self.articleCommentBarView.commentListButton.addTarget(self, action: #selector(commentListButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        self.articleCommentBarView.upvoteButton.addTarget(self, action: #selector(upvoteButtonButtonPressed(_:)), forControlEvents: .TouchUpInside)
         self.articleCommentBarView.shareButton.addTarget(self, action: #selector(shareButtonButtonPressed(_:)), forControlEvents: .TouchUpInside)
 
         self.view.addSubview(self.articleCommentBarView)
@@ -65,7 +65,7 @@ class ArticleDetailController: InAppBrowserController {
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
-    func commentCountButtonPressed(sender: UIButton!) {
+    func commentListButtonPressed(sender: UIButton!) {
         if (!Auth.check(self)) {
             return
         }
@@ -73,7 +73,7 @@ class ArticleDetailController: InAppBrowserController {
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
-    func favoriteCountButtonButtonPressed(sender: UIButton!) {
+    func upvoteButtonButtonPressed(sender: UIButton!) {
         if (!Auth.check(self)) {
             return
         }
