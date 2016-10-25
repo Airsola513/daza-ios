@@ -40,6 +40,8 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
         //-
         super.viewDidLoad()
 
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(deepLinkingHandler(_:)), name: "DeepLinkingEvent", object: nil)
+
         self.menuRefresh = UIBarButtonItem(image: UIImage(named: "ic_menu_refresh"), style: .Plain, target: self, action: #selector(refreshButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuRefresh
         
@@ -138,7 +140,11 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
             self.reloadPagerTabStripView()
             SVProgressHUD.dismiss()
         }
-        SVProgressHUD.showWithStatus("waiting...")
+        SVProgressHUD.showWithStatus("加载中...")
         Api.getCategoryList(1, completion: completionBlock)
+    }
+    
+    @objc func deepLinkingHandler(notification: NSNotification) {
+        SVProgressHUD.showInfoWithStatus("Data: \(notification.object)")
     }
 }
