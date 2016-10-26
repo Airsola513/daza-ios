@@ -18,10 +18,18 @@ import UIKit
 
 class TopicDetailController: BaseListController<Article> {
     
+    var topicId: Int!
     var topic: Topic!
     
+    init(_ id: Int) {
+        super.init()
+        self.topicId = id
+        self.topic = Topic(id: 0, name: "", description: "")
+    }
+
     init(_ data: Topic) {
         super.init()
+        self.topicId = data.id
         self.topic = data
     }
     
@@ -89,7 +97,7 @@ class TopicDetailController: BaseListController<Article> {
         let completionBlock = { (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void in
             self.loadComplete(pagination, data)
         }
-        Api.getArticleListByTopicId(page, topicId: topic.id, completion: completionBlock)
+        Api.getArticleListByTopicId(page, topicId: self.topicId, completion: completionBlock)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

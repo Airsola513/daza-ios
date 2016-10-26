@@ -24,8 +24,10 @@ class Thumbnail {
     let defaultWidth = 120;
     let defaultHeight = 120;
     
-    init(value: String) {
-        self.imageUrl = value;
+    init(value: String!) {
+        if (value != nil) {
+            self.imageUrl = value;
+        }
     }
     
     func imageView2(size: Int) -> String {

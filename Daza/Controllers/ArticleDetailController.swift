@@ -19,10 +19,16 @@ import TUSafariActivity
 
 class ArticleDetailController: InAppBrowserController {
 
+    var articleId: Int!
     var article: Article!
     
     var articleCommentBarView: ArticleCommentBarView = ArticleCommentBarView.instanceFromNib()
 
+    init(_ id: Int) {
+        super.init(nibName: nil, bundle: nil)
+        self.articleId = id
+    }
+    
     init(_ data: Article) {
         super.init(nibName: nil, bundle: nil)
         self.article = data

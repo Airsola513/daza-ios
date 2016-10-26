@@ -18,10 +18,17 @@ import UIKit
 
 class ArticleCommentsController: BaseListController<ArticleComment> {
     
-    var article: Article!
+    var articleId: Int!
+    var article: Article! = Article()
     
+    init(_ id: Int) {
+        super.init()
+        self.articleId = id
+    }
+
     init(_ data: Article) {
         super.init()
+        self.articleId = data.id
         self.article = data
     }
     
@@ -47,7 +54,7 @@ class ArticleCommentsController: BaseListController<ArticleComment> {
         let completionBlock = { (pagination: Pagination!, data: [ArticleComment]!, error: NSError!) -> Void in
             self.loadComplete(pagination, data)
         }
-        Api.getArticleCommentList(page, articleId: article.id, completion: completionBlock)
+        Api.getArticleCommentList(page, articleId: self.articleId, completion: completionBlock)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

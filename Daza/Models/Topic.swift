@@ -34,6 +34,13 @@ class Topic: Model {
     var subscriber_count: Int = 0   // 订阅数
     var user: User!
     
+    init(id: Int, name: String, description: String) {
+        super.init()
+        self.id = id
+        self.name = name
+        self.description = description
+    }
+    
     required init?(_ map: Map) {
         super.init(map)
     }
