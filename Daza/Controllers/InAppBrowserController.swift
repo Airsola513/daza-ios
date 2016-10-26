@@ -15,6 +15,7 @@
  */
 
 import UIKit
+import SafariServices
 
 class InAppBrowserController: BaseWebViewController {
     
@@ -36,6 +37,16 @@ class InAppBrowserController: BaseWebViewController {
         script += "localStorage.setItem('auth.user', '\(authUser!)');\n"
         script += "localStorage.setItem('auth.jwt_token', '\(authJwtToken!)');\n"
         webView.stringByEvaluatingJavaScriptFromString(script)
+    }
+    
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        let urlString: String = request.URLString
+        if (!urlString.containsString(BuildConfig.WEB_BASE_URL) && !urlString.containsString("daza://")) {
+            let svc = SFSafariViewController(URL: request.URL!)
+            self.presentViewController(svc, animated: true, completion: nil)
+            return false
+        }
+        return true
     }
 
 }
