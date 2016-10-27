@@ -37,7 +37,9 @@ class Article: Model {
     var author_link: String!    // 作者链接
     var source: String!         // 来源
     var source_link: String?    // 来源链接
+    var upvoted: Bool = false   // 已赞成
     var upvote_count: Int = 0   // 赞成票数
+    var downvoted: Bool = false // 已反对
     var downvote_count: Int = 0 // 反对票数数
     var view_count: Int = 0     // 阅读数
     var comment_count: Int = 0  // 评论数
@@ -74,7 +76,9 @@ class Article: Model {
         author_link     <- map["author_link"]
         source          <- map["source"]
         source_link     <- map["source_link"]
+        upvoted         <- map["upvoted"]
         upvote_count    <- map["upvote_count"]
+        downvoted       <- map["downvoted"]
         downvote_count  <- map["downvote_count"]
         view_count      <- map["view_count"]
         comment_count   <- map["comment_count"]

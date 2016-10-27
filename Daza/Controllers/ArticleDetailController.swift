@@ -42,6 +42,7 @@ class ArticleDetailController: InAppBrowserController {
         super.viewDidLoad()
         self.title = trans("article_detail.title")
         
+        self.articleCommentBarView.data = self.article
         self.articleCommentBarView.commentButton.addTarget(self, action: #selector(commentButtonPressed(_:)), forControlEvents: .TouchUpInside)
         self.articleCommentBarView.commentListButton.addTarget(self, action: #selector(commentListButtonPressed(_:)), forControlEvents: .TouchUpInside)
         self.articleCommentBarView.upvoteButton.addTarget(self, action: #selector(upvoteButtonButtonPressed(_:)), forControlEvents: .TouchUpInside)

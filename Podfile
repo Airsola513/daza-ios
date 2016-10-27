@@ -24,6 +24,7 @@ target 'Daza' do
   pod 'DateTools'
   pod 'GrowingIO'
   pod 'TUSafariActivity', '~> 1.0'
+  pod 'WZLBadge'
   pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 
   target 'DazaTests' do

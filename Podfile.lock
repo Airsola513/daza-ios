@@ -23,6 +23,7 @@ PODS:
   - SnapKit (0.22.0)
   - SVProgressHUD (2.0.3)
   - TUSafariActivity (1.0.4)
+  - WZLBadge (1.2.5)
   - XLPagerTabStrip (5.1.0)
 
 DEPENDENCIES:
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - SnapKit (~> 0.22.0)
   - SVProgressHUD
   - TUSafariActivity (~> 1.0)
+  - WZLBadge
   - XLPagerTabStrip (~> 5.0)
 
 EXTERNAL SOURCES:
@@ -77,8 +79,9 @@ SPEC CHECKSUMS:
   SnapKit: 0dd2fd157330f1ea11fd84da13e6be8a7a22bae0
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
+  WZLBadge: 16c08aa0a645e2591690f21cbcb410a3d878c7ac
   XLPagerTabStrip: 9191deaa2336735b7c47beb21e42be537fa4242a
 
-PODFILE CHECKSUM: 8ea28026dce919dd5d86d3c050b7cf32d5d17a4f
+PODFILE CHECKSUM: 29e0fa6f42814ca9880f7bfa9d793f5e0a7bfa3b
 
 COCOAPODS: 1.0.1

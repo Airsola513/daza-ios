@@ -40,8 +40,6 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
         //-
         super.viewDidLoad()
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(deepLinkingHandler(_:)), name: "DeepLinkingEvent", object: nil)
-
         self.menuRefresh = UIBarButtonItem(image: UIImage(named: "ic_menu_refresh"), style: .Plain, target: self, action: #selector(refreshButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuRefresh
         
@@ -142,48 +140,5 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
         }
         SVProgressHUD.showWithStatus("加载中...")
         Api.getCategoryList(1, completion: completionBlock)
-    }
-    
-    @objc func deepLinkingHandler(notification: NSNotification) {
-        let urlString: String = notification.object as! String
-        
-        // 拆分URL，获取参数。
-        let urlParameters = urlString.componentsSeparatedByString("/")
-        let firstAction: String = urlParameters[2]
-        let firstId: String = urlParameters.count >= 4 ? urlParameters[3] : "0"
-        let secondAction: String = urlParameters.count >= 5 ? urlParameters[4] : ""
-        let secondId: Int = urlParameters.count >= 6 ? Int(urlParameters[5])! : 0
-        
-        var controller: UIViewController!
-        switch(firstAction) {
-        case "users":
-            controller = UserDetailController(Int(firstId)!)
-            break
-        case "categories":
-            break
-        case "topics":
-            controller = TopicDetailController(Int(firstId)!)
-            break
-        case "articles":
-            switch(secondAction) {
-            case "comments":
-                controller = ArticleCommentsController(Int(firstId)!)
-                break
-            default:
-                controller = ArticleDetailController(Int(firstId)!)
-                break
-            }
-            break
-        case "tags":
-            controller = TagDetailController(firstId)
-            break
-        default:
-            break
-        }
-
-        if (controller != nil) {
-            controller?.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(controller!, animated: true)
-        }
     }
 }

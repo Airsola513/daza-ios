@@ -18,6 +18,10 @@ import UIKit
 
 class HomeController: UITabBarController {
     
+    var indexController: UINavigationController!
+    var exploreController: UINavigationController!
+    var mineController: UINavigationController!
+    
     let homeIndexController   = HomeIndexController()
     let homeExploreController = HomeExploreController()
     let homeMineController    = HomeMineController()
@@ -27,20 +31,67 @@ class HomeController: UITabBarController {
 
         UITabBar.appearance().tintColor = UIColor(rgba: "#37474F")
         
-        let indexController: UINavigationController = BaseNavigationController(rootViewController: homeIndexController, statusBarStyle: .LightContent)
-        indexController.tabBarItem.title = trans("home.index.title")
-        indexController.tabBarItem.image = UIImage(named: "ic_tab_home")
+        self.indexController = BaseNavigationController(rootViewController: homeIndexController, statusBarStyle: .LightContent)
+        self.indexController.tabBarItem.title = trans("home.index.title")
+        self.indexController.tabBarItem.image = UIImage(named: "ic_tab_home")
         self.addChildViewController(indexController)
         
-        let exploreController: UINavigationController = BaseNavigationController(rootViewController: homeExploreController, statusBarStyle: .LightContent)
-        exploreController.tabBarItem.title = trans("home.explore.title")
-        exploreController.tabBarItem.image = UIImage(named: "ic_tab_explore")
+        self.exploreController = BaseNavigationController(rootViewController: homeExploreController, statusBarStyle: .LightContent)
+        self.exploreController.tabBarItem.title = trans("home.explore.title")
+        self.exploreController.tabBarItem.image = UIImage(named: "ic_tab_explore")
         self.addChildViewController(exploreController)
         
-        let mineController: UINavigationController = BaseNavigationController(rootViewController: homeMineController, statusBarStyle: .LightContent)
-        mineController.tabBarItem.title = trans("home.mine.title")
-        mineController.tabBarItem.image = UIImage(named: "ic_tab_mine")
+        self.mineController = BaseNavigationController(rootViewController: homeMineController, statusBarStyle: .LightContent)
+        self.mineController.tabBarItem.title = trans("home.mine.title")
+        self.mineController.tabBarItem.image = UIImage(named: "ic_tab_mine")
         self.addChildViewController(mineController)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(deepLinkingHandler(_:)), name: "DeepLinkingEvent", object: nil)
+    }
+    
+    @objc func deepLinkingHandler(notification: NSNotification) {
+        let urlString: String = notification.object as! String
+        
+        // 拆分URL，获取参数。
+        let urlParameters = urlString.componentsSeparatedByString("/")
+        let firstAction: String = urlParameters[2]
+        let firstId: String = urlParameters.count >= 4 ? urlParameters[3] : "0"
+        let secondAction: String = urlParameters.count >= 5 ? urlParameters[4] : ""
+        let secondId: Int = urlParameters.count >= 6 ? Int(urlParameters[5])! : 0
+        
+        var controller: UIViewController!
+        switch(firstAction) {
+        case "users":
+            controller = UserDetailController(Int(firstId)!)
+            break
+        case "categories":
+            break
+        case "topics":
+            controller = TopicDetailController(Int(firstId)!)
+            break
+        case "articles":
+            switch(secondAction) {
+            case "comments":
+                controller = ArticleCommentsController(Int(firstId)!)
+                break
+            default:
+                controller = ArticleDetailController(Int(firstId)!)
+                break
+            }
+            break
+        case "tags":
+            controller = TagDetailController(firstId)
+            break
+        default:
+            break
+        }
+        
+        if (controller != nil) {
+            controller?.hidesBottomBarWhenPushed = true
+            // 获取当前所有Tab的UINavigationController，并由它启动新页面
+            let navigationController: UINavigationController! = self.childViewControllers[self.selectedIndex] as! UINavigationController
+            navigationController.pushViewController(controller!, animated: true)
+        }
     }
 
 }

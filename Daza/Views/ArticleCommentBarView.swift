@@ -24,6 +24,7 @@ import Foundation
  */
 
 import UIKit
+import WZLBadge
 
 class ArticleCommentBarView: UIView {
     
@@ -44,6 +45,15 @@ class ArticleCommentBarView: UIView {
         }
         set(newValue) {
             self.article = newValue
+            self.upvoteButton.setImage(UIImage(named: "ic_upvote"), forState: UIControlState.Normal)
+            self.upvoteButton.setImage(UIImage(named: "ic_upvote_checked"), forState: UIControlState.Selected)
+            
+            if (self.article.comment_count > 0) {
+                self.commentListButton.badgeCenterOffset = CGPointMake(-13, 13)
+                self.commentListButton.showBadgeWithStyle(.Number, value: self.article.comment_count, animationType: .None)
+
+            }
+            self.upvoteButton.selected = self.article.upvoted
         }
     }
 }

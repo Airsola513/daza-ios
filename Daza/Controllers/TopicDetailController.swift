@@ -80,12 +80,12 @@ class TopicDetailController: BaseListController<Article> {
     }
     
     private func sizeHeaderToFit() {
-        if let headerView = tableView.tableHeaderView {
+        if let headerView: TopicDetailHeaderView = tableView.tableHeaderView as! TopicDetailHeaderView {
             
             headerView.setNeedsLayout()
             headerView.layoutIfNeeded()
-            
-            let height = headerView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
+                        
+            let height = headerView.systemLayoutSizeFittingSize(UILayoutFittingExpandedSize).height
             var newFrame = headerView.frame
             
             // Needed or we will stay in viewDidLayoutSubviews() forever

@@ -70,12 +70,10 @@ extension Api {
     static func logout(errorHandler: ErrorHandler! = DefaultErrorHandler(),
                        completion: (error: NSError!) -> Void) {
 
+        Auth.user(nil)
         let URL = URLs.apiURL + "/account/logout";
         self.request(.POST, URL).responseObject { (response: Response<Result, NSError>) in
             handleResponse(response, errorHandler, completion: { (result, error) in
-                if (error == nil) {
-                    Auth.user(nil)
-                }
                 completion(error: error)
             })
         }

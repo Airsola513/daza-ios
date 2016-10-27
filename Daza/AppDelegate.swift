@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
         Growing.handleUrl(url)
         if (url.absoluteString!.containsString("daza://")) {
-            // 将DeepLink数据转发给HomeIndexController处理
+            // 将DeepLink数据转发给HomeController处理
             NSNotificationCenter.defaultCenter().postNotificationName("DeepLinkingEvent", object: url.absoluteString!)
             return false
         }

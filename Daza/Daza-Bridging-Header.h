@@ -22,3 +22,4 @@
 #import "OnePasswordExtension/OnePasswordExtension.h"
 #import "GrowingIO/Growing.h"
 #import "TUSafariActivity/TUSafariActivity.h"
+#import "WZLBadge/WZLBadgeImport.h"
