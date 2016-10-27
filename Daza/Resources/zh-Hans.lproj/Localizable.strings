@@ -60,7 +60,7 @@
 // Settings
 "settings.title" = "设置";
 
-"settings.notifications.title" = "推送消息设置";
+"settings.notifications.title" = "消息设置";
 "settings.notifications.push_notification.title" = "接收推送通知";
 "settings.notifications.push_notification.footer" = "请在 iPhone 的 \"设置\" - \"通知\" 中进行设置。";
 

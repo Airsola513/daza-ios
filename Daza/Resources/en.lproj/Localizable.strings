@@ -44,7 +44,7 @@
 // Settings
 "settings.title" = "Settings";
 
-"settings.notifications.title" = "推送消息设置";
+"settings.notifications.title" = "消息设置";
 "settings.notifications.push_notification.title" = "接收推送通知";
 "settings.notifications.push_notification.footer" = "请在 iPhone 的 \"设置\" - \"通知\" 中进行设置。";
 
@@ -78,7 +78,7 @@
 "login.welcome_back.subtitle" = "用邮箱登录，看看之前都错过了什么好文章吧。";
 "login.email.placeholder" = "Email";
 "login.password.placeholder" = "Password";
-"login.submit.title" = "Logout";
+"login.submit.title" = "Login";
 "login.forgot_password.title" = "Forgot password?";
 
 // >> Modify profile

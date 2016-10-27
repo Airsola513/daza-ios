@@ -321,16 +321,16 @@
 				F5D41DD41D3B2BCC0055195C /* NotificationsController.swift */,
 				F514AE891D4104ED00A68590 /* NotificationSettingsController.swift */,
 				F51D307E1D477F7400B3416F /* OwnSubscribesController.swift */,
-				F51D30821D47800700B3416F /* OwnUpvoteArticlesController.swift */,
 				F51D30801D477F8200B3416F /* OwnTopicsController.swift */,
+				F51D30821D47800700B3416F /* OwnUpvoteArticlesController.swift */,
 				F5F23E3C1D32A55B00234104 /* RegisterController.swift */,
 				F5FC7D8B1D427A9C00C6CB17 /* ResetPasswordController.swift */,
 				F51918401D33E48C0012897F /* SearchController.swift */,
 				F5F23E401D32A5EA00234104 /* SettingsController.swift */,
+				F54FCE951DC194A4005051B4 /* TagDetailController.swift */,
 				F51918371D337C0B0012897F /* TopicCreateController.swift */,
 				F5F23E421D32A5FB00234104 /* TopicDetailController.swift */,
 				F51918421D33E8150012897F /* UserDetailController.swift */,
-				F54FCE951DC194A4005051B4 /* TagDetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

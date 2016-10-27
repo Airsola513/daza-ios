@@ -25,46 +25,49 @@ class AccountController: BaseGroupedListController {
         
         form
             +++ Section()
-                <<< ButtonRow() { row in
+                <<< LabelRow() { row in
+                        row.tag = "modifyMailRow"
                         row.title = trans("settings.account.modify_email.title")
                         row.cellStyle = .Value1
-                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
+//                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
                     }.cellUpdate { (cell, row) in
-                        cell.detailTextLabel?.text = "未设置"
+                        if (Auth.check()) {
+                            cell.detailTextLabel?.text = Auth.user().email
+                        } else {
+                            cell.detailTextLabel?.text = "未设置"
+                        }
                     }
-                <<< ButtonRow() { row in
-                        row.title = trans("settings.account.modify_mobile.title")
-                        row.cellStyle = .Value1
-                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
-                    }.cellUpdate { (cell, row) in
-                        cell.detailTextLabel?.text = "未设置"
-                    }
+//                <<< ButtonRow() { row in
+//                        row.title = trans("settings.account.modify_mobile.title")
+//                        row.cellStyle = .Value1
+//                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
+//                    }.cellUpdate { (cell, row) in
+//                        cell.detailTextLabel?.text = "未设置"
+//                    }
                 <<< ButtonRow() { row in
                         row.title = trans("settings.account.modify_password.title")
-                        row.cellStyle = .Value1
-                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
-                    }.cellUpdate { (cell, row) in
-                        cell.detailTextLabel?.text = "未设置"
+//                        row.cellStyle = .Value1
+                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { ModifyPasswordController() }), completionCallback: nil)
                     }
-            +++ Section()
-                <<< SwitchRow() { row in
-                        row.title = trans("settings.account.bind_wechat.title")
-                        row.cellStyle = .Subtitle
-                    }.cellUpdate { (cell, row) in
-                        cell.detailTextLabel?.text = "未设置"
-                    }
-                <<< SwitchRow() { row in
-                        row.title = trans("settings.account.bind_weibo.title")
-                        row.cellStyle = .Subtitle
-                    }.cellUpdate { (cell, row) in
-                        cell.detailTextLabel?.text = "未设置"
-                    }
-                <<< SwitchRow() { row in
-                        row.title = trans("settings.account.bind_github.title")
-                        row.cellStyle = .Subtitle
-                    }.cellUpdate { (cell, row) in
-                        cell.detailTextLabel?.text = "未设置"
-                    }
+//            +++ Section()
+//                <<< SwitchRow() { row in
+//                        row.title = trans("settings.account.bind_wechat.title")
+//                        row.cellStyle = .Subtitle
+//                    }.cellUpdate { (cell, row) in
+//                        cell.detailTextLabel?.text = "未设置"
+//                    }
+//                <<< SwitchRow() { row in
+//                        row.title = trans("settings.account.bind_weibo.title")
+//                        row.cellStyle = .Subtitle
+//                    }.cellUpdate { (cell, row) in
+//                        cell.detailTextLabel?.text = "未设置"
+//                    }
+//                <<< SwitchRow() { row in
+//                        row.title = trans("settings.account.bind_github.title")
+//                        row.cellStyle = .Subtitle
+//                    }.cellUpdate { (cell, row) in
+//                        cell.detailTextLabel?.text = "未设置"
+//                    }
     }
     
 }

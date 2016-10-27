@@ -26,13 +26,17 @@ class SettingsController: BaseGroupedListController {
         form
             +++ Section()
                 <<< ButtonRow() { row in
+                        row.tag = "notificationRow"
                         row.title = trans("settings.notifications.title")
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { NotificationSettingsController() }), completionCallback: nil)
+                        row.disabled = Auth.check() ? false : true
                     }
             +++ Section()
                 <<< ButtonRow() { row in
+                        row.tag = "accountRow"
                         row.title = trans("settings.account.title")
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { AccountController() }), completionCallback: nil)
+                        row.disabled = Auth.check() ? false : true
                     }
             +++ Section()
                 <<< ButtonRow() { row in
@@ -59,8 +63,11 @@ class SettingsController: BaseGroupedListController {
                             }
                             row.hidden = true
                             row.evaluateHidden()
+                            self.form.rowByTag("notificationRow")!.disabled = true
+                            self.form.rowByTag("notificationRow")!.evaluateDisabled()
+                            self.form.rowByTag("accountRow")!.disabled = true
+                            self.form.rowByTag("accountRow")!.evaluateDisabled()
                         }
-                        
                         Api.logout(completion: completionBlock)
                     }
         
