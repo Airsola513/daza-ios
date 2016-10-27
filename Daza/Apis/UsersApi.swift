@@ -69,5 +69,50 @@ extension Api {
             })
         }
     }
+    
+    static func getTopicListByUserId(page: Int,
+                                     userId: Int,
+                                     errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                                     completion: (pagination: Pagination!, data: [Topic]!, error: NSError!) -> Void) {
+        let URL = URLs.apiURL + "/users/\(userId)/topics";
+        let parameters: [String: AnyObject] = [
+            "page": page,
+        ]
+        self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<Topic>, NSError>) in
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var pagination: Pagination! = nil
+                var data: [Topic]! = nil
+                if (error == nil) {
+                    pagination = result.pagination
+                    data = result.data
+                }
+                completion(pagination: pagination, data: data, error: error)
+            })
+        }
+    }
+    
+    
+    static func getSubscribedTopicListByUserId(page: Int,
+                                     userId: Int,
+                                     errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                                     completion: (pagination: Pagination!, data: [TopicSubscriber]!, error: NSError!) -> Void) {
+        let URL = URLs.apiURL + "/users/\(userId)/subscribes";
+        let parameters: [String: AnyObject] = [
+            "page": page,
+        ]
+        self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<TopicSubscriber>, NSError>) in
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var pagination: Pagination! = nil
+                var data: [TopicSubscriber]! = nil
+                if (error == nil) {
+                    pagination = result.pagination
+                    data = result.data
+                }
+                completion(pagination: pagination, data: data, error: error)
+            })
+        }
+    }
+    
+    
 
 }

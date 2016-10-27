@@ -16,7 +16,7 @@
 
 import UIKit
 
-class OwnTopicsController: BaseListController<Topic> {
+class OwnUpvoteArticlesController: BaseListController<Article> {
     
     var userId: Int!
     var user: User!
@@ -34,28 +34,40 @@ class OwnTopicsController: BaseListController<Topic> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("own_topics.title")
+        self.title = trans("topic_detail.title")
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0
         
-        self.tableView.registerClass(TopicItemCell.self, forCellReuseIdentifier: "TopicItemCell")
-        self.tableView.registerNib(UINib(nibName: "TopicItemCell", bundle: nil), forCellReuseIdentifier: "TopicItemCell")
+        self.tableView.registerClass(TopicItemCell.self, forCellReuseIdentifier: "ArticleItemCell")
+        self.tableView.registerNib(UINib(nibName: "ArticleItemCell", bundle: nil), forCellReuseIdentifier: "ArticleItemCell")
+        
+        self.tableView.registerClass(TopicItemCell.self, forCellReuseIdentifier: "ArticleNoImageItemCell")
+        self.tableView.registerNib(UINib(nibName: "ArticleNoImageItemCell", bundle: nil), forCellReuseIdentifier: "ArticleNoImageItemCell")
         
         self.firstRefreshing()
     }
     
     override func loadData(page: Int) {
-        let completionBlock = { (pagination: Pagination!, data: [Topic]!, error: NSError!) -> Void in
+        let completionBlock = { (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void in
             self.loadComplete(pagination, data)
         }
-        Api.getTopicListByUserId(page, userId: userId, completion: completionBlock)
+//        Api.getArticleListByTopicId(page, topicId: self.topicId, completion: completionBlock)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: TopicItemCell = tableView.dequeueReusableCellWithIdentifier("TopicItemCell", forIndexPath: indexPath) as! TopicItemCell
-        
         let data = self.itemsSource[indexPath.row]
+        
+        var identifier: String = "ArticleItemCell"
+        if (data.image_url == nil || data.image_url == "") {
+            identifier = "ArticleNoImageItemCell";
+        } else {
+            //            if (indexPath.row < 10) {
+            //                identifier = "ArticleBigImageItemCell";
+            //            }
+        }
+        
+        let cell: ArticleItemCell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! ArticleItemCell
         
         cell.data = data
         return cell
@@ -63,10 +75,9 @@ class OwnTopicsController: BaseListController<Topic> {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
-        
         let data = self.itemsSource[indexPath.row]
         
-        let controller = TopicDetailController(data)
+        let controller = ArticleDetailController(data)
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }

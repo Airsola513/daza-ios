@@ -41,10 +41,13 @@ class InAppBrowserController: BaseWebViewController {
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         let urlString: String = request.URLString
-        if (!urlString.containsString(BuildConfig.WEB_BASE_URL) && !urlString.containsString("daza://")) {
-            let svc = SFSafariViewController(URL: request.URL!)
-            self.presentViewController(svc, animated: true, completion: nil)
-            return false
+        // 拦截所有非本站链接，并使用SFSafariViewController打开
+        if (urlString.containsString("http://") || urlString.containsString("https://")) {
+            if (!urlString.containsString(URLs.webURL)) {
+                let svc = SFSafariViewController(URL: request.URL!)
+                self.presentViewController(svc, animated: true, completion: nil)
+                return false
+            }
         }
         return true
     }

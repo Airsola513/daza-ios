@@ -69,4 +69,12 @@ class Topic: Model {
         }
     }
     
+    var sharingContent: [AnyObject] {
+        get {
+            let contentURL         = NSURL(string: "\(URLs.webURL)/topics/\(self.id)")!   // 要分享的链接
+            let contentTitle       = "[daza.io] \(self.name)"                              // 表示链接中的内容的标题
+            return [contentTitle, contentURL];
+        }
+    }
+    
 }

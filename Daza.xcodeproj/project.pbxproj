@@ -46,9 +46,9 @@
 		F519184C1D34BB310012897F /* InAppBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519184B1D34BB310012897F /* InAppBrowserController.swift */; };
 		F519184E1D34DA310012897F /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519184D1D34DA310012897F /* NSObjectExtension.swift */; };
 		F51D307D1D471ED700B3416F /* BaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D307C1D471ED700B3416F /* BaseWebViewController.swift */; };
-		F51D307F1D477F7400B3416F /* OwnArticlesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D307E1D477F7400B3416F /* OwnArticlesController.swift */; };
+		F51D307F1D477F7400B3416F /* OwnSubscribesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D307E1D477F7400B3416F /* OwnSubscribesController.swift */; };
 		F51D30811D477F8200B3416F /* OwnTopicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D30801D477F8200B3416F /* OwnTopicsController.swift */; };
-		F51D30831D47800700B3416F /* OwnFavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D30821D47800700B3416F /* OwnFavoritesController.swift */; };
+		F51D30831D47800700B3416F /* OwnUpvoteArticlesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D30821D47800700B3416F /* OwnUpvoteArticlesController.swift */; };
 		F52C55241D3E710100819C6D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52C55231D3E710100819C6D /* UIViewExtension.swift */; };
 		F5338A1A1D35490B00B3D44F /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5338A191D35490B00B3D44F /* URLs.swift */; };
 		F5338A1C1D354A3500B3D44F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5338A1B1D354A3500B3D44F /* Result.swift */; };
@@ -62,6 +62,7 @@
 		F5342F101D3FB0F50076BBF8 /* FollowingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5342F0F1D3FB0F50076BBF8 /* FollowingController.swift */; };
 		F5342F1B1D4083D60076BBF8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5342F1A1D4083D60076BBF8 /* Category.swift */; };
 		F53DCFD11D3D1C65000180E4 /* ArticleBigImageItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F53DCFD01D3D1C65000180E4 /* ArticleBigImageItemCell.xib */; };
+		F54FCE961DC194A4005051B4 /* TagDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54FCE951DC194A4005051B4 /* TagDetailController.swift */; };
 		F553D5121DBA5B61007FB06F /* NotificationItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F553D5111DBA5B61007FB06F /* NotificationItemCell.swift */; };
 		F553D5141DBA5B79007FB06F /* NotificationItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F553D5131DBA5B79007FB06F /* NotificationItemCell.xib */; };
 		F56D2B011D3121AC004A92DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B001D3121AC004A92DD /* AppDelegate.swift */; };
@@ -179,9 +180,9 @@
 		F519184B1D34BB310012897F /* InAppBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InAppBrowserController.swift; sourceTree = "<group>"; };
 		F519184D1D34DA310012897F /* NSObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		F51D307C1D471ED700B3416F /* BaseWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWebViewController.swift; sourceTree = "<group>"; };
-		F51D307E1D477F7400B3416F /* OwnArticlesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnArticlesController.swift; sourceTree = "<group>"; };
+		F51D307E1D477F7400B3416F /* OwnSubscribesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnSubscribesController.swift; sourceTree = "<group>"; };
 		F51D30801D477F8200B3416F /* OwnTopicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnTopicsController.swift; sourceTree = "<group>"; };
-		F51D30821D47800700B3416F /* OwnFavoritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnFavoritesController.swift; sourceTree = "<group>"; };
+		F51D30821D47800700B3416F /* OwnUpvoteArticlesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnUpvoteArticlesController.swift; sourceTree = "<group>"; };
 		F52C55231D3E710100819C6D /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F5338A191D35490B00B3D44F /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		F5338A1B1D354A3500B3D44F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -195,6 +196,7 @@
 		F5342F0F1D3FB0F50076BBF8 /* FollowingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowingController.swift; sourceTree = "<group>"; };
 		F5342F1A1D4083D60076BBF8 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F53DCFD01D3D1C65000180E4 /* ArticleBigImageItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleBigImageItemCell.xib; sourceTree = "<group>"; };
+		F54FCE951DC194A4005051B4 /* TagDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagDetailController.swift; sourceTree = "<group>"; };
 		F553D5111DBA5B61007FB06F /* NotificationItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationItemCell.swift; sourceTree = "<group>"; };
 		F553D5131DBA5B79007FB06F /* NotificationItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationItemCell.xib; sourceTree = "<group>"; };
 		F56D2AFD1D3121AC004A92DD /* Daza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daza.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -318,8 +320,8 @@
 				F5B5D5EC1D3F53AE009EE5AD /* ModifyProfileController.swift */,
 				F5D41DD41D3B2BCC0055195C /* NotificationsController.swift */,
 				F514AE891D4104ED00A68590 /* NotificationSettingsController.swift */,
-				F51D307E1D477F7400B3416F /* OwnArticlesController.swift */,
-				F51D30821D47800700B3416F /* OwnFavoritesController.swift */,
+				F51D307E1D477F7400B3416F /* OwnSubscribesController.swift */,
+				F51D30821D47800700B3416F /* OwnUpvoteArticlesController.swift */,
 				F51D30801D477F8200B3416F /* OwnTopicsController.swift */,
 				F5F23E3C1D32A55B00234104 /* RegisterController.swift */,
 				F5FC7D8B1D427A9C00C6CB17 /* ResetPasswordController.swift */,
@@ -328,6 +330,7 @@
 				F51918371D337C0B0012897F /* TopicCreateController.swift */,
 				F5F23E421D32A5FB00234104 /* TopicDetailController.swift */,
 				F51918421D33E8150012897F /* UserDetailController.swift */,
+				F54FCE951DC194A4005051B4 /* TagDetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -860,7 +863,7 @@
 				F5715BCB1D353F0000F1CBE5 /* TagsApi.swift in Sources */,
 				F56DBA511D4D8F0000B54D7E /* ArticleCommentBarView.swift in Sources */,
 				87A9EEBC6C4B59CC03C29050 /* Article.swift in Sources */,
-				F51D30831D47800700B3416F /* OwnFavoritesController.swift in Sources */,
+				F51D30831D47800700B3416F /* OwnUpvoteArticlesController.swift in Sources */,
 				F514AE821D40DF3A00A68590 /* FollowingItemCell.swift in Sources */,
 				F514AE8A1D4104ED00A68590 /* NotificationSettingsController.swift in Sources */,
 				F5D41DD91D3B3C860055195C /* TopicSubscriber.swift in Sources */,
@@ -871,7 +874,7 @@
 				F51918391D337C0B0012897F /* ArticleDetailController.swift in Sources */,
 				F5FC7D961D438D9D00C6CB17 /* CategoriesApi.swift in Sources */,
 				F5715BC81D353F0000F1CBE5 /* AssetsApi.swift in Sources */,
-				F51D307F1D477F7400B3416F /* OwnArticlesController.swift in Sources */,
+				F51D307F1D477F7400B3416F /* OwnSubscribesController.swift in Sources */,
 				F519184E1D34DA310012897F /* NSObjectExtension.swift in Sources */,
 				87A9E137F2134802C2C6A256 /* ArticleLike.swift in Sources */,
 				F5FC7D8A1D41F96000C6CB17 /* UserRelationship.swift in Sources */,
@@ -906,6 +909,7 @@
 				F519184C1D34BB310012897F /* InAppBrowserController.swift in Sources */,
 				F52C55241D3E710100819C6D /* UIViewExtension.swift in Sources */,
 				F5D41DD71D3B2DDB0055195C /* Auth.swift in Sources */,
+				F54FCE961DC194A4005051B4 /* TagDetailController.swift in Sources */,
 				87A9E6FFFD865256D58D2101 /* ArticleComment.swift in Sources */,
 				F5F29B5C1D36A33B00071F04 /* AboutController.swift in Sources */,
 				F5342BB21DB3BC18009A5D25 /* ArticleCommentItemCell.swift in Sources */,

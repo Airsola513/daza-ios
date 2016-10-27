@@ -47,22 +47,22 @@ class HomeMineController: BaseGroupedListController {
                         if (!Auth.check(self)) {
                             return
                         }
-                        let controller = BaseTableViewController()
+                        let controller = ModifyProfileController()
                         controller.hidesBottomBarWhenPushed = true
                         self.navigationController?.pushViewController(controller, animated: true)
                     }
             +++ Section()
                 <<< ButtonRow() { row in
                         row.title = "我的主题"
-                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
+                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { OwnTopicsController(Auth.id()) }), completionCallback: nil)
                     }
                 <<< ButtonRow() { row in
                         row.title = "我订阅的"
-                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
+                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { OwnSubscribesController(Auth.id()) }), completionCallback: nil)
                     }
                 <<< ButtonRow() { row in
                         row.title = "我赞过的"
-                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
+                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { OwnUpvoteArticlesController(Auth.id()) }), completionCallback: nil)
                     }
     }
     

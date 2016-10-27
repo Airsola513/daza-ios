@@ -15,6 +15,7 @@
  */
 
 import UIKit
+import TUSafariActivity
 
 class TopicDetailController: BaseListController<Article> {
     
@@ -24,7 +25,7 @@ class TopicDetailController: BaseListController<Article> {
     init(_ id: Int) {
         super.init()
         self.topicId = id
-        self.topic = Topic(id: 0, name: "", description: "")
+        self.topic = Topic(id: id, name: "", description: "")
     }
 
     init(_ data: Topic) {
@@ -33,11 +34,15 @@ class TopicDetailController: BaseListController<Article> {
         self.topic = data
     }
     
+    var menuShare: UIBarButtonItem!
     var headerView: TopicDetailHeaderView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("topic_detail.title")
+        
+        self.menuShare = UIBarButtonItem(image: UIImage(named: "ic_menu_share"), style: .Plain, target: self, action: #selector(shareButtonPressed(_:)))
+        self.navigationItem.rightBarButtonItem = self.menuShare
         
         self.headerView = TopicDetailHeaderView.instanceFromNib()
         self.headerView!.data = self.topic
@@ -125,5 +130,12 @@ class TopicDetailController: BaseListController<Article> {
         let controller = ArticleDetailController(data)
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
+    func shareButtonPressed(sender: UIBarButtonItem) {
+        let activities: [UIActivity] = [TUSafariActivity()];
+        let activityViewController = UIActivityViewController(activityItems: self.topic.sharingContent, applicationActivities: activities)
+        self.presentViewController(activityViewController, animated: true, completion: nil)
     }
 }

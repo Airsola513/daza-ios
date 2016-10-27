@@ -16,20 +16,29 @@
 
 import UIKit
 
-class OwnArticlesController: BaseTableViewController {
+class TagDetailController: BaseTableViewController {
+    
+    var tagName: String!
+    var tag: Tag!
+    
+    init(_ name: String) {
+        super.init(nibName: nil, bundle: nil)
+        self.tagName = name
+    }
+    
+    init(_ data: Tag!) {
+        super.init(nibName: nil, bundle: nil)
+        self.tagName = data.name
+        self.tag = data
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: .Default, reuseIdentifier: "Cell")
-        cell.textLabel?.text = "hehe"
-        return cell
+        self.title = trans("tag_detail.title")
     }
     
 }

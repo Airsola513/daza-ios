@@ -16,7 +16,7 @@
 
 import UIKit
 
-class OwnTopicsController: BaseListController<Topic> {
+class OwnSubscribesController: BaseListController<TopicSubscriber> {
     
     var userId: Int!
     var user: User!
@@ -46,18 +46,18 @@ class OwnTopicsController: BaseListController<Topic> {
     }
     
     override func loadData(page: Int) {
-        let completionBlock = { (pagination: Pagination!, data: [Topic]!, error: NSError!) -> Void in
+        let completionBlock = { (pagination: Pagination!, data: [TopicSubscriber]!, error: NSError!) -> Void in
             self.loadComplete(pagination, data)
         }
-        Api.getTopicListByUserId(page, userId: userId, completion: completionBlock)
+        Api.getSubscribedTopicListByUserId(page, userId: userId, completion: completionBlock)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: TopicItemCell = tableView.dequeueReusableCellWithIdentifier("TopicItemCell", forIndexPath: indexPath) as! TopicItemCell
         
-        let data = self.itemsSource[indexPath.row]
+        let data: TopicSubscriber = self.itemsSource[indexPath.row]
         
-        cell.data = data
+        cell.data = data.topic
         return cell
     }
     
@@ -66,7 +66,7 @@ class OwnTopicsController: BaseListController<Topic> {
         
         let data = self.itemsSource[indexPath.row]
         
-        let controller = TopicDetailController(data)
+        let controller = TopicDetailController(data.topic)
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }

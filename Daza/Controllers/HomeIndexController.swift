@@ -150,44 +150,36 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
         // 拆分URL，获取参数。
         let urlParameters = urlString.componentsSeparatedByString("/")
         let firstAction: String = urlParameters[2]
-        let firstId: Int = urlParameters.count >= 4 ? Int(urlParameters[3])! : 0
+        let firstId: String = urlParameters.count >= 4 ? urlParameters[3] : "0"
         let secondAction: String = urlParameters.count >= 5 ? urlParameters[4] : ""
         let secondId: Int = urlParameters.count >= 6 ? Int(urlParameters[5])! : 0
         
         var controller: UIViewController!
         switch(firstAction) {
         case "users":
-            controller = UserDetailController(firstId)
+            controller = UserDetailController(Int(firstId)!)
             break
         case "categories":
             break
         case "topics":
-            controller = TopicDetailController(firstId)
+            controller = TopicDetailController(Int(firstId)!)
             break
         case "articles":
             switch(secondAction) {
             case "comments":
-                controller = ArticleCommentsController(firstId)
+                controller = ArticleCommentsController(Int(firstId)!)
                 break
             default:
-                controller = ArticleDetailController(firstId)
+                controller = ArticleDetailController(Int(firstId)!)
                 break
             }
             break
         case "tags":
+            controller = TagDetailController(firstId)
             break
         default:
             break
         }
-        
-        print(urlParameters)
-        print(">>>")
-        print(firstAction)
-        print(firstId)
-        print(secondAction)
-        print(secondId)
-        
-//        SVProgressHUD.showInfoWithStatus("Data: \(notification.object)")
 
         if (controller != nil) {
             controller?.hidesBottomBarWhenPushed = true

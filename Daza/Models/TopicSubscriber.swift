@@ -21,6 +21,8 @@ class TopicSubscriber: Model {
     
     var user_id: Int!       // 用户Id
     var topic_id: Int!      // 主题Id
+    var user: User!
+    var topic: Topic!
     
     required init?(_ map: Map) {
         super.init(map)
@@ -30,6 +32,8 @@ class TopicSubscriber: Model {
         super.mapping(map)
         user_id     <- map["user_id"]
         topic_id    <- map["topic_id"]
+        user        <- map["user"]
+        topic       <- map["topic"]
     }
     
 }
