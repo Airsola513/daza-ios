@@ -16,8 +16,9 @@
 
 import UIKit
 import Eureka
+import MessageUI
 
-class SettingsController: BaseGroupedListController {
+class SettingsController: BaseGroupedListController, MFMailComposeViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +41,14 @@ class SettingsController: BaseGroupedListController {
                     }
             +++ Section()
                 <<< ButtonRow() { row in
+                        let mailComposeController = MFMailComposeViewController()
+                        mailComposeController.mailComposeDelegate = self
+                        mailComposeController.setToRecipients([BuildConfig.EMAIL_HI])
+                        mailComposeController.setSubject("意见反馈")
+                        mailComposeController.setMessageBody("", isHTML: true)
                         row.title = trans("settings.feedback.title")
-                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { BaseTableViewController() }), completionCallback: nil)
+                        row.cellStyle = .Value1
+                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { mailComposeController }), completionCallback: nil)
                     }
                 <<< ButtonRow() { row in
                         row.title = trans("settings.about.title")
@@ -71,6 +78,10 @@ class SettingsController: BaseGroupedListController {
                         Api.logout(completion: completionBlock)
                     }
         
+    }
+
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
 }

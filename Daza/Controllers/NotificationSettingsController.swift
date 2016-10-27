@@ -47,6 +47,11 @@ class NotificationSettingsController: BaseGroupedListController {
                     }
                 <<< SwitchRow() { row in
                         row.title = trans("settings.notifications.itmes.mention")
+            }
+            +++ Section(footer: "开启后22:00到8:00间不会收到推送消息。")
+                <<< SwitchRow() { row in
+                        row.title = "勿扰模式"
+                        row.disabled = true
                     }
     }
 
