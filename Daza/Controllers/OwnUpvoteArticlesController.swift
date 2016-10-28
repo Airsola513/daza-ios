@@ -16,7 +16,7 @@
 
 import UIKit
 
-class OwnUpvoteArticlesController: BaseListController<Article> {
+class OwnUpvoteArticlesController: BaseListController<ArticleVote> {
     
     var userId: Int!
     var user: User!
@@ -49,14 +49,14 @@ class OwnUpvoteArticlesController: BaseListController<Article> {
     }
     
     override func loadData(page: Int) {
-        let completionBlock = { (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void in
+        let completionBlock = { (pagination: Pagination!, data: [ArticleVote]!, error: NSError!) -> Void in
             self.loadComplete(pagination, data)
         }
-//        Api.getArticleListByTopicId(page, topicId: self.topicId, completion: completionBlock)
+        Api.getUpvoteArticleListByUserId(page, userId: self.userId, completion: completionBlock)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let data = self.itemsSource[indexPath.row]
+        let data = self.itemsSource[indexPath.row].article
         
         var identifier: String = "ArticleItemCell"
         if (data.image_url == nil || data.image_url == "") {
@@ -75,7 +75,7 @@ class OwnUpvoteArticlesController: BaseListController<Article> {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
-        let data = self.itemsSource[indexPath.row]
+        let data = self.itemsSource[indexPath.row].article
         
         let controller = ArticleDetailController(data)
         controller.hidesBottomBarWhenPushed = true

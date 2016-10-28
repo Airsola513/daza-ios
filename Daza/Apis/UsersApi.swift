@@ -112,6 +112,27 @@ extension Api {
             })
         }
     }
+
+    static func getUpvoteArticleListByUserId(page: Int,
+                                               userId: Int,
+                                               errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                                               completion: (pagination: Pagination!, data: [ArticleVote]!, error: NSError!) -> Void) {
+        let URL = URLs.apiURL + "/users/\(userId)/upvotes";
+        let parameters: [String: AnyObject] = [
+            "page": page,
+        ]
+        self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<ArticleVote>, NSError>) in
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var pagination: Pagination! = nil
+                var data: [ArticleVote]! = nil
+                if (error == nil) {
+                    pagination = result.pagination
+                    data = result.data
+                }
+                completion(pagination: pagination, data: data, error: error)
+            })
+        }
+    }
     
     
 

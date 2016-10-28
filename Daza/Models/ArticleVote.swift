@@ -22,6 +22,7 @@ class ArticleVote: Model {
     var user_id: Int!       // 用户Id
     var article_id: Int!    // 文章Id
     var type: String!       // 类型[up, down]
+    var article: Article!
     
     required init?(_ map: Map) {
         super.init(map)
@@ -32,6 +33,7 @@ class ArticleVote: Model {
         user_id     <- map["user_id"]
         article_id  <- map["article_id"]
         type        <- map["type"]
+        article     <- map["article"]
     }
     
 }

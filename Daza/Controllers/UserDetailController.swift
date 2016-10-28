@@ -15,8 +15,9 @@
  */
 
 import UIKit
+import Eureka
 
-class UserDetailController: BaseTableViewController {
+class UserDetailController: BaseGroupedListController {
     
     var userId: Int!
     var user: User!
@@ -38,6 +39,49 @@ class UserDetailController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("user_detail.title")
+        
+        form
+            +++ Section()
+                <<< LabelRow() { row in
+                        row.tag = "profileRow"
+                        row.cellStyle = UITableViewCellStyle.Subtitle
+                        self.updateProfileRow(row)
+                    }.cellUpdate { (cell, row) in
+                        cell.height = { 70 }
+                        if (self.user != nil) {
+                            cell.detailTextLabel!.text = self.user.bio
+                        }
+                    }
+            +++ Section()
+                <<< ButtonRow() { row in
+                        row.title = "他/她的主题"
+                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { OwnTopicsController(self.userId) }), completionCallback: nil)
+                    }
+                <<< ButtonRow() { row in
+                        row.title = "他/她订阅的"
+                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { OwnSubscribesController(self.userId) }), completionCallback: nil)
+                    }
+                <<< ButtonRow() { row in
+                        row.title = "他/她赞过的"
+                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { OwnUpvoteArticlesController(self.userId) }), completionCallback: nil)
+                    }
+        
+        Api.showUser(self.userId) { (data) in
+            self.user = data
+            self.updateProfileRow(self.form.rowByTag("profileRow"))
+        }
+    }
+    
+    func updateProfileRow(row: LabelRow?) {
+        if (user == nil) {
+            row?.title = "N/A"
+            row?.cell.imageView!.sd_setImageWithURL(NSURL(string: ""), placeholderImage: UIImage(named: "placeholder_image"))
+            return
+        }
+
+        row?.title = user.name
+        row?.cell.imageView!.sd_setImageWithURL(NSURL(string: user.avatar_small_url), placeholderImage: UIImage(named: "placeholder_image"))
+        row?.updateCell()
     }
     
 }
