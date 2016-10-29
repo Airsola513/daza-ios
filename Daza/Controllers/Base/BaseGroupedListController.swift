@@ -34,6 +34,12 @@ class BaseGroupedListController: FormViewController {
             if (row.cellStyle == UITableViewCellStyle.Subtitle) {
                 cell.detailTextLabel?.font = UIFont.systemFontOfSize(13)
             }
+            
+            if (row is ButtonRow) {
+                if (row.isDisabled) {
+                    cell.textLabel?.textColor = cell.textLabel?.textColor.colorWithAlphaComponent( row.isDisabled ? 0.3 : 1.0)
+                }
+            }
         }
         
         LabelRow.defaultCellUpdate = defaultCellUpdate
