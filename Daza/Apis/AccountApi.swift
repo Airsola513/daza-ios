@@ -89,6 +89,7 @@ extension Api {
                 if (error == nil) {
                     data = result.data
                     Auth.user(data)
+                    Auth.jwtToken(data.jwt_token)
                 }
                 completion(data: data, error: error)
             })
@@ -105,7 +106,7 @@ extension Api {
         
         let URL = URLs.apiURL + "/account/profile";
         let parameters: [String: AnyObject] = [
-            "avatar_url": avatarUrl,
+//            "avatar_url": avatarUrl,
             "name": name,
             "city": city,
             "website": website,
@@ -118,6 +119,7 @@ extension Api {
                 if (error == nil) {
                     data = result.data
                     Auth.user(data)
+                    Auth.jwtToken(data.jwt_token)
                 }
                 completion(data: data, error: error)
             })
