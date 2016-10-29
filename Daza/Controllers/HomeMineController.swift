@@ -53,17 +53,21 @@ class HomeMineController: BaseGroupedListController {
                     }
             +++ Section()
                 <<< ButtonRow() { row in
+                        row.tag = "ownTopicsRow"
                         row.title = "我的主题"
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { OwnTopicsController(Auth.id()) }), completionCallback: nil)
                     }
                 <<< ButtonRow() { row in
+                        row.tag = "ownSubscribesRow"
                         row.title = "我订阅的"
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { OwnSubscribesController(Auth.id()) }), completionCallback: nil)
                     }
                 <<< ButtonRow() { row in
+                        row.tag = "ownUpvotesRow"
                         row.title = "我赞过的"
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { OwnUpvoteArticlesController(Auth.id()) }), completionCallback: nil)
                     }
+        self.updateCellsIfDisabled()
     }
     
     func updateProfileRow(row: LabelRow?) {
@@ -76,6 +80,15 @@ class HomeMineController: BaseGroupedListController {
             row?.cell.imageView!.sd_setImageWithURL(NSURL(string: user.avatar_small_url), placeholderImage: UIImage(named: "placeholder_image"))
         }
         row?.updateCell()
+    }
+    
+    func updateCellsIfDisabled() {
+        self.form.rowByTag("ownTopicsRow")!.disabled = Auth.check() ? false : true
+        self.form.rowByTag("ownTopicsRow")!.evaluateDisabled()
+        self.form.rowByTag("ownSubscribesRow")!.disabled = Auth.check() ? false : true
+        self.form.rowByTag("ownSubscribesRow")!.evaluateDisabled()
+        self.form.rowByTag("ownUpvotesRow")!.disabled = Auth.check() ? false : true
+        self.form.rowByTag("ownUpvotesRow")!.evaluateDisabled()
     }
 
     func notificationsButtonPressed(sender: UIBarButtonItem) {
@@ -132,7 +145,8 @@ class HomeMineController: BaseGroupedListController {
     // 我的问题列表发生变化
     @objc func loginStatusChanged(notification: NSNotification) {
         let row: LabelRow? = form.rowByTag("profileRow")
-        updateProfileRow(row)
+        self.updateProfileRow(row)
+        self.updateCellsIfDisabled()
     }
 
 }
