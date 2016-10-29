@@ -107,6 +107,7 @@ class TopicDetailController: BaseListController<Article> {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let data = self.itemsSource[indexPath.row]
+        data.topic = nil
         
         var identifier: String = "ArticleItemCell"
         if (data.image_url == nil || data.image_url == "") {

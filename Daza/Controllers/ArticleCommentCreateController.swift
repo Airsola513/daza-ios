@@ -34,7 +34,7 @@ class ArticleCommentCreateController: BaseGroupedListController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("article_comment_create.title")
+        self.title = "写评论"
         
         self.menuSend = UIBarButtonItem(image: UIImage(named: "ic_menu_send"), style: .Plain, target: self, action: #selector(sendButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuSend
@@ -43,7 +43,9 @@ class ArticleCommentCreateController: BaseGroupedListController {
             +++ Section()
                 <<< TextAreaRow() { row in
                         row.tag = "contentRow"
-//                        row.placeholder = trans("login.email.placeholder")
+                        row.placeholder = "在此输入评论内容"
+                    }.cellUpdate { (cell, row) in
+                        cell.textView.editable = true
                     }
     }
     

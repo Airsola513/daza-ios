@@ -20,7 +20,7 @@ class NotificationsController: BaseListController<Notification> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("notifications.title")
+        self.title = "消息"
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0

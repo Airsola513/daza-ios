@@ -34,7 +34,7 @@ class OwnSubscribesController: BaseListController<TopicSubscriber> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("own_topics.title")
+        self.title = Auth.id() == self.userId ? "我关注的" : "他/她关注的"
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0
