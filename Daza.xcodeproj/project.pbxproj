@@ -663,7 +663,7 @@
 				TargetAttributes = {
 					F56D2AFC1D3121AC004A92DD = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 8CBW3QTZNP;
+						DevelopmentTeam = G83H824X6L;
 					};
 					F56D2B121D3121AC004A92DD = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1109,7 +1109,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8CBW3QTZNP;
+				DEVELOPMENT_TEAM = G83H824X6L;
 				INFOPLIST_FILE = Daza/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -1132,7 +1132,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8CBW3QTZNP;
+				DEVELOPMENT_TEAM = G83H824X6L;
 				INFOPLIST_FILE = Daza/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
