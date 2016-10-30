@@ -23,3 +23,5 @@
 #import "GrowingIO/Growing.h"
 #import "TUSafariActivity/TUSafariActivity.h"
 #import "WZLBadge/WZLBadgeImport.h"
+#import "Vendors/YunBaSDK/YunBaService.h"
+

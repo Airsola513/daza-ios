@@ -15,6 +15,7 @@
  */
 
 struct BuildConfig {
+    internal static let DOMAIN_NAME = "daza.io"
     internal static let WEB_BASE_URL = "http://mock-web.daza.io"
     internal static let API_BASE_URL = "http://mock-api.daza.io"
 
@@ -23,6 +24,8 @@ struct BuildConfig {
     internal static let EMAIL_SUPPORT = "support@daza.io"
 
     internal static let QINIU_DOMAIN = "http://obryns2kk.bkt.clouddn.com"
+    
+    internal static let YUNBA_APP_KEY = ""
 
     internal static let GROWING_ID = ""
     internal static let GROWING_URL_SCHEME = ""

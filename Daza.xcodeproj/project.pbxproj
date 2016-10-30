@@ -65,6 +65,8 @@
 		F54FCE961DC194A4005051B4 /* TagDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54FCE951DC194A4005051B4 /* TagDetailController.swift */; };
 		F553D5121DBA5B61007FB06F /* NotificationItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F553D5111DBA5B61007FB06F /* NotificationItemCell.swift */; };
 		F553D5141DBA5B79007FB06F /* NotificationItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F553D5131DBA5B79007FB06F /* NotificationItemCell.xib */; };
+		F558A9411DC6336B0085C97D /* libYunBa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F558A93F1DC6336B0085C97D /* libYunBa.a */; };
+		F558A9431DC633900085C97D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F558A9421DC633900085C97D /* SystemConfiguration.framework */; };
 		F56D2B011D3121AC004A92DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56D2B001D3121AC004A92DD /* AppDelegate.swift */; };
 		F56D2B081D3121AC004A92DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56D2B061D3121AC004A92DD /* Main.storyboard */; };
 		F56D2B0A1D3121AC004A92DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F56D2B091D3121AC004A92DD /* Assets.xcassets */; };
@@ -199,6 +201,9 @@
 		F54FCE951DC194A4005051B4 /* TagDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagDetailController.swift; sourceTree = "<group>"; };
 		F553D5111DBA5B61007FB06F /* NotificationItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationItemCell.swift; sourceTree = "<group>"; };
 		F553D5131DBA5B79007FB06F /* NotificationItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationItemCell.xib; sourceTree = "<group>"; };
+		F558A93F1DC6336B0085C97D /* libYunBa.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYunBa.a; sourceTree = "<group>"; };
+		F558A9401DC6336B0085C97D /* YunBaService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YunBaService.h; sourceTree = "<group>"; };
+		F558A9421DC633900085C97D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F56D2AFD1D3121AC004A92DD /* Daza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Daza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56D2B001D3121AC004A92DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F56D2B071D3121AC004A92DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -266,7 +271,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F558A9431DC633900085C97D /* SystemConfiguration.framework in Frameworks */,
 				57F281865FD8154099281280 /* Pods_Daza.framework in Frameworks */,
+				F558A9411DC6336B0085C97D /* libYunBa.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +397,7 @@
 		DAF3D11576E59A30216886D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F558A9421DC633900085C97D /* SystemConfiguration.framework */,
 				E8FE8D8F603C29202F719D14 /* Pods_Daza.framework */,
 				8C4D813867A740C3F0DC5296 /* Pods_DazaTests.framework */,
 				AC039F93BC51F3874BC22538 /* Pods_DazaUITests.framework */,
@@ -432,6 +440,23 @@
 			path = TableViewHeaders;
 			sourceTree = "<group>";
 		};
+		F558A93D1DC6336B0085C97D /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				F558A93E1DC6336B0085C97D /* YunBaSDK */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		F558A93E1DC6336B0085C97D /* YunBaSDK */ = {
+			isa = PBXGroup;
+			children = (
+				F558A93F1DC6336B0085C97D /* libYunBa.a */,
+				F558A9401DC6336B0085C97D /* YunBaService.h */,
+			);
+			path = YunBaSDK;
+			sourceTree = "<group>";
+		};
 		F56D2AF41D3121AB004A92DD = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +496,7 @@
 				87A9EBA6A756C230C11874A5 /* Models */,
 				F5F23E4F1D32ABB700234104 /* Resources */,
 				87A9EDBED9750E641CD44FD6 /* Utils */,
+				F558A93D1DC6336B0085C97D /* Vendors */,
 				F5993DAD1D38B02600495E06 /* Views */,
 			);
 			path = Daza;
@@ -1086,6 +1112,10 @@
 				DEVELOPMENT_TEAM = 8CBW3QTZNP;
 				INFOPLIST_FILE = Daza/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Daza/Vendors/YunBaSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.daza.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1105,6 +1135,10 @@
 				DEVELOPMENT_TEAM = 8CBW3QTZNP;
 				INFOPLIST_FILE = Daza/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Daza/Vendors/YunBaSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.daza.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

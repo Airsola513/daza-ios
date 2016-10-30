@@ -31,9 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 初始化 SVProgressHUD 的配置
         SVProgressHUD.setDefaultStyle(.Dark)
-        SVProgressHUD.setMinimumDismissTimeInterval(1)
+        SVProgressHUD.setMinimumDismissTimeInterval(3)
         
-        // 初始化GrowingIO
+        // 初始化 YunBa
+        YunBaService.setupWithAppkey(BuildConfig.YUNBA_APP_KEY)
+        
+        // 初始化 GrowingIO
         Growing.startWithAccountId(BuildConfig.GROWING_ID)
 
         return true
