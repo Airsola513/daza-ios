@@ -16,6 +16,7 @@
 
 import UIKit
 import SVProgressHUD
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,9 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SVProgressHUD.setMinimumDismissTimeInterval(3)
         
         // 初始化PushNotification
-        let userNotificationSettings = UIUserNotificationSettings(forTypes: [.Sound, .Alert, .Badge], categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(userNotificationSettings)
-        UIApplication.sharedApplication().registerForRemoteNotifications()
+        self.registerRemoteNotification()
 
         // 初始化 YunBa
         YunBaService.setupWithAppkey(BuildConfig.YUNBA_APP_KEY)
@@ -92,7 +91,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        print("YunBar.Remote >>> \(userInfo)")
+    }
+    
+    func registerRemoteNotification() {
+        if #available(iOS 10.0, *) {
+            let center: UNUserNotificationCenter = UNUserNotificationCenter.currentNotificationCenter()
+            center.requestAuthorizationWithOptions(UNAuthorizationOptions(arrayLiteral: [.Alert, .Badge, .Sound]), completionHandler: { (granted, error) in
+                if (granted) {
+                    print("author success!")
+                } else {
+                    print("author failed!")
+                }
+            })
+        } else {
+            let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+            UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        }
         
+        UIApplication.sharedApplication().registerForRemoteNotifications()
     }
     
     func onMessageReceived(notification: NSNotification) {
