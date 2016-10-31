@@ -227,6 +227,7 @@
 		F5715BC11D353F0000F1CBE5 /* TagsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsApi.swift; sourceTree = "<group>"; };
 		F5715BC21D353F0000F1CBE5 /* TopicsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsApi.swift; sourceTree = "<group>"; };
 		F5715BC41D353F0000F1CBE5 /* UsersApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersApi.swift; sourceTree = "<group>"; };
+		F5806D4F1DC7826700923570 /* Daza.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Daza.entitlements; sourceTree = "<group>"; };
 		F58C21DB1DB7A2E300193336 /* Thumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 		F5985C041D66AC9C0033CE65 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		F5985C061D66AD030033CE65 /* ArticleTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTag.swift; sourceTree = "<group>"; };
@@ -487,6 +488,7 @@
 				F56D2B091D3121AC004A92DD /* Assets.xcassets */,
 				87A9EB23B9EE744469DCA117 /* Controllers */,
 				F5F23E361D32904800234104 /* Daza-Bridging-Header.h */,
+				F5806D4F1DC7826700923570 /* Daza.entitlements */,
 				87A9E8CC006EAD99528D2E58 /* Events */,
 				F519182B1D3364F80012897F /* Extensions */,
 				F5A2B57E1D3B82810031AF83 /* Handlers */,
@@ -664,6 +666,14 @@
 					F56D2AFC1D3121AC004A92DD = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = G83H824X6L;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					F56D2B121D3121AC004A92DD = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1107,6 +1117,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Daza/Daza.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = G83H824X6L;
@@ -1130,6 +1141,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Daza/Daza.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = G83H824X6L;

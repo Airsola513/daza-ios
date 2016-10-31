@@ -33,8 +33,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SVProgressHUD.setDefaultStyle(.Dark)
         SVProgressHUD.setMinimumDismissTimeInterval(3)
         
+        // 初始化PushNotification
+        let userNotificationSettings = UIUserNotificationSettings(forTypes: [.Sound, .Alert, .Badge], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(userNotificationSettings)
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+
         // 初始化 YunBa
         YunBaService.setupWithAppkey(BuildConfig.YUNBA_APP_KEY)
+        YunBaService.subscribe("test", resultBlock: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onMessageReceived), name: kYBDidReceiveMessageNotification, object: nil)
         
         // 初始化 GrowingIO
         Growing.startWithAccountId(BuildConfig.GROWING_ID)
@@ -72,6 +79,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
         return true
+    }
+
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        YunBaService.storeDeviceToken(deviceToken) { (succ, error) -> Void in
+            if (succ) {
+                print("store device token to YunBa succ")
+            } else {
+                print("store device token to YunBa failed due to : \(error), recovery suggestion: \(error.localizedRecoverySuggestion)")
+            }
+        }
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        
+    }
+    
+    func onMessageReceived(notification: NSNotification) {
+        let message: YBMessage = notification.object as! YBMessage
+        print("YunBa >>> \(message.data)")
     }
     
 }
