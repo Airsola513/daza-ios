@@ -11,8 +11,8 @@
 - [Material icons](https://design.google.com/icons/)
 
 ## 线上地址
-- 主页：[http://daza.io](http://daza.io)
-- 接口：[http://api.daza.io](http://api.daza.io)
+- 主页：[https://daza.io](https://daza.io)
+- 接口：[https://api.daza.io](https://api.daza.io)
 
 ## 演示
 [Live Demo](http://mock-web.daza.io)
