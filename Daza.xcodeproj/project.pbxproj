@@ -666,6 +666,7 @@
 					F56D2AFC1D3121AC004A92DD = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = G83H824X6L;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1129,7 +1130,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.daza.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "cd527acf-3169-486c-aa4d-8b3b4044b713";
+				PROVISIONING_PROFILE_SPECIFIER = "daza-dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "Daza/Daza-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1153,7 +1155,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.daza.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "cd527acf-3169-486c-aa4d-8b3b4044b713";
+				PROVISIONING_PROFILE_SPECIFIER = "daza-dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "Daza/Daza-Bridging-Header.h";
 			};
 			name = Release;

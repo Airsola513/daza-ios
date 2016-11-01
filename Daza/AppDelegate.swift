@@ -41,6 +41,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         YunBaService.setupWithAppkey(BuildConfig.YUNBA_APP_KEY)
         YunBaService.subscribe("test", resultBlock: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onMessageReceived), name: kYBDidReceiveMessageNotification, object: nil)
+        YunBaService.subscribe("yunba") { (succ, error) in
+            if (succ) {
+                print("subscribe success")
+            } else {
+                print("subscribe fail")
+            }
+        }
         
         // 初始化 GrowingIO
         Growing.startWithAccountId(BuildConfig.GROWING_ID)
@@ -91,7 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        print("YunBar.Remote >>> \(userInfo)")
+        print("YunBa.Remote >>> \(userInfo)")
     }
     
     func registerRemoteNotification() {
