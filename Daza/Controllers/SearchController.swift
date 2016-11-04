@@ -16,11 +16,36 @@
 
 import UIKit
 
-class SearchController: BaseTableViewController {
+class SearchController: BaseTableViewController, UISearchBarDelegate {
     
+    var searchBar: UISearchBar!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = trans("title_search")
+        
+        // 初始化搜索框
+        self.searchBar = UISearchBar(frame: CGRectMake(96, 0, 200, 44))
+        self.searchBar.showsCancelButton = true
+        self.searchBar.backgroundColor = .clearColor()
+        self.searchBar.backgroundImage = UIImage()
+        self.searchBar.barTintColor = .clearColor()
+        self.searchBar.placeholder = "搜索你感兴趣的内容"
+        self.searchBar.delegate = self
+        
+        let titleView: UIView = UIView(frame: (self.navigationController?.navigationBar.frame)!)
+        titleView.backgroundColor = .clearColor()
+        titleView.addSubview(self.searchBar)
+        self.searchBar.snp_makeConstraints { (make) in
+            make.left.equalTo(0)
+            make.right.equalTo(0)
+            make.centerY.equalTo(0)
+        }
+        self.navigationItem.titleView = titleView
+        self.searchBar.becomeFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        self.dismissViewControllerAnimated(false, completion: nil)
     }
     
 }

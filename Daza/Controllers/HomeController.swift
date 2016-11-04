@@ -49,6 +49,11 @@ class HomeController: UITabBarController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(deepLinkingHandler(_:)), name: "DeepLinkingEvent", object: nil)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.mineController.tabBarItem.badgeValue = "\(UIApplication.sharedApplication().applicationIconBadgeNumber)"
+    }
+    
     @objc func deepLinkingHandler(notification: NSNotification) {
         let urlString: String = notification.object as! String
         

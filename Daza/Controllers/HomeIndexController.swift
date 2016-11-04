@@ -22,7 +22,7 @@ import SVProgressHUD
 class HomeIndexController: ButtonBarPagerTabStripViewController {
     
     var logoImageView: UIImageView!
-    var searchBar: UISearchBar!
+    var searchButton: UIButton!
     
     var menuRefresh: UIBarButtonItem!
     var pagerChildViewControllers: [UIViewController] = []
@@ -67,32 +67,28 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
         self.reloadCategories()
         
         self.logoImageView = UIImageView(image: UIImage(named: "ic_logo_light"))
-        // 初始化搜索框
-        self.searchBar = UISearchBar(frame: CGRectMake(96, 0, 200, 44))
-        self.searchBar.backgroundColor = .clearColor()
-        self.searchBar.backgroundImage = UIImage()
-        self.searchBar.barTintColor = .clearColor()
-        self.searchBar.placeholder = "搜索你感兴趣的内容"
-//        for subView in self.searchBar.subviews {
-//            for ndLeveSubView in subView.subviews {
-//                if (ndLeveSubView.isKindOfClass(UITextField)) {
-//                    let textField = ndLeveSubView as? UITextField
-//                    textField?.backgroundColor = UIColor.whiteColor()
-//                    textField?.textColor = UIColor.blackColor()
-//                }
-//            }
-//        }
+        // 初始化搜索按钮
+        self.searchButton = UIButton(frame: CGRectMake(96, 0, 200, 44))
+        self.searchButton.backgroundColor = UIColor.whiteColor()
+        self.searchButton.setTitle("搜索你感兴趣的内容", forState: .Normal)
+        self.searchButton.setTitleColor(UIColor.grayColor(), forState: .Normal)
+//        self.searchButton.setImage(UIImage(named: "ic_menu_search"), forState: .Normal)
+        self.searchButton.titleLabel?.font = UIFont.systemFontOfSize(13)
+        self.searchButton.layer.cornerRadius = 5
+        self.searchButton.layer.masksToBounds = true
+        self.searchButton.addTarget(self, action: #selector(searchButtonPressed(_:)), forControlEvents: .TouchUpInside)
+
         let titleView: UIView = UIView(frame: (self.navigationController?.navigationBar.frame)!)
         titleView.backgroundColor = .clearColor()
         titleView.addSubview(self.logoImageView)
-        titleView.addSubview(self.searchBar)
+        titleView.addSubview(self.searchButton)
         self.logoImageView.snp_makeConstraints { (make) in
             make.left.equalTo(8)
             make.width.equalTo(80)
             make.height.equalTo(20)
             make.centerY.equalTo(0)
         }
-        self.searchBar.snp_makeConstraints { (make) in
+        self.searchButton.snp_makeConstraints { (make) in
             make.left.equalTo(self.logoImageView.snp_right).inset(-12)
             make.right.equalTo(-8)
             make.centerY.equalTo(0)
@@ -140,5 +136,10 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
         }
         SVProgressHUD.showWithStatus("加载中...")
         Api.getCategoryList(1, completion: completionBlock)
+    }
+    
+    func searchButtonPressed(sender: UIButton!) {
+        let controller: BaseNavigationController = BaseNavigationController(rootViewController: SearchController())
+        self.presentViewController(controller, animated: false, completion: nil)
     }
 }

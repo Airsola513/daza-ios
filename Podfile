@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-#source 'https://git.coding.net/lijy91/Specs.git'
+source 'https://git.coding.net/lijy91/Specs.git'
 platform :ios, '9.0'
 
 target 'Daza' do

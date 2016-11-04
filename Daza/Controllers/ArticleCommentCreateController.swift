@@ -45,9 +45,16 @@ class ArticleCommentCreateController: BaseGroupedListController {
                         row.tag = "contentRow"
                         row.placeholder = "在此输入评论内容"
                     }.cellUpdate { (cell, row) in
-                        cell.textView.editable = true
+                        
                     }
     }
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        let contentRow: TextAreaRow = form.rowByTag("contentRow") as! TextAreaRow
+        contentRow.cell.textView.becomeFirstResponder()
+    }
+
     
     
     func sendButtonPressed(sender: UIBarButtonItem) {

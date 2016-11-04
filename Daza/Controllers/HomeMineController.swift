@@ -68,6 +68,11 @@ class HomeMineController: BaseGroupedListController {
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { OwnUpvoteArticlesController(Auth.id()) }), completionCallback: nil)
                     }
         self.updateCellsIfDisabled()
+//        let firstItem: UITabBarItem = (self.tabBarItem)!
+//        firstItem.badgeCenterOffset = CGPointMake(0, 0)
+//        firstItem.badgeValue = "1"
+//        firstItem.showBadgeWithStyle(.New, value: 0, animationType: .Shake)
+//        self.navigationController!.tabBarItem.badgeValue = "99"
     }
     
     func updateProfileRow(row: LabelRow?) {
