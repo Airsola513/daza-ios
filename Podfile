@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-source 'https://git.coding.net/lijy91/Specs.git'
+# source 'https://git.coding.net/lijy91/Specs.git'
 platform :ios, '9.0'
 
 target 'Daza' do
@@ -8,18 +8,18 @@ target 'Daza' do
 
   # Pods for Daza
   pod 'MJRefresh'
-  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :tag => '3.5.0'
+  pod 'Alamofire', '~> 3.5.0'
   pod 'ObjectMapper', '~> 1.3'
   pod 'AlamofireObjectMapper', '~> 3.0'
   # pod 'RealmSwift'
-  pod 'SDWebImage', '~>3.8'
+  pod 'SDWebImage', '~> 3.8.2'
   pod 'SnapKit', '~> 0.22.0'
   pod 'NJKWebViewProgress'
   pod 'SVProgressHUD'
   pod '1PasswordExtension', '~> 1.8.2'
   pod 'JVFloatLabeledTextField'
   pod 'DZNEmptyDataSet'
-  pod 'Eureka', :git => 'https://github.com/xmartlabs/Eureka.git', :branch => 'swift2.3'
+  pod 'Eureka', '~> 1.7.0'
   pod 'XLPagerTabStrip', '~> 5.0'
   pod 'DateTools'
   pod 'GrowingIO'
