@@ -112,6 +112,7 @@
 		F5F29B581D360D7100071F04 /* ResultOfArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F29B571D360D7100071F04 /* ResultOfArray.swift */; };
 		F5F29B5A1D36A1A700071F04 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F29B591D36A1A700071F04 /* BaseViewController.swift */; };
 		F5F29B5C1D36A33B00071F04 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F29B5B1D36A33B00071F04 /* AboutController.swift */; };
+		F5FA3D7A1DCB71EA00D93C63 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA3D791DCB71EA00D93C63 /* StringExtension.swift */; };
 		F5FC7D8A1D41F96000C6CB17 /* UserRelationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FC7D891D41F96000C6CB17 /* UserRelationship.swift */; };
 		F5FC7D8C1D427A9C00C6CB17 /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FC7D8B1D427A9C00C6CB17 /* ResetPasswordController.swift */; };
 		F5FC7D8E1D427AD500C6CB17 /* ModifyPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FC7D8D1D427AD500C6CB17 /* ModifyPasswordController.swift */; };
@@ -258,6 +259,7 @@
 		F5F29B571D360D7100071F04 /* ResultOfArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultOfArray.swift; sourceTree = "<group>"; };
 		F5F29B591D36A1A700071F04 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F5F29B5B1D36A33B00071F04 /* AboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
+		F5FA3D791DCB71EA00D93C63 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		F5FC7D891D41F96000C6CB17 /* UserRelationship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRelationship.swift; sourceTree = "<group>"; };
 		F5FC7D8B1D427A9C00C6CB17 /* ResetPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
 		F5FC7D8D1D427AD500C6CB17 /* ModifyPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyPasswordController.swift; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				F519182C1D3364F80012897F /* UIViewControllerExtension.swift */,
 				F52C55231D3E710100819C6D /* UIViewExtension.swift */,
 				F5B5D5E81D3F2B16009EE5AD /* UIApplicationExtension.swift */,
+				F5FA3D791DCB71EA00D93C63 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -660,7 +663,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = JianyingLi;
 				TargetAttributes = {
 					F56D2AFC1D3121AC004A92DD = {
@@ -956,6 +959,7 @@
 				F58C21DC1DB7A2E300193336 /* Thumbnail.swift in Sources */,
 				F51918261D33629A0012897F /* BaseListController.swift in Sources */,
 				F5342BAB1DB25E27009A5D25 /* ArticleVote.swift in Sources */,
+				F5FA3D7A1DCB71EA00D93C63 /* StringExtension.swift in Sources */,
 				F514AE911D410D7200A68590 /* BaseButtonBarPagerTabStripViewController.swift in Sources */,
 				F5985C051D66AC9C0033CE65 /* AccessToken.swift in Sources */,
 				F519183B1D337C0B0012897F /* TopicCreateController.swift in Sources */,

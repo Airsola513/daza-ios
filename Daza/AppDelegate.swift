@@ -15,6 +15,7 @@
  */
 
 import UIKit
+import Foundation
 import SVProgressHUD
 import UserNotifications
 
@@ -39,11 +40,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // 初始化 YunBa
         YunBaService.setupWithAppkey(BuildConfig.YUNBA_APP_KEY)
-        YunBaService.subscribe("test", resultBlock: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onMessageReceived), name: kYBDidReceiveMessageNotification, object: nil)
-        YunBaService.subscribe("yunba") { (succ, error) in
+        
+        print("ALIAS>>>>\(String(Auth.id()).md5)")
+        
+        YunBaService.setAlias(String(Auth.id()).md5) { (succ, error) in
             if (succ) {
                 print("subscribe success")
+                YunBaService.getTopicList { (topics, error2) in
+                    print(topics)
+                }
             } else {
                 print("subscribe fail")
             }
@@ -98,18 +104,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        print("YunBa.Remote >>> \(userInfo)")
     }
     
     func registerRemoteNotification() {
         if #available(iOS 10.0, *) {
             let center: UNUserNotificationCenter = UNUserNotificationCenter.currentNotificationCenter()
             center.requestAuthorizationWithOptions(UNAuthorizationOptions(arrayLiteral: [.Alert, .Badge, .Sound]), completionHandler: { (granted, error) in
-                if (granted) {
-                    print("author success!")
-                } else {
-                    print("author failed!")
-                }
             })
         } else {
             let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
@@ -121,7 +121,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func onMessageReceived(notification: NSNotification) {
         let message: YBMessage = notification.object as! YBMessage
-        print("YunBa >>> \(message.data)")
+        let jsonString = String(data: message.data, encoding: NSUTF8StringEncoding)
+        print("YunBa >>> \(jsonString)")
     }
     
 }

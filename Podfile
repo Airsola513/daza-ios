@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-source 'https://git.coding.net/lijy91/Specs.git'
+#source 'https://git.coding.net/lijy91/Specs.git'
 platform :ios, '9.0'
 
 target 'Daza' do
@@ -36,7 +36,7 @@ target 'Daza' do
     inherit! :search_paths
     # Pods for testing
   end
-  
+
   post_install do |installer|
       installer.pods_project.targets.each do |target|
           target.build_configurations.each do |config|
