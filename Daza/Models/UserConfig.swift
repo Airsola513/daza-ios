@@ -20,8 +20,8 @@ import ObjectMapper
 class UserConfig: Model {
     
     var user_id: Int!   // 用户Id
-    var key: Int!       // Key
-    var value: User!    // Value
+    var key: String!    // Key
+    var value: String!  // Value
     
     required init?(_ map: Map) {
         super.init(map)

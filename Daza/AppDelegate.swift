@@ -42,8 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         YunBaService.setupWithAppkey(BuildConfig.YUNBA_APP_KEY)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onMessageReceived), name: kYBDidReceiveMessageNotification, object: nil)
         
-        print("ALIAS>>>>\(String(Auth.id()).md5)")
-        
         YunBaService.setAlias(String(Auth.id()).md5) { (succ, error) in
             if (succ) {
                 print("subscribe success")
