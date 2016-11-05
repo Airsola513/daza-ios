@@ -29,7 +29,7 @@
 // Home
 "home.index.title" = "Home";
 "home.explore.title" = "Explore";
-"home.events.title" = "Events";
+"home.inbox.title" = "Inbox";
 "home.mine.title" = "Mine";
 
 // >> Home mine

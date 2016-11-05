@@ -20,10 +20,12 @@ class HomeController: UITabBarController {
     
     var indexController: UINavigationController!
     var exploreController: UINavigationController!
+    var inboxController: UINavigationController!
     var mineController: UINavigationController!
     
     let homeIndexController   = HomeIndexController()
     let homeExploreController = HomeExploreController()
+    let homeInboxController   = HomeInboxController()
     let homeMineController    = HomeMineController()
     
     override func viewDidLoad() {
@@ -41,6 +43,11 @@ class HomeController: UITabBarController {
         self.exploreController.tabBarItem.image = UIImage(named: "ic_tab_explore")
         self.addChildViewController(exploreController)
         
+        self.inboxController = BaseNavigationController(rootViewController: homeInboxController, statusBarStyle: .LightContent)
+        self.inboxController.tabBarItem.title = trans("home.inbox.title")
+        self.inboxController.tabBarItem.image = UIImage(named: "ic_tab_inbox")
+        self.addChildViewController(inboxController)
+        
         self.mineController = BaseNavigationController(rootViewController: homeMineController, statusBarStyle: .LightContent)
         self.mineController.tabBarItem.title = trans("home.mine.title")
         self.mineController.tabBarItem.image = UIImage(named: "ic_tab_mine")
@@ -51,7 +58,7 @@ class HomeController: UITabBarController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.mineController.tabBarItem.badgeValue = "\(UIApplication.sharedApplication().applicationIconBadgeNumber)"
+        self.inboxController.tabBarItem.badgeValue = "\(UIApplication.sharedApplication().applicationIconBadgeNumber)"
     }
     
     @objc func deepLinkingHandler(notification: NSNotification) {

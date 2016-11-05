@@ -19,15 +19,11 @@ import Eureka
 
 class HomeMineController: BaseGroupedListController {
 
-    var menuNotifications: UIBarButtonItem?
     var menuSettings: UIBarButtonItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("home.mine.title")
-
-        self.menuNotifications = UIBarButtonItem(image: UIImage(named: "ic_menu_notifications"), style: .Plain, target: self, action: #selector(notificationsButtonPressed(_:)))
-        self.navigationItem.leftBarButtonItem = self.menuNotifications
 
         self.menuSettings = UIBarButtonItem(image: UIImage(named: "ic_menu_settings"), style: .Plain, target: self, action: #selector(settingsButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuSettings
@@ -68,11 +64,6 @@ class HomeMineController: BaseGroupedListController {
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { OwnUpvoteArticlesController(Auth.id()) }), completionCallback: nil)
                     }
         self.updateCellsIfDisabled()
-//        let firstItem: UITabBarItem = (self.tabBarItem)!
-//        firstItem.badgeCenterOffset = CGPointMake(0, 0)
-//        firstItem.badgeValue = "1"
-//        firstItem.showBadgeWithStyle(.New, value: 0, animationType: .Shake)
-//        self.navigationController!.tabBarItem.badgeValue = "99"
     }
     
     func updateProfileRow(row: LabelRow?) {
@@ -94,15 +85,6 @@ class HomeMineController: BaseGroupedListController {
         self.form.rowByTag("ownSubscribesRow")!.evaluateDisabled()
         self.form.rowByTag("ownUpvotesRow")!.disabled = Auth.check() ? false : true
         self.form.rowByTag("ownUpvotesRow")!.evaluateDisabled()
-    }
-
-    func notificationsButtonPressed(sender: UIBarButtonItem) {
-        if (!Auth.check(self)) {
-            return
-        }
-        let controller = NotificationsController()
-        controller.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(controller, animated: true)
     }
 
     func settingsButtonPressed(sender: UIBarButtonItem) {

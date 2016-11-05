@@ -45,7 +45,7 @@
 // Home
 "home.index.title" = "首页";
 "home.explore.title" = "探索";
-"home.events.title" = "活动";
+"home.inbox.title" = "消息";
 "home.mine.title" = "我的";
 
 // >> Home mine
