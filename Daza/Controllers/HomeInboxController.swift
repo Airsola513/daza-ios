@@ -18,9 +18,14 @@ import UIKit
 
 class HomeInboxController: BaseListController<Notification> {
     
+    var menuMarkAllRead: UIBarButtonItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "消息盒子"
+        self.title = trans("home.inbox.title")
+        
+        self.menuMarkAllRead = UIBarButtonItem(title: "标记已读", style: .Plain, target: self, action: #selector(markAllReadButtonPressed(_:)))
+        self.navigationItem.rightBarButtonItem = self.menuMarkAllRead
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0
@@ -55,6 +60,11 @@ class HomeInboxController: BaseListController<Notification> {
         let controller = UITableViewController()
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func markAllReadButtonPressed(sender: UIBarButtonItem) {
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        self.navigationController?.tabBarItem.badgeValue = nil
     }
     
 }

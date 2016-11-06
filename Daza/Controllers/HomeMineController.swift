@@ -19,14 +19,9 @@ import Eureka
 
 class HomeMineController: BaseGroupedListController {
 
-    var menuSettings: UIBarButtonItem?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("home.mine.title")
-
-        self.menuSettings = UIBarButtonItem(image: UIImage(named: "ic_menu_settings"), style: .Plain, target: self, action: #selector(settingsButtonPressed(_:)))
-        self.navigationItem.rightBarButtonItem = self.menuSettings
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(loginStatusChanged(_:)), name: "LoginStatusChangedEvent", object: nil)
 
@@ -62,7 +57,13 @@ class HomeMineController: BaseGroupedListController {
                         row.tag = "ownUpvotesRow"
                         row.title = "我赞过的"
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { OwnUpvoteArticlesController(Auth.id()) }), completionCallback: nil)
-                    }
+                }
+            +++ Section()
+                <<< ButtonRow() { row in
+                        row.tag = "settingsRow"
+                        row.title = "设置"
+                        row.presentationMode = .Show(controllerProvider: .Callback( builder: { SettingsController() }), completionCallback: nil)
+                }
         self.updateCellsIfDisabled()
     }
     
@@ -85,12 +86,6 @@ class HomeMineController: BaseGroupedListController {
         self.form.rowByTag("ownSubscribesRow")!.evaluateDisabled()
         self.form.rowByTag("ownUpvotesRow")!.disabled = Auth.check() ? false : true
         self.form.rowByTag("ownUpvotesRow")!.evaluateDisabled()
-    }
-
-    func settingsButtonPressed(sender: UIBarButtonItem) {
-        let controller = SettingsController()
-        controller.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(controller, animated: true)
     }
 
     func nameButtonPressed(sender: UIButton!) {

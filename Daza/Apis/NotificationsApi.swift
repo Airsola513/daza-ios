@@ -38,5 +38,21 @@ extension Api {
             })
         }
     }
+    
+    
+    
+    static func getNotificationCount(errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                                     completion: (data: NotificationCount!, error: NSError!) -> Void) {
+        let URL = URLs.apiURL + "/notifications/counts";
+        self.request(.GET, URL).responseObject { (response: Response<ResultOfObject<NotificationCount>, NSError>) in
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var data: NotificationCount! = nil
+                if (error == nil) {
+                    data = result.data
+                }
+                completion(data: data, error: error)
+            })
+        }
+    }
 
 }

@@ -58,7 +58,12 @@ class HomeController: UITabBarController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.inboxController.tabBarItem.badgeValue = "\(UIApplication.sharedApplication().applicationIconBadgeNumber)"
+        Api.getNotificationCount { (data, error) in
+            if (error == nil) {
+                UIApplication.sharedApplication().applicationIconBadgeNumber = data.unread_count
+                self.inboxController.tabBarItem.badgeValue = "\(data.unread_count)"
+            }
+        }
     }
     
     @objc func deepLinkingHandler(notification: NSNotification) {
