@@ -15,6 +15,7 @@
  */
 
 import UIKit
+import SVProgressHUD
 import TUSafariActivity
 
 class ArticleDetailController: InAppBrowserController {
@@ -31,6 +32,7 @@ class ArticleDetailController: InAppBrowserController {
     
     init(_ data: Article) {
         super.init(nibName: nil, bundle: nil)
+        self.articleId = data.id
         self.article = data
     }
 
@@ -83,6 +85,14 @@ class ArticleDetailController: InAppBrowserController {
     func upvoteButtonButtonPressed(sender: UIButton!) {
         if (!Auth.check(self)) {
             return
+        }
+        Api.articleUpvote(self.articleId) { (data, error) in
+            if (error == nil) {
+                SVProgressHUD.showSuccessWithStatus("已赞！")
+                self.article.upvoted = true
+                self.article.upvote_count += 1
+                self.articleCommentBarView.data = self.article
+            }
         }
     }
     

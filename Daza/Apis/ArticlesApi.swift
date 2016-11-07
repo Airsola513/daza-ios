@@ -111,6 +111,25 @@ extension Api {
             })
         }
     }
+    
+    static func articleUpvote(articleId: Int,
+                              errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                              completion: (data: ArticleVote!, error: NSError!) -> Void) {
+        let URL = URLs.apiURL + "/articles/\(articleId)/votes";
+        let parameters: [String: AnyObject] = [
+            "type": "up",
+        ]
+        
+        self.request(.POST, URL, parameters).responseObject { (response: Response<ResultOfObject<ArticleVote>, NSError>) in
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var data: ArticleVote! = nil
+                if (error == nil) {
+                    data = result.data
+                }
+                completion(data: data, error: error)
+            })
+        }
+    }
 
     static func createComment(articleId: Int,
                               content: String,
