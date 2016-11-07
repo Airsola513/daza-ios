@@ -61,7 +61,11 @@ class HomeController: UITabBarController {
         Api.getNotificationCount { (data, error) in
             if (error == nil) {
                 UIApplication.sharedApplication().applicationIconBadgeNumber = data.unread_count
-                self.inboxController.tabBarItem.badgeValue = "\(data.unread_count)"
+                if (data.unread_count > 0) {
+                    self.inboxController.tabBarItem.badgeValue = "\(data.unread_count)"
+                } else {
+                    self.inboxController.tabBarItem.badgeValue = nil
+                }
             }
         }
     }

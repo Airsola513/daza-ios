@@ -33,7 +33,7 @@ class HomeIndexController: ButtonBarPagerTabStripViewController {
     override func viewDidLoad() {
         // set up style before super view did load is executed
         settings.style.buttonBarHeight = 38
-        settings.style.buttonBarItemFont = UIFont.systemFontOfSize(16)
+        settings.style.buttonBarItemFont = UIFont.systemFontOfSize(17)
         settings.style.buttonBarBackgroundColor = UIColor(rgba: "#F5F5F5")
         settings.style.selectedBarBackgroundColor = .clearColor()
         settings.style.buttonBarItemsShouldFillAvailiableWidth = true

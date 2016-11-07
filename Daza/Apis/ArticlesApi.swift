@@ -111,4 +111,24 @@ extension Api {
             })
         }
     }
+
+    static func createComment(articleId: Int,
+                              content: String,
+                              errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                              completion: (data: ArticleComment!, error: NSError!) -> Void) {
+        let URL = URLs.apiURL + "/articles/\(articleId)/comments";
+        let parameters: [String: AnyObject] = [
+            "content": content,
+        ]
+        
+        self.request(.POST, URL, parameters).responseObject { (response: Response<ResultOfObject<ArticleComment>, NSError>) in
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var data: ArticleComment! = nil
+                if (error == nil) {
+                    data = result.data
+                }
+                completion(data: data, error: error)
+            })
+        }
+    }
 }

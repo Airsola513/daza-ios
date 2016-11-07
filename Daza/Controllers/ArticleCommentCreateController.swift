@@ -16,13 +16,16 @@
 
 import UIKit
 import Eureka
+import SVProgressHUD
 
 class ArticleCommentCreateController: BaseGroupedListController {
 
+    var articleId: Int!
     var article: Article!
 
     init(_ data: Article) {
         super.init(nibName: nil, bundle: nil)
+        self.articleId = data.id
         self.article = data
     }
 
@@ -44,8 +47,9 @@ class ArticleCommentCreateController: BaseGroupedListController {
                 <<< TextAreaRow() { row in
                         row.tag = "contentRow"
                         row.placeholder = "在此输入评论内容"
+                        row.addRule(RuleRequired())
                     }.cellUpdate { (cell, row) in
-                        
+
                     }
     }
 
@@ -55,10 +59,23 @@ class ArticleCommentCreateController: BaseGroupedListController {
         contentRow.cell.textView.becomeFirstResponder()
     }
 
-    
-    
     func sendButtonPressed(sender: UIBarButtonItem) {
         // TODO: 发表评论
+        let contentRow: TextAreaRow = form.rowByTag("contentRow") as! TextAreaRow
+        
+        
+        if ((contentRow.value == nil) || contentRow.value == "") {
+            SVProgressHUD.showErrorWithStatus("请输入内容。")
+            return
+        }
+        
+        SVProgressHUD.showWithStatus("发表中...")
+        Api.createComment(self.articleId, content: contentRow.value!) { (data, error) in
+            if (error == nil) {
+                SVProgressHUD.dismiss()
+                self.navigationController?.popToRootViewControllerAnimated(true)
+            }
+        }
     }
 
 }
