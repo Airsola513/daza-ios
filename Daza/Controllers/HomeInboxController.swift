@@ -15,6 +15,7 @@
  */
 
 import UIKit
+import SVProgressHUD
 
 class HomeInboxController: BaseListController<Notification> {
     
@@ -63,8 +64,16 @@ class HomeInboxController: BaseListController<Notification> {
     }
     
     func markAllReadButtonPressed(sender: UIBarButtonItem) {
-        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
-        self.navigationController?.tabBarItem.badgeValue = nil
+        SVProgressHUD.showWithStatus("处理中...")
+        Api.markAsReadNotification { (data, error) in
+            if (data) {
+                UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+                self.navigationController?.tabBarItem.badgeValue = nil
+            } else {
+                
+            }
+            SVProgressHUD.dismiss()
+        }
     }
     
 }
