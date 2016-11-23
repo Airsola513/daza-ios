@@ -16,10 +16,12 @@
 
 import SVProgressHUD
 
-class DefaultErrorHandler: ErrorHandler {
+class DefaultErrorHandler: NSObject, ErrorHandler {
     
     func handleError(error: NSError) -> Void {
-        SVProgressHUD.showErrorWithStatus(error.localizedDescription)
+        self.delay(0.2) {
+            SVProgressHUD.showErrorWithStatus(error.localizedDescription)
+        }
     }
 
 }

@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 初始化 SVProgressHUD 的配置
         SVProgressHUD.setDefaultStyle(.Dark)
-        SVProgressHUD.setMinimumDismissTimeInterval(3)
+        SVProgressHUD.setMinimumDismissTimeInterval(2)
         
         // 初始化PushNotification
         self.registerRemoteNotification()

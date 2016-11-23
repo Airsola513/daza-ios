@@ -17,12 +17,12 @@
 import UIKit
 
 class SearchController: BaseTableViewController, UISearchBarDelegate {
-    
+
     var searchBar: UISearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // 初始化搜索框
         self.searchBar = UISearchBar(frame: CGRectMake(96, 0, 200, 44))
         self.searchBar.showsCancelButton = true
@@ -30,8 +30,16 @@ class SearchController: BaseTableViewController, UISearchBarDelegate {
         self.searchBar.backgroundImage = UIImage()
         self.searchBar.barTintColor = .clearColor()
         self.searchBar.placeholder = "搜索你感兴趣的内容"
+        for subView in self.searchBar.subviews {
+            for ndLeveSubView in subView.subviews {
+                if (ndLeveSubView.isKindOfClass(UITextField)) {
+                    let textField = ndLeveSubView as? UITextField
+                    textField?.backgroundColor = UIColor(rgba: "#ECEFF1")
+                }
+            }
+        }
         self.searchBar.delegate = self
-        
+
         let titleView: UIView = UIView(frame: (self.navigationController?.navigationBar.frame)!)
         titleView.backgroundColor = .clearColor()
         titleView.addSubview(self.searchBar)
@@ -43,9 +51,9 @@ class SearchController: BaseTableViewController, UISearchBarDelegate {
         self.navigationItem.titleView = titleView
         self.searchBar.becomeFirstResponder()
     }
-    
+
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         self.dismissViewControllerAnimated(false, completion: nil)
     }
-    
+
 }

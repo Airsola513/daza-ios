@@ -16,12 +16,55 @@
 
 import UIKit
 import Eureka
+import SVProgressHUD
 
 class ModifyPasswordController: BaseGroupedListController {
-    
+
+    var menuSave: UIBarButtonItem!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "修改账号密码"
+
+        self.menuSave = UIBarButtonItem(image: UIImage(named: "ic_menu_save"), style: .Plain, target: self, action: #selector(saveButtonPressed(_:)))
+        self.navigationItem.rightBarButtonItem = self.menuSave
+
+        form
+            +++ Section()
+                <<< PasswordRow() { row in
+                        row.tag = "oldPasswordRow"
+                        row.placeholder = "原密码"
+                    }.cellUpdate { (cell, row) in
+                    }
+            +++ Section()
+                <<< PasswordRow() { row in
+                        row.tag = "newPasswordRow"
+                        row.placeholder = "新密码"
+                    }.cellUpdate { (cell, row) in
+                    }
+                <<< PasswordRow() { row in
+                        row.tag = "newPasswordConfirmationRow"
+                        row.placeholder = "确认密码"
+                    }.cellUpdate { (cell, row) in
+                    }
     }
-    
+
+    func saveButtonPressed(sender: UIBarButtonItem) {
+        let values = form.values()
+        let oldPassword = values["oldPasswordRow"] as? String
+        let newPassword = values["newPasswordRow"] as? String
+        let newPasswordConfirmation = values["newPasswordConfirmationRow"] as? String
+
+        let completionBlock = { (data: Bool!, error: NSError!) in
+            SVProgressHUD.dismiss()
+            if (error != nil) {
+                return
+            }
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+
+        SVProgressHUD.showWithStatus("修改中...")
+        Api.updatePassword(oldPassword, newPassword, completion: completionBlock)
+    }
+
 }

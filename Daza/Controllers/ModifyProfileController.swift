@@ -19,26 +19,30 @@ import Eureka
 import SVProgressHUD
 
 class ModifyProfileController: BaseGroupedListController {
-    
+
     var menuSave: UIBarButtonItem!
+
+    var user: User!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("modify_profile.title")
 
-        
+
         self.menuSave = UIBarButtonItem(image: UIImage(named: "ic_menu_save"), style: .Plain, target: self, action: #selector(saveButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuSave
-        
+
         form
-            +++ Section()
-                <<< ImageRow() { row in
-                        row.tag = "avatarRow"
-                        row.title = trans("modify_profile.avatar.title")
-                    }.cellUpdate { (cell, row) in
-                        cell.height =  { 60 }
-//                        cell.imageView!.sd_setImageWithURL(NSURL(string: ""), placeholderImage: UIImage(named: "placeholder_image"))
-                    }
+//            +++ Section()
+//                <<< ImageRow() { row in
+//                        row.tag = "avatarRow"
+//                        row.title = trans("modify_profile.avatar.title")
+//                    }.cellUpdate { (cell, row) in
+//                        cell.height =  { 60 }
+//                        if (self.user != nil) {
+//                          cell.imageView!.sd_setImageWithURL(NSURL(string: self.user.avatar_small_url), placeholderImage: UIImage(named: "placeholder_image"))
+//                        }
+//                    }
             +++ Section()
                 <<< TextRow() { row in
                         row.tag = "nameRow"
@@ -85,11 +89,20 @@ class ModifyProfileController: BaseGroupedListController {
                         row.tag = "bioRow"
                         row.placeholder = trans("modify_profile.bio.placeholder")
                     }
-        
+
+        self.user = Auth.user()
+
+        self.form.setValues([
+            "nameRow": self.user.name,
+            "cityRow": self.user.city,
+            "websiteRow": self.user.website,
+            "bioRow": self.user.bio,
+        ])
+
         let completionBlock = { (data: User!, error: NSError!) in
             if (error == nil) {
                 self.form.setValues([
-                    "avatarRow": NSURL(string: data.avatar_url),
+//                    "avatarRow": NSURL(string: data.avatar_url),
                     "nameRow": data.name,
                     "cityRow": data.city,
                     "websiteRow": data.website,
@@ -98,10 +111,10 @@ class ModifyProfileController: BaseGroupedListController {
             }
             self.tableView?.reloadData()
         }
-        
+
         Api.profile(completion: completionBlock)
     }
-    
+
     func saveButtonPressed(sender: UIBarButtonItem) {
         let values = form.values()
 //        let avatarUrl = values["avatarRow"] as? String
@@ -110,7 +123,7 @@ class ModifyProfileController: BaseGroupedListController {
         let city = values["cityRow"] as? String
         let website = values["websiteRow"] as? String
         let bio = values["bioRow"] as? String
-        
+
         let completionBlock = { (data: User!, error: NSError!) in
             SVProgressHUD.dismiss()
             if (error != nil) {
@@ -118,9 +131,9 @@ class ModifyProfileController: BaseGroupedListController {
             }
             self.dismissViewControllerAnimated(true, completion: nil)
         }
-        
-        SVProgressHUD.showWithStatus("waiting...")
-        Api.updateProfile(avatarUrl, name, city, website, bio, completion: completionBlock)
+
+        SVProgressHUD.showWithStatus("修改中...")
+        Api.updateProfile(name, city, website, bio, completion: completionBlock)
     }
 
 }

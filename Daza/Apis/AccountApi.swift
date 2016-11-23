@@ -18,7 +18,7 @@ import Alamofire
 import AlamofireObjectMapper
 
 extension Api {
-    
+
     static func register(username: String!,
                        _ email: String!,
                        _ password: String!,
@@ -43,7 +43,7 @@ extension Api {
             completion(data: nil, error: result.error)
         }
     }
-    
+
     static func login(email: String!,
                     _ password: String!,
                       errorHandler: ErrorHandler! = DefaultErrorHandler(),
@@ -66,7 +66,7 @@ extension Api {
             })
         }
     }
-    
+
     static func logout(errorHandler: ErrorHandler! = DefaultErrorHandler(),
                        completion: (error: NSError!) -> Void) {
 
@@ -78,7 +78,7 @@ extension Api {
             })
         }
     }
-    
+
     static func profile(errorHandler: ErrorHandler! = DefaultErrorHandler(),
                         completion: (data: User!, error: NSError!) -> Void) {
 
@@ -95,15 +95,14 @@ extension Api {
             })
         }
     }
-    
-    static func updateProfile(avatarUrl: String!,
-                            _ name: String!,
+
+    static func updateProfile(name: String!,
                             _ city: String!,
                             _ website: String!,
                             _ bio: String!,
                               errorHandler: ErrorHandler! = DefaultErrorHandler(),
                               completion: (data: User!, error: NSError!) -> Void) {
-        
+
         let URL = URLs.apiURL + "/account/profile";
         let parameters: [String: AnyObject] = [
 //            "avatar_url": avatarUrl,
@@ -122,6 +121,28 @@ extension Api {
                     Auth.jwtToken(data.jwt_token)
                 }
                 completion(data: data, error: error)
+            })
+        }
+    }
+
+    static func updatePassword(oldPassword: String!,
+                             _ newPassword: String!,
+                               errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                               completion: (data: Bool, error: NSError!) -> Void) {
+
+        let URL = URLs.apiURL + "/account/modify_password";
+        let parameters: [String: AnyObject] = [
+            "old_password": oldPassword,
+            "new_password": newPassword,
+        ]
+
+        self.request(.POST, URL, parameters).responseObject { (response: Response<Result, NSError>) in
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var successed: Bool = false
+                if (error == nil) {
+                    successed = true
+                }
+                completion(data: successed, error: error)
             })
         }
     }

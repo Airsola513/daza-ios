@@ -101,8 +101,9 @@ class HomeController: UITabBarController {
             }
             break
         case "tags":
-            controller = TagDetailController(firstId)
+//            controller = TagDetailController(firstId)
             break
+            return
         default:
             break
         }

@@ -146,19 +146,19 @@ class LoginController: BaseGroupedListController {
                             make.bottom.equalTo(12)
                         }
                     }
-                <<< LabelRow() { row in
-                    }.cellUpdate { (cell, row) in
-                        cell.height =  { 22 }
-
-                        cell.contentView.addSubview(self.forgotPasswordButton)
-
-                        self.forgotPasswordButton.snp_makeConstraints { (make) -> Void in
-                            make.width.equalTo(dividerWidth)
-                            make.height.equalTo(22)
-                            make.centerX.equalTo(cell)
-                            make.centerY.equalTo(cell)
-                        }
-                    }
+//                <<< LabelRow() { row in
+//                    }.cellUpdate { (cell, row) in
+//                        cell.height =  { 22 }
+//
+//                        cell.contentView.addSubview(self.forgotPasswordButton)
+//
+//                        self.forgotPasswordButton.snp_makeConstraints { (make) -> Void in
+//                            make.width.equalTo(dividerWidth)
+//                            make.height.equalTo(22)
+//                            make.centerX.equalTo(cell)
+//                            make.centerY.equalTo(cell)
+//                        }
+//                    }
     }
 
     func clickMenuClose(sender: UIBarButtonItem) {
@@ -200,12 +200,14 @@ class LoginController: BaseGroupedListController {
         }
         
         let completionBlock = { (data: User!, error: NSError!) in
+            SVProgressHUD.dismiss()
             if (error != nil) {
                 return
             }
             self.dismissViewControllerAnimated(true, completion: nil)
         }
 
+        SVProgressHUD.showWithStatus("登录中...")
         Api.login(email, password, completion: completionBlock)
     }
 
