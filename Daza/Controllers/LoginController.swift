@@ -195,7 +195,7 @@ class LoginController: BaseGroupedListController {
         let password = values["passwordRow"] as? String
         
         if (email == nil || password == nil) {
-            SVProgressHUD.showErrorWithStatus("用户名和密码不能为空")
+            SVProgressHUD.showErrorWithStatus("邮箱和密码不能为空")
             return
         }
         

@@ -99,37 +99,56 @@ class ModifyProfileController: BaseGroupedListController {
             "bioRow": self.user.bio,
         ])
 
-        let completionBlock = { (data: User!, error: NSError!) in
-            if (error == nil) {
-                self.form.setValues([
-//                    "avatarRow": NSURL(string: data.avatar_url),
-                    "nameRow": data.name,
-                    "cityRow": data.city,
-                    "websiteRow": data.website,
-                    "bioRow": data.bio,
-                ])
-            }
-            self.tableView?.reloadData()
-        }
-
-        Api.profile(completion: completionBlock)
+//        let completionBlock = { (data: User!, error: NSError!) in
+//            if (error == nil) {
+//                self.form.setValues([
+////                    "avatarRow": NSURL(string: data.avatar_url),
+//                    "nameRow": data.name,
+//                    "cityRow": data.city,
+//                    "websiteRow": data.website,
+//                    "bioRow": data.bio,
+//                ])
+//            }
+//            self.tableView?.reloadData()
+//        }
+//
+//        Api.profile(completion: completionBlock)
     }
 
     func saveButtonPressed(sender: UIBarButtonItem) {
         let values = form.values()
-//        let avatarUrl = values["avatarRow"] as? String
-        let avatarUrl = ""
-        let name = values["nameRow"] as? String
-        let city = values["cityRow"] as? String
-        let website = values["websiteRow"] as? String
-        let bio = values["bioRow"] as? String
+        
+        let name: String! = values["nameRow"] as? String
+        let city: String! = values["cityRow"] as? String
+        let website: String! = values["websiteRow"] as? String
+        let bio: String! = values["bioRow"] as? String
+        
+        if name == nil {
+            SVProgressHUD.showErrorWithStatus("请输入姓名")
+            return
+        }
+        
+        if city == nil {
+            SVProgressHUD.showErrorWithStatus("请输入城市")
+            return
+        }
+        
+        if website == nil {
+            SVProgressHUD.showErrorWithStatus("请输入网站")
+            return
+        }
+        
+        if bio == nil {
+            SVProgressHUD.showErrorWithStatus("请输入简介")
+            return
+        }
 
         let completionBlock = { (data: User!, error: NSError!) in
             SVProgressHUD.dismiss()
             if (error != nil) {
                 return
             }
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.navigationController?.popViewControllerAnimated(true)
         }
 
         SVProgressHUD.showWithStatus("修改中...")

@@ -86,8 +86,11 @@ class NotificationSettingsController: BaseGroupedListController {
     
     func closedByKey(key: String) -> Bool {
         if (Auth.check()) {
-            for config: UserConfig in Auth.user().configs {
-                print("\(config.key): \(config.value)")
+            let configs = Auth.user().configs
+            if (configs == nil) {
+                return false
+            }
+            for config: UserConfig in configs {
                 if (config.key == key) {
                     return config.value == "true"
                 }

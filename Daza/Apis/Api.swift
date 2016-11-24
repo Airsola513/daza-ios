@@ -53,8 +53,11 @@ class Api {
         ]
         
         // 添加授权请求Header
-        if (Auth.check()) {
+        if (Auth.check() && Auth.jwtToken() != nil) {
             reqHeaders["Authorization"] = "Bearer \(Auth.jwtToken().access_token)"
+        } else {
+            Auth.user(nil)
+            Auth.jwtToken(nil)
         }
 
         // Headers 合并
