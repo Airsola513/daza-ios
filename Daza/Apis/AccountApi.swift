@@ -105,7 +105,6 @@ extension Api {
 
         let URL = URLs.apiURL + "/account/profile";
         let parameters: [String: AnyObject] = [
-//            "avatar_url": avatarUrl,
             "name": name,
             "city": city,
             "website": website,
@@ -118,7 +117,6 @@ extension Api {
                 if (error == nil) {
                     data = result.data
                     Auth.user(data)
-                    Auth.jwtToken(data.jwt_token)
                 }
                 completion(data: data, error: error)
             })
@@ -130,7 +128,7 @@ extension Api {
                                errorHandler: ErrorHandler! = DefaultErrorHandler(),
                                completion: (data: Bool, error: NSError!) -> Void) {
 
-        let URL = URLs.apiURL + "/account/modify_password";
+        let URL = URLs.apiURL + "/account/password_modify";
         let parameters: [String: AnyObject] = [
             "old_password": oldPassword,
             "new_password": newPassword,

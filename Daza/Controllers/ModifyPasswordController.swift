@@ -54,13 +54,33 @@ class ModifyPasswordController: BaseGroupedListController {
         let oldPassword = values["oldPasswordRow"] as? String
         let newPassword = values["newPasswordRow"] as? String
         let newPasswordConfirmation = values["newPasswordConfirmationRow"] as? String
+        
+        if oldPassword == nil {
+            SVProgressHUD.showErrorWithStatus("请输入原密码")
+            return
+        }
+        
+        if newPassword == nil {
+            SVProgressHUD.showErrorWithStatus("请输入新密码")
+            return
+        }
+        
+        if newPasswordConfirmation == nil {
+            SVProgressHUD.showErrorWithStatus("请输入确认密码")
+            return
+        }
+        
+        if newPassword != newPasswordConfirmation {
+            SVProgressHUD.showErrorWithStatus("两次输入的密码不一致")
+            return
+        }
 
         let completionBlock = { (data: Bool!, error: NSError!) in
             SVProgressHUD.dismiss()
             if (error != nil) {
                 return
             }
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.navigationController?.popViewControllerAnimated(true)
         }
 
         SVProgressHUD.showWithStatus("修改中...")
