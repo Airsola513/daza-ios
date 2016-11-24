@@ -70,6 +70,10 @@ class HomeController: UITabBarController {
         }
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     @objc func deepLinkingHandler(notification: NSNotification) {
         let urlString: String = notification.object as! String
         

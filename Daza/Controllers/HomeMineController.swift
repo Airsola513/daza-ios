@@ -67,6 +67,10 @@ class HomeMineController: BaseGroupedListController {
         self.updateCellsIfDisabled()
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     func updateProfileRow(row: LabelRow?) {
         if (!Auth.check()) {
             row?.title = "未登录"

@@ -70,18 +70,17 @@ class NotificationSettingsController: BaseGroupedListController {
                         row.title = "勿扰模式"
                         row.disabled = true
                     }
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didBecomeActive(_:)), name: UIApplicationDidBecomeActiveNotification, object: nil)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-//        let statusRow: LabelRow = form.rowByTag("statusRow") as! LabelRow
-//        statusRow.cell.detailTextLabel?.text = UIApplication.sharedApplication().currentUserNotificationSettings()?.types != .None ? "已开启" : "未开启"
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func didBecomeActive(notification: NSNotification) {
+//        let statusRow = form.rowByTag("statusRow") as! LabelRow
 //        statusRow.updateCell()
-        
-        print("test")
-        for row in form.allRows {
-            row.updateCell()
-        }
+        form.rowByTag("statusRow")?.updateCell()
     }
     
     func closedByKey(key: String) -> Bool {
