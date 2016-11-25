@@ -34,7 +34,7 @@ class OwnUpvoteArticlesController: BaseListController<ArticleVote> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = Auth.id() == self.userId ? "我赞过的" : "他/她赞过的"
+        self.title = Auth.id() == self.userId ? "我赞过的" : "TA赞过的"
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0
