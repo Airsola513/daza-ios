@@ -47,7 +47,7 @@ class ArticlesController: BaseListController<Article>, IndicatorInfoProvider {
     
     override func loadData(page: Int) {
         let completionBlock = { (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void in
-            self.loadComplete(pagination, data)
+            self.loadComplete(pagination, data, error: error)
         }
         // 查询参数
         let categoryId = self.category.id;

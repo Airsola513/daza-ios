@@ -50,7 +50,7 @@ class OwnUpvoteArticlesController: BaseListController<ArticleVote> {
     
     override func loadData(page: Int) {
         let completionBlock = { (pagination: Pagination!, data: [ArticleVote]!, error: NSError!) -> Void in
-            self.loadComplete(pagination, data)
+            self.loadComplete(pagination, data, error: error)
         }
         Api.getUpvoteArticleListByUserId(page, userId: self.userId, completion: completionBlock)
     }

@@ -41,7 +41,7 @@ class FollowingController: BaseListController<UserRelationship> {
     
     override func loadData(page: Int) {
         let completionBlock = { (pagination: Pagination!, data: [UserRelationship]!, error: NSError!) -> Void in
-            self.loadComplete(pagination, data)
+            self.loadComplete(pagination, data, error: error)
         }
         Api.following(page, userId: user.id, completion: completionBlock)
     }

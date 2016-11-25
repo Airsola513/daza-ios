@@ -47,7 +47,7 @@ class OwnSubscribesController: BaseListController<TopicSubscriber> {
     
     override func loadData(page: Int) {
         let completionBlock = { (pagination: Pagination!, data: [TopicSubscriber]!, error: NSError!) -> Void in
-            self.loadComplete(pagination, data)
+            self.loadComplete(pagination, data, error: error)
         }
         Api.getSubscribedTopicListByUserId(page, userId: userId, completion: completionBlock)
     }

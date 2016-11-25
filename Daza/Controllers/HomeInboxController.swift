@@ -25,6 +25,8 @@ class HomeInboxController: BaseListController<Notification> {
         super.viewDidLoad()
         self.title = trans("home.inbox.title")
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(loginStatusChanged(_:)), name: "LoginStatusChangedEvent", object: nil)
+        
         self.menuMarkAllRead = UIBarButtonItem(title: "标记已读", style: .Plain, target: self, action: #selector(markAllReadButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuMarkAllRead
         
@@ -37,9 +39,13 @@ class HomeInboxController: BaseListController<Notification> {
         self.firstRefreshing()
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     override func loadData(page: Int) {
         let completionBlock = { (pagination: Pagination!, data: [Notification]!, error: NSError!) -> Void in
-            self.loadComplete(pagination, data)
+            self.loadComplete(pagination, data, error: error)
         }
         Api.getNotificationList(page, completion: completionBlock)
     }
@@ -50,19 +56,59 @@ class HomeInboxController: BaseListController<Notification> {
         let data = self.itemsSource[indexPath.row]
         
         cell.data = data
+
+        let tapAvatarGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapUserResponse(_:)))
+        tapAvatarGesture.numberOfTapsRequired = 1
+        tapAvatarGesture.numberOfTouchesRequired = 1
+        cell.avatarImageView.tag = indexPath.row
+        cell.avatarImageView.addGestureRecognizer(tapAvatarGesture)
+        cell.avatarImageView.userInteractionEnabled = true
+
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
         
+        var controller: UIViewController!
+        
         let data = self.itemsSource[indexPath.row]
         
-        let controller = UITableViewController()
+        let reason: String = data.reason
+        
+        switch reason {
+        case "followed":
+            controller = UserDetailController(data.from_user)
+            break
+        case "subscribed":
+            controller = TopicDetailController(data.topic)
+            break
+        case "upvoted":
+            controller = ArticleDetailController(data.article)
+            break
+        case "comment":
+            controller = ArticleDetailController(data.article)
+            break
+        case "mention":
+            controller = ArticleDetailController(data.article)
+            break
+        default:
+            SVProgressHUD.showErrorWithStatus("未知消息类型")
+            return
+        }
+
         controller.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
-    
+
+    func tapUserResponse(sender: UITapGestureRecognizer) {
+        let row: Int = sender.view!.tag
+        let user: User = self.itemsSource[row].from_user
+        let controller = UserDetailController(user)
+        controller.hidesBottomBarWhenPushed = true
+        self.navigationController!.pushViewController(controller, animated: true)
+    }
+
     func markAllReadButtonPressed(sender: UIBarButtonItem) {
         SVProgressHUD.showWithStatus("处理中...")
         Api.markAsReadNotification { (data, error) in
@@ -73,6 +119,18 @@ class HomeInboxController: BaseListController<Notification> {
                 
             }
             SVProgressHUD.dismiss()
+        }
+    }
+    
+    // 登录状态发生变化
+    @objc func loginStatusChanged(notification: NSNotification) {
+        self.itemsSource = []
+        self.tableView.reloadData()
+        self.tableView.reloadEmptyDataSet()
+        
+        // 如果是已经登录状态，即重新加载消息
+        if (Auth.check()) {
+            self.firstRefreshing()
         }
     }
     

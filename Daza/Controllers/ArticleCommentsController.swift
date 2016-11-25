@@ -52,7 +52,7 @@ class ArticleCommentsController: BaseListController<ArticleComment> {
     
     override func loadData(page: Int) {
         let completionBlock = { (pagination: Pagination!, data: [ArticleComment]!, error: NSError!) -> Void in
-            self.loadComplete(pagination, data)
+            self.loadComplete(pagination, data, error: error)
         }
         Api.getArticleCommentList(page, articleId: self.articleId, completion: completionBlock)
     }

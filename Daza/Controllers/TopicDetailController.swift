@@ -100,7 +100,7 @@ class TopicDetailController: BaseListController<Article> {
     
     override func loadData(page: Int) {
         let completionBlock = { (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void in
-            self.loadComplete(pagination, data)
+            self.loadComplete(pagination, data, error: error)
         }
         Api.getArticleListByTopicId(page, topicId: self.topicId, completion: completionBlock)
     }

@@ -29,7 +29,15 @@ class Api {
         if (result.isSuccess) {
             value = response.result.value!
             if (value.isFailure()) {
-                error = NSError(domain: URLs.webURL, code: 0, userInfo: [:])
+                var message: String = "发生异常："
+                if (value.errors != nil && value.errors.count > 0) {
+                    for e: Error in value.errors {
+                        message += "\n\(e.code): \(e.message)"
+                    }
+                } else {
+                    message += "\n\(value.message)"
+                }
+                error = NSError(domain: URLs.apiURL, code: 0, userInfo: [NSLocalizedDescriptionKey: message])
             }
         } else {
             error = result.error

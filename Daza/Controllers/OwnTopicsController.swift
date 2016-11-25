@@ -47,7 +47,7 @@ class OwnTopicsController: BaseListController<Topic> {
     
     override func loadData(page: Int) {
         let completionBlock = { (pagination: Pagination!, data: [Topic]!, error: NSError!) -> Void in
-            self.loadComplete(pagination, data)
+            self.loadComplete(pagination, data, error: error)
         }
         Api.getTopicListByUserId(page, userId: userId, completion: completionBlock)
     }

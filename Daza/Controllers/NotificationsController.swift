@@ -33,7 +33,7 @@ class NotificationsController: BaseListController<Notification> {
     
     override func loadData(page: Int) {
         let completionBlock = { (pagination: Pagination!, data: [Notification]!, error: NSError!) -> Void in
-            self.loadComplete(pagination, data)
+            self.loadComplete(pagination, data, error: error)
         }
         Api.getNotificationList(page, completion: completionBlock)
     }
