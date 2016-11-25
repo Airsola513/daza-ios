@@ -17,6 +17,12 @@
 import ObjectMapper
 
 class Auth {
+    
+    static let standardUserDefaults = NSUserDefaults.standardUserDefaults()
+    
+    static var _jwtToken: AccessToken? = nil
+    static var _user: User? = nil
+    static var _userConfigs: [UserConfig]? = nil
 
     static func check() -> Bool {
         return user() != nil
@@ -39,17 +45,17 @@ class Auth {
     }
     
     static func user() -> User! {
-        let standardUserDefaults = NSUserDefaults.standardUserDefaults()
-        let jsonString = standardUserDefaults.stringForKey("auth.user")
-        if (jsonString != nil && jsonString != "") {
-            let user: User? = Mapper<User>().map(jsonString!)
-            return user
+        if (_user == nil) {
+            let jsonString = standardUserDefaults.stringForKey("auth.user")
+            if (jsonString != nil && jsonString != "") {
+                _user = Mapper<User>().map(jsonString!)
+            }
         }
-        return nil
+        return _user
     }
     
     static func user(user: User?) {
-        let standardUserDefaults = NSUserDefaults.standardUserDefaults()
+        _user = nil
         let jsonString = user == nil ? "" : Mapper<User>().toJSONString(user!, prettyPrint: false)
         standardUserDefaults.setValue(jsonString, forKey: "auth.user")
         
@@ -57,18 +63,36 @@ class Auth {
     }
     
     static func jwtToken() -> AccessToken! {
-        let standardUserDefaults = NSUserDefaults.standardUserDefaults()
-        let jsonString = standardUserDefaults.stringForKey("auth.jwt_token")
-        if (jsonString != nil && jsonString != "") {
-            let jwtToken: AccessToken? = Mapper<AccessToken>().map(jsonString!)
-            return jwtToken
+        if (_jwtToken == nil) {
+            let jsonString = standardUserDefaults.stringForKey("auth.jwt_token")
+            if (jsonString != nil && jsonString != "") {
+                _jwtToken = Mapper<AccessToken>().map(jsonString!)
+            }
         }
-        return nil
+        return _jwtToken
     }
     
-    static func jwtToken(user: AccessToken?) {
-        let standardUserDefaults = NSUserDefaults.standardUserDefaults()
-        let jsonString = user == nil ? "" : Mapper<AccessToken>().toJSONString(user!, prettyPrint: false)
+    static func jwtToken(jwtToken: AccessToken?) {
+        _jwtToken = jwtToken
+        let jsonString = jwtToken == nil ? "" : Mapper<AccessToken>().toJSONString(jwtToken!, prettyPrint: false)
         standardUserDefaults.setValue(jsonString, forKey: "auth.jwt_token")
+    }
+    
+    
+    
+    static func userConfigs() -> [UserConfig]! {
+        if (_userConfigs == nil) {
+            let jsonString = standardUserDefaults.stringForKey("auth.user_configs")
+            if (jsonString != nil && jsonString != "") {
+                _userConfigs = Mapper<UserConfig>().mapArray(jsonString!)
+            }
+        }
+        return _userConfigs
+    }
+    
+    static func userConfigs(userConfigs: [UserConfig]!) {
+        _userConfigs = userConfigs
+        let jsonString = userConfigs == nil ? "" : Mapper<UserConfig>().toJSONString(userConfigs, prettyPrint: false)
+        standardUserDefaults.setValue(jsonString, forKey: "auth.user_configs")
     }
 }

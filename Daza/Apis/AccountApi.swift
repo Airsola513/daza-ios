@@ -31,16 +31,17 @@ extension Api {
             "password": password,
         ]
         self.request(.POST, URL, parameters).responseObject { (response: Response<ResultOfObject<User>, NSError>) in
-            let result = response.result
-            if (result.isSuccess) {
-                let value = result.value!
-                if (value.isSuccess()) {
-                    Auth.user(value.data)
-                    completion(data: value.data, error: nil)
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var data: User! = nil
+                if (error == nil) {
+                    data = result.data
+                    // 保存用户相关数据
+                    Auth.jwtToken(data.jwt_token)
+                    Auth.user(data)
+                    Auth.userConfigs(data.configs)
                 }
-                return
-            }
-            completion(data: nil, error: result.error)
+                completion(data: data, error: error)
+            })
         }
     }
 
@@ -59,8 +60,10 @@ extension Api {
                 var data: User! = nil
                 if (error == nil) {
                     data = result.data
-                    Auth.user(data)
+                    // 保存用户相关数据
                     Auth.jwtToken(data.jwt_token)
+                    Auth.user(data)
+                    Auth.userConfigs(data.configs)
                 }
                 completion(data: data, error: error)
             })
@@ -69,8 +72,10 @@ extension Api {
 
     static func logout(errorHandler: ErrorHandler! = DefaultErrorHandler(),
                        completion: (error: NSError!) -> Void) {
-
+        // 移除用户相关数据
+        Auth.jwtToken(nil)
         Auth.user(nil)
+        Auth.userConfigs(nil)
         let URL = URLs.apiURL + "/account/logout";
         self.request(.POST, URL).responseObject { (response: Response<Result, NSError>) in
             handleResponse(response, errorHandler, completion: { (result, error) in
@@ -88,8 +93,8 @@ extension Api {
                 var data: User! = nil
                 if (error == nil) {
                     data = result.data
+                    // 保存用户相关数据
                     Auth.user(data)
-                    Auth.jwtToken(data.jwt_token)
                 }
                 completion(data: data, error: error)
             })
@@ -116,6 +121,7 @@ extension Api {
                 var data: User! = nil
                 if (error == nil) {
                     data = result.data
+                    // 保存用户相关数据
                     Auth.user(data)
                 }
                 completion(data: data, error: error)
@@ -141,6 +147,36 @@ extension Api {
                     successed = true
                 }
                 completion(data: successed, error: error)
+            })
+        }
+    }
+    
+    static func updateConfigs(notification_followed: Bool,
+                            _ notification_subscribed: Bool,
+                            _ notification_upvoted: Bool,
+                            _ notification_comment: Bool,
+                            _ notification_mention: Bool,
+                              errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                              completion: (data: [UserConfig]!, error: NSError!) -> Void) {
+        
+        let URL = URLs.apiURL + "/account/configs";
+        let parameters: [String: AnyObject] = [
+            "notification_followed": (notification_followed ? "true" : "false"),
+            "notification_subscribed": (notification_subscribed ? "true" : "false"),
+            "notification_upvoted": (notification_upvoted ? "true" : "false"),
+            "notification_comment": (notification_comment ? "true" : "false"),
+            "notification_mention": (notification_mention ? "true" : "false"),
+        ]
+        
+        self.request(.PUT, URL, parameters).responseObject { (response: Response<ResultOfArray<UserConfig>, NSError>) in
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var data: [UserConfig]! = nil
+                if (error == nil) {
+                    data = result.data
+                    // 保存用户相关数据
+                    Auth.userConfigs(data)
+                }
+                completion(data: data, error: error)
             })
         }
     }

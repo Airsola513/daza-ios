@@ -16,13 +16,24 @@
 
 import UIKit
 import Eureka
+import SVProgressHUD
 
 class NotificationSettingsController: BaseGroupedListController {
+    
+    var menuSave: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = trans("settings.notifications.title")
+        
+        self.menuSave = UIBarButtonItem(image: UIImage(named: "ic_menu_save"), style: .Plain, target: self, action: #selector(saveButtonPressed(_:)))
+        self.navigationItem.rightBarButtonItem = self.menuSave
 
+        
+        print(Auth.userConfigs())
+        
+        print(NSUserDefaults.standardUserDefaults().stringForKey("auth.user_configs"))
+        
         form
             +++ Section(footer: trans("settings.notifications.push_notification.footer"))
                 <<< LabelRow() { row in
@@ -65,12 +76,20 @@ class NotificationSettingsController: BaseGroupedListController {
                     }.cellUpdate { (cell, row) in
                         row.value = self.closedByKey("notification_mention")
                     }
-            +++ Section(footer: "开启后22:00到8:00间不会收到推送消息。")
-                <<< SwitchRow() { row in
-                        row.title = "勿扰模式"
-                        row.disabled = true
-                    }
+//            +++ Section(footer: "开启后22:00到8:00间不会收到推送消息。")
+//                <<< SwitchRow() { row in
+//                        row.title = "勿扰模式"
+//                        row.disabled = true
+//                    }
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didBecomeActive(_:)), name: UIApplicationDidBecomeActiveNotification, object: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        for row in form.allRows {
+            row.updateCell()
+        }
     }
     
     deinit {
@@ -83,7 +102,7 @@ class NotificationSettingsController: BaseGroupedListController {
     
     func closedByKey(key: String) -> Bool {
         if (Auth.check()) {
-            let configs = Auth.user().configs
+            let configs = Auth.userConfigs()
             if (configs == nil) {
                 return false
             }
@@ -94,6 +113,35 @@ class NotificationSettingsController: BaseGroupedListController {
             }
         }
         return false
+    }
+    
+    
+    
+    func saveButtonPressed(sender: UIBarButtonItem) {
+        let values = form.values()
+        
+        let notification_followed: Bool! = values["notification_followed"] as? Bool
+        let notification_subscribed: Bool! = values["notification_subscribed"] as? Bool
+        let notification_upvoted: Bool! = values["notification_upvoted"] as? Bool
+        let notification_comment: Bool! = values["notification_comment"] as? Bool
+        let notification_mention: Bool! = values["notification_mention"] as? Bool
+        
+        
+        let completionBlock = { (data: [UserConfig]!, error: NSError!) in
+            SVProgressHUD.dismiss()
+            if (error != nil) {
+                return
+            }
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+        
+        SVProgressHUD.showWithStatus("修改中...")
+        Api.updateConfigs(notification_followed,
+                          notification_subscribed,
+                          notification_upvoted,
+                          notification_comment,
+                          notification_mention,
+                          completion: completionBlock)
     }
 
 }
