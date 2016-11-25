@@ -16,7 +16,7 @@
 
 import UIKit
 
-class SearchController: BaseTableViewController, UISearchBarDelegate {
+class SearchController: BaseListController<Article>, UISearchBarDelegate {
 
     var searchBar: UISearchBar!
 
@@ -50,10 +50,68 @@ class SearchController: BaseTableViewController, UISearchBarDelegate {
         }
         self.navigationItem.titleView = titleView
         self.searchBar.becomeFirstResponder()
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 44.0
     }
-
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        self.firstRefreshing()
+        self.searchBar.endEditing(true)
+    }
+    
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         self.dismissViewControllerAnimated(false, completion: nil)
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if (searchText == "") {
+            self.itemsSource = []
+            self.tableView.reloadData()
+            self.tableView.reloadEmptyDataSet()
+            self.searchBar.resignFirstResponder()
+        }
+    }
+    
+    override func loadData(page: Int) {
+        let completionBlock = { (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void in
+            self.loadComplete(pagination, data, error: error)
+        }
+        // 查询参数
+        let keyword = self.searchBar.text
+        
+        Api.getSearchArticleList(page, keyword, completion: completionBlock)
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let data = self.itemsSource[indexPath.row]
+        
+        
+        let cell: UITableViewCell = UITableViewCell()
+        
+        cell.textLabel?.text = data.title
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
+        let data = self.itemsSource[indexPath.row]
+        
+        let controller = ArticleDetailController(data)
+        controller.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+
+    override func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let attributes: [String : AnyObject] = [
+            NSFontAttributeName: UIFont.boldSystemFontOfSize(14),
+            NSForegroundColorAttributeName: UIColor.darkGrayColor(),
+            ]
+        
+        if (self.isRefreshing()) {
+            return NSAttributedString(string: "搜索中...", attributes: attributes);
+        }
+        return NSAttributedString(string: "搜索结果为空", attributes: attributes);
     }
 
 }

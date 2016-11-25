@@ -90,6 +90,7 @@ class BaseListController<T>: UITableViewController, DZNEmptyDataSetSource, DZNEm
     // 首次进入时刷新数据
     func firstRefreshing() {
         self.refreshing = true
+        self.tableView.reloadEmptyDataSet()
         // 延时0.3秒后执行加载数据操作，延时是为了Loading不会因为加载速度过快造成一闪而过的不好体验
         self.delay(0.1) { () -> () in
             self.loadData(1)

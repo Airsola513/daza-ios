@@ -105,6 +105,7 @@
 		F5D41DD71D3B2DDB0055195C /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D41DD61D3B2DDB0055195C /* Auth.swift */; };
 		F5D41DD91D3B3C860055195C /* TopicSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D41DD81D3B3C860055195C /* TopicSubscriber.swift */; };
 		F5D41DDB1D3B3CD50055195C /* ArticleViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D41DDA1D3B3CD50055195C /* ArticleViewer.swift */; };
+		F5E35C1D1DE87D79006263EA /* SearchApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E35C1C1DE87D79006263EA /* SearchApi.swift */; };
 		F5F23E3B1D329FE200234104 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E3A1D329FE200234104 /* Model.swift */; };
 		F5F23E3D1D32A55B00234104 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E3C1D32A55B00234104 /* RegisterController.swift */; };
 		F5F23E3F1D32A59800234104 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F23E3E1D32A59800234104 /* HomeController.swift */; };
@@ -254,6 +255,7 @@
 		F5D41DD61D3B2DDB0055195C /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		F5D41DD81D3B3C860055195C /* TopicSubscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicSubscriber.swift; sourceTree = "<group>"; };
 		F5D41DDA1D3B3CD50055195C /* ArticleViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewer.swift; sourceTree = "<group>"; };
+		F5E35C1C1DE87D79006263EA /* SearchApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchApi.swift; sourceTree = "<group>"; };
 		F5F23E361D32904800234104 /* Daza-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Daza-Bridging-Header.h"; sourceTree = "<group>"; };
 		F5F23E3A1D329FE200234104 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		F5F23E3C1D32A55B00234104 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
@@ -546,12 +548,13 @@
 				F5715BBC1D353F0000F1CBE5 /* Api.swift */,
 				F5715BBD1D353F0000F1CBE5 /* ArticlesApi.swift */,
 				F5715BBE1D353F0000F1CBE5 /* AssetsApi.swift */,
+				F5FC7D951D438D9D00C6CB17 /* CategoriesApi.swift */,
 				F5715BC01D353F0000F1CBE5 /* NotificationsApi.swift */,
+				F5E35C1C1DE87D79006263EA /* SearchApi.swift */,
 				F5715BC11D353F0000F1CBE5 /* TagsApi.swift */,
 				F5715BC21D353F0000F1CBE5 /* TopicsApi.swift */,
 				F5338A191D35490B00B3D44F /* URLs.swift */,
 				F5715BC41D353F0000F1CBE5 /* UsersApi.swift */,
-				F5FC7D951D438D9D00C6CB17 /* CategoriesApi.swift */,
 			);
 			path = Apis;
 			sourceTree = "<group>";
@@ -958,6 +961,7 @@
 				F5A6AFE01D46515000B89E7A /* Error.swift in Sources */,
 				F519182D1D3364F80012897F /* UIViewControllerExtension.swift in Sources */,
 				F5B5D5ED1D3F53AE009EE5AD /* ModifyProfileController.swift in Sources */,
+				F5E35C1D1DE87D79006263EA /* SearchApi.swift in Sources */,
 				F519182F1D33668D0012897F /* BaseNavigationController.swift in Sources */,
 				F5A2B5801D3B82810031AF83 /* ErrorHandler.swift in Sources */,
 				F5342F0E1D3FB0E10076BBF8 /* FollowersController.swift in Sources */,
