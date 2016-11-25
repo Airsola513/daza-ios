@@ -30,6 +30,9 @@ class HomeController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(deepLinkingHandler(_:)), name: "DeepLinkingEvent", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(loginStatusChanged(_:)), name: "LoginStatusChangedEvent", object: nil)
 
         UITabBar.appearance().tintColor = UIColor(rgba: "#37474F")
         
@@ -52,22 +55,12 @@ class HomeController: UITabBarController {
         self.mineController.tabBarItem.title = trans("home.mine.title")
         self.mineController.tabBarItem.image = UIImage(named: "ic_tab_mine")
         self.addChildViewController(mineController)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(deepLinkingHandler(_:)), name: "DeepLinkingEvent", object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        Api.getNotificationCount { (data, error) in
-            if (error == nil) {
-                UIApplication.sharedApplication().applicationIconBadgeNumber = data.unread_count
-                if (data.unread_count > 0) {
-                    self.inboxController.tabBarItem.badgeValue = "\(data.unread_count)"
-                } else {
-                    self.inboxController.tabBarItem.badgeValue = nil
-                }
-            }
-        }
+        // 更新 Inbox 标签上的角标数
+        self.updateInboxBadge()
     }
     
     deinit {
@@ -117,6 +110,29 @@ class HomeController: UITabBarController {
             // 获取当前所有Tab的UINavigationController，并由它启动新页面
             let navigationController: UINavigationController! = self.childViewControllers[self.selectedIndex] as! UINavigationController
             navigationController.pushViewController(controller!, animated: true)
+        }
+    }
+    
+    // 登录状态发生变化
+    @objc func loginStatusChanged(notification: NSNotification) {
+        // 更新 Inbox 标签上的角标数
+        self.updateInboxBadge()
+    }
+    
+    func updateInboxBadge() {
+        if (!Auth.check()) {
+            self.inboxController.tabBarItem.badgeValue = nil
+            return
+        }
+        Api.getNotificationCount { (data, error) in
+            if (error == nil) {
+                UIApplication.sharedApplication().applicationIconBadgeNumber = data.unread_count
+                if (data.unread_count > 0) {
+                    self.inboxController.tabBarItem.badgeValue = "\(data.unread_count)"
+                } else {
+                    self.inboxController.tabBarItem.badgeValue = nil
+                }
+            }
         }
     }
 

@@ -128,7 +128,7 @@ class HomeMineController: BaseGroupedListController {
         self.navigationController?.pushViewController(controller, animated: true)
     }
 
-    // 我的问题列表发生变化
+    // 登录状态发生变化
     @objc func loginStatusChanged(notification: NSNotification) {
         let row: LabelRow? = form.rowByTag("profileRow")
         self.updateProfileRow(row)
