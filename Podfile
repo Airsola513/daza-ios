@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-# source 'https://git.coding.net/lijy91/Specs.git'
+source 'https://git.coding.net/lijy91/Specs.git'
 platform :ios, '9.0'
 
 target 'Daza' do
@@ -25,6 +25,7 @@ target 'Daza' do
   pod 'GrowingIO'
   pod 'TUSafariActivity', '~> 1.0'
   pod 'WZLBadge'
+  pod 'KSCrash', '~> 1.8'
   pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 
   target 'DazaTests' do

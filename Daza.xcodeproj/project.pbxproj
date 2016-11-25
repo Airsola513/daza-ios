@@ -95,6 +95,8 @@
 		F5B5D5E91D3F2B16009EE5AD /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5D5E81D3F2B16009EE5AD /* UIApplicationExtension.swift */; };
 		F5B5D5EB1D3F4B97009EE5AD /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5D5EA1D3F4B97009EE5AD /* AccountController.swift */; };
 		F5B5D5ED1D3F53AE009EE5AD /* ModifyProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B5D5EC1D3F53AE009EE5AD /* ModifyProfileController.swift */; };
+		F5D38CEC1DE7E89E00CA82A5 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D38CEB1DE7E89E00CA82A5 /* libc++.tbd */; };
+		F5D38CEE1DE7E8A700CA82A5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D38CED1DE7E8A700CA82A5 /* libz.tbd */; };
 		F5D41DC91D38DDF00055195C /* TopicItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D41DC81D38DDF00055195C /* TopicItemCell.swift */; };
 		F5D41DCB1D38E1430055195C /* TopicItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D41DCA1D38E1430055195C /* TopicItemCell.xib */; };
 		F5D41DCD1D38E2370055195C /* ArticleItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D41DCC1D38E2370055195C /* ArticleItemCell.xib */; };
@@ -242,6 +244,8 @@
 		F5B5D5E81D3F2B16009EE5AD /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		F5B5D5EA1D3F4B97009EE5AD /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		F5B5D5EC1D3F53AE009EE5AD /* ModifyProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyProfileController.swift; sourceTree = "<group>"; };
+		F5D38CEB1DE7E89E00CA82A5 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		F5D38CED1DE7E8A700CA82A5 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F5D41DC81D38DDF00055195C /* TopicItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicItemCell.swift; sourceTree = "<group>"; };
 		F5D41DCA1D38E1430055195C /* TopicItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicItemCell.xib; sourceTree = "<group>"; };
 		F5D41DCC1D38E2370055195C /* ArticleItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleItemCell.xib; sourceTree = "<group>"; };
@@ -278,6 +282,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D38CEE1DE7E8A700CA82A5 /* libz.tbd in Frameworks */,
+				F5D38CEC1DE7E89E00CA82A5 /* libc++.tbd in Frameworks */,
 				F558A9431DC633900085C97D /* SystemConfiguration.framework in Frameworks */,
 				57F281865FD8154099281280 /* Pods_Daza.framework in Frameworks */,
 				F558A9411DC6336B0085C97D /* libYunBa.a in Frameworks */,
@@ -406,6 +412,8 @@
 		DAF3D11576E59A30216886D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F5D38CED1DE7E8A700CA82A5 /* libz.tbd */,
+				F5D38CEB1DE7E89E00CA82A5 /* libc++.tbd */,
 				F558A9421DC633900085C97D /* SystemConfiguration.framework */,
 				E8FE8D8F603C29202F719D14 /* Pods_Daza.framework */,
 				8C4D813867A740C3F0DC5296 /* Pods_DazaTests.framework */,

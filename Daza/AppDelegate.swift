@@ -18,6 +18,7 @@ import UIKit
 import Foundation
 import SVProgressHUD
 import UserNotifications
+import KSCrash
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,6 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.rootViewController = HomeController()
         self.window!.makeKeyAndVisible()
         self.window!.tintColor = UIColor.blackColor()
+        
+        // 初始化 KSCrash 配置
+        let installation: KSCrashInstallationStandard = KSCrashInstallationStandard.sharedInstance()
+        installation.url = NSURL(string: "https://collector.bughd.com/kscrash?key=3d58e0da5ec7d0b3fba0bd96dc98aa6b")
+        installation.install()
+        installation.sendAllReportsWithCompletion(nil)
         
         // 初始化 SVProgressHUD 的配置
         SVProgressHUD.setDefaultStyle(.Dark)
