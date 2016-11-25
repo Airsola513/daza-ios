@@ -78,8 +78,6 @@ class NotificationSettingsController: BaseGroupedListController {
     }
     
     func didBecomeActive(notification: NSNotification) {
-//        let statusRow = form.rowByTag("statusRow") as! LabelRow
-//        statusRow.updateCell()
         form.rowByTag("statusRow")?.updateCell()
     }
     

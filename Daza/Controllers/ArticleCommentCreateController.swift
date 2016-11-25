@@ -73,7 +73,7 @@ class ArticleCommentCreateController: BaseGroupedListController {
         Api.createComment(self.articleId, content: contentRow.value!) { (data, error) in
             if (error == nil) {
                 SVProgressHUD.dismiss()
-                self.navigationController?.popToRootViewControllerAnimated(true)
+                self.navigationController?.popViewControllerAnimated(true)
             }
         }
     }

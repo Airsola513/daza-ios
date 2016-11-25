@@ -14,35 +14,51 @@
  * limitations under the License.
  */
 
+// MJRefresh
+"MJRefreshHeaderIdleText" = "下拉刷新";
+"MJRefreshHeaderPullingText" = "松开即可刷新";
+"MJRefreshHeaderRefreshingText" = "加载中...";
+
+"MJRefreshAutoFooterIdleText" = "上拉加载更多";
+"MJRefreshAutoFooterRefreshingText" = "加载中...";
+"MJRefreshAutoFooterNoMoreDataText" = "暂无更多数据";
+
+// Eureka
+"Take photo" = "拍照";
+"Photo Library" = "从手机相册选择";
+"Saved Photos" = "时刻";
+"Clear Photo" = "清除照片";
+"Cancel" = "取消";
+
 // General
-"general.abort" = "Abort";
-"general.retry" = "Retry";
-"general.ignore" = "Ignore";
-"general.ok" = "OK";
-"general.cancel" = "Cancel";
-"general.yes" = "Yes";
-"general.no" = "No";
-"general.list.loading" = "Loading...";
-"general.list.no_result_found" = "No result found!";
-"general.list.an_error_occured" = "An error occured, please try again later";
+"general.abort" = "终止";
+"general.retry" = "重试";
+"general.ignore" = "忽略";
+"general.ok" = "确定";
+"general.cancel" = "取消";
+"general.yes" = "是";
+"general.no" = "否";
+"general.list.loading" = "加载中...";
+"general.list.no_result_found" = "没有发现结果！";
+"general.list.an_error_occured" = "发生了一个错误，请稍后重试。";
 
 // Home
-"home.index.title" = "Home";
-"home.explore.title" = "Explore";
-"home.inbox.title" = "Inbox";
-"home.mine.title" = "Mine";
+"home.index.title" = "首页";
+"home.explore.title" = "探索";
+"home.inbox.title" = "消息";
+"home.mine.title" = "我的";
 
 // >> Home mine
-"home.mine.modify_profile.title" = "Modify profile";
-"home.mine.name.not_logged.title" = "Login/Register";
-"home.mine.following.title" = "Following";
-"home.mine.followers.title" = "Followers";
-"home.mine.tabs.articles.title" = "Articles";
-"home.mine.tabs.topics.title" = "Topics";
-"home.mine.tabs.favorites.title" = "Favorites";
+"home.mine.modify_profile.title" = "编辑个人资料";
+"home.mine.name.not_logged.title" = "登录/注册";
+"home.mine.following.title" = "正在关注";
+"home.mine.followers.title" = "关注者";
+"home.mine.tabs.articles.title" = "文章";
+"home.mine.tabs.topics.title" = "主题";
+"home.mine.tabs.favorites.title" = "收藏";
 
 // Settings
-"settings.title" = "Settings";
+"settings.title" = "设置";
 
 "settings.notifications.title" = "消息设置";
 "settings.notifications.push_notification.title" = "接收推送通知";
@@ -56,69 +72,69 @@
 "settings.notifications.itmes.mention" = "提及我";
 
 "settings.account.title" = "账号与安全";
-"settings.account.modify_email.title" = "Email";
-"settings.account.modify_mobile.title" = "Mobile";
-"settings.account.modify_password.title" = "Modify password";
-"settings.account.bind_wechat.title" = "WeChat";
-"settings.account.bind_weibo.title" = "Weibo";
-"settings.account.bind_github.title" = "GitHub";
+"settings.account.modify_email.title" = "邮箱";
+"settings.account.modify_mobile.title" = "手机号";
+"settings.account.modify_password.title" = "修改账号密码";
+"settings.account.bind_wechat.title" = "微信账号";
+"settings.account.bind_weibo.title" = "微博账号";
+"settings.account.bind_github.title" = "GitHub 账号";
 
-"settings.feedback.title" = "Feedback";
-"settings.about.title" = "About Us";
-"settings.logout.title" = "Logout";
+"settings.feedback.title" = "意见反馈";
+"settings.about.title" = "关于我们";
+"settings.logout.title" = "退出";
 
 // Account
 
 // >> Register
-"register.title" = "Register";
+"register.title" = "注册";
 
 // >> Login
-"login.title" = "Login";
-"login.welcome_back.title" = "Welcome back";
+"login.title" = "登录";
+"login.welcome_back.title" = "欢迎回来";
 "login.welcome_back.subtitle" = "用邮箱登录，看看之前都错过了什么好文章吧。";
-"login.email.placeholder" = "Email";
-"login.password.placeholder" = "Password";
-"login.submit.title" = "Login";
-"login.forgot_password.title" = "Forgot password?";
+"login.email.placeholder" = "邮箱";
+"login.password.placeholder" = "密码";
+"login.submit.title" = "登录";
+"login.forgot_password.title" = "忘记密码？";
 
 // >> Modify profile
-"modify_profile.title" = "Modify profile";
-"modify_profile.avatar.title" = "Avatar";
-"modify_profile.name.title" = "Name";
+"modify_profile.title" = "修改个人资料";
+"modify_profile.avatar.title" = "头像";
+"modify_profile.name.title" = "姓名";
 "modify_profile.name.placeholder" = "添加你的姓名";
-"modify_profile.city.title" = "City";
+"modify_profile.city.title" = "城市";
 "modify_profile.city.placeholder" = "添加你的城市";
-"modify_profile.website.title" = "Website";
+"modify_profile.website.title" = "网站";
 "modify_profile.website.placeholder" = "添加你的网站";
 "modify_profile.bio.placeholder" = "在你的个人资料页中添加简介";
 
 // >> Reset password
-"reset_password.title" = "Reset your password";
+"reset_password.title" = "重置你的密码";
 
 // Users
 
 // >> User detail
-"user_detail.title" = "User detail";
+"user_detail.title" = "用户资料";
 // >> User following
-"user_following.title" = "Following";
+"user_following.title" = "正在关注";
 // >> User followers
-"user_followers.title" = "Followers";
+"user_followers.title" = "关注者";
 
 // Topics
 
 // >> Topic detail
-"topic_detail.title" = "Topic detail";
+"topic_detail.title" = "主题详情";
 
 // Articles
 
 // >> Article detail
-"article_detail.title" = "Article detail";
+"article_detail.title" = "文章详情";
 // >> Article comments
-"article_comments.title" = "Comments";
+"article_comments.title" = "评论列表";
 // >> Article comment create
 "article_comment_create.title" = "发表评论";
 
 // Events
 
 // >> Event detail
-"event_detail.title" = "Event detail";
+"event_detail.title" = "活动详情";

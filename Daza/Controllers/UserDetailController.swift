@@ -30,6 +30,7 @@ class UserDetailController: BaseGroupedListController {
     init(_ data: User!) {
         super.init(nibName: nil, bundle: nil)
         self.user = data
+        self.userId = data.id
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -54,15 +55,15 @@ class UserDetailController: BaseGroupedListController {
                     }
             +++ Section()
                 <<< ButtonRow() { row in
-                        row.title = "他/她的主题"
+                        row.title = Auth.id() == self.userId ? "我的主题" : "TA的主题"
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { OwnTopicsController(self.userId) }), completionCallback: nil)
                     }
                 <<< ButtonRow() { row in
-                        row.title = "他/她订阅的"
+                        row.title = Auth.id() == self.userId ? "我订阅的" : "TA订阅的"
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { OwnSubscribesController(self.userId) }), completionCallback: nil)
                     }
                 <<< ButtonRow() { row in
-                        row.title = "他/她赞过的"
+                        row.title = Auth.id() == self.userId ? "我赞过的" : "TA赞过的"
                         row.presentationMode = .Show(controllerProvider: .Callback( builder: { OwnUpvoteArticlesController(self.userId) }), completionCallback: nil)
                     }
         

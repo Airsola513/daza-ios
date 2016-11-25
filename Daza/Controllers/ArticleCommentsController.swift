@@ -60,12 +60,33 @@ class ArticleCommentsController: BaseListController<ArticleComment> {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let data = self.itemsSource[indexPath.row]
         
-        var identifier: String = "ArticleCommentItemCell"
+        let identifier: String = "ArticleCommentItemCell"
         
         let cell: ArticleCommentItemCell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! ArticleCommentItemCell
         
         cell.data = data
+        
+        let tapAvatarGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapUserResponse(_:)))
+        tapAvatarGesture.numberOfTapsRequired = 1
+        tapAvatarGesture.numberOfTouchesRequired = 1
+        cell.avatarImageView.tag = indexPath.row
+        cell.avatarImageView.addGestureRecognizer(tapAvatarGesture)
+        cell.avatarImageView.userInteractionEnabled = true
+        
+        let tapNameGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapUserResponse(_:)))
+        tapNameGesture.numberOfTapsRequired = 1
+        tapNameGesture.numberOfTouchesRequired = 1
+        cell.nameLabel.tag = indexPath.row
+        cell.nameLabel.addGestureRecognizer(tapNameGesture)
+        cell.nameLabel.userInteractionEnabled = true
         return cell
+    }
+    
+    func tapUserResponse(sender: UITapGestureRecognizer) {
+        let row: Int = sender.view!.tag
+        let user: User = self.itemsSource[row].user
+        let controller = UserDetailController(user)
+        self.navigationController!.pushViewController(controller, animated: true)
     }
 
 }
