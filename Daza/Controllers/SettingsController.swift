@@ -83,6 +83,7 @@ class SettingsController: BaseGroupedListController, MFMailComposeViewController
                             self.form.rowByTag("notificationRow")!.evaluateDisabled()
                             self.form.rowByTag("accountRow")!.disabled = true
                             self.form.rowByTag("accountRow")!.evaluateDisabled()
+                            self.navigationController?.popViewControllerAnimated(true)
                         }
                         Api.logout(completion: completionBlock)
                     }

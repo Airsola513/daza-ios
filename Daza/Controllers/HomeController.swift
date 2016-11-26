@@ -121,6 +121,7 @@ class HomeController: UITabBarController {
     
     func updateInboxBadge() {
         if (!Auth.check()) {
+            UIApplication.sharedApplication().applicationIconBadgeNumber = 0
             self.inboxController.tabBarItem.badgeValue = nil
             return
         }
