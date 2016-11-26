@@ -48,15 +48,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 初始化 YunBa
         YunBaService.setupWithAppkey(BuildConfig.YUNBA_APP_KEY)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onMessageReceived), name: kYBDidReceiveMessageNotification, object: nil)
-        
-        YunBaService.setAlias(String(Auth.id()).md5) { (succ, error) in
+        // 设置YunBa别名成功
+        let ybAlias = Auth.check() ? String(Auth.id()).md5 : nil
+        YunBaService.setAlias(ybAlias) { (succ, error) in
             if (succ) {
-                print("subscribe success")
-                YunBaService.getTopicList { (topics, error2) in
-                    print(topics)
-                }
+                print("subscribe alias (\(ybAlias)) successed")
             } else {
-                print("subscribe fail")
+                print("subscribe alias (\(ybAlias)) failed")
             }
         }
         
@@ -101,7 +99,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         YunBaService.storeDeviceToken(deviceToken) { (succ, error) -> Void in
             if (succ) {
-                print("store device token to YunBa succ")
+                print("store device token to YunBa successed")
             } else {
                 print("store device token to YunBa failed due to : \(error), recovery suggestion: \(error.localizedRecoverySuggestion)")
             }
