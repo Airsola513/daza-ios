@@ -38,9 +38,22 @@ class TopicDetailHeaderView: UITableViewCell {
             self.topic = newValue
             self.coverImageView.sd_setImageWithURL(NSURL(string: (topic!.image_small_url)), placeholderImage: UIImage(named: "placeholder_image"))
             self.nameLabel.text = topic!.name
-            self.subscribeButton.setTitle("订阅(\(self.topic!.subscriber_count))", forState: UIControlState.Normal)
-            self.createrLabel.text = "由 \(topic!.name) 维护"
+            if (self.topic!.subscribed != nil && self.topic!.subscribed) {
+                self.subscribeButton.setTitle("已订阅 (\(self.topic!.subscriber_count))", forState: UIControlState.Normal)
+//                self.subscribeButton.backgroundColor = UIColor(rgba: "#37474F")
+//                self.subscribeButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            } else {
+                self.subscribeButton.setTitle("订阅 (\(self.topic!.subscriber_count))", forState: UIControlState.Normal)
+//                self.subscribeButton.backgroundColor = UIColor.whiteColor()
+//                self.subscribeButton.setTitleColor(UIColor(rgba: "#37474F"), forState: UIControlState.Normal)
+            }
+            if (self.topic!.user != nil) {
+                self.createrLabel.text = "由 \(topic!.user.name) 维护"
+            } else {
+                self.createrLabel.text = ""
+            }
             self.descriptionLabel.text = topic!.description!
+            
         }
     }
 

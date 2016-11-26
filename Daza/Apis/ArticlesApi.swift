@@ -36,7 +36,6 @@ extension Api {
         }
         
         self.request(.GET, URL, parameters).responseObject { (response: Response<ResultOfArray<Article>, NSError>) in
-            print(response.request?.URLString);
             handleResponse(response, errorHandler, completion: { (result, error) in
                 var pagination: Pagination! = nil
                 var data: [Article]! = nil

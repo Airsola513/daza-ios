@@ -55,16 +55,21 @@ extension Api {
         
     }
     
-    static func createTopic() {
+    static func topicSubscribe(topicId: Int,
+                               errorHandler: ErrorHandler! = DefaultErrorHandler(),
+                               completion: (data: Bool!, error: NSError!) -> Void) {
+        let URL = URLs.apiURL + "/topics/\(topicId)/subscribe";
         
+        self.request(.POST, URL).responseObject { (response: Response<Result, NSError>) in
+            handleResponse(response, errorHandler, completion: { (result, error) in
+                var successed: Bool = false
+                if (error == nil) {
+                    successed = true
+                }
+                completion(data: successed, error: error)
+            })
+        }
     }
     
-    static func updateTopic() {
-        
-    }
-    
-    static func deleteTopic(topicId: Int) {
-        
-    }
     
 }

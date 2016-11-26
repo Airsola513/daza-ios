@@ -16,6 +16,7 @@
 
 import UIKit
 import TUSafariActivity
+import SVProgressHUD
 
 class TopicDetailController: BaseListController<Article> {
     
@@ -25,7 +26,7 @@ class TopicDetailController: BaseListController<Article> {
     init(_ id: Int) {
         super.init()
         self.topicId = id
-        self.topic = Topic(id: id, name: "", description: "")
+        self.topic = nil
     }
 
     init(_ data: Topic) {
@@ -44,10 +45,6 @@ class TopicDetailController: BaseListController<Article> {
         self.menuShare = UIBarButtonItem(image: UIImage(named: "ic_menu_share"), style: .Plain, target: self, action: #selector(shareButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuShare
         
-        self.headerView = TopicDetailHeaderView.instanceFromNib()
-        self.headerView!.data = self.topic
-        self.tableView!.tableHeaderView = self.headerView!
-        
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0
         
@@ -58,6 +55,32 @@ class TopicDetailController: BaseListController<Article> {
         self.tableView.registerNib(UINib(nibName: "ArticleNoImageItemCell", bundle: nil), forCellReuseIdentifier: "ArticleNoImageItemCell")
         
         self.firstRefreshing()
+        
+        // 显示主题信息
+        self.headerView = TopicDetailHeaderView.instanceFromNib()
+        if (self.topic == nil) {
+            self.headerView!.data = Topic(id: self.topicId, name: "获取中...", description: "")
+            SVProgressHUD.showWithStatus("获取中...")
+            Api.showTopic(self.topicId, completion: { (data, error) in
+                SVProgressHUD.dismiss()
+                if (error == nil) {
+                    self.topic = data
+                    self.headerView!.data = self.topic!
+                }
+            })
+        } else {
+            self.headerView!.data = self.topic
+        }
+        
+        self.tableView!.tableHeaderView = self.headerView!
+        
+        self.headerView!.subscribeButton.addTarget(self, action: #selector(subscribeButtonPressed(_:)), forControlEvents: .TouchUpInside)
+        
+        let tapNameGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapUserResponse(_:)))
+        tapNameGesture.numberOfTapsRequired = 1
+        tapNameGesture.numberOfTouchesRequired = 1
+        self.headerView!.createrLabel.addGestureRecognizer(tapNameGesture)
+        self.headerView!.createrLabel.userInteractionEnabled = true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -135,8 +158,37 @@ class TopicDetailController: BaseListController<Article> {
     
     
     func shareButtonPressed(sender: UIBarButtonItem) {
+        if (self.topic == nil) {
+            return
+        }
         let activities: [UIActivity] = [TUSafariActivity()];
         let activityViewController = UIActivityViewController(activityItems: self.topic.sharingContent, applicationActivities: activities)
         self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
+    func subscribeButtonPressed(sender: UIButton!) {
+        if (self.topic.subscribed != nil && self.topic.subscribed) {
+            return
+        }
+        SVProgressHUD.showWithStatus("订阅中...")
+        Api.topicSubscribe(self.topicId) { (data, error) in
+            SVProgressHUD.dismiss()
+            if (error == nil) {
+                SVProgressHUD.showSuccessWithStatus("订阅成功")
+                self.topic.subscribed = true
+                self.topic.subscriber_count += 1
+                self.headerView!.data = self.topic
+            }
+        }
+        
+    }
+    
+    func tapUserResponse(sender: UITapGestureRecognizer) {
+        if (self.topic.user == nil) {
+            return
+        }
+        let user: User = self.topic.user
+        let controller = UserDetailController(user)
+        self.navigationController!.pushViewController(controller, animated: true)
     }
 }

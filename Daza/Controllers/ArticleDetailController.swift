@@ -86,9 +86,12 @@ class ArticleDetailController: InAppBrowserController {
         if (!Auth.check(self)) {
             return
         }
+        if (self.article!.upvoted) {
+            return
+        }
         Api.articleUpvote(self.articleId) { (data, error) in
             if (error == nil) {
-                SVProgressHUD.showSuccessWithStatus("已赞！")
+                SVProgressHUD.showSuccessWithStatus("已赞")
                 self.article.upvoted = true
                 self.article.upvote_count += 1
                 self.articleCommentBarView.data = self.article
