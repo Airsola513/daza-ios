@@ -1,35 +1,58 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NotificationItemCell" customModule="Daza" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HLE-hE-4jr">
+                    <rect key="frame" x="14" y="12" width="32" height="32"/>
+                    <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="I6W-56-fgI"/>
+                        <constraint firstAttribute="width" constant="32" id="wHn-H1-n9c"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlM-xK-VnJ">
-                    <rect key="frame" x="14" y="12" width="347" height="22"/>
+                    <rect key="frame" x="54" y="12" width="307" height="32"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="TlM-xK-VnJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="C88-Sj-6zR"/>
-                <constraint firstAttribute="trailing" secondItem="TlM-xK-VnJ" secondAttribute="trailing" constant="14" id="akA-eX-lLP"/>
-                <constraint firstItem="TlM-xK-VnJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="dtZ-FS-EEC"/>
-                <constraint firstAttribute="bottom" secondItem="TlM-xK-VnJ" secondAttribute="bottom" constant="12" id="riC-C2-nHo"/>
+                <constraint firstItem="TlM-xK-VnJ" firstAttribute="leading" secondItem="HLE-hE-4jr" secondAttribute="trailing" constant="8" id="B7S-jg-lEH"/>
+                <constraint firstItem="TlM-xK-VnJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="Chw-iY-e0T"/>
+                <constraint firstAttribute="bottom" secondItem="HLE-hE-4jr" secondAttribute="bottom" constant="12" id="K0M-St-tvW"/>
+                <constraint firstItem="TlM-xK-VnJ" firstAttribute="leading" secondItem="HLE-hE-4jr" secondAttribute="trailing" constant="8" id="aU2-G8-BBP"/>
+                <constraint firstItem="HLE-hE-4jr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="dWr-ck-G6v"/>
+                <constraint firstAttribute="bottom" secondItem="TlM-xK-VnJ" secondAttribute="bottom" constant="12" id="esk-NP-o2m"/>
+                <constraint firstAttribute="trailing" secondItem="TlM-xK-VnJ" secondAttribute="trailing" constant="14" id="euN-2c-MY9"/>
+                <constraint firstItem="HLE-hE-4jr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="gGC-EC-waD"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="avatarImageView" destination="HLE-hE-4jr" id="PhL-jz-bFc"/>
                 <outlet property="contentLabel" destination="TlM-xK-VnJ" id="aXu-MD-yne"/>
             </connections>
-            <point key="canvasLocation" x="346.5" y="-81"/>
+            <point key="canvasLocation" x="346.5" y="-75"/>
         </view>
     </objects>
 </document>

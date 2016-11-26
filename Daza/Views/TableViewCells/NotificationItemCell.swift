@@ -18,6 +18,7 @@ import UIKit
 
 class NotificationItemCell: UITableViewCell {
     
+    @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!
     
     var notification: Notification?
@@ -29,10 +30,16 @@ class NotificationItemCell: UITableViewCell {
         set(newValue) {
             self.notification = newValue
             
+            let unread: Bool = self.notification!.unread
             let reason: String = self.notification!.reason
-            let from_user: User = self.notification!.from_user
-            let topic: Topic = self.notification!.topic
-            let article: Article = self.notification!.article
+            let from_user: User! = self.notification!.from_user
+            let topic: Topic! = self.notification!.topic
+            let article: Article! = self.notification!.article
+            
+            self.avatarImageView.sd_setImageWithURL(NSURL(string: (from_user.avatar_small_url)))
+            
+            self.contentLabel.textColor = unread ? UIColor.blackColor() : UIColor.lightGrayColor()
+            
             
             switch reason {
             case "followed":
@@ -51,7 +58,7 @@ class NotificationItemCell: UITableViewCell {
                 contentLabel.text = "\(from_user.name) "
                 break
             default:
-                contentLabel.text = "未知"
+                contentLabel.text = "未知类型"
                 break
             }
         }
