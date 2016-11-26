@@ -32,6 +32,7 @@ class Topic: Model {
     var source_link: String!        // 文章来源链接
     var article_count: Int = 0      // 文章数
     var subscriber_count: Int = 0   // 订阅数
+    var subscribed: Bool!           // 已订阅
     var user: User!
     
     init(id: Int, name: String, description: String) {
@@ -60,6 +61,7 @@ class Topic: Model {
         source_link         <- map["source_link"]
         article_count       <- map["article_count"]
         subscriber_count    <- map["subscriber_count"]
+        subscribed          <- map["subscribed"]
         user                <- map["user"]
     }
     
@@ -72,7 +74,7 @@ class Topic: Model {
     var sharingContent: [AnyObject] {
         get {
             let contentURL         = NSURL(string: "\(URLs.webURL)/topics/\(self.id)")!   // 要分享的链接
-            let contentTitle       = "分享一个来自「daza.io」的主题《\(self.name)》"                              // 表示链接中的内容的标题
+            let contentTitle       = "来自「daza.io」的主题《\(self.name)》"                // 表示链接中的内容的标题
             return [contentTitle, contentURL];
         }
     }
