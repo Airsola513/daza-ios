@@ -28,11 +28,6 @@ class NotificationSettingsController: BaseGroupedListController {
         
         self.menuSave = UIBarButtonItem(image: UIImage(named: "ic_menu_save"), style: .Plain, target: self, action: #selector(saveButtonPressed(_:)))
         self.navigationItem.rightBarButtonItem = self.menuSave
-
-        
-        print(Auth.userConfigs())
-        
-        print(NSUserDefaults.standardUserDefaults().stringForKey("auth.user_configs"))
         
         form
             +++ Section(footer: trans("settings.notifications.push_notification.footer"))

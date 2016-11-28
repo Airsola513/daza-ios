@@ -26,8 +26,8 @@ class Notification: Model {
     var topic_id: Int!              // 主题Id
     var article_id: Int!            // 文章Id
     var article_comment_id: Int!    // 文章评论Id
-    var title: Int!                 // 标题
-    var content: Int!               // 内容
+    var title: String!              // 标题
+    var content: String!            // 内容
     var from_user: User!            // 来自用户（对象）
     var topic: Topic!
     var article: Article!

@@ -47,7 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // 初始化 YunBa
         YunBaService.setupWithAppkey(BuildConfig.YUNBA_APP_KEY)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onMessageReceived), name: kYBDidReceiveMessageNotification, object: nil)
         // 设置YunBa别名成功
         let ybAlias = Auth.check() ? String(Auth.id()).md5 : nil
         YunBaService.setAlias(ybAlias) { (succ, error) in
@@ -120,12 +119,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         UIApplication.sharedApplication().registerForRemoteNotifications()
-    }
-    
-    func onMessageReceived(notification: NSNotification) {
-        let message: YBMessage = notification.object as! YBMessage
-        let jsonString = String(data: message.data, encoding: NSUTF8StringEncoding)
-        print("YunBa >>> \(jsonString)")
     }
     
 }

@@ -15,6 +15,7 @@
  */
 
 import UIKit
+import ObjectMapper
 
 class HomeController: UITabBarController {
     
@@ -33,6 +34,7 @@ class HomeController: UITabBarController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(deepLinkingHandler(_:)), name: "DeepLinkingEvent", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(loginStatusChanged(_:)), name: "LoginStatusChangedEvent", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(onMessageReceived), name: kYBDidReceiveMessageNotification, object: nil)
 
         UITabBar.appearance().tintColor = UIColor(rgba: "#37474F")
         
@@ -99,7 +101,7 @@ class HomeController: UITabBarController {
             break
         case "tags":
 //            controller = TagDetailController(firstId)
-            break
+//            break
             return
         default:
             break
@@ -135,6 +137,22 @@ class HomeController: UITabBarController {
                 }
             }
         }
+    }
+    
+    func onMessageReceived(notification: NSNotification) {
+        let message: YBMessage = notification.object as! YBMessage
+        let jsonString = String(data: message.data, encoding: NSUTF8StringEncoding)
+        
+        let data: Notification! = Mapper<Notification>().map(jsonString)
+        
+        if (data == nil) {
+            return
+        }
+        
+        let alertController: UIAlertController = UIAlertController(title: "新消息", message: data.content, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "好", style: .Default, handler: { (_) in
+        }))
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 
 }
