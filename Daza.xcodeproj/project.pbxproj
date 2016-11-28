@@ -1157,7 +1157,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Daza/Daza.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = G83H824X6L;
 				INFOPLIST_FILE = Daza/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1167,8 +1167,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.daza.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cd527acf-3169-486c-aa4d-8b3b4044b713";
-				PROVISIONING_PROFILE_SPECIFIER = "daza-dev";
+				PROVISIONING_PROFILE = "be20df1a-0330-4133-82dd-cc8202c0b6bd";
+				PROVISIONING_PROFILE_SPECIFIER = "daza-prod";
 				SWIFT_OBJC_BRIDGING_HEADER = "Daza/Daza-Bridging-Header.h";
 			};
 			name = Release;

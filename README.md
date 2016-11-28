@@ -1,21 +1,16 @@
 # daza-ios
 
-## 相关项目
-- [daza-backend](https://github.com/lijy91/daza-backend)
-- [daza-frontend](https://github.com/lijy91/daza-frontend)
-- [daza-ios](https://github.com/lijy91/daza-ios)
-- [daza-android](https://github.com/lijy91/daza-android)
+[「daza.io」](https://daza.io)是希望成为一款基于技能树的技术内容聚合阅读应用，根据你的技能对内容进行筛选，让你在这个信息过载的时代里更高效地获取你所需的内容。
 
-## 设计资源
-- [Material design](http://www.google.com/design/spec/style/color.html)
-- [Material icons](https://design.google.com/icons/)
+[![](https://devimages.apple.com.edgekey.net/app-store/marketing/guidelines/images/badge-download-on-the-app-store-cn.svg)](https://itunes.apple.com/us/app/daza.io/id1180300716?l=zh&ls=1&mt=8)
 
-## 线上地址
-- 主页：[https://daza.io](https://daza.io)
-- 接口：[https://api.daza.io](https://api.daza.io)
-
-## 演示
-[Live Demo](http://mock-web.daza.io)
+## 入门指南
+```bash
+$ git clone https://github.com/lijy91/daza-ios.git
+$ cd daza-ios
+$ pod update
+$ open Daza.xcworkspace
+```
 
 ## 加入讨论组
 ![](http://obryq3mj0.bkt.clouddn.com/topic/ByRafuLR/r1no_q9R.jpg?imageView2/2/w/480/h/480)

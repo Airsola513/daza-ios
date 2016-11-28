@@ -26,7 +26,7 @@ target 'Daza' do
   pod 'TUSafariActivity', '~> 1.0'
   pod 'WZLBadge'
   pod 'KSCrash', '~> 1.8'
-  pod 'Reveal-iOS-SDK', :configurations => ['Debug']
+#  pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 
   target 'DazaTests' do
     inherit! :search_paths
