@@ -23,10 +23,12 @@ struct BuildConfig {
     internal static let EMAIL_REPORT = "report@daza.io"
     internal static let EMAIL_SUPPORT = "support@daza.io"
 
-    internal static let QINIU_DOMAIN = "http://obryns2kk.bkt.clouddn.com"
+    internal static let QINIU_DOMAIN = ""
     
     internal static let YUNBA_APP_KEY = ""
 
     internal static let GROWING_ID = ""
     internal static let GROWING_URL_SCHEME = ""
+    
+    internal static let BUGHD_KEY = ""
 }

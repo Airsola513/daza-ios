@@ -16,14 +16,37 @@
 
 import UIKit
 
+public enum LeftBarButtonItemType {
+    case Close
+    case Cancel
+    case None
+}
+
 class BaseNavigationController: UINavigationController {
     
     var statusBarStyle: UIStatusBarStyle = .LightContent
+    var leftBarButtonItemType: LeftBarButtonItemType = .None
+    
+    convenience init(rootViewController: UIViewController, statusBarStyle: UIStatusBarStyle = .Default) {
+        self.init(rootViewController: rootViewController, statusBarStyle: statusBarStyle, leftBarButtonItemType: .None)
+    }
 
-    init(rootViewController: UIViewController, statusBarStyle: UIStatusBarStyle = .Default) {
+    init(rootViewController: UIViewController, statusBarStyle: UIStatusBarStyle = .Default, leftBarButtonItemType: LeftBarButtonItemType) {
         super.init(nibName: nil, bundle: nil)
         self.viewControllers.append(rootViewController)
         self.statusBarStyle = statusBarStyle
+        switch leftBarButtonItemType {
+        case .Close:
+            let item: UIBarButtonItem = UIBarButtonItem(title: "关闭", style: .Plain, target: self, action: #selector(close(_:)))
+            self.childViewControllers[0].navigationItem.leftBarButtonItem = item
+            break
+        case .Cancel:
+            let item: UIBarButtonItem = UIBarButtonItem(title: "取消", style: .Plain, target: self, action: #selector(cancel(_:)))
+            self.childViewControllers[0].navigationItem.leftBarButtonItem = item
+            break
+        default:
+            break
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -54,6 +77,16 @@ class BaseNavigationController: UINavigationController {
     
     override func prefersStatusBarHidden() -> Bool {
         return false
+    }
+    
+    func close(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func cancel(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
 }
 

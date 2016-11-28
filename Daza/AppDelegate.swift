@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 初始化 KSCrash 配置
         let installation: KSCrashInstallationStandard = KSCrashInstallationStandard.sharedInstance()
-        installation.url = NSURL(string: "https://collector.bughd.com/kscrash?key=3d58e0da5ec7d0b3fba0bd96dc98aa6b")
+        installation.url = NSURL(string: "https://collector.bughd.com/kscrash?key=\(BuildConfig.BUGHD_KEY)")
         installation.install()
         installation.sendAllReportsWithCompletion(nil)
         
