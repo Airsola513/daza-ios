@@ -48,6 +48,8 @@
 		F51D307F1D477F7400B3416F /* OwnSubscribesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D307E1D477F7400B3416F /* OwnSubscribesController.swift */; };
 		F51D30811D477F8200B3416F /* OwnTopicsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D30801D477F8200B3416F /* OwnTopicsController.swift */; };
 		F51D30831D47800700B3416F /* OwnUpvoteArticlesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D30821D47800700B3416F /* OwnUpvoteArticlesController.swift */; };
+		F524CA761DF975B40025E074 /* ArticleAdItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524CA751DF975B40025E074 /* ArticleAdItemCell.swift */; };
+		F524CA781DF975C00025E074 /* ArticleAdItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F524CA771DF975C00025E074 /* ArticleAdItemCell.xib */; };
 		F52C55241D3E710100819C6D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52C55231D3E710100819C6D /* UIViewExtension.swift */; };
 		F5338A1A1D35490B00B3D44F /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5338A191D35490B00B3D44F /* URLs.swift */; };
 		F5338A1C1D354A3500B3D44F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5338A1B1D354A3500B3D44F /* Result.swift */; };
@@ -189,6 +191,8 @@
 		F51D307E1D477F7400B3416F /* OwnSubscribesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnSubscribesController.swift; sourceTree = "<group>"; };
 		F51D30801D477F8200B3416F /* OwnTopicsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnTopicsController.swift; sourceTree = "<group>"; };
 		F51D30821D47800700B3416F /* OwnUpvoteArticlesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnUpvoteArticlesController.swift; sourceTree = "<group>"; };
+		F524CA751DF975B40025E074 /* ArticleAdItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleAdItemCell.swift; sourceTree = "<group>"; };
+		F524CA771DF975C00025E074 /* ArticleAdItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleAdItemCell.xib; sourceTree = "<group>"; };
 		F52C55231D3E710100819C6D /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F5338A191D35490B00B3D44F /* URLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		F5338A1B1D354A3500B3D44F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -572,7 +576,11 @@
 		F5D41DC71D38DDF00055195C /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				F524CA751DF975B40025E074 /* ArticleAdItemCell.swift */,
+				F524CA771DF975C00025E074 /* ArticleAdItemCell.xib */,
 				F53DCFD01D3D1C65000180E4 /* ArticleBigImageItemCell.xib */,
+				F5342BB11DB3BC18009A5D25 /* ArticleCommentItemCell.swift */,
+				F5342BB31DB3BC2B009A5D25 /* ArticleCommentItemCell.xib */,
 				F5D41DD01D38E25A0055195C /* ArticleItemCell.swift */,
 				F5D41DCC1D38E2370055195C /* ArticleItemCell.xib */,
 				F514AE921D41329F00A68590 /* ArticleNoImageItemCell.xib */,
@@ -580,12 +588,10 @@
 				F514AE851D40DFE800A68590 /* FollowersItemCell.xib */,
 				F514AE811D40DF3A00A68590 /* FollowingItemCell.swift */,
 				F514AE831D40DF4900A68590 /* FollowingItemCell.xib */,
-				F5D41DC81D38DDF00055195C /* TopicItemCell.swift */,
-				F5D41DCA1D38E1430055195C /* TopicItemCell.xib */,
-				F5342BB11DB3BC18009A5D25 /* ArticleCommentItemCell.swift */,
-				F5342BB31DB3BC2B009A5D25 /* ArticleCommentItemCell.xib */,
 				F553D5111DBA5B61007FB06F /* NotificationItemCell.swift */,
 				F553D5131DBA5B79007FB06F /* NotificationItemCell.xib */,
+				F5D41DC81D38DDF00055195C /* TopicItemCell.swift */,
+				F5D41DCA1D38E1430055195C /* TopicItemCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -729,6 +735,7 @@
 				F5F23E541D32ABFB00234104 /* Localizable.strings in Resources */,
 				F514AE841D40DF4900A68590 /* FollowingItemCell.xib in Resources */,
 				F5D41DCD1D38E2370055195C /* ArticleItemCell.xib in Resources */,
+				F524CA781DF975C00025E074 /* ArticleAdItemCell.xib in Resources */,
 				F514AE931D41329F00A68590 /* ArticleNoImageItemCell.xib in Resources */,
 				F553D5141DBA5B79007FB06F /* NotificationItemCell.xib in Resources */,
 				F5342BB01DB3B637009A5D25 /* TopicDetailHeaderView.xib in Resources */,
@@ -970,6 +977,7 @@
 				F514AE911D410D7200A68590 /* BaseButtonBarPagerTabStripViewController.swift in Sources */,
 				F5985C051D66AC9C0033CE65 /* AccessToken.swift in Sources */,
 				F519183B1D337C0B0012897F /* TopicCreateController.swift in Sources */,
+				F524CA761DF975B40025E074 /* ArticleAdItemCell.swift in Sources */,
 				87A9ECA0E17B0C722735E6F4 /* LoginController.swift in Sources */,
 				F5715BCC1D353F0000F1CBE5 /* TopicsApi.swift in Sources */,
 				F5342BAF1DB3B637009A5D25 /* TopicDetailHeaderView.swift in Sources */,

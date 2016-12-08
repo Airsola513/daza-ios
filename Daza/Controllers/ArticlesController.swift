@@ -33,20 +33,25 @@ class ArticlesController: BaseListController<Article>, IndicatorInfoProvider {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44.0
         
-        self.tableView.registerClass(TopicItemCell.self, forCellReuseIdentifier: "ArticleItemCell")
+        self.tableView.registerClass(ArticleItemCell.self, forCellReuseIdentifier: "ArticleItemCell")
         self.tableView.registerNib(UINib(nibName: "ArticleItemCell", bundle: nil), forCellReuseIdentifier: "ArticleItemCell")
         
-        self.tableView.registerClass(TopicItemCell.self, forCellReuseIdentifier: "ArticleNoImageItemCell")
+        self.tableView.registerClass(ArticleItemCell.self, forCellReuseIdentifier: "ArticleNoImageItemCell")
         self.tableView.registerNib(UINib(nibName: "ArticleNoImageItemCell", bundle: nil), forCellReuseIdentifier: "ArticleNoImageItemCell")
         
-        self.tableView.registerClass(TopicItemCell.self, forCellReuseIdentifier: "ArticleBigImageItemCell")
-        self.tableView.registerNib(UINib(nibName: "ArticleBigImageItemCell", bundle: nil), forCellReuseIdentifier: "ArticleBigImageItemCell")
+        self.tableView.registerClass(ArticleAdItemCell.self, forCellReuseIdentifier: "ArticleAdItemCell")
+        self.tableView.registerNib(UINib(nibName: "ArticleAdItemCell", bundle: nil), forCellReuseIdentifier: "ArticleAdItemCell")
         
         self.firstRefreshing()
     }
     
     override func loadData(page: Int) {
-        let completionBlock = { (pagination: Pagination!, data: [Article]!, error: NSError!) -> Void in
+        let completionBlock = { (pagination: Pagination!, var data: [Article]!, error: NSError!) -> Void in
+            if (pagination.current_page % 2 == 0) {
+                let adArticle = Article()
+                adArticle.type = "ad"
+                data.append(adArticle)
+            }
             self.loadComplete(pagination, data, error: error)
         }
         // 查询参数
@@ -60,12 +65,17 @@ class ArticlesController: BaseListController<Article>, IndicatorInfoProvider {
         let data = self.itemsSource[indexPath.row]
         
         var identifier: String = "ArticleItemCell"
+        
+        if (data.type == "ad") {
+            identifier = "ArticleAdItemCell"
+            let cell: ArticleAdItemCell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! ArticleAdItemCell
+            cell.data = data
+            cell.loadAd(self)
+            return cell
+        }
+        
         if (data.image_url == nil || data.image_url == "") {
-            identifier = "ArticleNoImageItemCell";
-        } else {
-//            if (indexPath.row < 10) {
-//                identifier = "ArticleBigImageItemCell";
-//            }
+            identifier = "ArticleNoImageItemCell"
         }
 
         let cell: ArticleItemCell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! ArticleItemCell

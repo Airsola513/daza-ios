@@ -26,6 +26,8 @@ target 'Daza' do
   pod 'TUSafariActivity', '~> 1.0'
   pod 'WZLBadge'
   pod 'KSCrash', '~> 1.8'
+  pod 'Firebase/Core'
+  pod 'Firebase/AdMob'
 #  pod 'Reveal-iOS-SDK', :configurations => ['Debug']
 
   target 'DazaTests' do
