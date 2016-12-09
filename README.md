@@ -50,7 +50,6 @@ $ cd daza-ios
 2、安装依赖
 ```
 $ pod update
-$ open Daza.xcworkspace
 ```
 
 3、修改配置项
