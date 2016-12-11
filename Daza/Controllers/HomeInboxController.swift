@@ -44,6 +44,12 @@ class HomeInboxController: BaseListController<Notification> {
     }
     
     override func loadData(page: Int) {
+        if (!Auth.check()) {
+            self.itemsSource.removeAll()
+            self.tableView.reloadData()
+            self.endRefreshing()
+            return
+        }
         let completionBlock = { (pagination: Pagination!, data: [Notification]!, error: NSError!) -> Void in
             self.loadComplete(pagination, data, error: error)
         }
@@ -110,6 +116,9 @@ class HomeInboxController: BaseListController<Notification> {
     }
 
     func markAllReadButtonPressed(sender: UIBarButtonItem) {
+        if (!Auth.check(self)) {
+            return;
+        }
         SVProgressHUD.showWithStatus("处理中...")
         Api.markAsReadNotification { (data, error) in
             if (data) {
