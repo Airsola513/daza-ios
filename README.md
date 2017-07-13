@@ -67,18 +67,6 @@ $ cp Daza/Utils/BuildConfig.swift.example Daza/Utils/BuildConfig.swift
 - [daza-ios](https://github.com/lijy91/daza-ios)
 - [daza-android](https://github.com/lijy91/daza-android)
 
-## 关于作者
-
-![](https://oeolgl6y5.qnssl.com/topic/ByRafuLR/r1no_q9R.jpg?imageView2/2/w/200)
-
-> 如果你有什么好想法想告诉我，或者想加入讨论组（注明加入讨论组），请加我微信。
-
-## 捐赠
-
-![](http://obryq3mj0.bkt.clouddn.com/topic/ByRafuLR/r1WH8F90.jpg?imageView2/2/w/200)
-
-> 如果你觉得我的工作对你有帮助，那你可以为项目捐赠运营费用。
-
 ## License
 
     Copyright (C) 2015 JianyingLi <lijy91@foxmail.com>
